@@ -1,0 +1,890 @@
+{
+	"$OUTPUT->action_icon": {
+		"prefix": [
+			"output_action_icon",
+			"$OUTPUT->action_icon"
+		],
+		"body": "\\$OUTPUT->action_icon(${1:\\$url}, ${2:\\$pix_icon}${3:, ${4:\\$component_action}${5:, ${6:\\$attributes_array}${7:, ${8:\\$linktext}}}});",
+		"description": "Renders an action_icon."
+	},
+	"$OUTPUT->action_link": {
+		"prefix": [
+			"output_action_link",
+			"$OUTPUT->action_link"
+		],
+		"body": "\\$OUTPUT->action_link(${1:\\$url}, ${2:\\$text}${3:, ${4:\\$component_action}${5:, ${6:\\$attributes_array}${7:, ${8:\\$icon}}}});",
+		"description": "Renders a special html link with attached action."
+	},
+	"$OUTPUT->activity_navigation": {
+		"prefix": [
+			"output_activity_navigation",
+			"$OUTPUT->activity_navigation"
+		],
+		"body": "\\$OUTPUT->activity_navigation();",
+		"description": "Returns standard navigation between activities in a course."
+	},
+	"$OUTPUT->add_action_handler": {
+		"prefix": [
+			"output_add_action_handler",
+			"$OUTPUT->add_action_handler"
+		],
+		"body": "\\$OUTPUT->add_action_handler(${1:\\$component_action}${2:, ${3:\\$id}});",
+		"description": "Adds a JS action for the element with the provided id."
+	},
+	"$OUTPUT->block": {
+		"prefix": [
+			"output_block",
+			"$OUTPUT->block"
+		],
+		"body": "\\$OUTPUT->block(${1:\\$block_contents}, ${2:\\$region});",
+		"description": "Prints a nice side block with an optional header."
+	},
+	"$OUTPUT->block_controls": {
+		"prefix": [
+			"output_block_controls",
+			"$OUTPUT->block_controls"
+		],
+		"body": "\\$OUTPUT->block_controls(${1:\\$actions}${2:, ${3:\\$blockid}});",
+		"description": "Output the row of editing icons for a block, as defined by the controls array."
+	},
+	"$OUTPUT->block_move_target": {
+		"prefix": [
+			"output_block_move_target",
+			"$OUTPUT->block_move_target"
+		],
+		"body": "\\$OUTPUT->block_move_target(${1:\\$target}, ${2:\\$zones}, ${3:\\$previous}, ${4:\\$region});",
+		"description": "Output a place where the block that is currently being moved can be dropped."
+	},
+	"$OUTPUT->blocks": {
+		"prefix": [
+			"output_blocks",
+			"$OUTPUT->blocks"
+		],
+		"body": "\\$OUTPUT->blocks(${1:\\$region}${2:, ${3:\\$classes}${4:, ${5:\\$tag}}});",
+		"description": "Get the HTML for blocks in the given region."
+	},
+	"$OUTPUT->blocks_for_region": {
+		"prefix": [
+			"output_blocks_for_region",
+			"$OUTPUT->blocks_for_region"
+		],
+		"body": "\\$OUTPUT->blocks_for_region(${1:\\$region});",
+		"description": "Does nothing. The maintenance renderer cannot produce blocks."
+	},
+	"$OUTPUT->body_attributes": {
+		"prefix": [
+			"output_body_attributes",
+			"$OUTPUT->body_attributes"
+		],
+		"body": "\\$OUTPUT->body_attributes(${1:\\$additionalclasses_array});",
+		"description": "Returns HTML attributes to use within the body tag. This includes an ID and classes."
+	},
+	"$OUTPUT->body_css_classes": {
+		"prefix": [
+			"output_body_css_classes",
+			"$OUTPUT->body_css_classes"
+		],
+		"body": "\\$OUTPUT->body_css_classes(${1:\\$additionalclasses_array});",
+		"description": "Returns the CSS classes to apply to the body tag."
+	},
+	"$OUTPUT->body_id": {
+		"prefix": [
+			"output_body_id",
+			"$OUTPUT->body_id"
+		],
+		"body": "\\$OUTPUT->body_id();",
+		"description": "The ID attribute to apply to the body tag."
+	},
+	"$OUTPUT->box": {
+		"prefix": [
+			"output_box",
+			"$OUTPUT->box"
+		],
+		"body": "\\$OUTPUT->box(${1:\\$contents}${2:, ${3:\\$classes}${4:, ${5:\\$id}${6:, ${7:\\$attributes}}}});",
+		"description": "Outputs a box."
+	},
+	"$OUTPUT->box_end": {
+		"prefix": [
+			"output_box_end",
+			"$OUTPUT->box_end"
+		],
+		"body": "\\$OUTPUT->box_end();",
+		"description": "Outputs the closing section of a box."
+	},
+	"$OUTPUT->box_start": {
+		"prefix": [
+			"output_box_start",
+			"$OUTPUT->box_start"
+		],
+		"body": "\\$OUTPUT->box_start(${1:${2:\\$classes}${3:, ${4:\\$id}${5:, ${6:\\$attributes}}});",
+		"description": "Outputs the opening section of a box."
+	},
+	"$OUTPUT->close_window_button": {
+		"prefix": [
+			"output_close_window_button",
+			"$OUTPUT->close_window_button"
+		],
+		"body": "\\$OUTPUT->close_window_button(${1:\\$text});",
+		"description": "Returns HTML to display a simple button to close a window."
+	},
+	"$OUTPUT->confirm": {
+		"prefix": [
+			"output_confirm",
+			"$OUTPUT->confirm"
+		],
+		"body": "\\$OUTPUT->confirm(${1:\\$message}, ${2:\\$continue}, ${3:\\$cancel});",
+		"description": "Print a message along with button choices for Continue/Cancel."
+	},
+	"$OUTPUT->container": {
+		"prefix": [
+			"output_container",
+			"$OUTPUT->container"
+		],
+		"body": "\\$OUTPUT->container(${1:\\$contents}${2:, ${3:\\$classes}${4:, ${5:\\$id}}});",
+		"description": "Outputs a container."
+	},
+	"$OUTPUT->container_end": {
+		"prefix": [
+			"output_container_end",
+			"$OUTPUT->container_end"
+		],
+		"body": "\\$OUTPUT->container_end();",
+		"description": "Outputs the closing section of a container."
+	},
+	"$OUTPUT->container_end_all": {
+		"prefix": [
+			"output_container_end_all",
+			"$OUTPUT->container_end_all"
+		],
+		"body": "\\$OUTPUT->container_end_all(${1:\\$shouldbenone});",
+		"description": "Close all but the last open container."
+	},
+	"$OUTPUT->container_start": {
+		"prefix": [
+			"output_container_start",
+			"$OUTPUT->container_start"
+		],
+		"body": "\\$OUTPUT->container_start(${1:${2:\\$classes}${3:, ${4:\\$id}}});",
+		"description": "Outputs the opening section of a container."
+	},
+	"$OUTPUT->context_header": {
+		"prefix": [
+			"output_context_header",
+			"$OUTPUT->context_header"
+		],
+		"body": "\\$OUTPUT->context_header(${1:${2:\\$headerinfo}${3:, ${4:\\$headinglevel}}});",
+		"description": "Context header bar."
+	},
+	"$OUTPUT->continue_button": {
+		"prefix": [
+			"output_continue_button",
+			"$OUTPUT->continue_button"
+		],
+		"body": "\\$OUTPUT->continue_button(${1:\\$url});",
+		"description": "Returns HTML to display a continue button that goes to a particular URL."
+	},
+	"$OUTPUT->course_content_footer": {
+		"prefix": [
+			"output_course_content_footer",
+			"$OUTPUT->course_content_footer"
+		],
+		"body": "\\$OUTPUT->course_content_footer(${1:\\$onlyifnotcalledbefore});",
+		"description": "Does nothing. The maintenance renderer cannot produce a course content footer."
+	},
+	"$OUTPUT->course_content_header": {
+		"prefix": [
+			"output_course_content_header",
+			"$OUTPUT->course_content_header"
+		],
+		"body": "\\$OUTPUT->course_content_header(${1:\\$onlyifnotcalledbefore});",
+		"description": "Does nothing. The maintenance renderer cannot produce a course content header."
+	},
+	"$OUTPUT->course_footer": {
+		"prefix": [
+			"output_course_footer",
+			"$OUTPUT->course_footer"
+		],
+		"body": "\\$OUTPUT->course_footer();",
+		"description": "Does nothing. The maintenance renderer cannot produce a course footer."
+	},
+	"$OUTPUT->course_header": {
+		"prefix": [
+			"output_course_header",
+			"$OUTPUT->course_header"
+		],
+		"body": "\\$OUTPUT->course_header();",
+		"description": "Does nothing. The maintenance renderer cannot produce a course header."
+	},
+	"$OUTPUT->custom_block_region": {
+		"prefix": [
+			"output_custom_block_region",
+			"$OUTPUT->custom_block_region"
+		],
+		"body": "\\$OUTPUT->custom_block_region(${1:\\$regionname});",
+		"description": "Renders a custom block region."
+	},
+	"$OUTPUT->custom_menu": {
+		"prefix": [
+			"output_custom_menu",
+			"$OUTPUT->custom_menu"
+		],
+		"body": "\\$OUTPUT->custom_menu(${1:\\$custommenuitems});",
+		"description": "Does nothing. The maintenance renderer cannot produce a custom menu."
+	},
+	"$OUTPUT->darrow": {
+		"prefix": [
+			"output_darrow",
+			"$OUTPUT->darrow"
+		],
+		"body": "\\$OUTPUT->darrow();",
+		"description": "Accessibility: Down arrow-like character."
+	},
+	"$OUTPUT->doc_link": {
+		"prefix": [
+			"output_doc_link",
+			"$OUTPUT->doc_link"
+		],
+		"body": "\\$OUTPUT->doc_link(${1:\\$path}${2:, ${3:\\$text}${4:, ${5:\\$forcepopup}}});",
+		"description": "Returns a string containing a link to the user documentation. Also contains an icon by default. Shown to teachers and admin only."
+	},
+	"$OUTPUT->doctype": {
+		"prefix": [
+			"output_doctype",
+			"$OUTPUT->doctype"
+		],
+		"body": "\\$OUTPUT->doctype();",
+		"description": "Get the DOCTYPE declaration that should be used with this page. Designed to be called in theme layout.php files."
+	},
+	"$OUTPUT->download_dataformat_selector": {
+		"prefix": [
+			"output_download_dataformat_selector",
+			"$OUTPUT->download_dataformat_selector"
+		],
+		"body": "\\$OUTPUT->download_dataformat_selector(${1:\\$label}, ${2:\\$base}${3:, ${4:\\$name}${5:, ${6:\\$params}}});",
+		"description": "Returns a dataformat selection and download form."
+	},
+	"$OUTPUT->edit_button": {
+		"prefix": [
+			"output_edit_button",
+			"$OUTPUT->edit_button"
+		],
+		"body": "\\$OUTPUT->edit_button(${1:\\$moodle_url});",
+		"description": "Returns HTML to display a \"Turn editing on/off\" button in a form."
+	},
+	"$OUTPUT->error_text": {
+		"prefix": [
+			"output_error_text",
+			"$OUTPUT->error_text"
+		],
+		"body": "\\$OUTPUT->error_text(${1:\\$message});",
+		"description": "Output an error message. By default wraps the error message in <span class=\"error\">. If the error message is blank, nothing is output."
+	},
+	"$OUTPUT->fatal_error": {
+		"prefix": [
+			"output_fatal_error",
+			"$OUTPUT->fatal_error"
+		],
+		"body": "\\$OUTPUT->fatal_error(${1:\\$message}, ${2:\\$moreinfourl}, ${3:\\$link}, ${4:\\$backtrace}${5:, ${6:\\$debuginfo}${7:, ${8:\\$errorcode}}});",
+		"description": "Do not call this function directly. To terminate the current script with a fatal error, call the {@link print_error} function, or throw an exception. Doing either of those things will then call this function to display the error, before terminating the execution."
+	},
+	"$OUTPUT->favicon": {
+		"prefix": [
+			"output_favicon",
+			"$OUTPUT->favicon"
+		],
+		"body": "\\$OUTPUT->favicon();",
+		"description": "Returns the URL for the favicon."
+	},
+	"$OUTPUT->file_picker": {
+		"prefix": [
+			"output_file_picker",
+			"$OUTPUT->file_picker"
+		],
+		"body": "\\$OUTPUT->file_picker(${1:\\$options});",
+		"description": "Does nothing. The maintenance renderer cannot produce a file picker."
+	},
+	"$OUTPUT->footer": {
+		"prefix": [
+			"output_footer",
+			"$OUTPUT->footer"
+		],
+		"body": "\\$OUTPUT->footer();",
+		"description": "Outputs the page's footer."
+	},
+	"$OUTPUT->full_header": {
+		"prefix": [
+			"output_full_header",
+			"$OUTPUT->full_header"
+		],
+		"body": "\\$OUTPUT->full_header();",
+		"description": "Wrapper for header elements."
+	},
+	"$OUTPUT->get_compact_logo_url": {
+		"prefix": [
+			"output_get_compact_logo_url",
+			"$OUTPUT->get_compact_logo_url"
+		],
+		"body": "\\$OUTPUT->get_compact_logo_url(${1:${2:\\$maxwidth}${3:, ${4:\\$maxheight}}});",
+		"description": "Return the site's compact logo URL, if any."
+	},
+	"$OUTPUT->get_logo_url": {
+		"prefix": [
+			"output_get_logo_url",
+			"$OUTPUT->get_logo_url"
+		],
+		"body": "\\$OUTPUT->get_logo_url(${1:${2:\\$maxwidth}${3:, ${4:\\$maxheight}}});",
+		"description": "Return the site's logo URL, if any."
+	},
+	"$OUTPUT->has_started": {
+		"prefix": [
+			"output_has_started",
+			"$OUTPUT->has_started"
+		],
+		"body": "\\$OUTPUT->has_started();",
+		"description": "Returns true is output has already started, and false if not."
+	},
+	"$OUTPUT->header": {
+		"prefix": [
+			"output_header",
+			"$OUTPUT->header"
+		],
+		"body": "\\$OUTPUT->header();",
+		"description": "Start output by sending the HTTP headers, and printing the HTML <head> and the start of the <body>."
+	},
+	"$OUTPUT->heading": {
+		"prefix": [
+			"output_heading",
+			"$OUTPUT->heading"
+		],
+		"body": "\\$OUTPUT->heading(${1:\\$text}${2:, ${3:\\$level}${4:, ${5:\\$classes}${6:, ${7:\\$id}}}});",
+		"description": "Outputs a heading."
+	},
+	"$OUTPUT->heading_with_help": {
+		"prefix": [
+			"output_heading_with_help",
+			"$OUTPUT->heading_with_help"
+		],
+		"body": "\\$OUTPUT->heading_with_help(${1:\\$text}, ${2:\\$helpidentifier}${3:, ${4:\\$component}${5:, ${6:\\$icon}${7:, ${8:\\$iconalt}${9:, ${10:\\$level}${11:, ${12:\\$classnames}}}}}});",
+		"description": "Centered heading with attached help button (same title text) and optional icon attached."
+	},
+	"$OUTPUT->help_icon": {
+		"prefix": [
+			"output_help_icon",
+			"$OUTPUT->help_icon"
+		],
+		"body": "\\$OUTPUT->help_icon(${1:\\$identifier}${2:, ${3:\\$component}${4:, ${5:\\$linktext}}});",
+		"description": "Returns HTML to display a help icon."
+	},
+	"$OUTPUT->help_icon_scale": {
+		"prefix": [
+			"output_help_icon_scale",
+			"$OUTPUT->help_icon_scale"
+		],
+		"body": "\\$OUTPUT->help_icon_scale(${1:\\$courseid}, ${2:\\$scale_stdClass});",
+		"description": "Returns HTML to display a scale help icon."
+	},
+	"$OUTPUT->home_link": {
+		"prefix": [
+			"output_home_link",
+			"$OUTPUT->home_link"
+		],
+		"body": "\\$OUTPUT->home_link();",
+		"description": "Return the 'back' link that normally appears in the footer."
+	},
+	"$OUTPUT->htmlattributes": {
+		"prefix": [
+			"output_htmlattributes",
+			"$OUTPUT->htmlattributes"
+		],
+		"body": "\\$OUTPUT->htmlattributes();",
+		"description": "The attributes that should be added to the <html> tag. Designed to be called in theme layout.php files."
+	},
+	"$OUTPUT->htmllize_file_tree": {
+		"prefix": [
+			"output_htmllize_file_tree",
+			"$OUTPUT->htmllize_file_tree"
+		],
+		"body": "\\$OUTPUT->htmllize_file_tree(${1:\\$dir});",
+		"description": "Internal implementation of file tree viewer items rendering."
+	},
+	"$OUTPUT->image_icon": {
+		"prefix": [
+			"output_image_icon",
+			"$OUTPUT->image_icon"
+		],
+		"body": "\\$OUTPUT->image_icon(${1:\\$pix}, ${2:\\$alt}${3:, ${4:\\$component}${5:, ${6:\\$attributes_array}}});",
+		"description": "Return HTML for an image_icon."
+	},
+	"$OUTPUT->image_url": {
+		"prefix": [
+			"output_image_url",
+			"$OUTPUT->image_url"
+		],
+		"body": "\\$OUTPUT->image_url(${1:\\$imagename}${2:, ${3:\\$component}});",
+		"description": "Return the moodle_url for an image."
+	},
+	"$OUTPUT->initials_bar": {
+		"prefix": [
+			"output_initials_bar",
+			"$OUTPUT->initials_bar"
+		],
+		"body": "\\$OUTPUT->initials_bar(${1:\\$current}, ${2:\\$class}, ${3:\\$title}, ${4:\\$urlvar}, ${5:\\$url}${6:, ${7:\\$alpha}});",
+		"description": "Returns HTML to display initials bar to provide access to other pages  (usually in a search)."
+	},
+	"$OUTPUT->lang_menu": {
+		"prefix": [
+			"output_lang_menu",
+			"$OUTPUT->lang_menu"
+		],
+		"body": "\\$OUTPUT->lang_menu();",
+		"description": "Does nothing. The maintenance renderer cannot produce language menus."
+	},
+	"$OUTPUT->larrow": {
+		"prefix": [
+			"output_larrow",
+			"$OUTPUT->larrow"
+		],
+		"body": "\\$OUTPUT->larrow();",
+		"description": "Accessibility: Left arrow-like character is used in the breadcrumb trail, course navigation menu (previous/next activity), calendar, and search forum block. If the theme does not set characters, appropriate defaults are set automatically."
+	},
+	"$OUTPUT->list_block_contents": {
+		"prefix": [
+			"output_list_block_contents",
+			"$OUTPUT->list_block_contents"
+		],
+		"body": "\\$OUTPUT->list_block_contents(${1:\\$icons}, ${2:\\$items});",
+		"description": "Render the contents of a block_list."
+	},
+	"$OUTPUT->login_info": {
+		"prefix": [
+			"output_login_info",
+			"$OUTPUT->login_info"
+		],
+		"body": "\\$OUTPUT->login_info(${1:\\$withlinks});",
+		"description": "Does nothing. The maintenance renderer has no need for login information."
+	},
+	"$OUTPUT->main_content": {
+		"prefix": [
+			"output_main_content",
+			"$OUTPUT->main_content"
+		],
+		"body": "\\$OUTPUT->main_content();",
+		"description": "Do NOT use, please use <?php echo $OUTPUT->main_content() ?> in layout files instead."
+	},
+	"$OUTPUT->maintenance_warning": {
+		"prefix": [
+			"output_maintenance_warning",
+			"$OUTPUT->maintenance_warning"
+		],
+		"body": "\\$OUTPUT->maintenance_warning();",
+		"description": "Scheduled maintenance warning message."
+	},
+	"$OUTPUT->mform_element": {
+		"prefix": [
+			"output_mform_element",
+			"$OUTPUT->mform_element"
+		],
+		"body": "\\$OUTPUT->mform_element(${1:\\$HTML_QuickForm_element}, ${2:\\$required}, ${3:\\$advanced}, ${4:\\$error}, ${5:\\$ingroup});",
+		"description": "Renders an mform element from a template."
+	},
+	"$OUTPUT->navbar": {
+		"prefix": [
+			"output_navbar",
+			"$OUTPUT->navbar"
+		],
+		"body": "\\$OUTPUT->navbar();",
+		"description": "Return the navbar content so that it can be echoed out by the layout."
+	},
+	"$OUTPUT->navbar_plugin_output": {
+		"prefix": [
+			"output_navbar_plugin_output",
+			"$OUTPUT->navbar_plugin_output"
+		],
+		"body": "\\$OUTPUT->navbar_plugin_output();",
+		"description": "Allow plugins to provide some content to be rendered in the navbar. The plugin must define a PLUGIN_render_navbar_output function that returns the HTML they wish to add to the navbar."
+	},
+	"$OUTPUT->notification": {
+		"prefix": [
+			"output_notification",
+			"$OUTPUT->notification"
+		],
+		"body": "\\$OUTPUT->notification(${1:\\$message}${2:, ${3:\\$type}});",
+		"description": "Returns a template fragment representing a notification."
+	},
+	"$OUTPUT->notify_message": {
+		"prefix": [
+			"output_notify_message",
+			"$OUTPUT->notify_message"
+		],
+		"body": "\\$OUTPUT->notify_message(${1:\\$message});",
+		"description": "Output a notification at a particular level - in this case, NOTIFY_MESSAGE."
+	},
+	"$OUTPUT->notify_problem": {
+		"prefix": [
+			"output_notify_problem",
+			"$OUTPUT->notify_problem"
+		],
+		"body": "\\$OUTPUT->notify_problem(${1:\\$message});",
+		"description": "Output a notification at a particular level - in this case, NOTIFY_PROBLEM."
+	},
+	"$OUTPUT->notify_redirect": {
+		"prefix": [
+			"output_notify_redirect",
+			"$OUTPUT->notify_redirect"
+		],
+		"body": "\\$OUTPUT->notify_redirect(${1:\\$message});",
+		"description": "Output a notification at a particular level - in this case, NOTIFY_REDIRECT."
+	},
+	"$OUTPUT->notify_success": {
+		"prefix": [
+			"output_notify_success",
+			"$OUTPUT->notify_success"
+		],
+		"body": "\\$OUTPUT->notify_success(${1:\\$message});",
+		"description": "Output a notification at a particular level - in this case, NOTIFY_SUCCESS."
+	},
+	"$OUTPUT->old_help_icon": {
+		"prefix": [
+			"output_old_help_icon",
+			"$OUTPUT->old_help_icon"
+		],
+		"body": "\\$OUTPUT->old_help_icon(${1:\\$helpidentifier}, ${2:\\$title}${3:, ${4:\\$component}${5:, ${6:\\$linktext}}});",
+		"description": "Returns HTML to display a help icon."
+	},
+	"$OUTPUT->page_doc_link": {
+		"prefix": [
+			"output_page_doc_link",
+			"$OUTPUT->page_doc_link"
+		],
+		"body": "\\$OUTPUT->page_doc_link(${1:\\$text});",
+		"description": "Returns the Moodle docs link to use for this page."
+	},
+	"$OUTPUT->page_heading": {
+		"prefix": [
+			"output_page_heading",
+			"$OUTPUT->page_heading"
+		],
+		"body": "\\$OUTPUT->page_heading(${1:\\$tag});",
+		"description": "Gets HTML for the page heading."
+	},
+	"$OUTPUT->page_heading_button": {
+		"prefix": [
+			"output_page_heading_button",
+			"$OUTPUT->page_heading_button"
+		],
+		"body": "\\$OUTPUT->page_heading_button();",
+		"description": "Gets the HTML for the page heading button."
+	},
+	"$OUTPUT->page_heading_menu": {
+		"prefix": [
+			"output_page_heading_menu",
+			"$OUTPUT->page_heading_menu"
+		],
+		"body": "\\$OUTPUT->page_heading_menu();",
+		"description": "Returns the page heading menu."
+	},
+	"$OUTPUT->page_title": {
+		"prefix": [
+			"output_page_title",
+			"$OUTPUT->page_title"
+		],
+		"body": "\\$OUTPUT->page_title();",
+		"description": "Returns the title to use on the page."
+	},
+	"$OUTPUT->paging_bar": {
+		"prefix": [
+			"output_paging_bar",
+			"$OUTPUT->paging_bar"
+		],
+		"body": "\\$OUTPUT->paging_bar(${1:\\$totalcount}, ${2:\\$page}, ${3:\\$perpage}, ${4:\\$baseurl}${5:, ${7:\\$pagevar}});",
+		"description": "Returns HTML to display a single paging bar to provide access to other pages  (usually in a search)."
+	},
+	"$OUTPUT->pix_icon": {
+		"prefix": [
+			"output_pix_icon",
+			"$OUTPUT->pix_icon"
+		],
+		"body": "\\$OUTPUT->pix_icon(${1:\\$pix}, ${2:\\$alt}${3:, ${4:\\$component}${5:, ${6:\\$attributes_array}}});",
+		"description": "Return HTML for a pix_icon."
+	},
+	"$OUTPUT->pix_url": {
+		"prefix": [
+			"output_pix_url",
+			"$OUTPUT->pix_url"
+		],
+		"body": "\\$OUTPUT->pix_url(${1:\\$imagename}${2:, ${3:\\$component}});",
+		"description": "Return the direct URL for an image from the pix folder."
+	},
+	"$OUTPUT->rarrow": {
+		"prefix": [
+			"output_rarrow",
+			"$OUTPUT->rarrow"
+		],
+		"body": "\\$OUTPUT->rarrow();",
+		"description": "Accessibility: Right arrow-like character is used in the breadcrumb trail, course navigation menu (previous/next activity), calendar, and search forum block. If the theme does not set characters, appropriate defaults are set automatically."
+	},
+	"$OUTPUT->redirect_message": {
+		"prefix": [
+			"output_redirect_message",
+			"$OUTPUT->redirect_message"
+		],
+		"body": "\\$OUTPUT->redirect_message(${1:\\$encodedurl}, ${2:\\$message}, ${3:\\$delay}, ${4:\\$debugdisableredirect}${5:, ${6:\\$messagetype}});",
+		"description": "Used to display a redirection message."
+	},
+	"$OUTPUT->render": {
+		"prefix": [
+			"output_render",
+			"$OUTPUT->render"
+		],
+		"body": "\\$OUTPUT->render(${1:\\$widget_renderable});",
+		"description": "Returns rendered widget."
+	},
+	"$OUTPUT->render_action_menu": {
+		"prefix": [
+			"output_render_action_menu",
+			"$OUTPUT->render_action_menu"
+		],
+		"body": "\\$OUTPUT->render_action_menu(${1:\\$menu_action_menu});",
+		"description": "Renders an action menu component."
+	},
+	"$OUTPUT->render_chart": {
+		"prefix": [
+			"output_render_chart",
+			"$OUTPUT->render_chart"
+		],
+		"body": "\\$OUTPUT->render_chart(${1:\\$chart_core_chart_base}${2:, ${3:\\$withtable}});",
+		"description": "Renders a chart."
+	},
+	"$OUTPUT->render_chart_bar": {
+		"prefix": [
+			"output_render_chart_bar",
+			"$OUTPUT->render_chart_bar"
+		],
+		"body": "\\$OUTPUT->render_chart_bar(${1:\\$chart_core_chart_bar});",
+		"description": "Renders a bar chart."
+	},
+	"$OUTPUT->render_chart_line": {
+		"prefix": [
+			"output_render_chart_line",
+			"$OUTPUT->render_chart_line"
+		],
+		"body": "\\$OUTPUT->render_chart_line(${1:\\$chart_core_chart_line});",
+		"description": "Renders a line chart."
+	},
+	"$OUTPUT->render_chart_pie": {
+		"prefix": [
+			"output_render_chart_pie",
+			"$OUTPUT->render_chart_pie"
+		],
+		"body": "\\$OUTPUT->render_chart_pie(${1:\\$chart_core_chart_pie});",
+		"description": "Renders a pie chart."
+	},
+	"$OUTPUT->render_file_picker": {
+		"prefix": [
+			"output_render_file_picker",
+			"$OUTPUT->render_file_picker"
+		],
+		"body": "\\$OUTPUT->render_file_picker(${1:\\$file_picker});",
+		"description": "Internal implementation of file picker rendering."
+	},
+	"$OUTPUT->render_from_template": {
+		"prefix": [
+			"output_render_from_template",
+			"$OUTPUT->render_from_template"
+		],
+		"body": "\\$OUTPUT->render_from_template(${1:\\$templatename}, ${2:\\$context});",
+		"description": "Renders a template by name with the given context. The provided data needs to be array/stdClass made up of only simple types. Simple types are array,stdClass,bool,int,float,string."
+	},
+	"$OUTPUT->render_inplace_editable": {
+		"prefix": [
+			"output_render_inplace_editable",
+			"$OUTPUT->render_inplace_editable"
+		],
+		"body": "\\$OUTPUT->render_inplace_editable(${1:\\$element_core_output_inplace_editable});",
+		"description": "Renders element for inline editing of any value."
+	},
+	"$OUTPUT->render_login": {
+		"prefix": [
+			"output_render_login",
+			"$OUTPUT->render_login"
+		],
+		"body": "\\$OUTPUT->render_login(${1:\\$form_core_auth_output_login});",
+		"description": "Renders the login form."
+	},
+	"$OUTPUT->render_login_signup_form": {
+		"prefix": [
+			"output_render_login_signup_form",
+			"$OUTPUT->render_login_signup_form"
+		],
+		"body": "\\$OUTPUT->render_login_signup_form(${1:\\$form});",
+		"description": "Render the login signup form into a nice template for the theme."
+	},
+	"$OUTPUT->render_preferences_group": {
+		"prefix": [
+			"output_render_preferences_group",
+			"$OUTPUT->render_preferences_group"
+		],
+		"body": "\\$OUTPUT->render_preferences_group(${1:\\$renderable_preferences_group});",
+		"description": "Renders preferences group."
+	},
+	"$OUTPUT->render_preferences_groups": {
+		"prefix": [
+			"output_render_preferences_groups",
+			"$OUTPUT->render_preferences_groups"
+		],
+		"body": "\\$OUTPUT->render_preferences_groups(${1:\\$renderable_preferences_groups});",
+		"description": "Renders preferences groups."
+	},
+	"$OUTPUT->render_progress_bar": {
+		"prefix": [
+			"output_render_progress_bar",
+			"$OUTPUT->render_progress_bar"
+		],
+		"body": "\\$OUTPUT->render_progress_bar(${1:\\$progress_bar});",
+		"description": "Renders a progress bar."
+	},
+	"$OUTPUT->render_skip_links": {
+		"prefix": [
+			"output_render_skip_links",
+			"$OUTPUT->render_skip_links"
+		],
+		"body": "\\$OUTPUT->render_skip_links(${1:\\$links});",
+		"description": "Renders the skip links for the page."
+	},
+	"$OUTPUT->search_box": {
+		"prefix": [
+			"output_search_box",
+			"$OUTPUT->search_box"
+		],
+		"body": "\\$OUTPUT->search_box(${1:\\$id});",
+		"description": "Returns a search box."
+	},
+	"$OUTPUT->single_button": {
+		"prefix": [
+			"output_single_button",
+			"$OUTPUT->single_button"
+		],
+		"body": "\\$OUTPUT->single_button(${1:\\$url}, ${2:\\$label}${3:, ${4:\\$method}${5:, ${6:\\$options_array}}});",
+		"description": "Returns a form with a single button."
+	},
+	"$OUTPUT->single_select": {
+		"prefix": [
+			"output_single_select",
+			"$OUTPUT->single_select"
+		],
+		"body": "\\$OUTPUT->single_select(${1:\\$url}, ${2:\\$name}, ${3:\\$options_array}${4:, ${5:\\$selected}${6:, ${7:\\$nothing}${8:, ${9:\\$formid}${10:, ${11:\\$attributes}}}}});",
+		"description": "Returns a form with a single select widget."
+	},
+	"$OUTPUT->skip_link_target": {
+		"prefix": [
+			"output_skip_link_target",
+			"$OUTPUT->skip_link_target"
+		],
+		"body": "\\$OUTPUT->skip_link_target(${1:\\$id});",
+		"description": "Output the place a skip link goes to."
+	},
+	"$OUTPUT->spacer": {
+		"prefix": [
+			"output_spacer",
+			"$OUTPUT->spacer"
+		],
+		"body": "\\$OUTPUT->spacer(${1:${2:\\$attributes_array}${3:, ${4:\\$br}}});",
+		"description": "Creates and returns a spacer image with optional line break."
+	},
+	"$OUTPUT->standard_end_of_body_html": {
+		"prefix": [
+			"output_standard_end_of_body_html",
+			"$OUTPUT->standard_end_of_body_html"
+		],
+		"body": "\\$OUTPUT->standard_end_of_body_html();",
+		"description": "The standard tags (typically script tags that are not needed earlier) that should be output after everything else. Designed to be called in theme layout.php files."
+	},
+	"$OUTPUT->standard_footer_html": {
+		"prefix": [
+			"output_standard_footer_html",
+			"$OUTPUT->standard_footer_html"
+		],
+		"body": "\\$OUTPUT->standard_footer_html();",
+		"description": "The standard tags (typically performance information and validation links, if we are in developer debug mode) that should be output in the footer area of the page. Designed to be called in theme layout.php files."
+	},
+	"$OUTPUT->standard_head_html": {
+		"prefix": [
+			"output_standard_head_html",
+			"$OUTPUT->standard_head_html"
+		],
+		"body": "\\$OUTPUT->standard_head_html();",
+		"description": "The standard tags (meta tags, links to stylesheets and JavaScript, etc.) that should be included in the <head> tag. Designed to be called in theme layout.php files."
+	},
+	"$OUTPUT->standard_top_of_body_html": {
+		"prefix": [
+			"output_standard_top_of_body_html",
+			"$OUTPUT->standard_top_of_body_html"
+		],
+		"body": "\\$OUTPUT->standard_top_of_body_html();",
+		"description": "The standard tags (typically skip links) that should be output just inside the start of the <body> tag. Designed to be called in theme layout.php files."
+	},
+	"$OUTPUT->tag_list": {
+		"prefix": [
+			"output_tag_list",
+			"$OUTPUT->tag_list"
+		],
+		"body": "\\$OUTPUT->tag_list(${1:\\$tags}${2:, ${3:\\$label}${4:, ${5:\\$classes}${6:, ${7:\\$limit}${8:, ${9:\\$pagecontext}}}}});",
+		"description": "Displays the list of tags associated with an entry."
+	},
+	"$OUTPUT->tree_block_contents": {
+		"prefix": [
+			"output_tree_block_contents",
+			"$OUTPUT->tree_block_contents"
+		],
+		"body": "\\$OUTPUT->tree_block_contents(${1:\\$items}${2:, ${3:\\$attrs_array}});",
+		"description": "Make nested HTML lists out of the items."
+	},
+	"$OUTPUT->uarrow": {
+		"prefix": [
+			"output_uarrow",
+			"$OUTPUT->uarrow"
+		],
+		"body": "\\$OUTPUT->uarrow();",
+		"description": "Accessibility: Up arrow-like character is used in the book heirarchical navigation. If the theme does not set characters, appropriate defaults are set automatically."
+	},
+	"$OUTPUT->update_module_button": {
+		"prefix": [
+			"output_update_module_button",
+			"$OUTPUT->update_module_button"
+		],
+		"body": "\\$OUTPUT->update_module_button(${1:\\$cmid}, ${2:\\$modulename});",
+		"description": "Returns HTML to display the 'Update this Modulename' button that appears on module pages."
+	},
+	"$OUTPUT->url_select": {
+		"prefix": [
+			"output_url_select",
+			"$OUTPUT->url_select"
+		],
+		"body": "\\$OUTPUT->url_select(${1:\\$urls_array}, ${2:\\$selected}${3:, ${4:\\$nothing}${5:, ${6:\\$formid}}});",
+		"description": "Returns a form with a url select widget."
+	},
+	"$OUTPUT->user_menu": {
+		"prefix": [
+			"output_user_menu",
+			"$OUTPUT->user_menu"
+		],
+		"body": "\\$OUTPUT->user_menu(${1:${2:\\$user}${3:, ${4:\\$withlinks}}});",
+		"description": "Construct a user menu, returning HTML that can be echoed out by a layout file."
+	},
+	"$OUTPUT->user_picture": {
+		"prefix": [
+			"output_user_picture",
+			"$OUTPUT->user_picture"
+		],
+		"body": "\\$OUTPUT->user_picture(${1:\\$user_stdClass}${2:, ${3:\\$options_array}});",
+		"description": "Does nothing. The maintenance renderer cannot produce user pictures."
+	},
+	"$OUTPUT::prepare_classes": {
+		"prefix": [
+			"output_prepare_classes",
+			"$OUTPUT::prepare_classes"
+		],
+		"body": "\\$OUTPUT::prepare_classes(${1:\\$classes});",
+		"description": "Given an array or space-separated list of classes, prepares and returns the HTML class attribute value."
+	}
+}

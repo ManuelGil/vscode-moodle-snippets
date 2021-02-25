@@ -1,0 +1,90 @@
+{
+	"$CFG->admin": {
+		"prefix": [
+			"cfg_admin",
+			"$CFG->admin"
+		],
+		"body": "\\$CFG->admin",
+		"description": "A very few webhosts use /admin as a special URL for you to access a control panel or something.  Unfortunately this conflicts with the standard location for the Moodle admin pages.  You can work around this by renaming the admin directory in your installation, and putting that new name here."
+	},
+	"$CFG->cachedir": {
+		"prefix": [
+			"cfg_cachedir",
+			"$CFG->cachedir"
+		],
+		"body": "\\$CFG->cachedir",
+		"description": "Cache location"
+	},
+	"$CFG->dataroot": {
+		"prefix": [
+			"cfg_dataroot",
+			"$CFG->dataroot"
+		],
+		"body": "\\$CFG->dataroot",
+		"description": "The place where Moodle can save uploaded files. This directory should be readable and writeable by the web server user but it should not be accessible directly via the web"
+	},
+	"$CFG->dirroot": {
+		"prefix": [
+			"cfg_dirroot",
+			"$CFG->dirroot"
+		],
+		"body": "\\$CFG->dirroot",
+		"description": "The dirroot is the name for the directory in which you have installed Moodle. It's a setting in config.php that must be entered correctly"
+	},
+	"$CFG->docroot": {
+		"prefix": [
+			"cfg_docroot",
+			"$CFG->docroot"
+		],
+		"body": "\\$CFG->docroot",
+		"description": "Path to documentation like: http://docs.moodle.org."
+	},
+	"$CFG->httpswwwroot": {
+		"prefix": [
+			"cfg_httpswwwroot",
+			"$CFG->httpswwwroot"
+		],
+		"body": "\\$CFG->httpswwwroot",
+		"description": "Specifies the full web address with http\\https to where moodle has been installed. If your web site is accessible via multiple URLs then it is the most natural one that your students would use. Do not contain a trailing slash"
+	},
+	"$CFG->lang": {
+		"prefix": [
+			"cfg_lang",
+			"$CFG->lang"
+		],
+		"body": "\\$CFG->lang",
+		"description": "Configurated lang"
+	},
+	"$CFG->libdir": {
+		"prefix": [
+			"cfg_libdir",
+			"$CFG->libdir"
+		],
+		"body": "\\$CFG->libdir",
+		"description": "Path to /lib directory"
+	},
+	"$CFG->localcachedir": {
+		"prefix": [
+			"cfg_localcachedir",
+			"$CFG->localcachedir"
+		],
+		"body": "\\$CFG->localcachedir",
+		"description": "Local cache directory path"
+	},
+	"$CFG->tempdir": {
+		"prefix": [
+			"cfg_tempdir",
+			"$CFG->tempdir"
+		],
+		"body": "\\$CFG->tempdir",
+		"description": "Path to temporary directory"
+	},
+	"$CFG->wwwroot": {
+		"prefix": [
+			"cfg_wwwroot",
+			"$CFG->wwwroot"
+		],
+		"body": "\\$CFG->wwwroot",
+		"description": "Specifies the full web address to where moodle has been installed. If your web site is accessible via multiple URLs then it is the most natural one that your students would use. Do not contain a trailing slash"
+	}
+}

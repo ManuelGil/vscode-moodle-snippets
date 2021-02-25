@@ -1,0 +1,866 @@
+{
+	"$PAGE->force_settings_menu": {
+		"prefix": [
+			"page_force_settings_menu",
+			"$PAGE->force_settings_menu"
+		],
+		"body": "\\$PAGE->force_settings_menu(${1:\\$forced});",
+		"description": "Force the settings menu to be displayed on this page. This will only force the settings menu on an activity / resource page that is being displayed on a theme that uses a settings menu."
+	},
+	"$PAGE->is_settings_menu_forced": {
+		"prefix": [
+			"page_is_settings_menu_forced",
+			"$PAGE->is_settings_menu_forced"
+		],
+		"body": "\\$PAGE->is_settings_menu_forced();",
+		"description": "Check to see if the settings menu is forced to display on this activity / resource page. This only applies to themes that use the settings menu."
+	},
+	"$PAGE->get_renderer": {
+		"prefix": [
+			"page_get_renderer",
+			"$PAGE->get_renderer"
+		],
+		"body": "\\$PAGE->get_renderer(${1:\\$component}${2:, ${3:\\$subtype}${4:, ${5:\\$target}}});",
+		"description": "Returns instance of page renderer"
+	},
+	"$PAGE->has_navbar": {
+		"prefix": [
+			"page_has_navbar",
+			"$PAGE->has_navbar"
+		],
+		"body": "\\$PAGE->has_navbar();",
+		"description": "Checks to see if there are any items on the navbar object"
+	},
+	"$PAGE->start_collecting_javascript_requirements": {
+		"prefix": [
+			"page_start_collecting_javascript_requirements",
+			"$PAGE->start_collecting_javascript_requirements"
+		],
+		"body": "\\$PAGE->start_collecting_javascript_requirements();",
+		"description": "Switches from the regular requirements manager to the fragment requirements manager to capture all necessary JavaScript to display a chunk of HTML such as an mform. This is for use by the get_fragment() web service and not for use elsewhere."
+	},
+	"$PAGE->end_collecting_javascript_requirements": {
+		"prefix": [
+			"page_end_collecting_javascript_requirements",
+			"$PAGE->end_collecting_javascript_requirements"
+		],
+		"body": "\\$PAGE->end_collecting_javascript_requirements();",
+		"description": "Switches back from collecting fragment JS requirement to the original requirement manager"
+	},
+	"$PAGE->user_is_editing": {
+		"prefix": [
+			"page_user_is_editing",
+			"$PAGE->user_is_editing"
+		],
+		"body": "\\$PAGE->user_is_editing();",
+		"description": "Should the current user see this page in editing mode. That is, are they allowed to edit this page, and are they currently in editing mode."
+	},
+	"$PAGE->user_can_edit_blocks": {
+		"prefix": [
+			"page_user_can_edit_blocks",
+			"$PAGE->user_can_edit_blocks"
+		],
+		"body": "\\$PAGE->user_can_edit_blocks();",
+		"description": "Does the user have permission to edit blocks on this page."
+	},
+	"$PAGE->user_allowed_editing": {
+		"prefix": [
+			"page_user_allowed_editing",
+			"$PAGE->user_allowed_editing"
+		],
+		"body": "\\$PAGE->user_allowed_editing();",
+		"description": "Does the user have permission to see this page in editing mode."
+	},
+	"$PAGE->debug_summary": {
+		"prefix": [
+			"page_debug_summary",
+			"$PAGE->debug_summary"
+		],
+		"body": "\\$PAGE->debug_summary();",
+		"description": "Get a description of this page. Normally displayed in the footer in developer debug mode."
+	},
+	"$PAGE->set_state": {
+		"prefix": [
+			"page_set_state",
+			"$PAGE->set_state"
+		],
+		"body": "\\$PAGE->set_state(${1|STATE_BEFORE_HEADER,STATE_PRINTING_HEADER,STATE_IN_BODY,STATE_DONE|});",
+		"description": "Set the state."
+	},
+	"$PAGE->set_course": {
+		"prefix": [
+			"page_set_course",
+			"$PAGE->set_course"
+		],
+		"body": "\\$PAGE->set_course(${1:\\$course});",
+		"description": "Set the current course. This sets both $PAGE->course and $COURSE. It also sets the right theme and locale."
+	},
+	"$PAGE->set_context": {
+		"prefix": [
+			"page_set_context",
+			"$PAGE->set_context"
+		],
+		"body": "\\$PAGE->set_context(${1:\\$context});",
+		"description": "Set the main context to which this page belongs."
+	},
+	"$PAGE->set_cm": {
+		"prefix": [
+			"page_set_cm",
+			"$PAGE->set_cm"
+		],
+		"body": "\\$PAGE->set_cm(${1:\\$cm}${2:, ${3:\\$course}${4:, ${5:\\$module}}});",
+		"description": "The course module that this page belongs to (if it does belong to one)."
+	},
+	"$PAGE->set_activity_record": {
+		"prefix": [
+			"page_set_activity_record",
+			"$PAGE->set_activity_record"
+		],
+		"body": "\\$PAGE->set_activity_record(${1:\\$module});",
+		"description": "Sets the activity record. This could be a row from the main table for a module. For instance if the current module (cm) is a forum this should be a row from the forum table."
+	},
+	"$PAGE->set_pagetype": {
+		"prefix": [
+			"page_set_pagetype",
+			"$PAGE->set_pagetype"
+		],
+		"body": "\\$PAGE->set_pagetype(${1:\\$pagetype});",
+		"description": "Sets the pagetype to use for this page."
+	},
+	"$PAGE->set_pagelayout": {
+		"prefix": [
+			"page_set_pagelayout",
+			"$PAGE->set_pagelayout"
+		],
+		"body": "\\$PAGE->set_pagelayout(${1:\\$pagelayout});",
+		"description": "Sets the layout to use for this page."
+	},
+	"$PAGE->set_subpage": {
+		"prefix": [
+			"page_set_subpage",
+			"$PAGE->set_subpage"
+		],
+		"body": "\\$PAGE->set_subpage(${1:\\$subpage});",
+		"description": "If context->id and pagetype are not enough to uniquely identify this page, then you can set a subpage id as well. For example, the tags page sets"
+	},
+	"$PAGE->add_body_class": {
+		"prefix": [
+			"page_add_body_class",
+			"$PAGE->add_body_class"
+		],
+		"body": "\\$PAGE->add_body_class(${1:\\$class});",
+		"description": "Adds a CSS class to the body tag of the page."
+	},
+	"$PAGE->add_body_classes": {
+		"prefix": [
+			"page_add_body_classes",
+			"$PAGE->add_body_classes"
+		],
+		"body": "\\$PAGE->add_body_classes(${1:\\$classes});",
+		"description": "Adds an array of body classes to the body tag of this page."
+	},
+	"$PAGE->set_title": {
+		"prefix": [
+			"page_set_title",
+			"$PAGE->set_title"
+		],
+		"body": "\\$PAGE->set_title(${1:\\$title});",
+		"description": "Sets the title for the page. This is normally used within the title tag in the head of the page."
+	},
+	"$PAGE->set_heading": {
+		"prefix": [
+			"page_set_heading",
+			"$PAGE->set_heading"
+		],
+		"body": "\\$PAGE->set_heading(${1:\\$heading});",
+		"description": "Sets the heading to use for the page. This is normally used as the main heading at the top of the content."
+	},
+	"$PAGE->set_headingmenu": {
+		"prefix": [
+			"page_set_headingmenu",
+			"$PAGE->set_headingmenu"
+		],
+		"body": "\\$PAGE->set_headingmenu(${1:\\$menu});",
+		"description": "Sets some HTML to use next to the heading {@link moodle_page::set_heading()}"
+	},
+	"$PAGE->set_category_by_id": {
+		"prefix": [
+			"page_set_category_by_id",
+			"$PAGE->set_category_by_id"
+		],
+		"body": "\\$PAGE->set_category_by_id(${1:\\$categoryid});",
+		"description": "Set the course category this page belongs to manually."
+	},
+	"$PAGE->set_docs_path": {
+		"prefix": [
+			"page_set_docs_path",
+			"$PAGE->set_docs_path"
+		],
+		"body": "\\$PAGE->set_docs_path(${1:\\$path});",
+		"description": "Set a different path to use for the 'Moodle docs for this page' link."
+	},
+	"$PAGE->set_url": {
+		"prefix": [
+			"page_set_url",
+			"$PAGE->set_url"
+		],
+		"body": "\\$PAGE->set_url(${1:\\$url}${2:, ${3:\\$params_array}});",
+		"description": "You should call this method from every page to set the URL that should be used to return to this page."
+	},
+	"$PAGE->ensure_param_not_in_url": {
+		"prefix": [
+			"page_ensure_param_not_in_url",
+			"$PAGE->ensure_param_not_in_url"
+		],
+		"body": "\\$PAGE->ensure_param_not_in_url(${1:\\$param});",
+		"description": "Make sure page URL does not contain the given URL parameter."
+	},
+	"$PAGE->add_alternate_version": {
+		"prefix": [
+			"page_add_alternate_version",
+			"$PAGE->add_alternate_version"
+		],
+		"body": "\\$PAGE->add_alternate_version(${1:\\$title}, ${2:\\$url}, ${3:\\$mimetype});",
+		"description": "Sets an alternative version of this page."
+	},
+	"$PAGE->set_focuscontrol": {
+		"prefix": [
+			"page_set_focuscontrol",
+			"$PAGE->set_focuscontrol"
+		],
+		"body": "\\$PAGE->set_focuscontrol(${1:\\$controlid});",
+		"description": "Specify a form control should be focused when the page has loaded."
+	},
+	"$PAGE->set_button": {
+		"prefix": [
+			"page_set_button",
+			"$PAGE->set_button"
+		],
+		"body": "\\$PAGE->set_button(${1:\\$html});",
+		"description": "Specify a fragment of HTML that goes where the 'Turn editing on' button normally goes."
+	},
+	"$PAGE->set_blocks_editing_capability": {
+		"prefix": [
+			"page_set_blocks_editing_capability",
+			"$PAGE->set_blocks_editing_capability"
+		],
+		"body": "\\$PAGE->set_blocks_editing_capability(${1:\\$capability});",
+		"description": "Set the capability that allows users to edit blocks on this page."
+	},
+	"$PAGE->set_other_editing_capability": {
+		"prefix": [
+			"page_set_other_editing_capability",
+			"$PAGE->set_other_editing_capability"
+		],
+		"body": "\\$PAGE->set_other_editing_capability(${1:\\$capability});",
+		"description": "Some pages let you turn editing on for reasons other than editing blocks."
+	},
+	"$PAGE->set_cacheable": {
+		"prefix": [
+			"page_set_cacheable",
+			"$PAGE->set_cacheable"
+		],
+		"body": "\\$PAGE->set_cacheable(${1:\\$cacheable});",
+		"description": "Sets whether the browser should cache this page or not."
+	},
+	"$PAGE->set_periodic_refresh_delay": {
+		"prefix": [
+			"page_set_periodic_refresh_delay",
+			"$PAGE->set_periodic_refresh_delay"
+		],
+		"body": "\\$PAGE->set_periodic_refresh_delay(${1:\\$delay});",
+		"description": "Sets the page to periodically refresh"
+	},
+	"$PAGE->force_theme": {
+		"prefix": [
+			"page_force_theme",
+			"$PAGE->force_theme"
+		],
+		"body": "\\$PAGE->force_theme(${1:\\$themename});",
+		"description": "Force this page to use a particular theme."
+	},
+	"$PAGE->reload_theme": {
+		"prefix": [
+			"page_reload_theme",
+			"$PAGE->reload_theme"
+		],
+		"body": "\\$PAGE->reload_theme();",
+		"description": "Reload theme settings."
+	},
+	"$PAGE->https_required": {
+		"prefix": [
+			"page_https_required",
+			"$PAGE->https_required"
+		],
+		"body": "\\$PAGE->https_required();",
+		"description": "@DEPRECATED SINCE MOODLE 3.4 MDL-42834. This function indicates that current page requires the https when $CFG->loginhttps enabled."
+	},
+	"$PAGE->verify_https_required": {
+		"prefix": [
+			"page_verify_https_required",
+			"$PAGE->verify_https_required"
+		],
+		"body": "\\$PAGE->verify_https_required();",
+		"description": "@DEPRECATED SINCE MOODLE 3.4 MDL-42834. Makes sure that page previously marked with https_required() is really using https://, if not it redirects to https://"
+	},
+	"$PAGE->initialise_theme_and_output": {
+		"prefix": [
+			"page_initialise_theme_and_output",
+			"$PAGE->initialise_theme_and_output"
+		],
+		"body": "\\$PAGE->initialise_theme_and_output();",
+		"description": "Method for use by Moodle core to set up the theme. Do not use this in your own code."
+	},
+	"$PAGE->reset_theme_and_output": {
+		"prefix": [
+			"page_reset_theme_and_output",
+			"$PAGE->reset_theme_and_output"
+		],
+		"body": "\\$PAGE->reset_theme_and_output();",
+		"description": "Reset the theme and output for a new context. This only makes sense from external::validate_context(). Do not cheat."
+	},
+	"$PAGE->has_set_url": {
+		"prefix": [
+			"page_has_set_url",
+			"$PAGE->has_set_url"
+		],
+		"body": "\\$PAGE->has_set_url();",
+		"description": "Returns true if the page URL has beem set."
+	},
+	"$PAGE->set_block_actions_done": {
+		"prefix": [
+			"page_set_block_actions_done",
+			"$PAGE->set_block_actions_done"
+		],
+		"body": "\\$PAGE->set_block_actions_done(${1:\\$setting} );",
+		"description": "Gets set when the block actions for the page have been processed."
+	},
+	"$PAGE->get_popup_notification_allowed": {
+		"prefix": [
+			"page_get_popup_notification_allowed",
+			"$PAGE->get_popup_notification_allowed"
+		],
+		"body": "\\$PAGE->get_popup_notification_allowed();",
+		"description": "Are popup notifications allowed on this page? Popup notifications may be disallowed in situations such as while upgrading or completing a quiz"
+	},
+	"$PAGE->set_popup_notification_allowed": {
+		"prefix": [
+			"page_set_popup_notification_allowed",
+			"$PAGE->set_popup_notification_allowed"
+		],
+		"body": "\\$PAGE->set_popup_notification_allowed(${1:\\$allowed});",
+		"description": "Allow or disallow popup notifications on this page. Popups are allowed by default."
+	},
+	"$PAGE->apply_theme_region_manipulations": {
+		"prefix": [
+			"page_apply_theme_region_manipulations",
+			"$PAGE->apply_theme_region_manipulations"
+		],
+		"body": "\\$PAGE->apply_theme_region_manipulations(${1:\\$region});",
+		"description": "Returns the block region having made any required theme manipulations."
+	},
+	"$PAGE->add_report_nodes": {
+		"prefix": [
+			"page_add_report_nodes",
+			"$PAGE->add_report_nodes"
+		],
+		"body": "\\$PAGE->add_report_nodes(${1:\\$userid}, ${2:\\$nodeinfo});",
+		"description": "Add a report node and a specific report to the navigation."
+	},
+	"$PAGE->state": {
+		"prefix": [
+			"page_state",
+			"$PAGE->state"
+		],
+		"body": "\\$PAGE->state",
+		"description": "Returns integer one of the STATE_XXX constants. You should not normally need to use this in your code. It is intended for internal use by this class and its friends like print_header, to check that everything is working as expected. Also accessible as $PAGE->state."
+	},
+	"$PAGE->headerprinted": {
+		"prefix": [
+			"page_headerprinted",
+			"$PAGE->headerprinted"
+		],
+		"body": "\\$PAGE->headerprinted",
+		"description": "Returns bool has the header already been printed?"
+	},
+	"$PAGE->course": {
+		"prefix": [
+			"page_course",
+			"$PAGE->course"
+		],
+		"body": "\\$PAGE->course",
+		"description": "Returns stdClass the current course that we are inside - a row from the course table. (Also available as $COURSE global.) If we are not inside an actual course, this will be the site course."
+	},
+	"$PAGE->cm": {
+		"prefix": [
+			"page_cm",
+			"$PAGE->cm"
+		],
+		"body": "\\$PAGE->cm",
+		"description": "Returns cm_info the course_module that this page belongs to. Will be null if this page is not within a module. This is a full cm object, as loaded by get_coursemodule_from_id or get_coursemodule_from_instance, so the extra modname and name fields are present."
+	},
+	"$PAGE->activityrecord": {
+		"prefix": [
+			"page_activityrecord",
+			"$PAGE->activityrecord"
+		],
+		"body": "\\$PAGE->activityrecord",
+		"description": "Returns stdClass the row from the activities own database table (for example the forum or quiz table) that this page belongs to. Will be null if this page is not within a module."
+	},
+	"$PAGE->activityname": {
+		"prefix": [
+			"page_activityname",
+			"$PAGE->activityname"
+		],
+		"body": "\\$PAGE->activityname",
+		"description": "Returns string the The type of activity we are in, for example 'forum' or 'quiz'. Will be null if this page is not within a module."
+	},
+	"$PAGE->category": {
+		"prefix": [
+			"page_category",
+			"$PAGE->category"
+		],
+		"body": "\\$PAGE->category",
+		"description": "Returns stdClass the category that the page course belongs to. If there isn't one (that is, if this is the front page course) returns null."
+	},
+	"$PAGE->categories": {
+		"prefix": [
+			"page_categories",
+			"$PAGE->categories"
+		],
+		"body": "\\$PAGE->categories",
+		"description": "Returns array an array of all the categories the page course belongs to, starting with the immediately containing category, and working out to the top-level category. This may be the empty array if we are in the front page course."
+	},
+	"$PAGE->context": {
+		"prefix": [
+			"page_context",
+			"$PAGE->context"
+		],
+		"body": "\\$PAGE->context",
+		"description": "Returns context the main context to which this page belongs."
+	},
+	"$PAGE->pagetype": {
+		"prefix": [
+			"page_pagetype",
+			"$PAGE->pagetype"
+		],
+		"body": "\\$PAGE->pagetype",
+		"description": "Returns string e.g. 'my-index' or 'mod-quiz-attempt'."
+	},
+	"$PAGE->bodyid": {
+		"prefix": [
+			"page_bodyid",
+			"$PAGE->bodyid"
+		],
+		"body": "\\$PAGE->bodyid",
+		"description": "Returns string The id to use on the body tag, uses {@link magic_get_pagetype()}."
+	},
+	"$PAGE->pagelayout": {
+		"prefix": [
+			"page_pagelayout",
+			"$PAGE->pagelayout"
+		],
+		"body": "\\$PAGE->pagelayout",
+		"description": "Returns string the general type of page this is. For example 'standard', 'popup', 'home'. Allows the theme to display things differently, if it wishes to."
+	},
+	"$PAGE->layout_options": {
+		"prefix": [
+			"page_layout_options",
+			"$PAGE->layout_options"
+		],
+		"body": "\\$PAGE->layout_options",
+		"description": "Returns array returns arrays with options for layout file"
+	},
+	"$PAGE->subpage": {
+		"prefix": [
+			"page_subpage",
+			"$PAGE->subpage"
+		],
+		"body": "\\$PAGE->subpage",
+		"description": "Returns string The subpage identifier, if any."
+	},
+	"$PAGE->bodyclasses": {
+		"prefix": [
+			"page_bodyclasses",
+			"$PAGE->bodyclasses"
+		],
+		"body": "\\$PAGE->bodyclasses",
+		"description": "Returns string the class names to put on the body element in the HTML."
+	},
+	"$PAGE->title": {
+		"prefix": [
+			"page_title",
+			"$PAGE->title"
+		],
+		"body": "\\$PAGE->title",
+		"description": "Returns string the title that should go in the <head> section of the HTML of this page."
+	},
+	"$PAGE->heading": {
+		"prefix": [
+			"page_heading",
+			"$PAGE->heading"
+		],
+		"body": "\\$PAGE->heading",
+		"description": "Returns string the main heading that should be displayed at the top of the <body>."
+	},
+	"$PAGE->headingmenu": {
+		"prefix": [
+			"page_headingmenu",
+			"$PAGE->headingmenu"
+		],
+		"body": "\\$PAGE->headingmenu",
+		"description": "Returns string The menu (or actions) to display in the heading"
+	},
+	"$PAGE->docspath": {
+		"prefix": [
+			"page_docspath",
+			"$PAGE->docspath"
+		],
+		"body": "\\$PAGE->docspath",
+		"description": "Returns string the path to the Moodle docs for this page."
+	},
+	"$PAGE->url": {
+		"prefix": [
+			"page_url",
+			"$PAGE->url"
+		],
+		"body": "\\$PAGE->url",
+		"description": "Returns moodle_url the clean URL required to load the current page. (You should normally use this in preference to $ME or $FULLME.)"
+	},
+	"$PAGE->alternateversions": {
+		"prefix": [
+			"page_alternateversions",
+			"$PAGE->alternateversions"
+		],
+		"body": "\\$PAGE->alternateversions",
+		"description": "The list of alternate versions of this page. Array mime type => object with ->url and ->title. "
+	},
+	"$PAGE->blocks": {
+		"prefix": [
+			"page_blocks",
+			"$PAGE->blocks"
+		],
+		"body": "\\$PAGE->blocks",
+		"description": "Returns block_manager the blocks manager object for this page."
+	},
+	"$PAGE->requires->get_config_for_javascript": {
+		"prefix": [
+			"page_requires_get_config_for_javascript",
+			"$PAGE->requires->get_config_for_javascript"
+		],
+		"body": "\\$PAGE->requires->get_config_for_javascript(${1:\\$moodle_page}, ${2:\\$renderer});",
+		"description": "Return the safe config values that get set for javascript in \"M.cfg\"."
+	},
+	"$PAGE->requires->js": {
+		"prefix": [
+			"page_requires_js",
+			"$PAGE->requires->js"
+		],
+		"body": "\\$PAGE->requires->js(${1:\\$url}${2:, ${3:\\$inhead}});",
+		"description": "Ensure that the specified JavaScript file is linked to from this page. NOTE: This function is to be used in RARE CASES ONLY, please store your JS in module.js file and use $PAGE->requires->js_init_call() instead or use /yui/ subdirectories for YUI modules."
+	},
+	"$PAGE->requires->jquery": {
+		"prefix": [
+			"page_requires_",
+			"$PAGE->requires->jquery"
+		],
+		"body": "\\$PAGE->requires->jquery();",
+		"description": "Request inclusion of jQuery library in the page. NOTE: this should not be used in official Moodle distribution!"
+	},
+	"$PAGE->requires->jquery_plugin": {
+		"prefix": [
+			"page_requires_jquery_plugin",
+			"$PAGE->requires->jquery_plugin"
+		],
+		"body": "\\$PAGE->requires->jquery_plugin(${1:\\$plugin}${2:, ${3:\\$component}});",
+		"description": "Request inclusion of jQuery plugin."
+	},
+	"$PAGE->requires->jquery_override_plugin": {
+		"prefix": [
+			"page_requires_jquery_override_plugin",
+			"$PAGE->requires->jquery_override_plugin"
+		],
+		"body": "\\$PAGE->requires->jquery_override_plugin(${1:\\$oldplugin}, ${2:\\$newplugin});",
+		"description": "Request replacement of one jQuery plugin by another. This is useful when themes want to replace the jQuery UI theme, the problem is that theme can not prevent others from including the core ui-css plugin."
+	},
+	"$PAGE->requires->js_module": {
+		"prefix": [
+			"page_requires_js_module",
+			"$PAGE->requires->js_module"
+		],
+		"body": "\\$PAGE->requires->js_module(${1:\\$module});",
+		"description": "Append YUI3 module to default YUI3 JS loader. The structure of module array is described at {@link http://developer.yahoo.com/yui/3/yui/}"
+	},
+	"$PAGE->requires->css": {
+		"prefix": [
+			"page_requires_css",
+			"$PAGE->requires->css"
+		],
+		"body": "\\$PAGE->requires->css(${1:\\$stylesheet});",
+		"description": "Ensure that the specified CSS file is linked to from this page."
+	},
+	"$PAGE->requires->css_theme": {
+		"prefix": [
+			"page_requires_css_theme",
+			"$PAGE->requires->css_theme"
+		],
+		"body": "\\$PAGE->requires->css_theme(${1:\\$stylesheet_moodle_url});",
+		"description": "Add theme stylesheet to page - do not use from plugin code, this should be called only from the core renderer!"
+	},
+	"$PAGE->requires->skip_link_to": {
+		"prefix": [
+			"page_requires_skip_link_to",
+			"$PAGE->requires->skip_link_to"
+		],
+		"body": "\\$PAGE->requires->skip_link_to(${1:\\$target}, ${2:\\$linktext});",
+		"description": "Ensure that a skip link to a given target is printed at the top of the <body>. You must call this function before {@link get_top_of_body_code()}"
+	},
+	"$PAGE->requires->js_amd_inline": {
+		"prefix": [
+			"page_requires_js_amd_inline",
+			"$PAGE->requires->js_amd_inline"
+		],
+		"body": "\\$PAGE->requires->js_amd_inline(${1:\\$code});",
+		"description": "This function appends a block of code to the AMD specific javascript block executed in the page footer, just after loading the requirejs library. The code passed here can rely on AMD module loading, e.g. require('jquery', function(${1:\\$)} {...});"
+	},
+	"$PAGE->requires->js_call_amd": {
+		"prefix": [
+			"page_requires_js_call_amd",
+			"$PAGE->requires->js_call_amd"
+		],
+		"body": "\\$PAGE->requires->js_call_amd(${1:\\$fullmodule}, ${2:\\$func}${3:, ${4:\\$params}});",
+		"description": "This function creates a minimal JS script that requires and calls a single function from an AMD module with arguments. If it is called multiple times, it will be executed multiple times."
+	},
+	"$PAGE->requires->yui_module": {
+		"prefix": [
+			"page_requires_yui_module",
+			"$PAGE->requires->yui_module"
+		],
+		"body": "\\$PAGE->requires->yui_module(${1:\\$modules}, ${2:\\$function},${3: ${4:\\$arguments_array}${5:, ${6:\\$galleryversion}${7:, ${8:\\$ondomready}}}});",
+		"description": "Creates a JavaScript function call that requires one or more modules to be loaded. This function can be used to include all of the standard YUI module types within JavaScript"
+	},
+	"$PAGE->requires->set_yuicssmodules": {
+		"prefix": [
+			"page_requires_set_yuicssmodules",
+			"$PAGE->requires->set_yuicssmodules"
+		],
+		"body": "\\$PAGE->requires->set_yuicssmodules(${1:\\$modules_array});",
+		"description": "Set the CSS Modules to be included from YUI."
+	},
+	"$PAGE->requires->js_init_call": {
+		"prefix": [
+			"page_requires_js_init_call",
+			"$PAGE->requires->js_init_call"
+		],
+		"body": "\\$PAGE->requires->js_init_call(${1:\\$function}${2:, ${3:\\$extraarguments_array}${4:, ${5:\\$ondomready}${6:, ${7:\\$module_array}}}});",
+		"description": "Ensure that the specified JavaScript function is called from an inline script from page footer."
+	},
+	"$PAGE->requires->js_init_code": {
+		"prefix": [
+			"page_requires_js_init_code",
+			"$PAGE->requires->js_init_code"
+		],
+		"body": "\\$PAGE->requires->js_init_code(${1:\\$jscode}${2:, ${3:\\$ondomready}${4:, ${5:\\$module_array}}});",
+		"description": "Add short static javascript code fragment to page footer. This is intended primarily for loading of js modules and initialising page layout. Ideally the JS code fragment should be stored in plugin renderer so that themes may override it."
+	},
+	"$PAGE->requires->string_for_js": {
+		"prefix": [
+			"page_requires_string_for_js",
+			"$PAGE->requires->string_for_js"
+		],
+		"body": "\\$PAGE->requires->string_for_js(${1:\\$identifier}, ${2:\\$component}${3:, ${4:\\$a}});",
+		"description": "Make a language string available to JavaScript. All the strings will be available in a M.str object in the global namespace. So, for example, after a call to $PAGE->requires->string_for_js('course', 'moodle'); then the JavaScript variable M.str.moodle.course will be 'Course', or the equivalent in the current language."
+	},
+	"$PAGE->requires->strings_for_js": {
+		"prefix": [
+			"page_requires_strings_for_js",
+			"$PAGE->requires->strings_for_js"
+		],
+		"body": "\\$PAGE->requires->strings_for_js(${1:\\$identifiers}, ${2:\\$component}${3:, ${4:\\$a}});",
+		"description": "Make an array of language strings available for JS. This function calls the above function {@link string_for_js()} for each requested string in the $identifiers array that is passed to the argument for a single module passed in $module."
+	},
+	"$PAGE->requires->event_handler": {
+		"prefix": [
+			"page_requires_event_handler",
+			"$PAGE->requires->event_handler"
+		],
+		"body": "\\$PAGE->requires->event_handler(${1:\\$selector}, ${2:\\$event}, ${3:\\$function}${4:, ${5:\\$arguments_array}});",
+		"description": "Creates a YUI event handler."
+	},
+	"$PAGE->requires->get_head_code": {
+		"prefix": [
+			"page_requires_get_head_code",
+			"$PAGE->requires->get_head_code"
+		],
+		"body": "\\$PAGE->requires->get_head_code(${1:\\$moodle_page}, ${2:\\$renderer});",
+		"description": "Generate any HTML that needs to go inside the <head> tag. Normally, this method is called automatically by the code that prints the <head> tag. You should not normally need to call it in your own code."
+	},
+	"$PAGE->requires->get_top_of_body_code": {
+		"prefix": [
+			"page_requires_get_top_of_body_code",
+			"$PAGE->requires->get_top_of_body_code"
+		],
+		"body": "\\$PAGE->requires->get_top_of_body_code(${1:\\$renderer});",
+		"description": "Generate any HTML that needs to go at the start of the <body> tag. Normally, this method is called automatically by the code that prints the <head> tag. You should not normally need to call it in your own code."
+	},
+	"$PAGE->requires->get_end_code": {
+		"prefix": [
+			"page_requires_get_end_code",
+			"$PAGE->requires->get_end_code"
+		],
+		"body": "\\$PAGE->requires->()get_end_code;",
+		"description": "Generate any HTML that needs to go at the end of the page. Normally, this method is called automatically by the code that prints the page footer. You should not normally need to call it in your own code."
+	},
+	"$PAGE->requires->is_head_done": {
+		"prefix": [
+			"page_requires_is_head_done",
+			"$PAGE->requires->is_head_done"
+		],
+		"body": "\\$PAGE->requires->()is_head_done;",
+		"description": "Have we already output the code in the <head> tag?"
+	},
+	"$PAGE->requires->is_top_of_body_done": {
+		"prefix": [
+			"page_requires_is_top_of_body_done",
+			"$PAGE->requires->is_top_of_body_done"
+		],
+		"body": "\\$PAGE->requires->()is_top_of_body_done;",
+		"description": "Have we already output the code at the start of the <body> tag?"
+	},
+	"$PAGE->requires->should_create_one_time_item_now": {
+		"prefix": [
+			"page_requires_should_create_one_time_item_now",
+			"$PAGE->requires->should_create_one_time_item_now"
+		],
+		"body": "\\$PAGE->requires->should_create_one_time_item_now(${1:\\$thing});",
+		"description": "Should we generate a bit of content HTML that is only required once on this page (e.g. the contents of the modchooser), now? Basically, we call {@link has_one_time_item_been_created()}, and if the thing has not already been output, we return true to tell the caller to generate it, and also call {@link set_one_time_item_created()} to record the fact that it is about to be generated."
+	},
+	"$PAGE->requires->has_one_time_item_been_created": {
+		"prefix": [
+			"page_requires_has_one_time_item_been_created",
+			"$PAGE->requires->has_one_time_item_been_created"
+		],
+		"body": "\\$PAGE->requires->has_one_time_item_been_created(${1:\\$thing});",
+		"description": "Has a particular bit of HTML that is only required once on this page (e.g. the contents of the modchooser) already been generated? Normally, you can use the {@link should_create_one_time_item_now()} helper method rather than calling this method directly."
+	},
+	"$PAGE->requires->set_one_time_item_created": {
+		"prefix": [
+			"page_requires_set_one_time_item_created",
+			"$PAGE->requires->set_one_time_item_created"
+		],
+		"body": "\\$PAGE->requires->set_one_time_item_created(${1:\\$thing});",
+		"description": "Indicate that a particular bit of HTML that is only required once on this page (e.g. the contents of the modchooser) has been generated (or is about to be)? Normally, you can use the {@link should_create_one_time_item_now()} helper method rather than calling this method directly."
+	},
+	"$PAGE->cacheable": {
+		"prefix": [
+			"page_cacheable",
+			"$PAGE->cacheable"
+		],
+		"body": "\\$PAGE->cacheable",
+		"description": "Returns bool can this page be cached by the user's browser."
+	},
+	"$PAGE->focuscontrol": {
+		"prefix": [
+			"page_focuscontrol",
+			"$PAGE->focuscontrol"
+		],
+		"body": "\\$PAGE->focuscontrol",
+		"description": "Returns string the id of the HTML element to be focused when the page has loaded."
+	},
+	"$PAGE->button": {
+		"prefix": [
+			"page_button",
+			"$PAGE->button"
+		],
+		"body": "\\$PAGE->button",
+		"description": "Returns string the HTML to go where the Turn editing on button normally goes."
+	},
+	"$PAGE->theme": {
+		"prefix": [
+			"page_theme",
+			"$PAGE->theme"
+		],
+		"body": "\\$PAGE->theme",
+		"description": "Returns theme_config the initialised theme for this page."
+	},
+	"$PAGE->blockmanipulations": {
+		"prefix": [
+			"page_blockmanipulations",
+			"$PAGE->blockmanipulations"
+		],
+		"body": "\\$PAGE->blockmanipulations",
+		"description": "Returns an array of minipulations or false if there are none to make."
+	},
+	"$PAGE->devicetypeinuse": {
+		"prefix": [
+			"page_devicetypeinuse",
+			"$PAGE->devicetypeinuse"
+		],
+		"body": "\\$PAGE->devicetypeinuse",
+		"description": "Returns string The device type being used."
+	},
+	"$PAGE->periodicrefreshdelay": {
+		"prefix": [
+			"page_periodicrefreshdelay",
+			"$PAGE->periodicrefreshdelay"
+		],
+		"body": "\\$PAGE->periodicrefreshdelay",
+		"description": "Returns int The periodic refresh delay to use with meta refresh"
+	},
+	"$PAGE->opencontainers": {
+		"prefix": [
+			"page_opencontainers",
+			"$PAGE->opencontainers"
+		],
+		"body": "\\$PAGE->opencontainers",
+		"description": "Returns xhtml_container_stack tracks XHTML tags on this page that have been opened but not closed. Mainly for internal use by the rendering code."
+	},
+	"$PAGE->navigation": {
+		"prefix": [
+			"page_navigation",
+			"$PAGE->navigation"
+		],
+		"body": "\\$PAGE->navigation",
+		"description": "Return the navigation object - global_navigation."
+	},
+	"$PAGE->navbar": {
+		"prefix": [
+			"page_navbar",
+			"$PAGE->navbar"
+		],
+		"body": "\\$PAGE->navbar",
+		"description": "Return a navbar object"
+	},
+	"$PAGE->settingsnav": {
+		"prefix": [
+			"page_settingsnav",
+			"$PAGE->settingsnav"
+		],
+		"body": "\\$PAGE->settingsnav",
+		"description": "Returns the settings navigation object"
+	},
+	"$PAGE->flatnav": {
+		"prefix": [
+			"page_flatnav",
+			"$PAGE->flatnav"
+		],
+		"body": "\\$PAGE->flatnav",
+		"description": "Returns the flat navigation object"
+	},
+	"$PAGE->requestip": {
+		"prefix": [
+			"page_requestip",
+			"$PAGE->requestip"
+		],
+		"body": "\\$PAGE->requestip",
+		"description": "Returns request IP address."
+	},
+	"$PAGE->requestorigin": {
+		"prefix": [
+			"page_requestorigin",
+			"$PAGE->requestorigin"
+		],
+		"body": "\\$PAGE->requestorigin",
+		"description": "Returns the origin of current request. Note: constants are not required because we need to use these values in logging and reports."
+	}
+}

@@ -1,0 +1,17 @@
+{
+	"moodle comment": {
+		"prefix": "moodle comment",
+		"body": [
+			"/**",
+			" * ${1:short_description}",
+			" *",
+			" * ${2:long_description}",
+			" *",
+			" * @package    ${3:package}_${4:subpackage}",
+			" * @copyright  ${CURRENT_YEAR} ${5:author_fullname} <${6:author_link}>",
+			" * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later",
+			" */"
+		],
+		"description": "Comment block with author of this file for Moodle."
+	}
+}

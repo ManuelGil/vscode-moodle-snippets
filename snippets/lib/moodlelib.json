@@ -1,0 +1,967 @@
+{
+	"required_param": {
+		"prefix": "required_param",
+		"body": "required_param(${1:\\$parameter_name}, ${2|PARAM_INT,PARAM_TEXT,PARAM_BOOL,PARAM_ALPHA,PARAM_ALPHAEXT,PARAM_ALPHANUM,PARAM_ALPHANUMEXT,PARAM_AUTH,PARAM_BASE64,PARAM_CAPABILITY,PARAM_CLEANHTML,PARAM_EMAIL,PARAM_FILE,PARAM_FLOAT,PARAM_HOST,PARAM_LANG,PARAM_LOCALURL,PARAM_NOTAGS,PARAM_PATH,PARAM_PEM,PARAM_PERMISSION,PARAM_RAW,PARAM_RAW_TRIMMED,PARAM_SAFEDIR,PARAM_SAFEPATH,PARAM_SEQUENCE,PARAM_STRINGID,PARAM_TAG,PARAM_TAGLIST,PARAM_THEME,PARAM_URL,PARAM_USERNAME|});",
+		"description": "Returns a particular value for the named variable, taken from POST or GET. If the parameter doesn't exist then an error is thrown because we require this variable. This function should be used to initialise all required values in a script that are based on parameters."
+	},
+	"required_param_array": {
+		"prefix": "required_param_array",
+		"body": "required_param_array(${1:\\$parameter_name}, ${2|PARAM_INT,PARAM_TEXT,PARAM_BOOL,PARAM_ALPHA,PARAM_ALPHAEXT,PARAM_ALPHANUM,PARAM_ALPHANUMEXT,PARAM_AUTH,PARAM_BASE64,PARAM_CAPABILITY,PARAM_CLEANHTML,PARAM_EMAIL,PARAM_FILE,PARAM_FLOAT,PARAM_HOST,PARAM_LANG,PARAM_LOCALURL,PARAM_NOTAGS,PARAM_PATH,PARAM_PEM,PARAM_PERMISSION,PARAM_RAW,PARAM_RAW_TRIMMED,PARAM_SAFEDIR,PARAM_SAFEPATH,PARAM_SEQUENCE,PARAM_STRINGID,PARAM_TAG,PARAM_TAGLIST,PARAM_THEME,PARAM_URL,PARAM_USERNAME|});",
+		"description": "Returns a particular array value for the named variable, taken from POST or GET. This function should be used to initialise all required values in a script that are based on parameters."
+	},
+	"optional_param": {
+		"prefix": "optional_param",
+		"body": "optional_param(${1:\\$parameter_name}, ${2:\\$default_value}, ${3|PARAM_INT,PARAM_TEXT,PARAM_BOOL,PARAM_ALPHA,PARAM_ALPHAEXT,PARAM_ALPHANUM,PARAM_ALPHANUMEXT,PARAM_AUTH,PARAM_BASE64,PARAM_CAPABILITY,PARAM_CLEANHTML,PARAM_EMAIL,PARAM_FILE,PARAM_FLOAT,PARAM_HOST,PARAM_LANG,PARAM_LOCALURL,PARAM_NOTAGS,PARAM_PATH,PARAM_PEM,PARAM_PERMISSION,PARAM_RAW,PARAM_RAW_TRIMMED,PARAM_SAFEDIR,PARAM_SAFEPATH,PARAM_SEQUENCE,PARAM_STRINGID,PARAM_TAG,PARAM_TAGLIST,PARAM_THEME,PARAM_URL,PARAM_USERNAME|});",
+		"description": "Returns a particular value for the named variable, taken from POST or GET, otherwise returning a given default. This function should be used to initialise all required values in a script that are based on parameters."
+	},
+	"optional_param_array": {
+		"prefix": "optional_param_array",
+		"body": "optional_param_array(${1:\\$parameter_name}, ${2:\\$default_value}, ${3|PARAM_INT,PARAM_TEXT,PARAM_BOOL,PARAM_ALPHA,PARAM_ALPHAEXT,PARAM_ALPHANUM,PARAM_ALPHANUMEXT,PARAM_AUTH,PARAM_BASE64,PARAM_CAPABILITY,PARAM_CLEANHTML,PARAM_EMAIL,PARAM_FILE,PARAM_FLOAT,PARAM_HOST,PARAM_LANG,PARAM_LOCALURL,PARAM_NOTAGS,PARAM_PATH,PARAM_PEM,PARAM_PERMISSION,PARAM_RAW,PARAM_RAW_TRIMMED,PARAM_SAFEDIR,PARAM_SAFEPATH,PARAM_SEQUENCE,PARAM_STRINGID,PARAM_TAG,PARAM_TAGLIST,PARAM_THEME,PARAM_URL,PARAM_USERNAME|});",
+		"description": "Returns a particular array for the named variable, taken from POST or GET, otherwise returning a given default. This function should be used to initialise all required values in a script that are based on parameters."
+	},
+	"validate_param": {
+		"prefix": "validate_param",
+		"body": "validate_param(${1:\\$param},  ${2|PARAM_INT,PARAM_TEXT,PARAM_BOOL,PARAM_ALPHA,PARAM_ALPHAEXT,PARAM_ALPHANUM,PARAM_ALPHANUMEXT,PARAM_AUTH,PARAM_BASE64,PARAM_CAPABILITY,PARAM_CLEANHTML,PARAM_EMAIL,PARAM_FILE,PARAM_FLOAT,PARAM_HOST,PARAM_LANG,PARAM_LOCALURL,PARAM_NOTAGS,PARAM_PATH,PARAM_PEM,PARAM_PERMISSION,PARAM_RAW,PARAM_RAW_TRIMMED,PARAM_SAFEDIR,PARAM_SAFEPATH,PARAM_SEQUENCE,PARAM_STRINGID,PARAM_TAG,PARAM_TAGLIST,PARAM_THEME,PARAM_URL,PARAM_USERNAME|}${3:, ${4:\\$allownull}${5:, ${6:\\$debuginfo}}});",
+		"description": "Strict validation of parameter values, the values are only converted to requested PHP type. Internally it is using clean_param, the values before and after cleaning must be equal - otherwise an invalid_parameter_exception is thrown."
+	},
+	"clean_param_array": {
+		"prefix": "clean_param_array",
+		"body": "clean_param_array(${1:\\$param_array},  ${2|PARAM_INT,PARAM_TEXT,PARAM_BOOL,PARAM_ALPHA,PARAM_ALPHAEXT,PARAM_ALPHANUM,PARAM_ALPHANUMEXT,PARAM_AUTH,PARAM_BASE64,PARAM_CAPABILITY,PARAM_CLEANHTML,PARAM_EMAIL,PARAM_FILE,PARAM_FLOAT,PARAM_HOST,PARAM_LANG,PARAM_LOCALURL,PARAM_NOTAGS,PARAM_PATH,PARAM_PEM,PARAM_PERMISSION,PARAM_RAW,PARAM_RAW_TRIMMED,PARAM_SAFEDIR,PARAM_SAFEPATH,PARAM_SEQUENCE,PARAM_STRINGID,PARAM_TAG,PARAM_TAGLIST,PARAM_THEME,PARAM_URL,PARAM_USERNAME|}${3:, ${4:\\$recursive}});",
+		"description": "Makes sure array contains only the allowed types, this function does not validate array key names!"
+	},
+	"clean_param": {
+		"prefix": "clean_param",
+		"body": "clean_param(${1:\\$param},  ${2|PARAM_INT,PARAM_TEXT,PARAM_BOOL,PARAM_ALPHA,PARAM_ALPHAEXT,PARAM_ALPHANUM,PARAM_ALPHANUMEXT,PARAM_AUTH,PARAM_BASE64,PARAM_CAPABILITY,PARAM_CLEANHTML,PARAM_EMAIL,PARAM_FILE,PARAM_FLOAT,PARAM_HOST,PARAM_LANG,PARAM_LOCALURL,PARAM_NOTAGS,PARAM_PATH,PARAM_PEM,PARAM_PERMISSION,PARAM_RAW,PARAM_RAW_TRIMMED,PARAM_SAFEDIR,PARAM_SAFEPATH,PARAM_SEQUENCE,PARAM_STRINGID,PARAM_TAG,PARAM_TAGLIST,PARAM_THEME,PARAM_URL,PARAM_USERNAME|});",
+		"description": "Used by {@link optional_param()} and {@link required_param()} to clean the variables and/or cast to specific types, based on an options field."
+	},
+	"is_rtl_compatible": {
+		"prefix": "is_rtl_compatible",
+		"body": "is_rtl_compatible(${1|PARAM_INT,PARAM_TEXT,PARAM_BOOL,PARAM_ALPHA,PARAM_ALPHAEXT,PARAM_ALPHANUM,PARAM_ALPHANUMEXT,PARAM_AUTH,PARAM_BASE64,PARAM_CAPABILITY,PARAM_CLEANHTML,PARAM_EMAIL,PARAM_FILE,PARAM_FLOAT,PARAM_HOST,PARAM_LANG,PARAM_LOCALURL,PARAM_NOTAGS,PARAM_PATH,PARAM_PEM,PARAM_PERMISSION,PARAM_RAW,PARAM_RAW_TRIMMED,PARAM_SAFEDIR,PARAM_SAFEPATH,PARAM_SEQUENCE,PARAM_STRINGID,PARAM_TAG,PARAM_TAGLIST,PARAM_THEME,PARAM_URL,PARAM_USERNAME|});",
+		"description": "Whether the PARAM_* type is compatible in RTL. Being compatible with RTL means that the data they contain can flow from right-to-left or left-to-right without compromising the user experience."
+	},
+	"fix_utf8": {
+		"prefix": "fix_utf8",
+		"body": "fix_utf8(${1:\\$value});",
+		"description": "Makes sure the data is using valid utf8, invalid characters are discarded."
+	},
+	"is_number": {
+		"prefix": "is_number",
+		"body": "is_number(${1:\\$value});",
+		"description": "Return true if given value is integer or string with integer value"
+	},
+	"get_host_from_url": {
+		"prefix": "get_host_from_url",
+		"body": "get_host_from_url(${1:\\$url});",
+		"description": "Returns host part from url."
+	},
+	"html_is_blank": {
+		"prefix": "html_is_blank",
+		"body": "html_is_blank(${1:\\$string});",
+		"description": "Tests whether anything was returned by text editor"
+	},
+	"set_config": {
+		"prefix": "set_config",
+		"body": "set_config(${1:\\$name}, ${2:\\$value}${3:, ${4:\\$plugin}});",
+		"description": "Set a key in global configuration"
+	},
+	"get_config": {
+		"prefix": "get_config",
+		"body": "get_config(${1:\\$plugin}${2:, ${3:\\$name}});",
+		"description": "Get configuration values from the global config table or the config_plugins table."
+	},
+	"unset_config": {
+		"prefix": "unset_config",
+		"body": "unset_config(${1:\\$name}${2:, ${3:\\$plugin}});",
+		"description": "Removes a key from global configuration."
+	},
+	"unset_all_config_for_plugin": {
+		"prefix": "unset_all_config_for_plugin",
+		"body": "unset_all_config_for_plugin(${1:\\$plugin});",
+		"description": "Remove all the config variables for a given plugin."
+	},
+	"get_users_from_config": {
+		"prefix": "get_users_from_config",
+		"body": "get_users_from_config(${1:\\$value}, ${2:\\$capability}${3:, ${4:\\$includeadmins}});",
+		"description": "Use this function to get a list of users from a config setting of type admin_setting_users_with_capability."
+	},
+	"purge_all_caches": {
+		"prefix": "purge_all_caches",
+		"body": "purge_all_caches();",
+		"description": "Invalidates browser caches and cached data in temp."
+	},
+	"get_cache_flags": {
+		"prefix": "get_cache_flags",
+		"body": "get_cache_flags(${1:\\$type}${2:, ${3:\\$changedsince}});",
+		"description": "Get volatile flags"
+	},
+	"get_cache_flag": {
+		"prefix": "get_cache_flag",
+		"body": "get_cache_flag(${1:\\$type}, ${2:\\$name}${3:, ${4:\\$changedsince}});",
+		"description": "Get volatile flags"
+	},
+	"set_cache_flag": {
+		"prefix": "set_cache_flag",
+		"body": "set_cache_flag(${1:\\$type}, ${2:\\$name}, ${3:\\$value}${4:, ${5:\\$expiry}});",
+		"description": "Set a volatile flag"
+	},
+	"unset_cache_flag": {
+		"prefix": "unset_cache_flag",
+		"body": "unset_cache_flag(${1:\\$type}, ${2:\\$name});",
+		"description": "Removes a single volatile flag"
+	},
+	"gc_cache_flags": {
+		"prefix": "gc_cache_flags",
+		"body": "gc_cache_flags();",
+		"description": "Garbage-collect volatile flags"
+	},
+	"check_user_preferences_loaded": {
+		"prefix": "check_user_preferences_loaded",
+		"body": "check_user_preferences_loaded(${1:\\$user_stdClass}${2:, ${3:\\$cachelifetime}});",
+		"description": "Refresh user preference cache. This is used most often for $USER object that is stored in session, but it also helps with performance in cron script."
+	},
+	"mark_user_preferences_changed": {
+		"prefix": "mark_user_preferences_changed",
+		"body": "mark_user_preferences_changed(${1:\\$userid});",
+		"description": "Called from set/unset_user_preferences, so that the prefs can be correctly reloaded in different sessions."
+	},
+	"set_user_preference": {
+		"prefix": "set_user_preference",
+		"body": "set_user_preference(${1:\\$name}, ${2:\\$value}${3:, ${4:\\$user}});",
+		"description": "Sets a preference for the specified user."
+	},
+	"set_user_preferences": {
+		"prefix": "set_user_preferences",
+		"body": "set_user_preferences(${1:\\$prefarray_array}${2:, ${3:\\$user}});",
+		"description": "Sets a whole array of preferences for the current user"
+	},
+	"unset_user_preference": {
+		"prefix": "unset_user_preference",
+		"body": "unset_user_preference(${1:\\$name}${2:, ${3:\\$user}});",
+		"description": "Unsets a preference completely by deleting it from the database"
+	},
+	"get_user_preferences": {
+		"prefix": "get_user_preferences",
+		"body": "get_user_preferences(${1:{$2:\\$name}${3:, ${4:\\$default}${5:, ${6:\\$user}}}});",
+		"description": "Used to fetch user preference(s)"
+	},
+	"make_timestamp": {
+		"prefix": "make_timestamp",
+		"body": "make_timestamp(${1:\\$year}${2:, ${3:\\$month}${4:, ${5:\\$day}${6:, ${7:\\$hour}${8:, ${9:\\$minute}${10:, ${11:\\$second}${12:, ${13:\\$timezone}${14:, ${15:\\$applydst}}}}}}}});",
+		"description": "Given Gregorian date parts in user time produce a GMT timestamp."
+	},
+	"format_time": {
+		"prefix": "format_time",
+		"body": "format_time(${1:\\$totalsecs}${2:, ${3:\\$str}});",
+		"description": "Format a date/time (seconds) as weeks, days, hours etc as needed"
+	},
+	"userdate": {
+		"prefix": "userdate",
+		"body": "userdate(${1:\\$date}${2:, ${3:\\$format}${4:, ${5:\\$timezone}${6:, ${7:\\$fixday}${8:, ${9:\\$fixhour}${10:, ${11:\\$fixmonthlang}}}}}});",
+		"description": "Returns a formatted string that represents a date in user time."
+	},
+	"date_format_string": {
+		"prefix": "date_format_string",
+		"body": "date_format_string(${1:\\$date}, ${2:\\$format}${3:, ${4:\\$timezone}});",
+		"description": "Returns a formatted date ensuring it is UTF-8."
+	},
+	"usergetdate": {
+		"prefix": "usergetdate",
+		"body": "usergetdate(${1:\\$time}${2:, ${3:\\$timezone}});",
+		"description": "Given a $time timestamp in GMT (seconds since epoch), returns an array that represents the Gregorian date in user time"
+	},
+	"usertime": {
+		"prefix": "usertime",
+		"body": "usertime(${1:\\$date}${2:, ${3:\\$timezone}});",
+		"description": "Given a GMT timestamp (seconds since epoch), offsets it by the timezone.  eg 3pm in India is 3pm GMT - 7 * 3600 seconds"
+	},
+	"usergetmidnight": {
+		"prefix": "usergetmidnight",
+		"body": "usergetmidnight(${1:\\$date}${2:, ${3:\\$timezone}});",
+		"description": "Given a time, return the GMT timestamp of the most recent midnight for the current user."
+	},
+	"usertimezone": {
+		"prefix": "Returns a string that prints the user's timezone",
+		"body": "usertimezone(${1:\\$timezone});",
+		"description": "Returns a string that prints the user's timezone."
+	},
+	"get_user_timezone": {
+		"prefix": "get_user_timezone",
+		"body": "get_user_timezone(${1:\\$timezone});",
+		"description": "Returns a float or a string which denotes the user's timezone."
+	},
+	"dst_offset_on": {
+		"prefix": "dst_offset_on",
+		"body": "dst_offset_on(${1:\\$time}${2:, ${3:\\$strtimezone}});",
+		"description": "Calculates the Daylight Saving Offset for a given date/time (timestamp). Note: Daylight saving only works for string timezones and not for float."
+	},
+	"find_day_in_month": {
+		"prefix": "find_day_in_month",
+		"body": "find_day_in_month(${1:\\$startday}, ${2:\\$weekday}, ${3:\\$month}, ${4:\\$year});",
+		"description": "Calculates when the day appears in specific month"
+	},
+	"days_in_month": {
+		"prefix": "days_in_month",
+		"body": "days_in_month(${1:\\$month}, ${2:\\$year});",
+		"description": "Calculate the number of days in a given month"
+	},
+	"dayofweek": {
+		"prefix": "dayofweek",
+		"body": "dayofweek(${1:\\$day}, ${2:\\$month}, ${3:\\$year});",
+		"description": "Calculate the position in the week of a specific calendar day"
+	},
+	"get_login_url": {
+		"prefix": "get_login_url",
+		"body": "get_login_url();",
+		"description": "Returns full login url."
+	},
+	"require_login": {
+		"prefix": "require_login",
+		"body": "require_login(${1:${2:\\$courseorid}${3:, ${4:\\$autologinguest}${5:, ${6:\\$cm}${7:, ${8:\\$setwantsurltome}${9:, ${10:\\$preventredirect}}}}}});",
+		"description": "This function checks that the current user is logged in and has the required privileges"
+	},
+	"require_logout": {
+		"prefix": "require_logout",
+		"body": "require_logout();",
+		"description": "This function just makes sure a user is logged out."
+	},
+	"require_course_login": {
+		"prefix": "require_course_login",
+		"body": "require_course_login(${1:\\$courseorid}${2:, ${3:\\$autologinguest}${4:, ${5:\\$cm}${6:, ${7:\\$setwantsurltome}${8:, ${9:\\$preventredirect}}}}});",
+		"description": "Weaker version of require_login()"
+	},
+	"validate_user_key": {
+		"prefix": "validate_user_key",
+		"body": "validate_user_key(${1:\\$keyvalue}, ${2:\\$script}, ${3:\\$instance});",
+		"description": "Validates a user key, checking if the key exists, is not expired and the remote ip is correct."
+	},
+	"require_user_key_login": {
+		"prefix": "require_user_key_login",
+		"body": "require_user_key_login(${1:\\$script}${2:, ${3:\\$instance}});",
+		"description": "Require key login. Function terminates with error if key not found or incorrect."
+	},
+	"create_user_key": {
+		"prefix": "create_user_key",
+		"body": "create_user_key(${1:\\$script}, ${2:\\$userid}${3:, ${4:\\$instance}${5:, ${6:\\$iprestriction}${7:, ${8:\\$validuntil}}}});",
+		"description": "Creates a new private user access key."
+	},
+	"delete_user_key": {
+		"prefix": "delete_user_key",
+		"body": "delete_user_key(${1:\\$script}, ${2:\\$userid});",
+		"description": "Delete the user's new private user access keys for a particular script."
+	},
+	"get_user_key": {
+		"prefix": "get_user_key",
+		"body": "get_user_key(${1:\\$script}, ${2:\\$userid}${3:, ${4:\\$instance}${5:, ${6:\\$iprestriction}${7:, ${8:\\$validuntil}}}});",
+		"description": "Gets a private user access key (and creates one if one doesn't exist)."
+	},
+	"update_user_login_times": {
+		"prefix": "update_user_login_times",
+		"body": "update_user_login_times();",
+		"description": "Modify the user table by setting the currently logged in user's last login to now."
+	},
+	"user_not_fully_set_up": {
+		"prefix": "user_not_fully_set_up",
+		"body": "user_not_fully_set_up(${1:\\$user}${2:, ${3:\\$strict}});",
+		"description": "Determines if a user has completed setting up their account."
+	},
+	"over_bounce_threshold": {
+		"prefix": "over_bounce_threshold",
+		"body": "over_bounce_threshold(${1:\\$user});",
+		"description": "Check whether the user has exceeded the bounce threshold"
+	},
+	"set_send_count": {
+		"prefix": "set_send_count",
+		"body": "set_send_count(${1:\\$user}${2:, ${3:\\$reset}});",
+		"description": "Used to increment or reset email sent count"
+	},
+	"set_bounce_count": {
+		"prefix": "set_bounce_count",
+		"body": "set_bounce_count(${1:\\$user}${2:, ${3:\\$reset}});",
+		"description": "Increment or reset user's email bounce count"
+	},
+	"ismoving": {
+		"prefix": "ismoving",
+		"body": "ismoving(${1:\\$courseid});",
+		"description": "Determines if the logged in user is currently moving an activity"
+	},
+	"fullname": {
+		"prefix": "fullname",
+		"body": "fullname(${1:\\$user}${2:, ${3:\\$override}});",
+		"description": "Returns a persons full name."
+	},
+	"get_all_user_name_fields": {
+		"prefix": "get_all_user_name_fields",
+		"body": "get_all_user_name_fields(${1:${2:\\$returnsql}${3:, ${4:\\$tableprefix}${5:, ${6:\\$prefix}${7:, ${8:\\$fieldprefix}${9:, ${10:\\$order}}}}}});",
+		"description": "A centralised location for the all name fields. Returns an array / sql string snippet."
+	},
+	"username_load_fields_from_object": {
+		"prefix": "username_load_fields_from_object",
+		"body": "username_load_fields_from_object(${1:\\$addtoobject}, ${2:\\$secondobject}${3:, ${4:\\$prefix}${5:, ${6:\\$additionalfields}}});",
+		"description": "Reduces lines of duplicated code for getting user name fields."
+	},
+	"order_in_string": {
+		"prefix": "order_in_string",
+		"body": "order_in_string(${1:\\$values}, ${2:\\$stringformat});",
+		"description": "Returns an array of values in order of occurance in a provided string. The key in the result is the character postion in the string."
+	},
+	"get_extra_user_fields": {
+		"prefix": "get_extra_user_fields",
+		"body": "get_extra_user_fields(${1:\\$context}${2:, ${3:\\$already}});",
+		"description": "Checks if current user is shown any extra fields when listing users."
+	},
+	"get_extra_user_fields_sql": {
+		"prefix": "get_extra_user_fields_sql",
+		"body": "get_extra_user_fields_sql(${1:\\$context}${2:, ${3:\\$alias}${4:, ${5:\\$prefix}${6:, ${7:\\$already}}}});",
+		"description": "If the current user is to be shown extra user fields when listing or selecting users, returns a string suitable for including in an SQL select clause to retrieve those fields."
+	},
+	"get_user_field_name": {
+		"prefix": "get_user_field_name",
+		"body": "get_user_field_name(${1:\\$field});",
+		"description": "Returns the display name of a field in the user table. Works for most fields that are commonly displayed to users."
+	},
+	"exists_auth_plugin": {
+		"prefix": "exists_auth_plugin",
+		"body": "exists_auth_plugin(${1:\\$auth});",
+		"description": "Returns whether a given authentication plugin exists."
+	},
+	"is_enabled_auth": {
+		"prefix": "is_enabled_auth",
+		"body": "is_enabled_auth(${1:\\$auth});",
+		"description": "Checks if a given plugin is in the list of enabled authentication plugins."
+	},
+	"get_auth_plugin": {
+		"prefix": "get_auth_plugin",
+		"body": "get_auth_plugin(${1:\\$auth});",
+		"description": "Returns an authentication plugin instance."
+	},
+	"get_enabled_auth_plugins": {
+		"prefix": "get_enabled_auth_plugins",
+		"body": "get_enabled_auth_plugins(${1:\\$fix});",
+		"description": "Returns array of active auth plugins."
+	},
+	"is_internal_auth": {
+		"prefix": "is_internal_auth",
+		"body": "is_internal_auth(${1:\\$auth});",
+		"description": "Returns true if an internal authentication method is being used. If method not specified then, global default is assumed"
+	},
+	"is_restored_user": {
+		"prefix": "is_restored_user",
+		"body": "is_restored_user(${1:\\$username});",
+		"description": "Returns true if the user is a 'restored' one."
+	},
+	"get_user_fieldnames": {
+		"prefix": "get_user_fieldnames",
+		"body": "get_user_fieldnames();",
+		"description": "Returns an array of user fields"
+	},
+	"create_user_record": {
+		"prefix": "create_user_record",
+		"body": "create_user_record(${1:\\$username}, ${2:\\$password}${3:, ${4:\\$auth}});",
+		"description": "Creates a bare-bones user record"
+	},
+	"update_user_record": {
+		"prefix": "update_user_record",
+		"body": "update_user_record(${1:\\$username});",
+		"description": "Will update a local user record from an external source (MNET users can not be updated using this method!)."
+	},
+	"update_user_record_by_id": {
+		"prefix": "update_user_record_by_id",
+		"body": "update_user_record_by_id(${1:\\$id});",
+		"description": "Will update a local user record from an external source (MNET users can not be updated using this method!)."
+	},
+	"truncate_userinfo": {
+		"prefix": "truncate_userinfo",
+		"body": "truncate_userinfo(${1:\\$info_array});",
+		"description": "Will truncate userinfo as it comes from auth_get_userinfo (from external auth) which may have large fields."
+	},
+	"delete_user": {
+		"prefix": "delete_user",
+		"body": "delete_user(${1:\\$user_stdClass});",
+		"description": "Marks user deleted in internal user database and notifies the auth plugin. Also unenrols user from all roles and does other cleanup."
+	},
+	"guest_user": {
+		"prefix": "guest_user",
+		"body": "guest_user();",
+		"description": "Retrieve the guest user object."
+	},
+	"authenticate_user_login": {
+		"prefix": "authenticate_user_login",
+		"body": "authenticate_user_login(${1:\\$username}, ${2:\\$password}${3:, ${4:\\$ignorelockout}${5:, ${6:\\$failurereason}${7:, ${8:\\$logintoken}}}});",
+		"description": "Authenticates a user against the chosen authentication mechanism"
+	},
+	"complete_user_login": {
+		"prefix": "complete_user_login",
+		"body": "complete_user_login(${1:\\$user});",
+		"description": "Call to complete the user login process after authenticate_user_login() has succeeded. It will setup the $USER variable and other required bits and pieces."
+	},
+	"password_is_legacy_hash": {
+		"prefix": "password_is_legacy_hash",
+		"body": "password_is_legacy_hash(${1:\\$password});",
+		"description": "Check a password hash to see if it was hashed using the legacy hash algorithm (md5)."
+	},
+	"validate_internal_user_password": {
+		"prefix": "validate_internal_user_password",
+		"body": "validate_internal_user_password(${1:\\$user}, ${2:\\$password});",
+		"description": "Compare password against hash stored in user object to determine if it is valid."
+	},
+	"hash_internal_user_password": {
+		"prefix": "hash_internal_user_password",
+		"body": "hash_internal_user_password(${1:\\$password}${2:, ${3:\\$fasthash}});",
+		"description": "Calculate hash for a plain text password."
+	},
+	"update_internal_user_password": {
+		"prefix": "update_internal_user_password",
+		"body": "update_internal_user_password(${1:\\$user}, ${2:\\$password}${3:, ${4:\\$fasthash}});",
+		"description": "Update password hash in user object (if necessary)."
+	},
+	"get_complete_user_data": {
+		"prefix": "get_complete_user_data",
+		"body": "get_complete_user_data(${1:\\$field}, ${2:\\$value}${3:, ${4:\\$mnethostid}});",
+		"description": "Get a complete user record, which includes all the info in the user record."
+	},
+	"check_password_policy": {
+		"prefix": "check_password_policy",
+		"body": "check_password_policy(${1:\\$password}, ${2:\\$errmsg});",
+		"description": "Validate a password against the configured password policy"
+	},
+	"set_login_session_preferences": {
+		"prefix": "set_login_session_preferences",
+		"body": "set_login_session_preferences();",
+		"description": "When logging in, this function is run to set certain preferences for the current SESSION."
+	},
+	"delete_course": {
+		"prefix": "delete_course",
+		"body": "delete_course(${1:\\$courseorid}${2:, ${3:\\$showfeedback}});",
+		"description": "Delete a course, including all related data from the database, and any associated files."
+	},
+	"remove_course_contents": {
+		"prefix": "remove_course_contents",
+		"body": "remove_course_contents(${1:\\$courseid}${2:, ${3:\\$showfeedback}${4:, ${5:\\$options}}});",
+		"description": "Clear a course out completely, deleting all content but don't delete the course itself."
+	},
+	"shift_course_mod_dates": {
+		"prefix": "shift_course_mod_dates",
+		"body": "shift_course_mod_dates(${1:\\$modname}, ${2:\\$fields}, ${3:\\$timeshift}, ${4:\\$courseid}${5:, ${6:\\$modid}});",
+		"description": "Change dates in module - used from course reset."
+	},
+	"reset_course_userdata": {
+		"prefix": "reset_course_userdata",
+		"body": "reset_course_userdata(${1:\\$data});",
+		"description": "This function will empty a course of user data. It will retain the activities and the structure of the course."
+	},
+	"generate_email_processing_address": {
+		"prefix": "generate_email_processing_address",
+		"body": "generate_email_processing_address(${1:\\$modid}, ${2:\\$modargs});",
+		"description": "Generate an email processing address."
+	},
+	"moodle_process_email": {
+		"prefix": "moodle_process_email",
+		"body": "moodle_process_email(${1:\\$modargs}, ${2:\\$body});",
+		"description": "moodle_process_email"
+	},
+	"get_mailer": {
+		"prefix": "get_mailer",
+		"body": "get_mailer(${1:\\$action});",
+		"description": "Get mailer instance, enable buffering, flush buffer or disable buffering."
+	},
+	"email_should_be_diverted": {
+		"prefix": "email_should_be_diverted",
+		"body": "email_should_be_diverted(${1:\\$email});",
+		"description": "A helper function to test for email diversion"
+	},
+	"generate_email_messageid": {
+		"prefix": "generate_email_messageid",
+		"body": "generate_email_messageid(${1:\\$localpart});",
+		"description": "Generate a unique email Message-ID using the moodle domain and install path"
+	},
+	"email_to_user": {
+		"prefix": "email_to_user",
+		"body": "email_to_user(${1:\\$user}, ${2:\\$from}, ${3:\\$subject}, ${4:\\$messagetext}${5:, ${6:\\$messagehtml}${7:, ${8:\\$attachment}${9:, ${10:\\$attachname}${11:, ${12:\\$usetrueaddress}${13, ${14:\\$replyto}${15:, ${16:\\$replytoname}${17:, ${18:\\$wordwrapwidth}${19:, ${20:\\$strategy}}}}}}}});",
+		"description": "Send an email to a specified user"
+	},
+	"can_send_from_real_email_address": {
+		"prefix": "can_send_from_real_email_address",
+		"body": "can_send_from_real_email_address(${1:\\$from}, ${2:\\$user}${3:, ${4:\\$unused}});",
+		"description": "Check to see if a user's real email address should be used for the \"From\" field."
+	},
+	"generate_email_signoff": {
+		"prefix": "generate_email_signoff",
+		"body": "generate_email_signoff();",
+		"description": "Generate a signoff for emails based on support settings"
+	},
+	"setnew_password_and_mail": {
+		"prefix": "setnew_password_and_mail",
+		"body": "setnew_password_and_mail(${1:\\$user}${2:, ${3:\\$fasthash}});",
+		"description": "Sets specified user's password and send the new password to the user via email."
+	},
+	"reset_password_and_mail": {
+		"prefix": "reset_password_and_mail",
+		"body": "reset_password_and_mail(${1:\\$user});",
+		"description": "Resets specified user's password and send the new password to the user via email."
+	},
+	"send_confirmation_email": {
+		"prefix": "send_confirmation_email",
+		"body": "send_confirmation_email(${1:\\$user}${2:, ${3:\\$confirmationurl}});",
+		"description": "Send email to specified user with confirmation text and activation link."
+	},
+	"send_password_change_confirmation_email": {
+		"prefix": "send_password_change_confirmation_email",
+		"body": "send_password_change_confirmation_email(${1:\\$user}, ${2:\\$resetrecord});",
+		"description": "Sends a password change confirmation email."
+	},
+	"send_password_change_info": {
+		"prefix": "send_password_change_info",
+		"body": "send_password_change_info(${1:\\$user});",
+		"description": "Sends an email containinginformation on how to change your password."
+	},
+	"email_is_not_allowed": {
+		"prefix": "email_is_not_allowed",
+		"body": "email_is_not_allowed(${1:\\$email});",
+		"description": "Check that an email is allowed.  It returns an error message if there was a problem."
+	},
+	"get_file_storage": {
+		"prefix": "get_file_storage",
+		"body": "get_file_storage(${1:\\$reset});",
+		"description": "Returns local file storage instance"
+	},
+	"get_file_browser": {
+		"prefix": "get_file_browser",
+		"body": "get_file_browser();",
+		"description": "Returns local file storage instance"
+	},
+	"get_file_packer": {
+		"prefix": "get_file_packer",
+		"body": "get_file_packer(${1:\\$mimetype});",
+		"description": "Returns file packer"
+	},
+	"valid_uploaded_file": {
+		"prefix": "valid_uploaded_file",
+		"body": "valid_uploaded_file(${1:\\$newfile});",
+		"description": "Returns current name of file on disk if it exists."
+	},
+	"get_max_upload_file_size": {
+		"prefix": "get_max_upload_file_size",
+		"body": "get_max_upload_file_size(${1:${2:\\$sitebytes}${3:, ${4:\\$coursebytes}${5:, ${6:\\$modulebytes}${7:, ${8:\\$unused}}}}});",
+		"description": "Returns the maximum size for uploading files."
+	},
+	"get_user_max_upload_file_size": {
+		"prefix": "get_user_max_upload_file_size",
+		"body": "get_user_max_upload_file_size(${1:\\$context}${2:, ${3:\\$sitebytes}${4:, ${5:\\$coursebytes}${6:, ${7:\\$modulebytes}${8:, ${9:\\$user}${10:, ${11:\\$unused}}}}}});",
+		"description": "Returns the maximum size for uploading files for the current user"
+	},
+	"get_max_upload_sizes": {
+		"prefix": "get_max_upload_sizes",
+		"body": "get_max_upload_sizes(${1:${2:\\$sitebytes}${3:, ${4:\\$coursebytes}${5:, ${6:\\$modulebytes}${7:, ${8:\\$custombytes}}}}});",
+		"description": "Returns an array of possible sizes in local language"
+	},
+	"get_directory_list": {
+		"prefix": "get_directory_list",
+		"body": "get_directory_list(${1:\\$rootdir}${2:, ${3:\\$excludefiles}${4:, ${5:\\$descend}${6:, ${7:\\$getdirs}${8:, ${9:\\$getfiles}}}}});",
+		"description": "Returns an array with all the filenames in all subdirectories, relative to the given rootdir."
+	},
+	"get_directory_size": {
+		"prefix": "get_directory_size",
+		"body": "get_directory_size(${1:\\$rootdir}${2:, ${3:\\$excludefile}});",
+		"description": "Adds up all the files in a directory and works out the size."
+	},
+	"display_size": {
+		"prefix": "display_size",
+		"body": "display_size(${1:\\$size});",
+		"description": "Converts bytes into display form"
+	},
+	"clean_filename": {
+		"prefix": "clean_filename",
+		"body": "clean_filename(${1:\\$string});",
+		"description": "Cleans a given filename by removing suspicious or troublesome characters"
+	},
+	"current_language": {
+		"prefix": "current_language",
+		"body": "current_language();",
+		"description": "Returns the code for the current language"
+	},
+	"get_parent_language": {
+		"prefix": "get_parent_language",
+		"body": "get_parent_language(${1:\\$lang});",
+		"description": "Returns parent language of current active language if defined"
+	},
+	"force_current_language": {
+		"prefix": "force_current_language",
+		"body": "force_current_language(${1:\\$language});",
+		"description": "Force the current language to get strings and dates localised in the given language."
+	},
+	"get_string_manager": {
+		"prefix": "get_string_manager",
+		"body": "get_string_manager(${1:\\$forcereload});",
+		"description": "Returns current string_manager instance."
+	},
+	"get_string": {
+		"prefix": "get_string",
+		"body": "get_string(${1:\\$identifier}${2:, ${3:\\$component}${4:, ${5:\\$a}${6:, ${7:\\$lazyload}}}});",
+		"description": "Returns a localized string."
+	},
+	"get_strings": {
+		"prefix": "get_strings",
+		"body": "get_strings(${1:\\$array}${2:, ${3:\\$component}});",
+		"description": "Converts an array of strings to their localized value."
+	},
+	"print_string": {
+		"prefix": "print_string",
+		"body": "print_string(${1:\\$identifier}${2:, ${3:\\$component}${4:, ${5:\\$a}}});",
+		"description": "Prints out a translated string."
+	},
+	"get_list_of_charsets": {
+		"prefix": "get_list_of_charsets",
+		"body": "get_list_of_charsets();",
+		"description": "Returns a list of charset codes"
+	},
+	"get_list_of_themes": {
+		"prefix": "get_list_of_themes",
+		"body": "get_list_of_themes();",
+		"description": "Returns a list of valid and compatible themes"
+	},
+	"get_emoticon_manager": {
+		"prefix": "get_emoticon_manager",
+		"body": "get_emoticon_manager();",
+		"description": "Factory function for emoticon_manager"
+	},
+	"rc4encrypt": {
+		"prefix": "rc4encrypt",
+		"body": "rc4encrypt(${1:\\$data});",
+		"description": "rc4encrypt"
+	},
+	"rc4decrypt": {
+		"prefix": "rc4decrypt",
+		"body": "rc4decrypt(${1:\\$data});",
+		"description": "rc4decrypt"
+	},
+	"endecrypt": {
+		"prefix": "endecrypt",
+		"body": "endecrypt (${1:\\$pwd}, ${2:\\$data}, ${3:\\$case});",
+		"description": "Based on a class by Mukul Sabharwal [mukulsabharwal @ yahoo.com]"
+	},
+	"is_valid_plugin_name": {
+		"prefix": "is_valid_plugin_name",
+		"body": "is_valid_plugin_name(${1:\\$name});",
+		"description": "This method validates a plug name. It is much faster than calling clean_param."
+	},
+	"get_plugin_list_with_function": {
+		"prefix": "get_plugin_list_with_function",
+		"body": "get_plugin_list_with_function(${1:\\$plugintype}, ${2:\\$function}${3:, ${4:\\$file}})",
+		"description": "Get a list of all the plugins of a given type that define a certain API function in a certain file. The plugin component names and function names are returned."
+	},
+	"get_plugins_with_function": {
+		"prefix": "get_plugins_with_function",
+		"body": "get_plugins_with_function(${1:\\$function}${2:, ${3:\\$file}${4:, ${5:\\$include}}});",
+		"description": "Get a list of all the plugins that define a certain API function in a certain file."
+	},
+	"get_list_of_plugins": {
+		"prefix": "get_list_of_plugins",
+		"body": "get_list_of_plugins(${1:${2:\\$directory}${3:, ${4:\\$exclude}${5:, ${6:\\$basedir}}}});",
+		"description": "Lists plugin-like directories within specified directory"
+	},
+	"plugin_callback": {
+		"prefix": "plugin_callback",
+		"body": "plugin_callback(${1:\\$type}, ${2:\\$name}, ${3:\\$feature}, ${4:\\$action}${5:, ${6:\\$params}${7:, ${8:\\$default}}});",
+		"description": "Invoke plugin's callback functions"
+	},
+	"component_callback": {
+		"prefix": "component_callback",
+		"body": "component_callback(${1:\\$component}, ${2:\\$function}${3:, ${4:\\$params_array}${5:, ${6:\\$default}}});",
+		"description": "Invoke component's callback functions"
+	},
+	"component_callback_exists": {
+		"prefix": "component_callback_exists",
+		"body": "component_callback_exists(${1:\\$component}, ${2:\\$function});",
+		"description": "Determine if a component callback exists and return the function name to call. Note that this function will include the required library files so that the functioname returned can be called directly."
+	},
+	"component_class_callback": {
+		"prefix": "component_class_callback",
+		"body": "component_class_callback(${1:\\$classname}, ${2:\\$methodname}, ${3:\\$params_array}${4:, ${5:\\$default}});",
+		"description": "Call the specified callback method on the provided class."
+	},
+	"plugin_supports": {
+		"prefix": "plugin_supports",
+		"body": "plugin_supports(${1:\\$type}, ${2:\\$name}, ${3:\\$feature}${4:, ${5:\\$default}});",
+		"description": "Checks whether a plugin supports a specified feature."
+	},
+	"check_php_version": {
+		"prefix": "check_php_version",
+		"body": "check_php_version(${1:\\$version});",
+		"description": "Returns true if the current version of PHP is greater that the specified one."
+	},
+	"moodle_needs_upgrading": {
+		"prefix": "moodle_needs_upgrading",
+		"body": "moodle_needs_upgrading();",
+		"description": "Determine if moodle installation requires update."
+	},
+	"moodle_major_version": {
+		"prefix": "moodle_major_version",
+		"body": "moodle_major_version(${1:\\$fromdisk});",
+		"description": "Returns the major version of this site"
+	},
+	"moodle_setlocale": {
+		"prefix": "moodle_setlocale",
+		"body": "moodle_setlocale(${1:\\$locale});",
+		"description": "Sets the system locale"
+	},
+	"count_words": {
+		"prefix": "count_words",
+		"body": "count_words(${1:\\$string});",
+		"description": "Count words in a string."
+	},
+	"count_letters": {
+		"prefix": "count_letters",
+		"body": "count_letters(${1:\\$string});",
+		"description": "Count letters in a string."
+	},
+	"random_string": {
+		"prefix": "random_string",
+		"body": "random_string(${1:\\$length});",
+		"description": "Generate and return a random string of the specified length."
+	},
+	"complex_random_string": {
+		"prefix": "complex_random_string",
+		"body": "complex_random_string(${1:\\$length});",
+		"description": "Generate a complex random string (useful for md5 salts)"
+	},
+	"random_bytes_emulate": {
+		"prefix": "random_bytes_emulate",
+		"body": "random_bytes_emulate(${1:\\$length});",
+		"description": "Try to generates cryptographically secure pseudo-random bytes."
+	},
+	"shorten_text": {
+		"prefix": "shorten_text",
+		"body": "shorten_text(${1:\\$text}${2:, ${3:\\$ideal}${3:, ${4:\\$exact}${5:, ${6:\\$ending}}}});",
+		"description": "Given some text (which may contain HTML) and an ideal length, this function truncates the text neatly on a word boundary if possible"
+	},
+	"shorten_filename": {
+		"prefix": "shorten_filename",
+		"body": "shorten_filename(${1:\\$filename}${2:, ${3:\\$length}${3:, ${4:\\$includehash}}});",
+		"description": "Shortens a given filename by removing characters positioned after the ideal string length. When the filename is too long, the file cannot be created on the filesystem due to exceeding max byte size. Limiting the filename to a certain size (considering multibyte characters) will prevent this."
+	},
+	"shorten_filenames": {
+		"prefix": "shorten_filenames",
+		"body": "shorten_filenames(${1:\\$path_array}${2:, ${3:\\$length}${3:, ${4:\\$includehash}}});",
+		"description": "Shortens a given array of filenames by removing characters positioned after the ideal string length."
+	},
+	"getweek": {
+		"prefix": "getweek",
+		"body": "getweek(${1:\\$startdate}, ${2:\\$thedate});",
+		"description": "Given dates in seconds, how many weeks is the date from startdate The first week is 1, the second 2 etc ..."
+	},
+	"generate_password": {
+		"prefix": "generate_password",
+		"body": "generate_password(${1:\\$maxlen});",
+		"description": "Returns a randomly generated password of length $maxlen.  inspired by"
+	},
+	"format_float": {
+		"prefix": "format_float",
+		"body": "format_float(${1:\\$float}${2:, ${3:\\$decimalpoints}${4:, ${5:\\$localized}${6:, ${1:\\$stripzeros}}}});",
+		"description": "Given a float, prints it nicely."
+	},
+	"unformat_float": {
+		"prefix": "unformat_float",
+		"body": "unformat_float(${1:\\$localefloat}${2:, ${3:\\$strict}});",
+		"description": "Converts locale specific floating point/comma number back to standard PHP float value"
+	},
+	"swapshuffle": {
+		"prefix": "swapshuffle",
+		"body": "swapshuffle(${1:\\$array});",
+		"description": "Given a simple array, this shuffles it up just like shuffle() Unlike PHP's shuffle() this function works on any machine."
+	},
+	"swapshuffle_assoc": {
+		"prefix": "swapshuffle_assoc",
+		"body": "swapshuffle_assoc(${1:\\$array});",
+		"description": "swapshuffle_assoc"
+	},
+	"draw_rand_array": {
+		"prefix": "draw_rand_array",
+		"body": "draw_rand_array(${1:\\$array}, ${2:\\$draws});",
+		"description": "Given an arbitrary array, and a number of draws, this function returns an array with that amount of items.  The indexes are retained."
+	},
+	"microtime_diff": {
+		"prefix": "microtime_diff",
+		"body": "microtime_diff(${1:\\$a}, ${2:\\$b});",
+		"description": "Calculate the difference between two microtimes"
+	},
+	"make_menu_from_list": {
+		"prefix": "make_menu_from_list",
+		"body": "make_menu_from_list(${1:\\$list}${2:, ${3:\\$separator}});",
+		"description": "Given a list (eg a,b,c,d,e) this function returns an array of 1->a, 2->b, 3->c etc"
+	},
+	"make_grades_menu": {
+		"prefix": "make_grades_menu",
+		"body": "make_grades_menu(${1:\\$gradingtype});",
+		"description": "Creates an array that represents all the current grades that can be chosen using the given grading type."
+	},
+	"make_unique_id_code": {
+		"prefix": "make_unique_id_code",
+		"body": "make_unique_id_code(${1:\\$extra});",
+		"description": "make_unique_id_code"
+	},
+	"address_in_subnet": {
+		"prefix": "address_in_subnet",
+		"body": "address_in_subnet(${1:\\$addr}, ${2:\\$subnetstr});",
+		"description": "Function to check the passed address is within the passed subnet"
+	},
+	"mtrace": {
+		"prefix": "mtrace",
+		"body": "mtrace(${1:\\$string}${2:, ${3:\\$eol}${4:, ${5:\\$sleep}}});",
+		"description": "For outputting debugging info"
+	},
+	"cleardoubleslashes": {
+		"prefix": "cleardoubleslashes",
+		"body": "cleardoubleslashes (${1:\\$path});",
+		"description": "Replace 1 or more slashes or backslashes to 1 slash"
+	},
+	"remoteip_in_list": {
+		"prefix": "remoteip_in_list",
+		"body": "remoteip_in_list(${1:\\$list});",
+		"description": "Is current ip in give list?"
+	},
+	"getremoteaddr": {
+		"prefix": "getremoteaddr",
+		"body": "getremoteaddr(${1:\\$default});",
+		"description": "Returns most reliable client address"
+	},
+	"cleanremoteaddr": {
+		"prefix": "cleanremoteaddr",
+		"body": "cleanremoteaddr(${1:\\$addr}${2:, ${3:\\$compress}});",
+		"description": "Cleans an ip address. Internal addresses are now allowed."
+	},
+	"ip_is_public": {
+		"prefix": "ip_is_public",
+		"body": "ip_is_public(${1:\\$ip});",
+		"description": "Is IP address a public address?"
+	},
+	"fullclone": {
+		"prefix": "fullclone",
+		"body": "fullclone(${1:\\$thing});",
+		"description": "This function will make a complete copy of anything it's given, regardless of whether it's an object or not."
+	},
+	"bounded_number": {
+		"prefix": "bounded_number",
+		"body": "bounded_number(${1:\\$min}, ${2:\\$value}, ${3:\\$max});",
+		"description": "Used to make sure that $min <= $value <= $max"
+	},
+	"array_is_nested": {
+		"prefix": "array_is_nested",
+		"body": "array_is_nested(${1:\\$array});",
+		"description": "Check if there is a nested array within the passed array"
+	},
+	"get_performance_info": {
+		"prefix": "get_performance_info",
+		"body": "get_performance_info();",
+		"description": "get_performance_info() pairs up with init_performance_info() loaded in setup.php. Returns an array with 'html' and 'txt' values ready for use, and each of the individual stats provided separately as well."
+	},
+	"remove_dir": {
+		"prefix": "remove_dir",
+		"body": "remove_dir(${1:\\$dir}${2:, ${3:\\$contentonly}});",
+		"description": "Delete directory or only its content"
+	},
+	"object_property_exists": {
+		"prefix": "object_property_exists",
+		"body": "object_property_exists(${1:\\$obj}, ${2:\\$property});",
+		"description": "Detect if an object or a class contains a given property will take an actual object or the name of a class"
+	},
+	"convert_to_array": {
+		"prefix": "convert_to_array",
+		"body": "convert_to_array(${1:\\$var});",
+		"description": "Converts an object into an associative array"
+	},
+	"custom_script_path": {
+		"prefix": "custom_script_path",
+		"body": "custom_script_path();",
+		"description": "Detect a custom script replacement in the data directory that will replace an existing moodle script"
+	},
+	"is_mnet_remote_user": {
+		"prefix": "is_mnet_remote_user",
+		"body": "is_mnet_remote_user(${1:\\$user});",
+		"description": "Returns whether or not the user object is a remote MNET user. This function is in moodlelib because it does not rely on loading any of the MNET code."
+	},
+	"setup_lang_from_browser": {
+		"prefix": "setup_lang_from_browser",
+		"body": "setup_lang_from_browser();",
+		"description": "This function will search for browser prefereed languages, setting Moodle to use the best one available if $SESSION->lang is undefined"
+	},
+	"is_proxybypass": {
+		"prefix": "is_proxybypass",
+		"body": "is_proxybypass(${1:\\$url});",
+		"description": "Check if $url matches anything in proxybypass list"
+	},
+	"is_newnav": {
+		"prefix": "is_newnav",
+		"body": "is_newnav(${1:\\$navigation});",
+		"description": "Check if the passed navigation is of the new style"
+	},
+	"in_object_vars": {
+		"prefix": "in_object_vars",
+		"body": "in_object_vars(${1:\\$var}, ${2:\\$object});",
+		"description": "Checks whether the given variable name is defined as a variable within the given object."
+	},
+	"object_array_unique": {
+		"prefix": "object_array_unique",
+		"body": "object_array_unique(${1:\\$array}${2:, ${3:\\$keepkeyassoc}});",
+		"description": "Returns an array without repeated objects."
+	},
+	"is_primary_admin": {
+		"prefix": "is_primary_admin",
+		"body": "is_primary_admin(${1:\\$userid});",
+		"description": "Is a userid the primary administrator?"
+	},
+	"get_site_identifier": {
+		"prefix": "get_site_identifier",
+		"body": "get_site_identifier();",
+		"description": "Returns the site identifier"
+	},
+	"check_consecutive_identical_characters": {
+		"prefix": "check_consecutive_identical_characters",
+		"body": "check_consecutive_identical_characters(${1:\\$password}, ${2:\\$maxchars});",
+		"description": "Check whether the given password has no more than the specified number of consecutive identical characters."
+	},
+	"partial": {
+		"prefix": "partial",
+		"body": "partial();",
+		"description": "Helper function to do partial function binding. so we can use it for preg_replace_callback, for example this works with php functions, user functions, static methods and class methods it returns you a callback that you can pass on like so:"
+	},
+	"get_mnet_environment": {
+		"prefix": "get_mnet_environment",
+		"body": "get_mnet_environment();",
+		"description": "helper function to load up and initialise the mnet environment this must be called before you use mnet functions."
+	},
+	"get_mnet_remote_client": {
+		"prefix": "get_mnet_remote_client",
+		"body": "get_mnet_remote_client();",
+		"description": "during xmlrpc server code execution, any code wishing to access information about the remote peer must use this to get it."
+	},
+	"set_mnet_remote_client": {
+		"prefix": "set_mnet_remote_client",
+		"body": "set_mnet_remote_client(${1:\\$client});",
+		"description": "during the xmlrpc server code execution, this will be called to setup the object returned by {@link get_mnet_remote_client}"
+	},
+	"mnet_get_idp_jump_url": {
+		"prefix": "mnet_get_idp_jump_url",
+		"body": "mnet_get_idp_jump_url(${1:\\$user});",
+		"description": "return the jump url for a given remote user this is used for rewriting forum post links in emails, etc"
+	},
+	"get_home_page": {
+		"prefix": "get_home_page",
+		"body": "get_home_page();",
+		"description": "Gets the homepage to use for the current user"
+	},
+	"get_course_display_name_for_list": {
+		"prefix": "get_course_display_name_for_list",
+		"body": "get_course_display_name_for_list(${1:\\$course});",
+		"description": "ets the name of a course to be displayed when showing a list of courses. By default this is just $course->fullname but user can configure it. The result of this function should be passed through print_string."
+	},
+	"unserialize_array": {
+		"prefix": "unserialize_array",
+		"body": "unserialize_array(${1:\\$expression});",
+		"description": "Safe analogue of unserialize() that can only parse arrays"
+	},
+	"get_callable_name": {
+		"prefix": "get_callable_name",
+		"body": "get_callable_name(${1:\\$callable});",
+		"description": "Get human readable name describing the given callable."
+	}
+}

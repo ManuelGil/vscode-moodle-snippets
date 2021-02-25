@@ -1,0 +1,82 @@
+{
+    "xml": {
+        "prefix": [
+            "xml",
+            "<?xml"
+        ],
+        "body": [
+            "<?xml version=\"1.0\" encoding=\"UTF-8\"?>",
+            "<?xml-stylesheet type=\"text/xsl\" href=\"correct-xmldb-format.xslt\"?>",
+            "<XMLDB PATH=\"mod/module-name/db\" VERSION=\"2013013100\"",
+            "\t\txmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"",
+            "\t\txsi:noNamespaceSchemaLocation=\"../../../lib/xmldb/xmldb.xsd\">",
+            "\t<TABLES>",
+            "\t\t<TABLE NAME=\"${name}\">",
+            "\t\t\t<FIELDS>",
+            "\t\t\t\t<FIELD NAME=\"id\" TYPE=\"int\" />",
+            "\t\t\t\t<FIELD NAME=\"name\" TYPE=\"char\" />",
+            "\t\t\t\t<FIELD NAME=\"description\" TYPE=\"text\" NOTNULL=\"false\" />",
+            "\t\t\t\t<FIELD NAME=\"date\" TYPE=\"int\" DEFAULT=\"0\" COMMENT=\"delivery time\" />",
+            "\t\t\t</FIELDS>",
+            "\t\t\t<KEYS>",
+            "\t\t\t\t<KEY NAME=\"primary\" FIELDS=\"id\" />",
+            "\t\t\t\t<KEY NAME=\"name\" FIELDS=\"name\" />",
+            "\t\t\t</KEYS>",
+            "\t\t\t<INDEXES>",
+            "\t\t\t\t<INDEX NAME=\"date\" FIELDS=\"date\" />",
+            "\t\t\t</INDEXES>",
+            "\t\t</TABLE>",
+            "\t</TABLES>",
+            "</XMLDB>"
+        ],
+        "description": "XML snippets"
+    },
+    "TABLE": {
+        "prefix": [
+            "TABLE",
+            "<TABLE "
+        ],
+        "body": [
+            "<TABLE NAME=\"${name}\">",
+            "\t\t\t<FIELDS>",
+            "\t\t\t\t<FIELD NAME=\"id\" TYPE=\"int\" />",
+            "\t\t\t\t<FIELD NAME=\"name\" TYPE=\"char\" />",
+            "\t\t\t\t<FIELD NAME=\"description\" TYPE=\"text\" NOTNULL=\"false\" />",
+            "\t\t\t\t<FIELD NAME=\"date\" TYPE=\"int\" DEFAULT=\"0\" COMMENT=\"delivery time\" />",
+            "\t\t\t</FIELDS>",
+            "\t\t\t<KEYS>",
+            "\t\t\t\t<KEY NAME=\"primary\" FIELDS=\"id\" />",
+            "\t\t\t\t<KEY NAME=\"name\" FIELDS=\"name\" />",
+            "\t\t\t</KEYS>",
+            "\t\t\t<INDEXES>",
+            "\t\t\t\t<INDEX NAME=\"date\" FIELDS=\"date\" />",
+            "\t\t\t</INDEXES>",
+            "\t\t</TABLE>"
+        ],
+        "description": "XML snippets"
+    },
+    "FIELD": {
+        "prefix": [
+            "FIELD",
+            "<FIELD "
+        ],
+        "body": "<FIELD NAME=\"id\" TYPE=\"int\" />",
+        "description": "XML snippets"
+    },
+    "KEY": {
+        "prefix": [
+            "KEY",
+            "<KEY "
+        ],
+        "body": "<KEY NAME=\"primary\" FIELDS=\"id\" />",
+        "description": "XML snippets"
+    },
+    "INDEX": {
+        "prefix": [
+            "INDEX",
+            "<INDEX "
+        ],
+        "body": "<INDEX NAME=\"date\" FIELDS=\"date\" />",
+        "description": "XML snippets"
+    }
+}

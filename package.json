@@ -1,0 +1,154 @@
+{
+    "name": "vscode-moodle-snippets",
+    "displayName": "Moodle Pack",
+    "description": "Moodle - snippets, autocomplete, emmet & syntax for VSCode editor",
+    "version": "1.0.0",
+    "icon": "icon.png",
+    "license": "MIT",
+    "publisher": "imgildev",
+    "author": {
+        "name": "Manuel Gil",
+        "url": "https://github.com/ManuelGil"
+    },
+    "engines": {
+        "vscode": "^1.53.0"
+    },
+    "categories": [
+        "Snippets",
+        "Keymaps",
+        "Other"
+    ],
+    "keywords": [
+        "css",
+        "html",
+        "mustache",
+        "moodle",
+        "snippets",
+        "completion",
+        "template"
+    ],
+    "homepage": "https://github.com/ManuelGil/vscode-moodle-snippets",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/ManuelGil/vscode-moodle-snippets"
+    },
+    "bugs": {
+        "url": "https://github.com/ManuelGil/vscode-moodle-snippets/issues"
+    },
+    "activationEvents": [
+        "*"
+    ],
+    "main": "./extension.js",
+    "contributes": {
+        "snippets": [
+            {
+                "language": "php",
+                "path": "./snippets/GLOBAL/CFG.json"
+            },
+            {
+                "language": "php",
+                "path": "./snippets/GLOBAL/DB.json"
+            },
+            {
+                "language": "php",
+                "path": "./snippets/GLOBAL/OUTPUT.json"
+            },
+            {
+                "language": "php",
+                "path": "./snippets/GLOBAL/PAGE.json"
+            },
+            {
+                "language": "php",
+                "path": "./snippets/GLOBAL/USER.json"
+            },
+            {
+                "language": "php",
+                "path": "./snippets/lib/moodlelib.json"
+            },
+            {
+                "language": "php",
+                "path": "./snippets/php-language.json"
+            },
+            {
+                "language": "mustache",
+                "path": "./snippets/mustache-language.json"
+            },
+            {
+                "language": "xml",
+                "path": "./snippets/xml-language.json"
+            }
+        ],
+        "languages": [
+            {
+                "id": "html",
+                "aliases": [
+                    "HTML (Mustache)",
+                    "Mustache"
+                ],
+                "extensions": [
+                    ".mustache"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "mustache",
+                "scopeName": "source.mustache",
+                "path": "./syntaxes/mustache.tmLanguage.json"
+            }
+        ],
+        "commands": [
+            {
+                "command": "moodle.file.mustache",
+                "title": "Moodle: New Mustache File"
+            },
+            {
+                "command": "moodle.file.php",
+                "title": "Moodle: New PHP File"
+            },
+            {
+                "command": "moodle.file.xml",
+                "title": "Moodle: New XML File"
+            },
+            {
+                "command": "moodle.table",
+                "title": "Moodle: New Table File"
+            },
+            {
+                "command": "moodle.version",
+                "title": "Moodle: New Version File"
+            }
+        ],
+        "keybindings": [
+            {
+                "key": "ctrl+alt+m",
+                "command": "moodle.file.mustache"
+            },
+            {
+                "key": "ctrl+alt+p",
+                "command": "moodle.file.php"
+            },
+            {
+                "key": "ctrl+shift+v",
+                "command": "moodle.version"
+            }
+        ]
+    },
+    "scripts": {
+        "lint": "eslint .",
+        "pretest": "npm run lint",
+        "test": "node ./test/runTest.js"
+    },
+    "devDependencies": {
+        "@types/vscode": "^1.53.0",
+        "@types/glob": "^7.1.3",
+        "@types/mocha": "^8.0.4",
+        "@types/node": "^12.11.7",
+        "eslint": "^7.19.0",
+        "glob": "^7.1.6",
+        "mocha": "^8.2.1",
+        "typescript": "^4.1.3",
+        "vscode-test": "^1.5.0"
+    }
+}
