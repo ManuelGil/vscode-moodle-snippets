@@ -456,11 +456,11 @@ Type part of snippet, press `Tab` or `Enter`, and the snippet unfolds. Below is 
 
 #### XML Snippets
 
-| Snippet | Purpose                             |
-| ------- | ----------------------------------- |
-| FIELD   | <FIELD NAME="id" TYPE="int" />      |
-| KEY     | <KEY NAME="primary" FIELDS="id" />  |
-| INDEX   | <INDEX NAME="date" FIELDS="date" /> |
+| Snippet | Purpose                                     |
+| ------- | ------------------------------------------- |
+| FIELD   | &lt;FIELD NAME="id" TYPE="int" /&gt;        |
+| KEY     | &lt;KEY NAME="primary" FIELDS="id" /&gt;    |
+| INDEX   | &lt;INDEX NAME="date" FIELDS="date" /&gt;   |
 
 ### Commands
 
