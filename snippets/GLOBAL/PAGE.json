@@ -862,5 +862,45 @@
 		],
 		"body": "\\$PAGE->requestorigin",
 		"description": "Returns the origin of current request. Note: constants are not required because we need to use these values in logging and reports."
+	},
+	"$PAGE->navbar->ignore_active": {
+		"prefix": [
+			"page_navbar_ignore_active",
+			"$PAGE->navbar->ignore_active"
+		],
+		"body": "\\$PAGE->navbar->ignore_active();",
+		"description": "Moodle snippets"
+	},
+	"$PAGE->navbar->add": {
+		"prefix": [
+			"page_navbar_add",
+			"$PAGE->navbar->add"
+		],
+		"body": "\\$PAGE->navbar->add(${1:get_string('name of thing')}, ${2: new moodle_url('\/a\/link\/if\/you\/want\/one.php')});",
+		"description": "Moodle snippets"
+	},
+	"$PAGE->settingsnav->add": {
+		"prefix": [
+			"page_settingsnav_add",
+			"$PAGE->settingsnav->add"
+		],
+		"body": "\\$PAGE->settingsnav->add(${1:get_string('setting')}, ${2: new moodle_url('\/a\/link\/if\/you\/want\/one.php')}, ${3: navigation_node::TYPE_CONTAINER});",
+		"description": "Moodle snippets"
+	},
+	"$PAGE->navigation->find": {
+		"prefix": [
+			"page_navigation_find",
+			"$PAGE->navigation->find"
+		],
+		"body": "\\$PAGE->navigation->find(${1:\\$courseid}, ${2: navigation_node::TYPE_COURSE});",
+		"description": "Moodle snippets"
+	},
+	"$PAGE->requires": {
+		"prefix": [
+			"page_requires",
+			"$PAGE->requires"
+		],
+		"body": "\\$PAGE->requires",
+		"description": "Moodle snippets"
 	}
 }

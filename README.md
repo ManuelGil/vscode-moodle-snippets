@@ -12,10 +12,11 @@ Based on [Moodle - snippets & autocomplete](https://marketplace.visualstudio.com
 
 ## Features
 
-- Mustache Format
+- Mustache Grammar
+- XML Schema
 - [Snippets](#snippets)
 - [Commands](#commands)
-- [Keymaps](#keymaps)
+- [Keyboard Shortcuts](#keyboard-shortcuts)
 
 ## Other Repositories
 
@@ -276,6 +277,15 @@ Type part of snippet, press `Tab` or `Enter`, and the snippet unfolds. Below is 
 | output_url_select                   | $OUTPUT->url_select                   |
 | output_user_menu                    | $OUTPUT->user_menu                    |
 | output_user_picture                 | $OUTPUT->user_picture                 |
+| output_label                        | $OUTPUT->label                        |
+| output_link                         | $OUTPUT->link                         |
+| output_image                        | $OUTPUT->image                        |
+| output_form                         | $OUTPUT->form                         |
+| output_button                       | $OUTPUT->button                       |
+| output_htmllist                     | $OUTPUT->htmllist                     |
+| output_select                       | $OUTPUT->select                       |
+| output_checkbox                     | $OUTPUT->checkbox                     |
+| output_old_icon_url                 | $OUTPUT->old_icon_url                 |
 
 #### $PAGE Snippets
 
@@ -389,6 +399,11 @@ Type part of snippet, press `Tab` or `Enter`, and the snippet unfolds. Below is 
 | page_flatnav                                  | $PAGE->flatnav                                   |
 | page_requestip                                | $PAGE->requestip                                 |
 | page_requestorigin                            | $PAGE->requestorigin                             |
+| page_navbar_ignore_active                     | $PAGE->navbar->ignore_active                     |
+| page_navbar_add                               | $PAGE->navbar->add                               |
+| page_settingsnav_add                          | $PAGE->settingsnav->add                          |
+| page_navigation_find                          | $PAGE->navigation->find                          |
+| page_requires                                 | $PAGE->requires                                  |
 
 #### $USER Snippets
 
@@ -443,6 +458,37 @@ Type part of snippet, press `Tab` or `Enter`, and the snippet unfolds. Below is 
 | user_moodlenetprofile  | $USER->moodlenetprofile  |
 | user_sesskey           | $USER->sesskey           |
 
+#### Form Snippets
+
+| Snippet                           | Purpose                                   |
+| --------------------------------- | ----------------------------------------- |
+| add_element_button                | addElement('button', ... );               |
+| add_element_checkbox              | addElement('checkbox', ... );             |
+| add_element_advcheckbox           | addElement('advcheckbox', ... );          |
+| add_element_choosecoursefile      | addElement('choosecoursefile', ... );     |
+| add_element_date_time_selector    | addElement('date_time_selector', ... );   |
+| add_element_select                | addElement('select', ... );               |
+| add_element_password              | addElement('password', ... );             |
+| add_element_hidden                | addElement('hidden', ... );               |
+| add_element_html                  | addElement('html', ... );                 |
+| add_element_modgrade              | addElement('modgrade', ... );             |
+| add_element_static                | addElement('static', ... );               |
+| add_element_text                  | addElement('text', ... );                 |
+| add_element_textarea              | addElement('textarea', ... );             |
+| add_element_recaptcha             | addElement('recaptcha', ... );            |
+| add_element_passwordunmask        | addElement('passwordunmask', ... );       |
+| add_element_selectyesno           | addElement('selectyesno', ... );          |
+| add_element_selectwithlink        | addElement('selectwithlink', ... );       |
+| add_element_date_selector         | addElement('date_selector', ... );        |
+| add_element_duration              | addElement('duration', ... );             |
+| add_element_editor                | addElement('editor', ... );               |
+| add_element_filepicker            | addElement('filepicker', ... );           |
+| add_element_filemanager           | addElement('filemanager', ... );          |
+| add_element_tags                  | addElement('tags', ... );                 |
+| add_element_modvisible            | addElement('modvisible', ... );           |
+| add_element_grading               | addElement('grading', ... );              |
+| add_element_questioncategory      | addElement('questioncategory', ... );     |
+
 #### Mustache Snippets
 
 | Snippet          | Purpose                     |
@@ -466,7 +512,7 @@ Type part of snippet, press `Tab` or `Enter`, and the snippet unfolds. Below is 
 
 ![commands](https://raw.githubusercontent.com/ManuelGil/vscode-moodle-snippets/main/readme/commands.gif)
 
-| Command                   | Purpose                                    |
+| Commands                  | Purpose                                    |
 | ------------------------- | ------------------------------------------ |
 | Moodle: New Mustache File | Create a new file with .mustache extension |
 | Moodle: New PHP File      | Create a new file with .php extension      |
@@ -474,11 +520,11 @@ Type part of snippet, press `Tab` or `Enter`, and the snippet unfolds. Below is 
 | Moodle: New Table File    | Create a new file with table structure     |
 | Moodle: New Version File  | Create a new file with version structure   |
 
-### Keymaps
+### Keyboard Shortcuts
 
-![commands](https://raw.githubusercontent.com/ManuelGil/vscode-moodle-snippets/main/readme/keymaps.gif)
+![shortcuts](https://raw.githubusercontent.com/ManuelGil/vscode-moodle-snippets/main/readme/shortcuts.gif)
 
-| Keymap           | Purpose                   |
+| Shortcuts        | Purpose                   |
 | ---------------- | ------------------------- |
 | ctrl + alt + m   | Moodle: New Mustache File |
 | ctrl + alt + p   | Moodle: New PHP File      |

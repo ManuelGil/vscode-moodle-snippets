@@ -886,5 +886,77 @@
 		],
 		"body": "\\$OUTPUT::prepare_classes(${1:\\$classes});",
 		"description": "Given an array or space-separated list of classes, prepares and returns the HTML class attribute value."
+	},
+	"$OUTPUT->label": {
+		"prefix": [
+			"output_label",
+			"$OUTPUT->label"
+		],
+		"body": "\\$OUTPUT->label(${1:html_label \\$label});",
+		"description": "Moodle snippets"
+	},
+	"$OUTPUT->link": {
+		"prefix": [
+			"output_link",
+			"$OUTPUT->link"
+		],
+		"body": "\\$OUTPUT->link(${1:\\$link});",
+		"description": "Moodle snippets"
+	},
+	"$OUTPUT->image": {
+		"prefix": [
+			"output_image",
+			"$OUTPUT->image"
+		],
+		"body": "\\$OUTPUT->image();",
+		"description": "Moodle snippets"
+	},
+	"$OUTPUT->form": {
+		"prefix": [
+			"output_form",
+			"$OUTPUT->form"
+		],
+		"body": "\\$OUTPUT->form(${1:\\$form}, ${2: \\$contents});",
+		"description": "Moodle snippets"
+	},
+	"$OUTPUT->button": {
+		"prefix": [
+			"output_button",
+			"$OUTPUT->button"
+		],
+		"body": "\\$OUTPUT->button(${1:\\$formwithbutton});",
+		"description": "Moodle snippets"
+	},
+	"$OUTPUT->htmllist": {
+		"prefix": [
+			"output_htmllist",
+			"$OUTPUT->htmllist"
+		],
+		"body": "\\$OUTPUT->htmllist(${1:\\$list});",
+		"description": "Moodle snippets"
+	},
+	"$OUTPUT->select": {
+		"prefix": [
+			"output_select",
+			"$OUTPUT->select"
+		],
+		"body": "\\$OUTPUT->select(${1:\\$select});",
+		"description": "Moodle snippets"
+	},
+	"$OUTPUT->checkbox": {
+		"prefix": [
+			"output_checkbox",
+			"$OUTPUT->checkbox"
+		],
+		"body": "\\$OUTPUT->checkbox(${1:\\$checkbox}, ${2: 'donotask'});",
+		"description": "Moodle snippets"
+	},
+	"$OUTPUT->old_icon_url": {
+		"prefix": [
+			"output_old_icon_url",
+			"$OUTPUT->old_icon_url"
+		],
+		"body": "\\$OUTPUT->old_icon_url(${1:'moodlelogo'});",
+		"description": "Moodle snippets"
 	}
 }

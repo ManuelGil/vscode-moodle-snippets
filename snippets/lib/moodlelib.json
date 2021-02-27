@@ -646,7 +646,7 @@
 	},
 	"get_plugin_list_with_function": {
 		"prefix": "get_plugin_list_with_function",
-		"body": "get_plugin_list_with_function(${1:\\$plugintype}, ${2:\\$function}${3:, ${4:\\$file}})",
+		"body": "get_plugin_list_with_function(${1:\\$plugintype}, ${2:\\$function}${3:, ${4:\\$file}});",
 		"description": "Get a list of all the plugins of a given type that define a certain API function in a certain file. The plugin component names and function names are returned."
 	},
 	"get_plugins_with_function": {
@@ -963,5 +963,1147 @@
 		"prefix": "get_callable_name",
 		"body": "get_callable_name(${1:\\$callable});",
 		"description": "Get human readable name describing the given callable."
+	},
+	"get_context_instance": {
+		"prefix": "get_context_instance",
+		"body": "get_context_instance(${1:\\$contextlevel}, ${2:\\$instance = 0}, ${3:\\$strictness = IGNORE_MISSING});",
+		"description": "Moodle snippets"
+	},
+	"get_context_instance_by_id": {
+		"prefix": "get_context_instance_by_id",
+		"body": "get_context_instance_by_id(${1:\\$id}, ${2:\\$strictness = IGNORE_MISSING});",
+		"description": "Moodle snippets"
+	},
+	"has_capability": {
+		"prefix": "has_capability",
+		"body": "has_capability(${1:\\$capability}, ${2:context \\$context}, ${3:\\$user = null}, ${4:\\$doanything = true});",
+		"description": "Moodle snippets"
+	},
+	"require_capability": {
+		"prefix": "require_capability",
+		"body": "require_capability(${1:\\$capability}, ${2:context \\$context}, ${3:\\$userid = null}, ${4:\\$doanything = true}, ${5:\\$errormessage = 'nopermissions'}, ${6:\\$stringfile = ''});",
+		"description": "Moodle snippets"
+	},
+	"get_users_by_capability": {
+		"prefix": "get_users_by_capability",
+		"body": "get_users_by_capability(${1:context \\$context}, ${2:\\$capability}, ${3:\\$fields = ''}, ${4:\\$sort = ''}, ${5:\\$limitfrom = ''}, ${6:\\$limitnum = ''}, ${7:\\$groups = ''}, ${8:\\$exceptions = ''}, ${9:\\$doanything_ignored = null}, ${10:\\$view_ignored = null}, ${11:\\$useviewallgroups = false});",
+		"description": "Moodle snippets"
+	},
+	"isguestuser": {
+		"prefix": "isguestuser",
+		"body": "isguestuser(${1:\\$user = null});",
+		"description": "Moodle snippets"
+	},
+	"isloggedin": {
+		"prefix": "isloggedin",
+		"body": "isloggedin();",
+		"description": "Moodle snippets"
+	},
+	"is_siteadmin": {
+		"prefix": "is_siteadmin",
+		"body": "is_siteadmin(${1:\\$user_or_id = null});",
+		"description": "Moodle snippets"
+	},
+	"is_guest": {
+		"prefix": "is_guest",
+		"body": "is_guest(${1:context \\$context}, ${2:\\$user = null});",
+		"description": "Moodle snippets"
+	},
+	"is_viewing": {
+		"prefix": "is_viewing",
+		"body": "is_viewing(${1:context \\$context}, ${2: \\$user = null}, ${3: \\$withcapability = ''});",
+		"description": "Moodle snippets"
+	},
+	"allow_commit": {
+		"prefix": "allow_commit",
+		"body": "allow_commit();",
+		"description": "Moodle snippets"
+	},
+	"get_course": {
+		"prefix": "get_course",
+		"body": "get_course(${1:\\$courseid});",
+		"description": "Moodle snippets"
+	},
+	"get_file_content": {
+		"prefix": "get_file_content",
+		"body": "get_file_content(${1:'userfile'});",
+		"description": "Moodle snippets"
+	},
+	"get_new_filename": {
+		"prefix": "get_new_filename",
+		"body": "get_new_filename(${1:'userfile'});",
+		"description": "Moodle snippets"
+	},
+	"save_file": {
+		"prefix": "save_file",
+		"body": "save_file(${1:'userfile'}, ${2: \\$fullpath}, ${3: \\$override});",
+		"description": "Moodle snippets"
+	},
+	"save_stored_file": {
+		"prefix": "save_stored_file",
+		"body": "save_stored_file(${1:'userfile'}, ${2: ...});",
+		"description": "Moodle snippets"
+	},
+	"file_get_submitted_draft_itemid": {
+		"prefix": "file_get_submitted_draft_itemid",
+		"body": "file_get_submitted_draft_itemid(${1:'entry'});",
+		"description": "Moodle snippets"
+	},
+	"file_prepare_draft_area": {
+		"prefix": "file_prepare_draft_area",
+		"body": "file_prepare_draft_area(${1:\\$draftid_editor}, ${2: \\$context->id}, ${3: 'mod_MYMOD'}, ${4: 'entry'}, ${5: \\$entry->id}, ${6: array('subdirs'=>true)}, ${7: \\$entry->definition});",
+		"description": "Moodle snippets"
+	},
+	"file_save_draft_area_files": {
+		"prefix": "file_save_draft_area_files",
+		"body": "file_save_draft_area_files(${1:\\$data->attachments}, ${2: \\$context->id}, ${3: 'mod_glossary'}, ${4: 'attachment'}, ${5: \\$entry->id}, array(${6:'subdirs' => 0}, ${7: 'maxbytes' => \\$maxbytes}, ${8: 'maxfiles' => 50}));",
+		"description": "Moodle snippets"
+	},
+	"file_rewrite_pluginfile_urls": {
+		"prefix": "file_rewrite_pluginfile_urls",
+		"body": "file_rewrite_pluginfile_urls(${1:\\$messagetext}, ${2: 'pluginfile.php'}, ${3: \\$context->id}, ${4: 'mod_mymodule'}, ${5: 'proper_file_area'}, ${6: \\$itemid});",
+		"description": "Moodle snippets"
+	},
+	"file_prepare_standard_editor": {
+		"prefix": "file_prepare_standard_editor",
+		"body": "file_prepare_standard_editor(${1:\\$data}, ${2: 'textfield'}, ${3: \\$textfieldoptions}, ${4: \\$context}, ${5: 'mod_somemodule'}, ${6: 'somearea'}, ${7: \\$data->id});",
+		"description": "Moodle snippets"
+	},
+	"file_prepare_standard_filemanager": {
+		"prefix": "file_prepare_standard_filemanager",
+		"body": "file_prepare_standard_filemanager(${1:\\$entry}, ${2: 'attachment'}, ${3: \\$attachmentoptions}, ${4: \\$context}, ${5: 'mod_mymod'}, ${6: 'attachment'}, ${7: \\$entry->id});",
+		"description": "Moodle snippets"
+	},
+	"file_postupdate_standard_filemanager": {
+		"prefix": "file_postupdate_standard_filemanager",
+		"body": "file_postupdate_standard_filemanager(${1:\\$entry}, ${2: 'attachment'}, ${3: \\$attachmentoptions}, ${4: \\$context}, ${5: 'mod_mymod'}, ${6: 'attachment'}, ${7: \\$entry->id});",
+		"description": "Moodle snippets"
+	},
+	"file_postupdate_standard_editor": {
+		"prefix": "file_postupdate_standard_editor",
+		"body": "file_postupdate_standard_editor(${1:\\$data}, ${2: 'textfield'}, ${3: \\$textfieldoptions}, ${4: \\$context}, ${5: 'mod_somemodule'}, ${6: 'somearea'}, ${7: \\$data->id});",
+		"description": "Moodle snippets"
+	},
+	"make_pluginfile_url": {
+		"prefix": "make_pluginfile_url",
+		"body": "make_pluginfile_url(${1:\\$file->get_contextid()}, ${2: \\$file->get_component()}, ${3: \\$file->get_filearea()}, ${4: \\$file->get_itemid()}, ${5: \\$file->get_filepath()}, ${6: \\$file->get_filename()});",
+		"description": "Moodle snippets"
+	},
+	"myPLUGIN_pluginfile": {
+		"prefix": "myPLUGIN_pluginfile",
+		"body": "myPLUGIN_pluginfile(${1:\\$course}, ${2: \\$cm}, ${3: \\$context}, ${4: \\$filearea}, ${5: \\$args}, ${6: \\$forcedownload}, ${7: array \\$options=array()});",
+		"description": "Moodle snippets"
+	},
+	"get_file": {
+		"prefix": "get_file",
+		"body": "get_file(${1:\\$context->id}, ${2: 'mod_MYPLUGIN'}, ${3: \\$filearea}, ${4: \\$itemid}, ${5: \\$filepath}, ${6: \\$filename});",
+		"description": "Moodle snippets"
+	},
+	"send_file": {
+		"prefix": "send_file",
+		"body": "send_file(${1:\\$file}, ${2: 86400}, ${3: 0}, ${4: \\$forcedownload}, ${5: \\$options});",
+		"description": "Moodle snippets"
+	},
+	"get_system_context": {
+		"prefix": "get_system_context",
+		"body": "get_system_context();",
+		"description": "Moodle snippets"
+	},
+	"get_file_info": {
+		"prefix": "get_file_info",
+		"body": "get_file_info(${1:\\$context}, ${2: \\$component}, ${3: \\$filearea}, ${4: \\$itemid}, ${5: '\/'}, ${6: \\$filename});",
+		"description": "Moodle snippets"
+	},
+	"get_parent": {
+		"prefix": "get_parent",
+		"body": "get_parent();",
+		"description": "Moodle snippets"
+	},
+	"get_children": {
+		"prefix": "get_children",
+		"body": "get_children();",
+		"description": "Moodle snippets"
+	},
+	"is_directory": {
+		"prefix": "is_directory",
+		"body": "is_directory();",
+		"description": "Moodle snippets"
+	},
+	"get_visible_name": {
+		"prefix": "get_visible_name",
+		"body": "get_visible_name();",
+		"description": "Moodle snippets"
+	},
+	"get_params": {
+		"prefix": "get_params",
+		"body": "get_params();",
+		"description": "Moodle snippets"
+	},
+	"create_file_from_pathname": {
+		"prefix": "create_file_from_pathname",
+		"body": "create_file_from_pathname(${1:\\$file_record}, ${2: \\$from_zip_file});",
+		"description": "Moodle snippets"
+	},
+	"get_area_files": {
+		"prefix": "get_area_files",
+		"body": "get_area_files(${1:\\$contextid}, ${2: 'mod_MYMOD'}, ${3: 'AREA'}, ${4: \\$submission->id});",
+		"description": "Moodle snippets"
+	},
+	"get_filename": {
+		"prefix": "get_filename",
+		"body": "get_filename();",
+		"description": "Moodle snippets"
+	},
+	"get_itemid": {
+		"prefix": "get_itemid",
+		"body": "get_itemid();",
+		"description": "Moodle snippets"
+	},
+	"get_filepath": {
+		"prefix": "get_filepath",
+		"body": "get_filepath();",
+		"description": "Moodle snippets"
+	},
+	"get_component": {
+		"prefix": "get_component",
+		"body": "get_component();",
+		"description": "Moodle snippets"
+	},
+	"get_contextid": {
+		"prefix": "get_contextid",
+		"body": "get_contextid();",
+		"description": "Moodle snippets"
+	},
+	"get_filearea": {
+		"prefix": "get_filearea",
+		"body": "get_filearea();",
+		"description": "Moodle snippets"
+	},
+	"create_file_from_string": {
+		"prefix": "create_file_from_string",
+		"body": "create_file_from_string(${1:\\$fileinfo}, ${2: 'hello world'});",
+		"description": "Moodle snippets"
+	},
+	"get_content": {
+		"prefix": "get_content",
+		"body": "get_content();",
+		"description": "Moodle snippets"
+	},
+	"delete": {
+		"prefix": "delete",
+		"body": "delete();",
+		"description": "Moodle snippets"
+	},
+	"addGroupRule": {
+		"prefix": "addGroupRule",
+		"body": "addGroupRule(${1:'elementname'}, array(${2:'value'} => array(array(${3:list}, ${4: of}, ${5: rule}, ${6: params}, ${7: but}, ${8: fieldname}))));",
+		"description": "Moodle snippets"
+	},
+	"createElement": {
+		"prefix": "createElement",
+		"body": "createElement(${1:'radio'}, ${2: 'yesno'}, ${3: ''}, ${4: get_string('yes')}, ${5: 1}, ${6: \\$attributes});",
+		"description": "Moodle snippets"
+	},
+	"setDefault": {
+		"prefix": "setDefault",
+		"body": "setDefault(${1:'yesno'}, ${2: 0});",
+		"description": "Moodle snippets"
+	},
+	"setMultiple": {
+		"prefix": "setMultiple",
+		"body": "setMultiple(${1:true});",
+		"description": "Moodle snippets"
+	},
+	"addGroup": {
+		"prefix": "addGroup",
+		"body": "addGroup(${1:\\$buttonarray}, ${2: 'buttonar'}, ${3: ''}, ${4: array(' ')}, ${5: false});",
+		"description": "Moodle snippets"
+	},
+	"disabledIf": {
+		"prefix": "disabledIf",
+		"body": "disabledIf(${1:'mycontrol'}, ${2: 'someselect'}, ${3: 'neq'}, ${4: 42});",
+		"description": "Moodle snippets"
+	},
+	"addRule": {
+		"prefix": "addRule",
+		"body": "addRule(${1:'elementname'}, ${2: get_string('error')}, ${3: 'rule type'}, ${4: 'extraruledata'}, ${5: 'server'(default)}, ${6: false}, ${7: false});",
+		"description": "Moodle snippets"
+	},
+	"setHelpButton": {
+		"prefix": "setHelpButton",
+		"body": "setHelpButton(${1:'lessondefault'}, array(${2:'lessondefault'}, ${3: get_string('lessondefault', 'lesson')}, ${4: 'lesson')});",
+		"description": "Moodle snippets"
+	},
+	"addHelpButton": {
+		"prefix": "addHelpButton",
+		"body": "addHelpButton(${1:'api_key_field'}, ${2: 'api_key'}, ${3: 'block_extsearch'});",
+		"description": "Moodle snippets"
+	},
+	"disable_form_change_checker": {
+		"prefix": "disable_form_change_checker",
+		"body": "disable_form_change_checker();",
+		"description": "Moodle snippets"
+	},
+	"setType": {
+		"prefix": "setType",
+		"body": "setType(${2:'name'}, ${4:PARAM_TYPE});",
+		"description": "Moodle snippets"
+	},
+	"add_to_log": {
+		"prefix": "add_to_log",
+		"body": "add_to_log(${1:\\$courseid}, ${2: \\$module}, ${3: \\$action}, ${4: \\$url=''}, ${5: \\$info=''}, ${6: \\$cm=0}, ${7: \\$user=0});",
+		"description": "Moodle snippets"
+	},
+	"user_accesstime_log": {
+		"prefix": "user_accesstime_log",
+		"body": "user_accesstime_log(${1:\\$courseid=0});",
+		"description": "Moodle snippets"
+	},
+	"get_logs": {
+		"prefix": "get_logs",
+		"body": "get_logs(${1:\\$select}, ${2: array \\$params=null}, ${3: \\$order='l.time DESC'}, ${4: \\$limitfrom=''}, ${5: \\$limitnum=''}, ${6: &\\$totalcount});",
+		"description": "Moodle snippets"
+	},
+	"get_logs_usercourse": {
+		"prefix": "get_logs_usercourse",
+		"body": "get_logs_usercourse(${1:\\$userid}, ${2: \\$courseid}, ${3: \\$coursestart});",
+		"description": "Moodle snippets"
+	},
+	"get_logs_userday": {
+		"prefix": "get_logs_userday",
+		"body": "get_logs_userday(${1:\\$userid}, ${2: \\$courseid}, ${3: \\$daystart});",
+		"description": "Moodle snippets"
+	},
+	"make_active": {
+		"prefix": "make_active",
+		"body": "make_active();",
+		"description": "Moodle snippets"
+	},
+	"get_coursemodule_from_id": {
+		"prefix": "get_coursemodule_from_id",
+		"body": "get_coursemodule_from_id(${1:'mymodulename'}, ${2: \\$cmid}, ${3: 0}, ${4: false}, ${5: MUST_EXIST});",
+		"description": "Moodle snippets"
+	},
+	"get_strings(": {
+		"prefix": "get_strings",
+		"body": "get_strings(array(${1:'enable'}, ${2: 'disable'}, ${3: 'up'}, ${4: 'down'}, ${5: 'none')}, ${6: 'qtype_dragdrop'});",
+		"description": "Moodle snippets"
+	},
+	"asort": {
+		"prefix": "asort",
+		"body": "asort();",
+		"description": "Moodle snippets"
+	},
+	"code2utf8": {
+		"prefix": "code2utf8",
+		"body": "code2utf8(${1:\\$string});",
+		"description": "Moodle snippets"
+	},
+	"convert": {
+		"prefix": "convert",
+		"body": "convert(${1:\\$string});",
+		"description": "Moodle snippets"
+	},
+	"encode_mimeheader": {
+		"prefix": "encode_mimeheader",
+		"body": "encode_mimeheader(${1:\\$string});",
+		"description": "Moodle snippets"
+	},
+	"entities_to_utf8": {
+		"prefix": "entities_to_utf8",
+		"body": "entities_to_utf8(${1:\\$string});",
+		"description": "Moodle snippets"
+	},
+	"specialtoascii": {
+		"prefix": "specialtoascii",
+		"body": "specialtoascii(${1:\\$string});",
+		"description": "Moodle snippets"
+	},
+	"strlen": {
+		"prefix": "strlen",
+		"body": "strlen(${1:\\$string});",
+		"description": "Moodle snippets"
+	},
+	"strpos": {
+		"prefix": "strpos",
+		"body": "strpos(${1:\\$string});",
+		"description": "Moodle snippets"
+	},
+	"strrpos": {
+		"prefix": "strrpos",
+		"body": "strrpos(${1:\\$string});",
+		"description": "Moodle snippets"
+	},
+	"strtolower": {
+		"prefix": "strtolower",
+		"body": "strtolower(${1:\\$string});",
+		"description": "Moodle snippets"
+	},
+	"strtotitle": {
+		"prefix": "strtotitle",
+		"body": "strtotitle(${1:\\$string});",
+		"description": "Moodle snippets"
+	},
+	"strtoupper": {
+		"prefix": "strtoupper",
+		"body": "strtoupper(${1:\\$string});",
+		"description": "Moodle snippets"
+	},
+	"substr": {
+		"prefix": "substr",
+		"body": "substr(${1:\\$string});",
+		"description": "Moodle snippets"
+	},
+	"trim_utf8_bom": {
+		"prefix": "trim_utf8_bom",
+		"body": "trim_utf8_bom(${1:\\$string});",
+		"description": "Moodle snippets"
+	},
+	"utf8_to_entities": {
+		"prefix": "utf8_to_entities",
+		"body": "utf8_to_entities(${1:\\$string});",
+		"description": "Moodle snippets"
+	},
+	"add(": {
+		"prefix": "add",
+		"body": "add(new admin_setting_FIELDTYPE(${1:'MYMOD\/MYNAME'}, ${2: 'MYNAME'}, ${3: 'MYDESC'}, array(${4:'value' => '0'}, ${5: 'fix' => false)}, ${6: PARAM_INT}));",
+		"description": "Moodle snippets"
+	},
+	"get_fast_modinfo": {
+		"prefix": "get_fast_modinfo",
+		"body": "get_fast_modinfo(${1:\\$course});",
+		"description": "Moodle snippets"
+	},
+	"filter_user_list": {
+		"prefix": "filter_user_list",
+		"body": "filter_user_list(${1:\\$users});",
+		"description": "Moodle snippets"
+	},
+	"define_my_steps": {
+		"prefix": "define_my_steps",
+		"body": "define_my_steps();",
+		"description": "Moodle snippets"
+	},
+	"set_source_table": {
+		"prefix": "set_source_table",
+		"body": "set_source_table();",
+		"description": "Moodle snippets"
+	},
+	"set_source_sql": {
+		"prefix": "set_source_sql",
+		"body": "set_source_sql();",
+		"description": "Moodle snippets"
+	},
+	"prepare_activity_structure": {
+		"prefix": "prepare_activity_structure",
+		"body": "prepare_activity_structure();",
+		"description": "Moodle snippets"
+	},
+	"calendar_event_hook": {
+		"prefix": "calendar_event_hook",
+		"body": "calendar_event_hook(${1:\\$action}, ${2: array \\$args});",
+		"description": "Moodle snippets"
+	},
+	"calendar_get_default_courses": {
+		"prefix": "calendar_get_default_courses",
+		"body": "calendar_get_default_courses();",
+		"description": "Moodle snippets"
+	},
+	"calendar_get_days": {
+		"prefix": "calendar_get_days",
+		"body": "calendar_get_days();",
+		"description": "Moodle snippets"
+	},
+	"calendar_get_starting_weekday": {
+		"prefix": "calendar_get_starting_weekday",
+		"body": "calendar_get_starting_weekday();",
+		"description": "Moodle snippets"
+	},
+	"calendar_day_representation": {
+		"prefix": "calendar_day_representation",
+		"body": "calendar_day_representation(${1:\\$tstamp}, ${2: \\$now = false}, ${3: \\$usecommonwords = true});",
+		"description": "Moodle snippets"
+	},
+	"calendar_time_representation": {
+		"prefix": "calendar_time_representation",
+		"body": "calendar_time_representation(${1:\\$time});",
+		"description": "Moodle snippets"
+	},
+	"calendar_wday_name": {
+		"prefix": "calendar_wday_name",
+		"body": "calendar_wday_name(${1:\\$englishname});",
+		"description": "Moodle snippets"
+	},
+	"calendar_days_in_month": {
+		"prefix": "calendar_days_in_month",
+		"body": "calendar_days_in_month(${1:\\$month}, ${2: \\$year});",
+		"description": "Moodle snippets"
+	},
+	"calendar_get_link_href": {
+		"prefix": "calendar_get_link_href",
+		"body": "calendar_get_link_href(${1:\\$linkbase}, ${2: \\$d}, ${3: \\$m}, ${4: \\$y});",
+		"description": "Moodle snippets"
+	},
+	"calendar_get_mini": {
+		"prefix": "calendar_get_mini",
+		"body": "calendar_get_mini(${1:\\$courses}, ${2: \\$groups}, ${3: \\$users}, ${4: \\$cal_month = false}, ${5: \\$cal_year = false});",
+		"description": "Moodle snippets"
+	},
+	"calendar_get_popup": {
+		"prefix": "calendar_get_popup",
+		"body": "calendar_get_popup(${1:\\$is_today}, ${2: \\$event_timestart}, ${3: \\$popupcontent = ''});",
+		"description": "Moodle snippets"
+	},
+	"calendar_add_month": {
+		"prefix": "calendar_add_month",
+		"body": "calendar_add_month(${1:\\$month}, ${2: \\$year});",
+		"description": "Moodle snippets"
+	},
+	"calendar_sub_month": {
+		"prefix": "calendar_sub_month",
+		"body": "calendar_sub_month(${1:\\$month}, ${2: \\$year});",
+		"description": "Moodle snippets"
+	},
+	"calendar_get_module_cached": {
+		"prefix": "calendar_get_module_cached",
+		"body": "calendar_get_module_cached(${1:&\\$coursecache}, ${2: \\$modulename}, ${3: \\$instance});",
+		"description": "Moodle snippets"
+	},
+	"calendar_get_course_cached": {
+		"prefix": "calendar_get_course_cached",
+		"body": "calendar_get_course_cached(${1:&\\$coursecache}, ${2: \\$courseid});",
+		"description": "Moodle snippets"
+	},
+	"calendar_print_month_selector": {
+		"prefix": "calendar_print_month_selector",
+		"body": "calendar_print_month_selector(${1:\\$name}, ${2: \\$selected});",
+		"description": "Moodle snippets"
+	},
+	"calendar_top_controls": {
+		"prefix": "calendar_top_controls",
+		"body": "calendar_top_controls(${1:\\$type}, ${2: \\$data});",
+		"description": "Moodle snippets"
+	},
+	"calendar_filter_controls": {
+		"prefix": "calendar_filter_controls",
+		"body": "calendar_filter_controls(${1:moodle_url \\$returnurl});",
+		"description": "Moodle snippets"
+	},
+	"calendar_preferences_button": {
+		"prefix": "calendar_preferences_button",
+		"body": "calendar_preferences_button(${1:stdClass \\$course});",
+		"description": "Moodle snippets"
+	},
+	"calendar_set_filters": {
+		"prefix": "calendar_set_filters",
+		"body": "calendar_set_filters(${1:array \\$courseeventsfrom}, ${2: \\$ignorefilters = false});",
+		"description": "Moodle snippets"
+	},
+	"calendar_get_link_previous": {
+		"prefix": "calendar_get_link_previous",
+		"body": "calendar_get_link_previous(${1:\\$text}, ${2: \\$linkbase}, ${3: \\$d}, ${4: \\$m}, ${5: \\$y}, ${6: \\$accesshide = false});",
+		"description": "Moodle snippets"
+	},
+	"calendar_get_link_next": {
+		"prefix": "calendar_get_link_next",
+		"body": "calendar_get_link_next(${1:\\$text}, ${2: \\$linkbase}, ${3: \\$d}, ${4: \\$m}, ${5: \\$y}, ${6: \\$accesshide = false});",
+		"description": "Moodle snippets"
+	},
+	"calendar_get_allowed_types": {
+		"prefix": "calendar_get_allowed_types",
+		"body": "calendar_get_allowed_types(${1:&\\$allowed}, ${2: \\$course = null});",
+		"description": "Moodle snippets"
+	},
+	"calendar_add_event_allowed": {
+		"prefix": "calendar_add_event_allowed",
+		"body": "calendar_add_event_allowed(${1:\\$event});",
+		"description": "Moodle snippets"
+	},
+	"calendar_edit_event_allowed": {
+		"prefix": "calendar_edit_event_allowed",
+		"body": "calendar_edit_event_allowed(${1:\\$event});",
+		"description": "Moodle snippets"
+	},
+	"calendar_user_can_add_event": {
+		"prefix": "calendar_user_can_add_event",
+		"body": "calendar_user_can_add_event(${1:\\$course});",
+		"description": "Moodle snippets"
+	},
+	"calendar_show_event_type": {
+		"prefix": "calendar_show_event_type",
+		"body": "calendar_show_event_type(${1:\\$type}, ${2: \\$user = null});",
+		"description": "Moodle snippets"
+	},
+	"calendar_set_event_type_display": {
+		"prefix": "calendar_set_event_type_display",
+		"body": "calendar_set_event_type_display(${1:\\$type}, ${2: \\$display = null}, ${3: \\$user = null});",
+		"description": "Moodle snippets"
+	},
+	"calendar_get_events": {
+		"prefix": "calendar_get_events",
+		"body": "calendar_get_events(${1:\\$tstart}, ${2: \\$tend}, ${3: \\$users}, ${4: \\$groups}, ${5: \\$courses}, ${6: \\$withduration = true}, ${7: \\$ignorehidden = true});",
+		"description": "Moodle snippets"
+	},
+	"calendar_events_by_day": {
+		"prefix": "calendar_events_by_day",
+		"body": "calendar_events_by_day(${1:\\$events}, ${2: \\$month}, ${3: \\$year}, ${4: &\\$eventsbyday}, ${5: &\\$durationbyday}, ${6: &\\$typesbyday}, ${7: &\\$courses});",
+		"description": "Moodle snippets"
+	},
+	"calendar_get_upcoming": {
+		"prefix": "calendar_get_upcoming",
+		"body": "calendar_get_upcoming(${1:\\$courses}, ${2: \\$groups}, ${3: \\$users}, ${4: \\$daysinfuture}, ${5: \\$maxevents}, ${6: \\$fromtime = 0});",
+		"description": "Moodle snippets"
+	},
+	"calendar_get_block_upcoming": {
+		"prefix": "calendar_get_block_upcoming",
+		"body": "calendar_get_block_upcoming(${1:\\$events}, ${2: \\$linkhref = NULL});",
+		"description": "Moodle snippets"
+	},
+	"calendar_format_event_time": {
+		"prefix": "calendar_format_event_time",
+		"body": "calendar_format_event_time(${1:\\$event}, ${2: \\$now}, ${3: \\$linkparams = null}, ${4: \\$usecommonwords = true}, ${5: \\$showtime = 0});",
+		"description": "Moodle snippets"
+	},
+	"calendar_add_event_metadata": {
+		"prefix": "calendar_add_event_metadata",
+		"body": "calendar_add_event_metadata(${1:\\$event});",
+		"description": "Moodle snippets"
+	},
+	"table_exists": {
+		"prefix": "table_exists",
+		"body": "table_exists(${1:\\$table});",
+		"description": "Moodle snippets"
+	},
+	"create_table": {
+		"prefix": "create_table",
+		"body": "create_table(${1:\\$table}, ${2: \\$continue=true}, ${3: \\$feedback=true});",
+		"description": "Moodle snippets"
+	},
+	"drop_table": {
+		"prefix": "drop_table",
+		"body": "drop_table(${1:\\$table}, ${2: \\$continue=true}, ${3: \\$feedback=true});",
+		"description": "Moodle snippets"
+	},
+	"rename_table": {
+		"prefix": "rename_table",
+		"body": "rename_table(${1:\\$table}, ${2: \\$newname}, ${3: \\$continue=true}, ${4: \\$feedback=true});",
+		"description": "Moodle snippets"
+	},
+	"field_exists": {
+		"prefix": "field_exists",
+		"body": "field_exists(${1:\\$table}, ${2: \\$field});",
+		"description": "Moodle snippets"
+	},
+	"add_field": {
+		"prefix": "add_field",
+		"body": "add_field(${1:\\$table}, ${2: \\$field}, ${3: \\$continue=true}, ${4: \\$feedback=true});",
+		"description": "Moodle snippets"
+	},
+	"drop_field": {
+		"prefix": "drop_field",
+		"body": "drop_field(${1:\\$table}, ${2: \\$field}, ${3: \\$continue=true}, ${4: \\$feedback=true});",
+		"description": "Moodle snippets"
+	},
+	"change_field_type": {
+		"prefix": "change_field_type",
+		"body": "change_field_type(${1:\\$table}, ${2: \\$field}, ${3: \\$continue=true}, ${4: \\$feedback=true});",
+		"description": "Moodle snippets"
+	},
+	"change_field_precision": {
+		"prefix": "change_field_precision",
+		"body": "change_field_precision(${1:\\$table}, ${2: \\$field}, ${3: \\$continue=true}, ${4: \\$feedback=true});",
+		"description": "Moodle snippets"
+	},
+	"change_field_unsigned": {
+		"prefix": "change_field_unsigned",
+		"body": "change_field_unsigned(${1:\\$table}, ${2: \\$field}, ${3: \\$continue=true}, ${4: \\$feedback=true});",
+		"description": "Moodle snippets"
+	},
+	"change_field_notnull": {
+		"prefix": "change_field_notnull",
+		"body": "change_field_notnull(${1:\\$table}, ${2: \\$field}, ${3: \\$continue=true}, ${4: \\$feedback=true});",
+		"description": "Moodle snippets"
+	},
+	"drop_enum_from_field": {
+		"prefix": "drop_enum_from_field",
+		"body": "drop_enum_from_field(${1:\\$table}, ${2: \\$field}, ${3: \\$continue=true}, ${4: \\$feedback=true});",
+		"description": "Moodle snippets"
+	},
+	"change_field_default": {
+		"prefix": "change_field_default",
+		"body": "change_field_default(${1:\\$table}, ${2: \\$field}, ${3: \\$continue=true}, ${4: \\$feedback=true});",
+		"description": "Moodle snippets"
+	},
+	"rename_field": {
+		"prefix": "rename_field",
+		"body": "rename_field(${1:\\$table}, ${2: \\$field}, ${3: \\$newname}, ${4: \\$continue=true}, ${5: \\$feedback=true});",
+		"description": "Moodle snippets"
+	},
+	"index_exists": {
+		"prefix": "index_exists",
+		"body": "index_exists(${1:\\$table}, ${2: \\$index});",
+		"description": "Moodle snippets"
+	},
+	"find_index_name": {
+		"prefix": "find_index_name",
+		"body": "find_index_name(${1:\\$table}, ${2: \\$index});",
+		"description": "Moodle snippets"
+	},
+	"add_index": {
+		"prefix": "add_index",
+		"body": "add_index(${1:\\$table}, ${2: \\$index}, ${3: \\$continue=true}, ${4: \\$feedback=true});",
+		"description": "Moodle snippets"
+	},
+	"drop_index": {
+		"prefix": "drop_index",
+		"body": "drop_index(${1:\\$table}, ${2: \\$index}, ${3: \\$continue=true}, ${4: \\$feedback=true});",
+		"description": "Moodle snippets"
+	},
+	"is_enrolled": {
+		"prefix": "is_enrolled",
+		"body": "is_enrolled(${1:context \\$context}, ${2: \\$user = null}, ${3: \\$withcapability = ''}, ${4: \\$onlyactive = false});",
+		"description": "Moodle snippets"
+	},
+	"get_enrolled_sql": {
+		"prefix": "get_enrolled_sql",
+		"body": "get_enrolled_sql(${1:context \\$context}, ${2: \\$withcapability = ''}, ${3: \\$groupid = 0}, ${4: \\$onlyactive = false});",
+		"description": "Moodle snippets"
+	},
+	"get_enrolled_users": {
+		"prefix": "get_enrolled_users",
+		"body": "get_enrolled_users(${1:context \\$context}, ${2: \\$withcapability = ''}, ${3: \\$groupid = 0}, ${4: \\$userfields = 'u.*'}, ${5: \\$orderby = ''}, ${6: \\$limitfrom = 0}, ${7: \\$limitnum = 0});",
+		"description": "Moodle snippets"
+	},
+	"count_enrolled_users": {
+		"prefix": "count_enrolled_users",
+		"body": "count_enrolled_users(${1:context \\$context}, ${2: \\$withcapability = ''}, ${3: \\$groupid = 0});",
+		"description": "Moodle snippets"
+	},
+	"events_trigger": {
+		"prefix": "events_trigger",
+		"body": "events_trigger(${1:'user_enrolled'}, ${2: \\$ue});",
+		"description": "Moodle snippets"
+	},
+	"message_send": {
+		"prefix": "message_send",
+		"body": "message_send(${1:\\$eventdata});",
+		"description": "Moodle snippets"
+	},
+	"get_ratings": {
+		"prefix": "get_ratings",
+		"body": "get_ratings();",
+		"description": "Moodle snippets"
+	},
+	"get_user_grades": {
+		"prefix": "get_user_grades",
+		"body": "get_user_grades();",
+		"description": "Moodle snippets"
+	},
+	"delete_ratings": {
+		"prefix": "delete_ratings",
+		"body": "delete_ratings();",
+		"description": "Moodle snippets"
+	},
+	"tag_set": {
+		"prefix": "tag_set",
+		"body": "tag_set(${1:'user'}, ${2: \\$userId}, ${3: array()});",
+		"description": "Moodle snippets"
+	},
+	"tag_get_tags": {
+		"prefix": "tag_get_tags",
+		"body": "tag_get_tags(${1:'user'}, ${2: \\$userId});",
+		"description": "Moodle snippets"
+	},
+	"tag_set_add": {
+		"prefix": "tag_set_add",
+		"body": "tag_set_add(${1:'user'}, ${2: \\$userId}, ${3: 'chess'});",
+		"description": "Moodle snippets"
+	},
+	"tag_set_delete": {
+		"prefix": "tag_set_delete",
+		"body": "tag_set_delete(${1:'user'}, ${2: \\$userId}, ${3: 'chess'});",
+		"description": "Moodle snippets"
+	},
+	"tag_description_set": {
+		"prefix": "tag_description_set",
+		"body": "tag_description_set(\\$firstTagKey, '<p>TEXT</p>', FORMAT_HTML);",
+		"description": "Moodle snippets"
+	},
+	"tag_print_cloud": {
+		"prefix": "tag_print_cloud",
+		"body": "tag_print_cloud();",
+		"description": "Moodle snippets"
+	},
+	"get_user_timezone_offset": {
+		"prefix": "get_user_timezone_offset",
+		"body": "get_user_timezone_offset();",
+		"description": "Moodle snippets"
+	},
+	"get_timezone_offset": {
+		"prefix": "get_timezone_offset",
+		"body": "get_timezone_offset();",
+		"description": "Moodle snippets"
+	},
+	"dst_changes_for_year": {
+		"prefix": "dst_changes_for_year",
+		"body": "dst_changes_for_year();",
+		"description": "Moodle snippets"
+	},
+	"set_module_viewed": {
+		"prefix": "set_module_viewed",
+		"body": "set_module_viewed(${1:\\$cm});",
+		"description": "Moodle snippets"
+	},
+	"addElement button": {
+		"prefix": [
+			"add_element_button",
+			"addElement button"
+		],
+		"body": "addElement(${1:'button'}, ${2: 'intro'}, ${3: get_string('buttonlabel')});",
+		"description": "Moodle snippets"
+	},
+	"addElement checkbox": {
+		"prefix": [
+			"add_element_checkbox",
+			"addElement checkbox"
+		],
+		"body": "addElement(${1:'checkbox'}, ${2: 'ratingtime'}, ${3: get_string('ratingtime'}, ${4: 'forum')});",
+		"description": "Moodle snippets"
+	},
+	"addElement advcheckbox": {
+		"prefix": [
+			"add_element_advcheckbox",
+			"addElement advcheckbox"
+		],
+		"body": "addElement(${1:'advcheckbox'}, ${2: 'ratingtime'}, ${3: get_string('ratingtime', 'forum')}, ${4: 'Label displayed after checkbox'}, ${5:array('group' => 1)}, ${6: array(0, 1)});",
+		"description": "Moodle snippets"
+	},
+	"addElement choosecoursefile": {
+		"prefix": [
+			"add_element_choosecoursefile",
+			"addElement choosecoursefile"
+		],
+		"body": "addElement(${1:'choosecoursefile'}, ${2: 'mediafile'}, ${3: get_string('mediafile', 'lesson')}, ${4: array('courseid'=>\\$COURSE->id)});",
+		"description": "Moodle snippets"
+	},
+	"addElement date_time_selector": {
+		"prefix": [
+			"add_element_date_time_selector",
+			"addElement date_time_selector"
+		],
+		"body": "addElement(${1:'date_time_selector'}, ${2: 'assesstimestart'}, ${3: get_string('from')});",
+		"description": "Moodle snippets"
+	},
+	"addElement select": {
+		"prefix": [
+			"add_element_select",
+			"addElement select"
+		],
+		"body": "addElement(${1:'select'}, ${2: 'type'}, ${3: get_string('forumtype', 'forum')}, ${4: \\$FORUM_TYPES}, ${5: \\$attributes});",
+		"description": "Moodle snippets"
+	},
+	"addElement password": {
+		"prefix": [
+			"add_element_password",
+			"addElement password"
+		],
+		"body": "addElement(${1:'password'}, ${2: 'password'}, ${3: get_string('label')}, ${4: \\$attributes});",
+		"description": "Moodle snippets"
+	},
+	"addElement hidden": {
+		"prefix": [
+			"add_element_hidden",
+			"addElement hidden"
+		],
+		"body": "addElement(${1:'hidden'}, ${2: 'reply'}, ${3: 'yes'});",
+		"description": "Moodle snippets"
+	},
+	"addElement html": {
+		"prefix": [
+			"add_element_html",
+			"addElement html"
+		],
+		"body": "addElement(${1:'html'}, ${2: '<div class=qheader>'});",
+		"description": "Moodle snippets"
+	},
+	"addElement modgrade": {
+		"prefix": [
+			"add_element_modgrade",
+			"addElement modgrade"
+		],
+		"body": "addElement(${1:'modgrade'}, ${2: 'scale'}, ${3: get_string('grade')}, ${4: false});",
+		"description": "Moodle snippets"
+	},
+	"addElement static": {
+		"prefix": [
+			"add_element_static",
+			"addElement static"
+		],
+		"body": "addElement(${1:'static'}, ${2: 'description'}, ${3: get_string('description', 'exercise')}, ${4:get_string('descriptionofexercise', 'exercise'}, ${5: \\$COURSE->students)});",
+		"description": "Moodle snippets"
+	},
+	"addElement text": {
+		"prefix": [
+			"add_element_text",
+			"addElement text"
+		],
+		"body": "addElement(${1:'text'}, ${2: 'name'}, ${3: get_string('forumname', 'forum')}, ${4: \\$attributes});",
+		"description": "Moodle snippets"
+	},
+	"addElement textarea": {
+		"prefix": [
+			"add_element_textarea",
+			"addElement textarea"
+		],
+		"body": "addElement(${1:'textarea'}, ${2: 'introduction'}, ${3: get_string('introtext', 'survey')}, ${4: 'wrap=virtual rows=20 cols=50'});",
+		"description": "Moodle snippets"
+	},
+	"addElement recaptcha": {
+		"prefix": [
+			"add_element_recaptcha",
+			"addElement recaptcha"
+		],
+		"body": "addElement(${1:'recaptcha'}, ${2: 'recaptcha_field_name'}, ${3: \\$attributes});",
+		"description": "Moodle snippets"
+	},
+	"addElement passwordunmask": {
+		"prefix": [
+			"add_element_passwordunmask",
+			"addElement passwordunmask"
+		],
+		"body": "addElement(${1:'passwordunmask'}, ${2: 'password'}, ${3: get_string('label')}, ${4: \\$attributes});",
+		"description": "Moodle snippets"
+	},
+	"addElement selectyesno": {
+		"prefix": [
+			"add_element_selectyesno",
+			"addElement selectyesno"
+		],
+		"body": "addElement(${1:'selectyesno'}, ${2: 'maxbytes'}, ${3: get_string('maxattachmentsize', 'forum')});",
+		"description": "Moodle snippets"
+	},
+	"addElement selectwithlink": {
+		"prefix": [
+			"add_element_selectwithlink",
+			"addElement selectwithlink"
+		],
+		"body": "addElement(${1:'selectwithlink'}, ${2: 'scaleid'}, ${3: get_string('scale')}, ${4:\\$options}, ${5: null}, array(${6:'link' => URL}, ${7: 'label' => get_string('scalescustomcreate')}));",
+		"description": "Moodle snippets"
+	},
+	"addElement date_selector": {
+		"prefix": [
+			"add_element_date_selector",
+			"addElement date_selector"
+		],
+		"body": "addElement(${1:'date_selector'}, ${2: 'assesstimefinish'}, ${3: get_string('to')});",
+		"description": "Moodle snippets"
+	},
+	"addElement duration": {
+		"prefix": [
+			"add_element_duration",
+			"addElement duration"
+		],
+		"body": "addElement(${1:'duration'}, ${2: 'timelimit'}, ${3: get_string('timelimit', 'quiz')});",
+		"description": "Moodle snippets"
+	},
+	"addElement editor": {
+		"prefix": [
+			"add_element_editor",
+			"addElement editor"
+		],
+		"body": "addElement(${1:'editor'}, ${2: 'fieldname'}, ${3: get_string('labeltext', 'langfile')});",
+		"description": "Moodle snippets"
+	},
+	"addElement filepicker": {
+		"prefix": [
+			"add_element_filepicker",
+			"addElement filepicker"
+		],
+		"body": "addElement(${1:'filepicker'}, ${2: 'userfile'}, ${3: get_string('file')}, ${4: null}, array(${5:'maxbytes' => \\$maxbytes}, ${6: 'accepted_types' => '*'}));",
+		"description": "Moodle snippets"
+	},
+	"addElement filemanager": {
+		"prefix": [
+			"add_element_filemanager",
+			"addElement filemanager"
+		],
+		"body": "addElement(${1:'filemanager'}, ${2: 'attachments'}, ${3: get_string('attachment', 'moodle')}, ${4: null}, array(${5:'subdirs' => 0}, ${6: 'maxbytes' => \\$maxbytes}, ${7: 'maxfiles' => 50}, ${8: 'accepted_types' => array('document')}));",
+		"description": "Moodle snippets"
+	},
+	"addElement tags": {
+		"prefix": [
+			"add_element_tags",
+			"addElement tags"
+		],
+		"body": "addElement(${1:'tags'}, ${2: 'field_name'}, ${3: \\$lable}, ${4: \\$options}, ${5: \\$attributes});",
+		"description": "Moodle snippets"
+	},
+	"addElement modvisible": {
+		"prefix": [
+			"add_element_modvisible",
+			"addElement modvisible"
+		],
+		"body": "addElement(${1:'modvisible'}, ${2: 'visible'}, ${3: get_string('visible')});",
+		"description": "Moodle snippets"
+	},
+	"addElement grading": {
+		"prefix": [
+			"add_element_grading",
+			"addElement grading"
+		],
+		"body": "addElement(${1:'grading'}, ${2: 'advancedgrading'}, ${3: get_string('grade').':'}, ${4: array('gradinginstance' => \\$gradinginstance)});",
+		"description": "Moodle snippets"
+	},
+	"addElement questioncategory": {
+		"prefix": [
+			"add_element_questioncategory",
+			"addElement questioncategory"
+		],
+		"body": "addElement(${1:'questioncategory'}, ${2: 'category'}, ${3: get_string('category', 'question')}, array(${4:'contexts'=>\\$contexts}, ${5: 'top'=>true}, ${6: 'currentcat'=>\\$currentcat}, ${7: 'nochildrenof'=>\\$currentcat}));",
+		"description": "Moodle snippets"
+	},
+	"context_system::instance": {
+		"prefix": [
+			"context_system_instance",
+			"context_system::instance"
+		],
+		"body": "context_system::instance();",
+		"description": "Moodle snippets"
+	},
+	"context_user::instance": {
+		"prefix": [
+			"context_user_instance",
+			"context_user::instance"
+		],
+		"body": "context_user::instance(${1:\\$user->id});",
+		"description": "Moodle snippets"
+	},
+	"context_coursecat::instance": {
+		"prefix": [
+			"context_coursecat_instance",
+			"context_coursecat::instance"
+		],
+		"body": "context_coursecat::instance(${1:\\$category->id});",
+		"description": "Moodle snippets"
+	},
+	"context_course::instance": {
+		"prefix": [
+			"context_course_instance",
+			"context_course::instance"
+		],
+		"body": "context_course::instance(${1:\\$course->id});",
+		"description": "Moodle snippets"
+	},
+	"context_module::instance": {
+		"prefix": [
+			"context_module_instance",
+			"context_module::instance"
+		],
+		"body": "context_module::instance(${1:\\$cm->id});",
+		"description": "Moodle snippets"
+	},
+	"context::instance_by_id": {
+		"prefix": [
+			"context_instance_by_id",
+			"context::instance_by_id"
+		],
+		"body": "context::instance_by_id(${1:\\$contextid});",
+		"description": "Moodle snippets"
+	},
+	"html_writer::table": {
+		"prefix": [
+			"html_writer_table",
+			"html_writer::table"
+		],
+		"body": "html_writer::table(${1:\\$table});",
+		"description": "Moodle snippets"
+	},
+	"html_select::make": {
+		"prefix": [
+			"html_select_make",
+			"html_select::make"
+		],
+		"body": "html_select::make(${1:\\$options}, ${2: 'choice1'}, ${3: 'value1'});",
+		"description": "Moodle snippets"
+	},
+	"html_select::make_time_selector": {
+		"prefix": [
+			"html_select_make_time_selector",
+			"html_select::make_time_selector"
+		],
+		"body": "html_select::make_time_selector(${1:'days'}, ${2: 'myday'}, ${3: '120308000'});",
+		"description": "Moodle snippets"
+	},
+	"calendar_event::create": {
+		"prefix": [
+			"calendar_event_create",
+			"calendar_event::create"
+		],
+		"body": "calendar_event::create(${1:\\$properties});",
+		"description": "Moodle snippets"
+	},
+	"calendar_event::update": {
+		"prefix": [
+			"calendar_event_update",
+			"calendar_event::update"
+		],
+		"body": "calendar_event::update(${1:\\$data}, ${2: \\$checkcapability = true});",
+		"description": "Moodle snippets"
+	},
+	"$capabilities": {
+		"prefix": [
+			"capabilities",
+			"$capabilities"
+		],
+		"body": "\\$capabilities = array('${1:mod}/${2:MYPLUGIN}:${3:MYCAPABILITY}' => array('riskbitmask' => ${4:RISK_SPAM}, 'captype' => ${5:'write'}, 'contextlevel' =>${6:CONTEXT_MODULE}, 'archetypes' => array(${7:'editingteacher' => CAP_ALLOW})));",
+		"description": "Moodle snippets"
+	},
+	"$fileinfo": {
+		"prefix": [
+			"fileinfo",
+			"$fileinfo"
+		],
+		"body": "\\$fileinfo = array(${1:'contextid' => \\$context->id}, ${2: 'component' => 'mod_MYMOD'}, ${3: 'filearea' => 'myarea'}, ${4: 'itemid' => 0}, ${5: 'filepath' => '\/'}, ${6: 'filename' => 'myfile.txt'});",
+		"description": "Moodle snippets"
+	},
+	"$handlers": {
+		"prefix": [
+			"handlers",
+			"$handlers"
+		],
+		"body": "\\$handlers = array(${1: 'user_enrolled'} => array ('handlerfile' => ${2:'\/mod\/MYMOD\/lib.php'}, 'handlerfunction' => ${3:'MYMODFUNCTION'}, 'schedule' => ${4:'instant'}, 'internal' => ${5: 1}));",
+		"description": "Moodle snippets"
+	},
+	"$messageproviders": {
+		"prefix": [
+			"messageproviders",
+			"$messageproviders"
+		],
+		"body": "\\$messageproviders = array (${1:'MYPROVIDER' => array ()});",
+		"description": "Moodle snippets"
+	},
+	"$plugin->version": {
+		"prefix": [
+			"plugin_version",
+			"$plugin->version"
+		],
+		"body": "\\$plugin->version",
+		"description": "Moodle snippets"
+	},
+	"$plugin->requires": {
+		"prefix": [
+			"plugin_requires",
+			"$plugin->requires"
+		],
+		"body": "\\$plugin->requires",
+		"description": "Moodle snippets"
+	},
+	"$plugin->dependencies": {
+		"prefix": [
+			"plugin_dependencies",
+			"$plugin->dependencies"
+		],
+		"body": "\\$plugin->dependencies",
+		"description": "Moodle snippets"
 	}
 }
