@@ -1,386 +1,386 @@
 {
-    "$USER->id": {
-        "prefix": [
-            "user_id",
-            "$USER->id"
-        ],
-        "body": "\\$USER->id",
-        "description": "The user ID."
-    },
-    "$USER->auth": {
-        "prefix": [
-            "user_auth",
-            "$USER->auth"
-        ],
-        "body": "\\$USER->auth",
-        "description": "The authentication plugin used for this user record."
-    },
-    "$USER->confirmed": {
-        "prefix": [
-            "user_confirmed",
-            "$USER->confirmed"
-        ],
-        "body": "\\$USER->confirmed",
-        "description": "If this is an active user or not."
-    },
-    "$USER->policyagreed": {
-        "prefix": [
-            "user_policyagreed",
-            "$USER->policyagreed"
-        ],
-        "body": "\\$USER->policyagreed",
-        "description": "A flag to determine if the user has agreed to the site policy."
-    },
-    "$USER->deleted": {
-        "prefix": [
-            "user_deleted",
-            "$USER->deleted"
-        ],
-        "body": "\\$USER->deleted",
-        "description": "A flag to show if the user has been deleted or not."
-    },
-    "$USER->suspended": {
-        "prefix": [
-            "user_suspended",
-            "$USER->suspended"
-        ],
-        "body": "\\$USER->suspended",
-        "description": "A flag to show if the user has been suspended on this system."
-    },
-    "$USER->mnethostid": {
-        "prefix": [
-            "user_mnethostid",
-            "$USER->mnethostid"
-        ],
-        "body": "\\$USER->mnethostid",
-        "description": "An identifier for the MNet host if used."
-    },
-    "$USER->username": {
-        "prefix": [
-            "user_username",
-            "$USER->username"
-        ],
-        "body": "\\$USER->username",
-        "description": "The username for this user."
-    },
-    "$USER->idnumber": {
-        "prefix": [
-            "user_idnumber",
-            "$USER->idnumber"
-        ],
-        "body": "\\$USER->idnumber",
-        "description": "An identification number given by the institution."
-    },
-    "$USER->firstname": {
-        "prefix": [
-            "user_firstname",
-            "$USER->firstname"
-        ],
-        "body": "\\$USER->firstname",
-        "description": "The first name of the user."
-    },
-    "$USER->lastname": {
-        "prefix": [
-            "user_lastname",
-            "$USER->lastname"
-        ],
-        "body": "\\$USER->lastname",
-        "description": "The surname of the user."
-    },
-    "$USER->email": {
-        "prefix": [
-            "user_email",
-            "$USER->email"
-        ],
-        "body": "\\$USER->email",
-        "description": "An email address for contact."
-    },
-    "$USER->emailstop": {
-        "prefix": [
-            "user_emailstop",
-            "$USER->emailstop"
-        ],
-        "body": "\\$USER->emailstop",
-        "description": "A preference to disable notifications from being sent to the user."
-    },
-    "$USER->icq": {
-        "prefix": [
-            "user_icq",
-            "$USER->icq"
-        ],
-        "body": "\\$USER->icq",
-        "description": "The ICQ number of the user."
-    },
-    "$USER->skype": {
-        "prefix": [
-            "user_skype",
-            "$USER->skype"
-        ],
-        "body": "\\$USER->skype",
-        "description": "The Skype identifier of the user."
-    },
-    "$USER->yahoo": {
-        "prefix": [
-            "user_yahoo",
-            "$USER->yahoo"
-        ],
-        "body": "\\$USER->yahoo",
-        "description": "The Yahoo identifier of the user."
-    },
-    "$USER->aim": {
-        "prefix": [
-            "user_aim",
-            "$USER->aim"
-        ],
-        "body": "\\$USER->aim",
-        "description": "The AIM identifier of the user."
-    },
-    "$USER->msn": {
-        "prefix": [
-            "user_msn",
-            "$USER->msn"
-        ],
-        "body": "\\$USER->msn",
-        "description": "The MSN identifier of the user."
-    },
-    "$USER->institution": {
-        "prefix": [
-            "user_institution",
-            "$USER->institution"
-        ],
-        "body": "\\$USER->institution",
-        "description": "The institution that this user is a member of."
-    },
-    "$USER->department": {
-        "prefix": [
-            "user_department",
-            "$USER->department"
-        ],
-        "body": "\\$USER->department",
-        "description": "The department that this user can be found in."
-    },
-    "$USER->address": {
-        "prefix": [
-            "user_address",
-            "$USER->address"
-        ],
-        "body": "\\$USER->address",
-        "description": "The address of the user."
-    },
-    "$USER->city": {
-        "prefix": [
-            "user_city",
-            "$USER->city"
-        ],
-        "body": "\\$USER->city",
-        "description": "The city of the user."
-    },
-    "$USER->country": {
-        "prefix": [
-            "user_country",
-            "$USER->country"
-        ],
-        "body": "\\$USER->country",
-        "description": "The country that the user is in."
-    },
-    "$USER->lang": {
-        "prefix": [
-            "user_lang",
-            "$USER->lang"
-        ],
-        "body": "\\$USER->lang",
-        "description": "A user preference for the language shown."
-    },
-    "$USER->calendartype": {
-        "prefix": [
-            "user_calendartype",
-            "$USER->calendartype"
-        ],
-        "body": "\\$USER->calendartype",
-        "description": "A user preference for the type of calendar to use."
-    },
-    "$USER->theme": {
-        "prefix": [
-            "user_theme",
-            "$USER->theme"
-        ],
-        "body": "\\$USER->theme",
-        "description": "A user preference for the theme to display."
-    },
-    "$USER->timezone": {
-        "prefix": [
-            "user_timezone",
-            "$USER->timezone"
-        ],
-        "body": "\\$USER->timezone",
-        "description": "The timezone of the user."
-    },
-    "$USER->firstaccess": {
-        "prefix": [
-            "user_firstaccess",
-            "$USER->firstaccess"
-        ],
-        "body": "\\$USER->firstaccess",
-        "description": "The time that this user first accessed the site."
-    },
-    "$USER->lastaccess": {
-        "prefix": [
-            "user_lastaccess",
-            "$USER->lastaccess"
-        ],
-        "body": "\\$USER->lastaccess",
-        "description": "The time that the user last accessed the site."
-    },
-    "$USER->lastlogin": {
-        "prefix": [
-            "user_lastlogin",
-            "$USER->lastlogin"
-        ],
-        "body": "\\$USER->lastlogin",
-        "description": "The last login of this user."
-    },
-    "$USER->currentlogin": {
-        "prefix": [
-            "user_currentlogin",
-            "$USER->currentlogin"
-        ],
-        "body": "\\$USER->currentlogin",
-        "description": "The current login for this user."
-    },
-    "$USER->lastip": {
-        "prefix": [
-            "user_lastip",
-            "$USER->lastip"
-        ],
-        "body": "\\$USER->lastip",
-        "description": "The last IP address for the user."
-    },
-    "$USER->secret": {
-        "prefix": [
-            "user_secret",
-            "$USER->secret"
-        ],
-        "body": "\\$USER->secret",
-        "description": "Secret.. not sure."
-    },
-    "$USER->picture": {
-        "prefix": [
-            "user_picture",
-            "$USER->picture"
-        ],
-        "body": "\\$USER->picture",
-        "description": "The picture details associated with this user."
-    },
-    "$USER->url": {
-        "prefix": [
-            "user_url",
-            "$USER->url"
-        ],
-        "body": "\\$USER->url",
-        "description": "A URL related to this user."
-    },
-    "$USER->maildigest": {
-        "prefix": [
-            "user_maildigest",
-            "$USER->maildigest"
-        ],
-        "body": "\\$USER->maildigest",
-        "description": "A setting for the mail digest for this user."
-    },
-    "$USER->autosubscribe": {
-        "prefix": [
-            "user_autosubscribe",
-            "$USER->autosubscribe"
-        ],
-        "body": "\\$USER->autosubscribe",
-        "description": "A preference as to if the user should be auto-subscribed to forums the user posts in."
-    },
-    "$USER->trackforums": {
-        "prefix": [
-            "user_trackforums",
-            "$USER->trackforums"
-        ],
-        "body": "\\$USER->trackforums",
-        "description": "A preference for forums and tracking them."
-    },
-    "$USER->timecreated": {
-        "prefix": [
-            "user_timecreated",
-            "$USER->timecreated"
-        ],
-        "body": "\\$USER->timecreated",
-        "description": "The time this record was created."
-    },
-    "$USER->timemodified": {
-        "prefix": [
-            "user_timemodified",
-            "$USER->timemodified"
-        ],
-        "body": "\\$USER->timemodified",
-        "description": "The time when the record was modified."
-    },
-    "$USER->trustbitmask": {
-        "prefix": [
-            "user_trustbitmask",
-            "$USER->trustbitmask"
-        ],
-        "body": "\\$USER->trustbitmask",
-        "description": "The trust bit mask."
-    },
-    "$USER->imagealt": {
-        "prefix": [
-            "user_imagealt",
-            "$USER->imagealt"
-        ],
-        "body": "\\$USER->imagealt",
-        "description": "Alternative text for the user\\'s image."
-    },
-    "$USER->lastnamephonetic": {
-        "prefix": [
-            "user_lastnamephonetic",
-            "$USER->lastnamephonetic"
-        ],
-        "body": "\\$USER->lastnamephonetic",
-        "description": "The phonetic details about the user\\'s surname."
-    },
-    "$USER->firstnamephonetic": {
-        "prefix": [
-            "user_firstnamephonetic",
-            "$USER->firstnamephonetic"
-        ],
-        "body": "\\$USER->firstnamephonetic",
-        "description": "The phonetic details about the user\\'s first name."
-    },
-    "$USER->middlename": {
-        "prefix": [
-            "user_middlename",
-            "$USER->middlename"
-        ],
-        "body": "\\$USER->middlename",
-        "description": "The middle name of the user."
-    },
-    "$USER->alternatename": {
-        "prefix": [
-            "user_alternatename",
-            "$USER->alternatename"
-        ],
-        "body": "\\$USER->alternatename",
-        "description": "An alternative name for the user."
-    },
-    "$USER->moodlenetprofile": {
-        "prefix": [
-            "user_moodlenetprofile",
-            "$USER->moodlenetprofile"
-        ],
-        "body": "\\$USER->moodlenetprofile",
-        "description": "The MoodleNet profile for the user."
-    },
-    "$USER->sesskey": {
-        "prefix": [
-            "user_sesskey",
-            "$USER->sesskey"
-        ],
-        "body": "\\$USER->sesskey",
-        "description": "The session key."
-    }
+  "$USER->id": {
+    "prefix": [
+      "user_id",
+      "$USER->id"
+    ],
+    "body": "\\$USER->id",
+    "description": "The user ID."
+  },
+  "$USER->auth": {
+    "prefix": [
+      "user_auth",
+      "$USER->auth"
+    ],
+    "body": "\\$USER->auth",
+    "description": "The authentication plugin used for this user record."
+  },
+  "$USER->confirmed": {
+    "prefix": [
+      "user_confirmed",
+      "$USER->confirmed"
+    ],
+    "body": "\\$USER->confirmed",
+    "description": "If this is an active user or not."
+  },
+  "$USER->policyagreed": {
+    "prefix": [
+      "user_policyagreed",
+      "$USER->policyagreed"
+    ],
+    "body": "\\$USER->policyagreed",
+    "description": "A flag to determine if the user has agreed to the site policy."
+  },
+  "$USER->deleted": {
+    "prefix": [
+      "user_deleted",
+      "$USER->deleted"
+    ],
+    "body": "\\$USER->deleted",
+    "description": "A flag to show if the user has been deleted or not."
+  },
+  "$USER->suspended": {
+    "prefix": [
+      "user_suspended",
+      "$USER->suspended"
+    ],
+    "body": "\\$USER->suspended",
+    "description": "A flag to show if the user has been suspended on this system."
+  },
+  "$USER->mnethostid": {
+    "prefix": [
+      "user_mnethostid",
+      "$USER->mnethostid"
+    ],
+    "body": "\\$USER->mnethostid",
+    "description": "An identifier for the MNet host if used."
+  },
+  "$USER->username": {
+    "prefix": [
+      "user_username",
+      "$USER->username"
+    ],
+    "body": "\\$USER->username",
+    "description": "The username for this user."
+  },
+  "$USER->idnumber": {
+    "prefix": [
+      "user_idnumber",
+      "$USER->idnumber"
+    ],
+    "body": "\\$USER->idnumber",
+    "description": "An identification number given by the institution."
+  },
+  "$USER->firstname": {
+    "prefix": [
+      "user_firstname",
+      "$USER->firstname"
+    ],
+    "body": "\\$USER->firstname",
+    "description": "The first name of the user."
+  },
+  "$USER->lastname": {
+    "prefix": [
+      "user_lastname",
+      "$USER->lastname"
+    ],
+    "body": "\\$USER->lastname",
+    "description": "The surname of the user."
+  },
+  "$USER->email": {
+    "prefix": [
+      "user_email",
+      "$USER->email"
+    ],
+    "body": "\\$USER->email",
+    "description": "An email address for contact."
+  },
+  "$USER->emailstop": {
+    "prefix": [
+      "user_emailstop",
+      "$USER->emailstop"
+    ],
+    "body": "\\$USER->emailstop",
+    "description": "A preference to disable notifications from being sent to the user."
+  },
+  "$USER->icq": {
+    "prefix": [
+      "user_icq",
+      "$USER->icq"
+    ],
+    "body": "\\$USER->icq",
+    "description": "The ICQ number of the user."
+  },
+  "$USER->skype": {
+    "prefix": [
+      "user_skype",
+      "$USER->skype"
+    ],
+    "body": "\\$USER->skype",
+    "description": "The Skype identifier of the user."
+  },
+  "$USER->yahoo": {
+    "prefix": [
+      "user_yahoo",
+      "$USER->yahoo"
+    ],
+    "body": "\\$USER->yahoo",
+    "description": "The Yahoo identifier of the user."
+  },
+  "$USER->aim": {
+    "prefix": [
+      "user_aim",
+      "$USER->aim"
+    ],
+    "body": "\\$USER->aim",
+    "description": "The AIM identifier of the user."
+  },
+  "$USER->msn": {
+    "prefix": [
+      "user_msn",
+      "$USER->msn"
+    ],
+    "body": "\\$USER->msn",
+    "description": "The MSN identifier of the user."
+  },
+  "$USER->institution": {
+    "prefix": [
+      "user_institution",
+      "$USER->institution"
+    ],
+    "body": "\\$USER->institution",
+    "description": "The institution that this user is a member of."
+  },
+  "$USER->department": {
+    "prefix": [
+      "user_department",
+      "$USER->department"
+    ],
+    "body": "\\$USER->department",
+    "description": "The department that this user can be found in."
+  },
+  "$USER->address": {
+    "prefix": [
+      "user_address",
+      "$USER->address"
+    ],
+    "body": "\\$USER->address",
+    "description": "The address of the user."
+  },
+  "$USER->city": {
+    "prefix": [
+      "user_city",
+      "$USER->city"
+    ],
+    "body": "\\$USER->city",
+    "description": "The city of the user."
+  },
+  "$USER->country": {
+    "prefix": [
+      "user_country",
+      "$USER->country"
+    ],
+    "body": "\\$USER->country",
+    "description": "The country that the user is in."
+  },
+  "$USER->lang": {
+    "prefix": [
+      "user_lang",
+      "$USER->lang"
+    ],
+    "body": "\\$USER->lang",
+    "description": "A user preference for the language shown."
+  },
+  "$USER->calendartype": {
+    "prefix": [
+      "user_calendartype",
+      "$USER->calendartype"
+    ],
+    "body": "\\$USER->calendartype",
+    "description": "A user preference for the type of calendar to use."
+  },
+  "$USER->theme": {
+    "prefix": [
+      "user_theme",
+      "$USER->theme"
+    ],
+    "body": "\\$USER->theme",
+    "description": "A user preference for the theme to display."
+  },
+  "$USER->timezone": {
+    "prefix": [
+      "user_timezone",
+      "$USER->timezone"
+    ],
+    "body": "\\$USER->timezone",
+    "description": "The timezone of the user."
+  },
+  "$USER->firstaccess": {
+    "prefix": [
+      "user_firstaccess",
+      "$USER->firstaccess"
+    ],
+    "body": "\\$USER->firstaccess",
+    "description": "The time that this user first accessed the site."
+  },
+  "$USER->lastaccess": {
+    "prefix": [
+      "user_lastaccess",
+      "$USER->lastaccess"
+    ],
+    "body": "\\$USER->lastaccess",
+    "description": "The time that the user last accessed the site."
+  },
+  "$USER->lastlogin": {
+    "prefix": [
+      "user_lastlogin",
+      "$USER->lastlogin"
+    ],
+    "body": "\\$USER->lastlogin",
+    "description": "The last login of this user."
+  },
+  "$USER->currentlogin": {
+    "prefix": [
+      "user_currentlogin",
+      "$USER->currentlogin"
+    ],
+    "body": "\\$USER->currentlogin",
+    "description": "The current login for this user."
+  },
+  "$USER->lastip": {
+    "prefix": [
+      "user_lastip",
+      "$USER->lastip"
+    ],
+    "body": "\\$USER->lastip",
+    "description": "The last IP address for the user."
+  },
+  "$USER->secret": {
+    "prefix": [
+      "user_secret",
+      "$USER->secret"
+    ],
+    "body": "\\$USER->secret",
+    "description": "Secret.. not sure."
+  },
+  "$USER->picture": {
+    "prefix": [
+      "user_picture",
+      "$USER->picture"
+    ],
+    "body": "\\$USER->picture",
+    "description": "The picture details associated with this user."
+  },
+  "$USER->url": {
+    "prefix": [
+      "user_url",
+      "$USER->url"
+    ],
+    "body": "\\$USER->url",
+    "description": "A URL related to this user."
+  },
+  "$USER->maildigest": {
+    "prefix": [
+      "user_maildigest",
+      "$USER->maildigest"
+    ],
+    "body": "\\$USER->maildigest",
+    "description": "A setting for the mail digest for this user."
+  },
+  "$USER->autosubscribe": {
+    "prefix": [
+      "user_autosubscribe",
+      "$USER->autosubscribe"
+    ],
+    "body": "\\$USER->autosubscribe",
+    "description": "A preference as to if the user should be auto-subscribed to forums the user posts in."
+  },
+  "$USER->trackforums": {
+    "prefix": [
+      "user_trackforums",
+      "$USER->trackforums"
+    ],
+    "body": "\\$USER->trackforums",
+    "description": "A preference for forums and tracking them."
+  },
+  "$USER->timecreated": {
+    "prefix": [
+      "user_timecreated",
+      "$USER->timecreated"
+    ],
+    "body": "\\$USER->timecreated",
+    "description": "The time this record was created."
+  },
+  "$USER->timemodified": {
+    "prefix": [
+      "user_timemodified",
+      "$USER->timemodified"
+    ],
+    "body": "\\$USER->timemodified",
+    "description": "The time when the record was modified."
+  },
+  "$USER->trustbitmask": {
+    "prefix": [
+      "user_trustbitmask",
+      "$USER->trustbitmask"
+    ],
+    "body": "\\$USER->trustbitmask",
+    "description": "The trust bit mask."
+  },
+  "$USER->imagealt": {
+    "prefix": [
+      "user_imagealt",
+      "$USER->imagealt"
+    ],
+    "body": "\\$USER->imagealt",
+    "description": "Alternative text for the user\\'s image."
+  },
+  "$USER->lastnamephonetic": {
+    "prefix": [
+      "user_lastnamephonetic",
+      "$USER->lastnamephonetic"
+    ],
+    "body": "\\$USER->lastnamephonetic",
+    "description": "The phonetic details about the user\\'s surname."
+  },
+  "$USER->firstnamephonetic": {
+    "prefix": [
+      "user_firstnamephonetic",
+      "$USER->firstnamephonetic"
+    ],
+    "body": "\\$USER->firstnamephonetic",
+    "description": "The phonetic details about the user\\'s first name."
+  },
+  "$USER->middlename": {
+    "prefix": [
+      "user_middlename",
+      "$USER->middlename"
+    ],
+    "body": "\\$USER->middlename",
+    "description": "The middle name of the user."
+  },
+  "$USER->alternatename": {
+    "prefix": [
+      "user_alternatename",
+      "$USER->alternatename"
+    ],
+    "body": "\\$USER->alternatename",
+    "description": "An alternative name for the user."
+  },
+  "$USER->moodlenetprofile": {
+    "prefix": [
+      "user_moodlenetprofile",
+      "$USER->moodlenetprofile"
+    ],
+    "body": "\\$USER->moodlenetprofile",
+    "description": "The MoodleNet profile for the user."
+  },
+  "$USER->sesskey": {
+    "prefix": [
+      "user_sesskey",
+      "$USER->sesskey"
+    ],
+    "body": "\\$USER->sesskey",
+    "description": "The session key."
+  }
 }

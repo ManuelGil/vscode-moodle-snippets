@@ -3,7 +3,6 @@
 # Moodle Pack
 
 [![Latest Release](https://img.shields.io/visual-studio-marketplace/v/imgildev.vscode-moodle-snippets?style=flat&label=VS%20Marketplace&logo=visual-studio-code)](https://marketplace.visualstudio.com/items?itemName=imgildev.vscode-moodle-snippets)
-[![Installs](https://vsmarketplacebadge.apphb.com/installs/imgildev.vscode-moodle-snippets.svg)](https://marketplace.visualstudio.com/items?itemName=imgildev.vscode-moodle-snippets)
 [![GitHub license](https://img.shields.io/github/license/ManuelGil/vscode-moodle-snippets)]()
 
 Moodle - snippets, autocomplete, emmet & syntax for VSCode editor
@@ -546,4 +545,4 @@ See also the list of [contributors](https://github.com/ManuelGil/vscode-moodle-s
 
 ## License
 
-Mustache Snippets is licensed under the MIT License - see the [MIT License](https://opensource.org/licenses/MIT) for details.
+Moodle Snippets is licensed under the MIT License - see the [MIT License](https://opensource.org/licenses/MIT) for details.

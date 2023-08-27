@@ -19,11 +19,13 @@ let content = `{{!
 `;
 
 module.exports = function (vscode, fs, path) {
-    vscode.window.showInputBox({
-        prompt: "Filename",
-        placeHolder: "Filename"
-    }).then(function (value) {
-        const filename = value.endsWith('.mustache') ? value : `${value}.mustache`;
-        execute.save(vscode, fs, path, filename, content);
+  vscode.window
+    .showInputBox({
+      prompt: 'Filename',
+      placeHolder: 'Filename',
+    })
+    .then(function (value) {
+      const filename = value.endsWith('.mustache') ? value : `${value}.mustache`;
+      execute.save(vscode, fs, path, filename, content);
     });
-}
+};

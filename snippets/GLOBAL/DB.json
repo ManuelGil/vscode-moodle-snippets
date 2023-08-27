@@ -1,890 +1,890 @@
 {
-	"$DB::get_driver_instance": {
-		"prefix": [
-			"db_get_driver_instance",
-			"$DB::get_driver_instance"
-		],
-		"body": "\\$DB::get_driver_instance(${1:\\$type}, ${2:\\$library}${3:, ${4:\\$external}});",
-		"description": "Loads and returns a database instance with the specified type and library. The loaded class is within lib/dml directory and of the form: $type.'_'.$library.'_moodle_database'."
-	},
-	"$DB->driver_installed": {
-		"prefix": [
-			"db_driver_installed",
-			"$DB->driver_installed"
-		],
-		"body": "\\$DB->driver_installed();",
-		"description": "Detects if all needed PHP stuff are installed for DB connectivity. Can be used before connect()"
-	},
-	"$DB->get_prefix": {
-		"prefix": [
-			"db_get_prefix",
-			"$DB->get_prefix"
-		],
-		"body": "\\$DB->get_prefix();",
-		"description": "Returns database table prefix can be used before connect()."
-	},
-	"$DB->get_dbvendor": {
-		"prefix": [
-			"db_get_dbvendor",
-			"$DB->get_dbvendor"
-		],
-		"body": "\\$DB->get_dbvendor();",
-		"description": "Returns the database vendor. Can be used before connect()."
-	},
-	"$DB->get_dbfamily": {
-		"prefix": [
-			"db_get_dbfamily",
-			"$DB->get_dbfamily"
-		],
-		"body": "\\$DB->get_dbfamily();",
-		"description": "Returns the database family type. (This sort of describes the SQL 'dialect') can be used before connect()."
-	},
-	"$DB->get_name": {
-		"prefix": [
-			"db_get_name",
-			"$DB->get_name"
-		],
-		"body": "\\$DB->get_name();",
-		"description": "Returns the localised database type name can be used before connect()."
-	},
-	"$DB->get_configuration_help": {
-		"prefix": [
-			"db_get_configuration_help",
-			"$DB->get_configuration_help"
-		],
-		"body": "\\$DB->get_configuration_help();",
-		"description": "Returns the localised database configuration help. Can be used before connect()."
-	},
-	"$DB->get_configuration_hints": {
-		"prefix": [
-			"db_get_configuration_hints",
-			"$DB->get_configuration_hints"
-		],
-		"body": "\\$DB->get_configuration_hints();",
-		"description": "DEPRECATED SINCE 2.6. Returns the localised database description can be used before connect()."
-	},
-	"$DB->export_dbconfig": {
-		"prefix": [
-			"db_export_dbconfig",
-			"$DB->export_dbconfig"
-		],
-		"body": "\\$DB->export_dbconfig();",
-		"description": "Returns the db related part of config.php"
-	},
-	"$DB->diagnose": {
-		"prefix": [
-			"db_diagnose",
-			"$DB->diagnose"
-		],
-		"body": "\\$DB->diagnose();",
-		"description": "Diagnose database and tables, this function is used to verify database and driver settings, db engine types, etc."
-	},
-	"$DB->connect": {
-		"prefix": [
-			"db_connect",
-			"$DB->connect"
-		],
-		"body": "\\$DB->connect(${1:\\$dbhost}, ${2:\\$dbuser}, ${3:\\$dbpass}, ${4:\\$dbname}, ${5:\\$prefix}${6:, ${7:\\$dboptions_array}});",
-		"description": "Connects to the database. Must be called before other methods."
-	},
-	"$DB->create_database": {
-		"prefix": [
-			"db_create_database",
-			"$DB->create_database"
-		],
-		"body": "\\$DB->create_database(${1:\\$dbhost}, ${2:\\$dbuser}, ${3:\\$dbpass}, ${4:\\$dbname}${5:, ${6:\\$dboptions_array}});",
-		"description": "Attempt to create the database."
-	},
-	"$DB->get_transaction_start_backtrace": {
-		"prefix": [
-			"db_get_transaction_start_backtrace",
-			"$DB->get_transaction_start_backtrace"
-		],
-		"body": "\\$DB->get_transaction_start_backtrace();",
-		"description": "Returns transaction trace for debugging purposes. @private to be used by core only"
-	},
-	"$DB->dispose": {
-		"prefix": [
-			"db_dispose",
-			"$DB->dispose"
-		],
-		"body": "\\$DB->dispose();",
-		"description": "Closes the database connection and releases all resources and memory (especially circular memory references). Do NOT use connect() again, create a new instance if needed."
-	},
-	"$DB->query_log": {
-		"prefix": [
-			"db_query_log",
-			"$DB->query_log"
-		],
-		"body": "\\$DB->query_log(${1:\\$error});",
-		"description": "This logs the last query based on 'logall', 'logslow' and 'logerrors' options configured via $CFG->dboptions ."
-	},
-	"$DB->get_server_info": {
-		"prefix": [
-			"db_get_server_info",
-			"$DB->get_server_info"
-		],
-		"body": "\\$DB->get_server_info();",
-		"description": "Returns database server info array"
-	},
-	"$DB->get_last_error": {
-		"prefix": [
-			"db_get_last_error",
-			"$DB->get_last_error"
-		],
-		"body": "\\$DB->get_last_error();",
-		"description": "Returns the last error reported by the database engine."
-	},
-	"$DB->get_in_or_equal": {
-		"prefix": [
-			"db_get_in_or_equal",
-			"$DB->get_in_or_equal"
-		],
-		"body": "\\$DB->get_in_or_equal(${1:\\$items}${2:, ${3|SQL_PARAMS_QM,SQL_PARAMS_NAMED|}${4:, ${5:\\$prefix}${6:, ${7:\\$equal}${8:, ${9:\\$onemptyitems}}}}});",
-		"description": "Constructs 'IN()' or '=' sql fragment"
-	},
-	"$DB->fix_sql_params": {
-		"prefix": [
-			"db_fix_sql_params",
-			"$DB->fix_sql_params"
-		],
-		"body": "\\$DB->fix_sql_params(${1:\\$sql}${2:, ${3:\\$params_array}});",
-		"description": "Normalizes sql query parameters and verifies parameters."
-	},
-	"$DB->get_tables": {
-		"prefix": [
-			"db_get_tables",
-			"$DB->get_tables"
-		],
-		"body": "\\$DB->get_tables(${1:\\$usecache});",
-		"description": "Return tables in database WITHOUT current prefix."
-	},
-	"$DB->get_indexes": {
-		"prefix": [
-			"db_get_indexes",
-			"$DB->get_indexes"
-		],
-		"body": "\\$DB->get_indexes(${1:\\$table});",
-		"description": "Return table indexes - everything lowercased."
-	},
-	"$DB->get_columns": {
-		"prefix": [
-			"db_get_columns",
-			"$DB->get_columns"
-		],
-		"body": "\\$DB->get_columns(${1:\\$table}${2:, ${3:\\$usecache}});",
-		"description": "Returns detailed information about columns in table. This information is cached internally."
-	},
-	"$DB->reset_caches": {
-		"prefix": [
-			"db_reset_caches",
-			"$DB->reset_caches"
-		],
-		"body": "\\$DB->reset_caches(${1:\\$tablenames});",
-		"description": "Resets the internal column details cache"
-	},
-	"$DB->get_manager": {
-		"prefix": [
-			"db_get_manager",
-			"$DB->get_manager"
-		],
-		"body": "\\$DB->get_manager();",
-		"description": "Returns the sql generator used for db manipulation. Used mostly in upgrade.php scripts."
-	},
-	"$DB->change_db_encoding": {
-		"prefix": [
-			"db_change_db_encoding",
-			"$DB->change_db_encoding"
-		],
-		"body": "\\$DB->change_db_encoding();",
-		"description": "Attempts to change db encoding to UTF-8 encoding if possible."
-	},
-	"$DB->setup_is_unicodedb": {
-		"prefix": [
-			"db_setup_is_unicodedb",
-			"$DB->setup_is_unicodedb"
-		],
-		"body": "\\$DB->setup_is_unicodedb();",
-		"description": "Checks to see if the database is in unicode mode?"
-	},
-	"$DB->set_debug": {
-		"prefix": [
-			"db_set_debug",
-			"$DB->set_debug"
-		],
-		"body": "\\$DB->set_debug(${1:\\$state});",
-		"description": "Enable/disable very detailed debugging."
-	},
-	"$DB->get_debug": {
-		"prefix": [
-			"db_get_debug",
-			"$DB->get_debug"
-		],
-		"body": "\\$DB->get_debug();",
-		"description": "Returns debug status"
-	},
-	"$DB->set_logging": {
-		"prefix": [
-			"db_set_logging",
-			"$DB->set_logging"
-		],
-		"body": "\\$DB->set_logging(${1:\\$state});",
-		"description": "DEPRECATED SINCE MOODLE 2.9. Enable/disable detailed sql logging"
-	},
-	"$DB->change_database_structure": {
-		"prefix": [
-			"db_change_database_structure",
-			"$DB->change_database_structure"
-		],
-		"body": "\\$DB->change_database_structure(${1:\\$sql}${2:, ${3:\\$tablenames}});",
-		"description": "Do NOT use in code, this is for use by database_manager only!"
-	},
-	"$DB->execute": {
-		"prefix": [
-			"db_execute",
-			"$DB->execute"
-		],
-		"body": "\\$DB->execute(${1:\\$sql}${2:, ${3:\\$params_array}});",
-		"description": "Executes a general sql query. Should be used only when no other method suitable. Do NOT use this to make changes in db structure, use database_manager methods instead!"
-	},
-	"$DB->get_recordset": {
-		"prefix": [
-			"db_get_recordset",
-			"$DB->get_recordset"
-		],
-		"body": "\\$DB->get_recordset(${1:\\$table}${2:, ${3:\\$conditions_array}${4:, ${5:\\$sort}${6:, ${7:\\$fields}${8:, ${9:\\$limitfrom}${10:, ${11:\\$limitnum}}}}}});",
-		"description": "Get a number of records as a moodle_recordset where all the given conditions met."
-	},
-	"$DB->get_recordset_list": {
-		"prefix": [
-			"db_get_recordset_list",
-			"$DB->get_recordset_list"
-		],
-		"body": "\\$DB->get_recordset_list(${1:\\$table}, ${2:\\$field}, ${3:\\$values_array}${4:, ${5:\\$sort}${6:, ${7:\\$fields}${8:, ${9:\\$limitfrom}${10:, ${11:\\$limitnum}}}}});",
-		"description": "Get a number of records as a moodle_recordset where one field match one list of values."
-	},
-	"$DB->get_recordset_select": {
-		"prefix": [
-			"db_get_recordset_select",
-			"$DB->get_recordset_select"
-		],
-		"body": "\\$DB->get_recordset_select(${1:\\$table}, ${2:\\$select}${3:, ${4:\\$params_array}${5:, ${6:\\$sort}${7:, ${8:\\$fields}${9:, ${10:\\$limitfrom}${11:, ${12:\\$limitnum}}}}}});",
-		"description": "Get a number of records as a moodle_recordset which match a particular WHERE clause."
-	},
-	"$DB->get_recordset_sql": {
-		"prefix": [
-			"db_get_recordset_sql",
-			"$DB->get_recordset_sql"
-		],
-		"body": "\\$DB->get_recordset_sql(${1:\\$sql}${2:, ${3:\\$params_array}${4:, ${5:\\$limitfrom}${6:, ${7:\\$limitnum}}}});",
-		"description": "Get a number of records as a moodle_recordset using a SQL statement."
-	},
-	"$DB->export_table_recordset": {
-		"prefix": [
-			"db_export_table_recordset",
-			"$DB->export_table_recordset"
-		],
-		"body": "\\$DB->export_table_recordset(${1:\\$table});",
-		"description": "Get all records from a table."
-	},
-	"$DB->get_records": {
-		"prefix": [
-			"db_get_records",
-			"$DB->get_records"
-		],
-		"body": "\\$DB->get_records(${1:\\$table}${2:, ${3:\\$conditions_array}${4:, ${5:\\$sort}${6:, ${7:\\$fields}${8:, ${9:\\$limitfrom}${10:, ${11:\\$limitnum}}}}}});",
-		"description": "Get a number of records as an array of objects where all the given conditions met."
-	},
-	"$DB->get_records_list": {
-		"prefix": [
-			"db_get_records_list",
-			"$DB->get_records_list"
-		],
-		"body": "\\$DB->get_records_list(${1:\\$table}, ${2:\\$field}, ${3:\\$values_array}${4:, ${5:\\$sort}${6:, ${7:\\$fields}${8:, ${9:\\$limitfrom}${10:, ${11:\\$limitnum}}}}});",
-		"description": "Get a number of records as an array of objects where one field match one list of values."
-	},
-	"$DB->get_records_select": {
-		"prefix": [
-			"db_get_records_select",
-			"$DB->get_records_select"
-		],
-		"body": "\\$DB->get_records_select(${1:\\$table}, ${2:\\$select}${3:, ${4:\\$params_array}${5:, ${6:\\$sort}${7:, ${8:\\$fields}${9:, ${10:\\$limitfrom}${11:, ${12:\\$limitnum}}}}}});",
-		"description": "Get a number of records as an array of objects which match a particular WHERE clause."
-	},
-	"$DB->get_records_sql": {
-		"prefix": [
-			"db_get_records_sql",
-			"$DB->get_records_sql"
-		],
-		"body": "\\$DB->get_records_sql(${1:\\$sql}${2:, ${3:\\$params_array}${4:, ${5:\\$limitfrom}${6:, ${7:\\$limitnum}}}});",
-		"description": "Get a number of records as an array of objects using a SQL statement."
-	},
-	"$DB->get_records_menu": {
-		"prefix": [
-			"db_get_records_menu",
-			"$DB->get_records_menu"
-		],
-		"body": "\\$DB->get_records_menu(${1:\\$table}${2:, ${3:\\$conditions_array}${4:, ${5:\\$sort}${6:, ${7:\\$fields}${8:, ${9:\\$limitfrom}${10:, ${11:\\$limitnum}}}}}});",
-		"description": "Get the first two columns from a number of records as an associative array where all the given conditions met."
-	},
-	"$DB->get_records_select_menu": {
-		"prefix": [
-			"db_get_records_select_menu",
-			"$DB->get_records_select_menu"
-		],
-		"body": "\\$DB->get_records_select_menu(${1:\\$table}, ${2:\\$select}${3:, ${4:\\$params_array}${5:, ${6:\\$sort}${7:, ${8:\\$fields}${9:, ${10:\\$limitfrom}${11:, ${12:\\$limitnum}}}}}});",
-		"description": "Get the first two columns from a number of records as an associative array which match a particular WHERE clause."
-	},
-	"$DB->get_records_sql_menu": {
-		"prefix": [
-			"db_get_records_sql_menu",
-			"$DB->get_records_sql_menu"
-		],
-		"body": "\\$DB->get_records_sql_menu(${1:\\$sql}${2:, ${3:\\$params_array}${4:, ${5:\\$limitfrom}${6:, ${7:\\$limitnum}}}});",
-		"description": "Get the first two columns from a number of records as an associative array using a SQL statement."
-	},
-	"$DB->get_record": {
-		"prefix": [
-			"db_get_record",
-			"$DB->get_record"
-		],
-		"body": "\\$DB->get_record(${1:\\$table}, ${2:\\$conditions_array}${3:, ${4:\\$fields}${5:, ${6|IGNORE_MISSING,IGNORE_MULTIPLE,MUST_EXIST|}}});",
-		"description": "Get a single database record as an object where all the given conditions met."
-	},
-	"$DB->get_record_select": {
-		"prefix": [
-			"db_get_record_select",
-			"$DB->get_record_select"
-		],
-		"body": "\\$DB->get_record_select(${1:\\$table}, ${2:\\$select}${3:, ${4:\\$params_array}${5:, ${6:\\$fields}${7:, ${8|IGNORE_MISSING,IGNORE_MULTIPLE,MUST_EXIST|}}}});",
-		"description": "Get a single database record as an object which match a particular WHERE clause."
-	},
-	"$DB->get_record_sql": {
-		"prefix": [
-			"db_get_record_sql",
-			"$DB->get_record_sql"
-		],
-		"body": "\\$DB->get_record_sql(${1:\\$sql}${2:, ${3:\\$params_array}${4:, ${5|IGNORE_MISSING,IGNORE_MULTIPLE,MUST_EXIST|}}});",
-		"description": "Get a single database record as an object using a SQL statement."
-	},
-	"$DB->get_field": {
-		"prefix": [
-			"db_get_field",
-			"$DB->get_field"
-		],
-		"body": "\\$DB->get_field(${1:\\$table}, ${2:\\$return}, ${3:\\$conditions_array}${4:, ${5|IGNORE_MISSING,IGNORE_MULTIPLE,MUST_EXIST|}});",
-		"description": "Get a single field value from a table record where all the given conditions met."
-	},
-	"$DB->get_field_select": {
-		"prefix": [
-			"db_get_field_select",
-			"$DB->get_field_select"
-		],
-		"body": "\\$DB->get_field_select(${1:\\$table}, ${2:\\$return}, ${3:\\$select}${4:, ${5:\\$params_array}${6:, ${7|IGNORE_MISSING,IGNORE_MULTIPLE,MUST_EXIST|}}});",
-		"description": "Get a single field value from a table record which match a particular WHERE clause."
-	},
-	"$DB->get_field_sql": {
-		"prefix": [
-			"db_get_field_sql",
-			"$DB->get_field_sql"
-		],
-		"body": "\\$DB->get_field_sql(${1:\\$sql}${2:, ${3:\\$params_array}${4:, ${5|IGNORE_MISSING,IGNORE_MULTIPLE,MUST_EXIST|}}});",
-		"description": "Get a single field value (first field) using a SQL statement."
-	},
-	"$DB->get_fieldset_select": {
-		"prefix": [
-			"db_get_fieldset_select",
-			"$DB->get_fieldset_select"
-		],
-		"body": "\\$DB->get_fieldset_select(${1:\\$table}, ${2:\\$return}, ${3:\\$select}${4:, ${5:\\$params_array}});",
-		"description": "Selects records and return values of chosen field as an array which match a particular WHERE clause."
-	},
-	"$DB->get_fieldset_sql": {
-		"prefix": [
-			"db_get_fieldset_sql",
-			"$DB->get_fieldset_sql"
-		],
-		"body": "\\$DB->get_fieldset_sql(${1:\\$sql}${2:, ${3:\\$params_array}});",
-		"description": "Selects records and return values (first field) as an array using a SQL statement."
-	},
-	"$DB->insert_record_raw": {
-		"prefix": [
-			"db_insert_record_raw",
-			"$DB->insert_record_raw"
-		],
-		"body": "\\$DB->insert_record_raw(${1:\\$table}, ${2:\\$params}${3:, ${4:\\$returnid}${5:, ${6:\\$bulk}${7:, ${8:\\$customsequence}}}});",
-		"description": "Insert new record into database, as fast as possible, no safety checks, lobs not supported."
-	},
-	"$DB->insert_record": {
-		"prefix": [
-			"db_insert_record",
-			"$DB->insert_record"
-		],
-		"body": "\\$DB->insert_record(${1:\\$table}, ${2:\\$dataobject}${3:, ${4:\\$returnid}${5:, ${6:\\$bulk}}});",
-		"description": "Insert a record into a table and return the \"id\" field if required."
-	},
-	"$DB->insert_records": {
-		"prefix": [
-			"db_insert_records",
-			"$DB->insert_records"
-		],
-		"body": "\\$DB->insert_records(${1:\\$table}, ${2:\\$dataobjects});",
-		"description": "Insert multiple records into database as fast as possible."
-	},
-	"$DB->import_record": {
-		"prefix": [
-			"db_import_record",
-			"$DB->import_record"
-		],
-		"body": "\\$DB->import_record(${1:\\$table}, ${2:\\$dataobject});",
-		"description": "Import a record into a table, id field is required. Safety checks are NOT carried out. Lobs are supported."
-	},
-	"$DB->update_record_raw": {
-		"prefix": [
-			"db_update_record_raw",
-			"$DB->update_record_raw"
-		],
-		"body": "\\$DB->update_record_raw(${1:\\$table}, ${2:\\$params}${3:, ${4:\\$bulk}});",
-		"description": "Update record in database, as fast as possible, no safety checks, lobs not supported."
-	},
-	"$DB->update_record": {
-		"prefix": [
-			"db_update_record",
-			"$DB->update_record"
-		],
-		"body": "\\$DB->update_record(${1:\\$table}, ${2:\\$dataobject}${3:, ${4:\\$bulk}});",
-		"description": "Update a record in a table"
-	},
-	"$DB->set_field": {
-		"prefix": [
-			"db_set_field",
-			"$DB->set_field"
-		],
-		"body": "\\$DB->set_field(${1:\\$table}, ${2:\\$newfield}, ${3:\\$newvalue}${4:, ${5:\\$conditions_array}});",
-		"description": "Set a single field in every table record where all the given conditions met."
-	},
-	"$DB->set_field_select": {
-		"prefix": [
-			"db_set_field_select",
-			"$DB->set_field_select"
-		],
-		"body": "\\$DB->set_field_select(${1:\\$table}, ${2:\\$newfield}, ${3:\\$newvalue}, ${4:\\$select}${5:, ${6:\\$params_array}});",
-		"description": "Set a single field in every table record which match a particular WHERE clause."
-	},
-	"$DB->count_records": {
-		"prefix": [
-			"db_count_records",
-			"$DB->count_records"
-		],
-		"body": "\\$DB->count_records(${1:\\$table}${2:, ${3:\\$conditions_array}});",
-		"description": "Count the records in a table where all the given conditions met."
-	},
-	"$DB->count_records_select": {
-		"prefix": [
-			"db_count_records_select",
-			"$DB->count_records_select"
-		],
-		"body": "\\$DB->count_records_select(${1:\\$table}, ${2:\\$select}${3:, ${4:\\$params_array}${5:, ${6:\\$countitem}}});",
-		"description": "Count the records in a table which match a particular WHERE clause."
-	},
-	"$DB->count_records_sql": {
-		"prefix": [
-			"db_count_records_sql",
-			"$DB->count_records_sql"
-		],
-		"body": "\\$DB->count_records_sql(${1:\\$sql}${2:, ${3:\\$params_array}});",
-		"description": "Get the result of a SQL SELECT COUNT(...) query."
-	},
-	"$DB->record_exists": {
-		"prefix": [
-			"db_record_exists",
-			"$DB->record_exists"
-		],
-		"body": "\\$DB->record_exists(${1:\\$table}, ${2:\\$conditions_array});",
-		"description": "Test whether a record exists in a table where all the given conditions met."
-	},
-	"$DB->record_exists_select": {
-		"prefix": [
-			"db_record_exists_select",
-			"$DB->record_exists_select"
-		],
-		"body": "\\$DB->record_exists_select(${1:\\$table}, ${2:\\$select}${3:, ${4:\\$params_array}});",
-		"description": "Test whether any records exists in a table which match a particular WHERE clause."
-	},
-	"$DB->record_exists_sql": {
-		"prefix": [
-			"db_record_exists_sql",
-			"$DB->record_exists_sql"
-		],
-		"body": "\\$DB->record_exists_sql(${1:\\$sql}${2:, ${3:\\$params_array}});",
-		"description": "Test whether a SQL SELECT statement returns any records."
-	},
-	"$DB->delete_records": {
-		"prefix": [
-			"db_delete_records",
-			"$DB->delete_records"
-		],
-		"body": "\\$DB->delete_records(${1:\\$table}${2:, ${3:\\$conditions_array}});",
-		"description": "Delete the records from a table where all the given conditions met. If conditions not specified, table is truncated."
-	},
-	"$DB->delete_records_list": {
-		"prefix": [
-			"db_delete_records_list",
-			"$DB->delete_records_list"
-		],
-		"body": "\\$DB->delete_records_list(${1:\\$table}, ${2:\\$field}, ${3:\\$values_array});",
-		"description": "Delete the records from a table where one field match one list of values."
-	},
-	"$DB->delete_records_select": {
-		"prefix": [
-			"db_delete_records_select",
-			"$DB->delete_records_select"
-		],
-		"body": "\\$DB->delete_records_select(${1:\\$table}, ${2:\\$select}${3:, ${4:\\$params_array}});",
-		"description": "Delete one or more records from a table which match a particular WHERE clause."
-	},
-	"$DB->sql_null_from_clause": {
-		"prefix": [
-			"db_sql_null_from_clause",
-			"$DB->sql_null_from_clause"
-		],
-		"body": "\\$DB->sql_null_from_clause();",
-		"description": "Returns the FROM clause required by some DBs in all SELECT statements."
-	},
-	"$DB->sql_bitand": {
-		"prefix": [
-			"db_sql_bitand",
-			"$DB->sql_bitand"
-		],
-		"body": "\\$DB->sql_bitand(${1:\\$int1}, ${2:\\$int2});",
-		"description": "Returns the SQL text to be used in order to perform one bitwise AND operation between 2 integers."
-	},
-	"$DB->sql_bitnot": {
-		"prefix": [
-			"db_sql_bitnot",
-			"$DB->sql_bitnot"
-		],
-		"body": "\\$DB->sql_bitnot(${1:\\$int1});",
-		"description": "Returns the SQL text to be used in order to perform one bitwise NOT operation with 1 integer."
-	},
-	"$DB->sql_bitor": {
-		"prefix": [
-			"db_sql_bitor",
-			"$DB->sql_bitor"
-		],
-		"body": "\\$DB->sql_bitor(${1:\\$int1}, ${2:\\$int2});",
-		"description": "Returns the SQL text to be used in order to perform one bitwise OR operation between 2 integers."
-	},
-	"$DB->sql_bitxor": {
-		"prefix": [
-			"db_sql_bitxor",
-			"$DB->sql_bitxor"
-		],
-		"body": "\\$DB->sql_bitxor(${1:\\$int1}, ${2:\\$int2});",
-		"description": "Returns the SQL text to be used in order to perform one bitwise XOR operation between 2 integers."
-	},
-	"$DB->sql_modulo": {
-		"prefix": [
-			"db_sql_modulo",
-			"$DB->sql_modulo"
-		],
-		"body": "\\$DB->sql_modulo(${1:\\$int1}, ${2:\\$int2});",
-		"description": "Returns the SQL text to be used in order to perform module '%' operation - remainder after division."
-	},
-	"$DB->sql_ceil": {
-		"prefix": [
-			"db_sql_ceil",
-			"$DB->sql_ceil"
-		],
-		"body": "\\$DB->sql_ceil(${1:\\$fieldname});",
-		"description": "Returns the cross db correct CEIL (ceiling) expression applied to fieldname. Most DBs use CEIL(), hence it's the default here."
-	},
-	"$DB->sql_cast_char2int": {
-		"prefix": [
-			"db_sql_cast_char2int",
-			"$DB->sql_cast_char2int"
-		],
-		"body": "\\$DB->sql_cast_char2int(${1:\\$fieldname}${2:, ${3:\\$text}});",
-		"description": "Returns the SQL to be used in order to CAST one CHAR column to INTEGER."
-	},
-	"$DB->sql_cast_char2real": {
-		"prefix": [
-			"db_sql_cast_char2real",
-			"$DB->sql_cast_char2real"
-		],
-		"body": "\\$DB->sql_cast_char2real(${1:\\$fieldname}${2:, ${3:\\$text}});",
-		"description": "Returns the SQL to be used in order to CAST one CHAR column to REAL number."
-	},
-	"$DB->sql_cast_2signed": {
-		"prefix": [
-			"db_sql_cast_2signed",
-			"$DB->sql_cast_2signed"
-		],
-		"body": "\\$DB->sql_cast_2signed(${1:\\$fieldname});",
-		"description": "DEPRECATED SINCE 2.3. Returns the SQL to be used in order to an UNSIGNED INTEGER column to SIGNED."
-	},
-	"$DB->sql_compare_text": {
-		"prefix": [
-			"db_sql_compare_text",
-			"$DB->sql_compare_text"
-		],
-		"body": "\\$DB->sql_compare_text(${1:\\$fieldname}${2:, ${3:\\$numchars}});",
-		"description": "Returns the SQL text to be used to compare one TEXT (clob) column with one varchar column, because some RDBMS doesn't support such direct comparisons."
-	},
-	"$DB->sql_equal": {
-		"prefix": [
-			"db_sql_equal",
-			"$DB->sql_equal"
-		],
-		"body": "\\$DB->sql_equal(${1:\\$fieldname}, ${2:\\$param}${3:, ${4:\\$casesensitive}${5:, ${6:\\$accentsensitive}${7:, ${8:\\$notequal}}}});",
-		"description": "Returns an equal (=) or not equal (<>) part of a query."
-	},
-	"$DB->sql_like": {
-		"prefix": [
-			"db_sql_like",
-			"$DB->sql_like"
-		],
-		"body": "\\$DB->sql_like(${1:\\$fieldname}, ${2:\\$param}${3:, ${4:\\$casesensitive}${5:, ${6:\\$accentsensitive}${7:, ${8:\\$notlike}${9:, ${10:\\$escapechar}}}}});",
-		"description": "Returns 'LIKE' part of a query."
-	},
-	"$DB->sql_like_escape": {
-		"prefix": [
-			"db_sql_like_escape",
-			"$DB->sql_like_escape"
-		],
-		"body": "\\$DB->sql_like_escape(${1:\\$text}${2:, ${3:\\$escapechar}});",
-		"description": "Escape sql LIKE special characters like '_' or '%'."
-	},
-	"$DB->sql_concat": {
-		"prefix": [
-			"db_sql_concat",
-			"$DB->sql_concat"
-		],
-		"body": "\\$DB->sql_concat();",
-		"description": "Returns the proper SQL to do CONCAT between the elements(fieldnames) passed."
-	},
-	"$DB->sql_concat_join": {
-		"prefix": [
-			"db_sql_concat_join",
-			"$DB->sql_concat_join"
-		],
-		"body": "\\$DB->sql_concat_join(${1:${2:\\$separator}${3:, ${4:\\$elements}}});",
-		"description": "Returns the proper SQL to do CONCAT between the elements passed with a given separator"
-	},
-	"$DB->sql_fullname": {
-		"prefix": [
-			"db_sql_fullname",
-			"$DB->sql_fullname"
-		],
-		"body": "\\$DB->sql_fullname(${1:${2:\\$first}${3:, ${4:\\$last}}});",
-		"description": "Returns the proper SQL (for the dbms in use) to concatenate $firstname and $lastname"
-	},
-	"$DB->sql_order_by_text": {
-		"prefix": [
-			"db_sql_order_by_text",
-			"$DB->sql_order_by_text"
-		],
-		"body": "\\$DB->sql_order_by_text(${1:\\$fieldname}${2:, ${3:\\$numchars}});",
-		"description": "Returns the SQL text to be used to order by one TEXT (clob) column, because some RDBMS doesn't support direct ordering of such fields."
-	},
-	"$DB->sql_length": {
-		"prefix": [
-			"db_sql_length",
-			"$DB->sql_length"
-		],
-		"body": "\\$DB->sql_length(${1:\\$fieldname});",
-		"description": "Returns the SQL text to be used to calculate the length in characters of one expression."
-	},
-	"$DB->sql_substr": {
-		"prefix": [
-			"db_sql_substr",
-			"$DB->sql_substr"
-		],
-		"body": "\\$DB->sql_substr(${1:\\$expr}, ${2:\\$start}${3:, ${4:\\$length}});",
-		"description": "Returns the proper substr() SQL text used to extract substrings from DB this was originally returning only function name"
-	},
-	"$DB->sql_position": {
-		"prefix": [
-			"db_sql_position",
-			"$DB->sql_position"
-		],
-		"body": "\\$DB->sql_position(${1:\\$needle}, ${2:\\$haystack});",
-		"description": "Returns the SQL for returning searching one string for the location of another."
-	},
-	"$DB->sql_empty": {
-		"prefix": [
-			"db_sql_empty",
-			"$DB->sql_empty"
-		],
-		"body": "\\$DB->sql_empty();",
-		"description": "DEPRECATED USE BOUND PARAMETER WITH EMPTY STRING INSTEAD. This used to return empty string replacement character."
-	},
-	"$DB->sql_isempty": {
-		"prefix": [
-			"db_sql_isempty",
-			"$DB->sql_isempty"
-		],
-		"body": "\\$DB->sql_isempty(${1:\\$tablename}, ${2:\\$fieldname}, ${3:\\$nullablefield}, ${4:\\$textfield});",
-		"description": "Returns the proper SQL to know if one field is empty."
-	},
-	"$DB->sql_isnotempty": {
-		"prefix": [
-			"db_sql_isnotempty",
-			"$DB->sql_isnotempty"
-		],
-		"body": "\\$DB->sql_isnotempty(${1:\\$tablename}, ${2:\\$fieldname}, ${3:\\$nullablefield}, ${4:\\$textfield});",
-		"description": "Returns the proper SQL to know if one field is not empty."
-	},
-	"$DB->sql_regex_supported": {
-		"prefix": [
-			"db_sql_regex_supported",
-			"$DB->sql_regex_supported"
-		],
-		"body": "\\$DB->sql_regex_supported();",
-		"description": "Returns true if this database driver supports regex syntax when searching."
-	},
-	"$DB->sql_regex": {
-		"prefix": [
-			"db_sql_regex",
-			"$DB->sql_regex"
-		],
-		"body": "\\$DB->sql_regex(${1:${2:\\$positivematch}${3:, ${4:\\$casesensitive}}});",
-		"description": "Returns the driver specific syntax (SQL part) for matching regex positively or negatively (inverted matching). Eg: 'REGEXP':'NOT REGEXP' or '~*' : '!~*'"
-	},
-	"$DB->sql_intersect": {
-		"prefix": [
-			"db_sql_intersect",
-			"$DB->sql_intersect"
-		],
-		"body": "\\$DB->sql_intersect(${1:\\$selects}, ${2:\\$fields});",
-		"description": "Returns the SQL that allows to find intersection of two or more queries"
-	},
-	"$DB->replace_all_text_supported": {
-		"prefix": [
-			"db_replace_all_text_supported",
-			"$DB->replace_all_text_supported"
-		],
-		"body": "\\$DB->replace_all_text_supported();",
-		"description": "Does this driver support tool_replace?"
-	},
-	"$DB->replace_all_text": {
-		"prefix": [
-			"db_replace_all_text",
-			"$DB->replace_all_text"
-		],
-		"body": "\\$DB->replace_all_text(${1:\\$table}, ${2:\\$database_column_info}, ${3:\\$search}, ${4:\\$replace});",
-		"description": "Replace given text in all rows of column."
-	},
-	"$DB->update_temp_table_stats": {
-		"prefix": [
-			"db_update_temp_table_stats",
-			"$DB->update_temp_table_stats"
-		],
-		"body": "\\$DB->update_temp_table_stats();",
-		"description": "Analyze the data in temporary tables to force statistics collection after bulk data loads."
-	},
-	"$DB->is_transaction_started": {
-		"prefix": [
-			"db_is_transaction_started",
-			"$DB->is_transaction_started"
-		],
-		"body": "\\$DB->is_transaction_started();",
-		"description": "Returns true if a transaction is in progress."
-	},
-	"$DB->transactions_forbidden": {
-		"prefix": [
-			"db_transactions_forbidden",
-			"$DB->transactions_forbidden"
-		],
-		"body": "\\$DB->transactions_forbidden();",
-		"description": "This is a test that throws an exception if transaction in progress. This test does not force rollback of active transactions."
-	},
-	"$DB->start_delegated_transaction": {
-		"prefix": [
-			"db_start_delegated_transaction",
-			"$DB->start_delegated_transaction"
-		],
-		"body": "\\$DB->start_delegated_transaction();",
-		"description": "On DBs that support it, switch to transaction mode and begin a transaction you'll need to ensure you call allow_commit() on the returned object or your changes *will* be lost."
-	},
-	"$DB->commit_delegated_transaction": {
-		"prefix": [
-			"db_commit_delegated_transaction",
-			"$DB->commit_delegated_transaction"
-		],
-		"body": "\\$DB->commit_delegated_transaction(${1:\\$moodle_transaction});",
-		"description": "Indicates delegated transaction finished successfully. The real database transaction is committed only if all delegated transactions committed."
-	},
-	"$DB->rollback_delegated_transaction": {
-		"prefix": [
-			"db_rollback_delegated_transaction",
-			"$DB->rollback_delegated_transaction"
-		],
-		"body": "\\$DB->rollback_delegated_transaction(${1:\\$moodle_transaction}, ${2:\\$exception});",
-		"description": "Call when delegated transaction failed, this rolls back all delegated transactions up to the top most level."
-	},
-	"$DB->force_transaction_rollback": {
-		"prefix": [
-			"db_force_transaction_rollback",
-			"$DB->force_transaction_rollback"
-		],
-		"body": "\\$DB->force_transaction_rollback();",
-		"description": "Force rollback of all delegated transaction. Does not throw any exceptions and does not log anything."
-	},
-	"$DB->session_lock_supported": {
-		"prefix": [
-			"db_session_lock_supported",
-			"$DB->session_lock_supported"
-		],
-		"body": "\\$DB->session_lock_supported();",
-		"description": "Is session lock supported in this driver?"
-	},
-	"$DB->get_session_lock": {
-		"prefix": [
-			"db_get_session_lock",
-			"$DB->get_session_lock"
-		],
-		"body": "\\$DB->get_session_lock(${1:\\$rowid}, ${2:\\$timeout});",
-		"description": "Obtains the session lock."
-	},
-	"$DB->release_session_lock": {
-		"prefix": [
-			"db_release_session_lock",
-			"$DB->release_session_lock"
-		],
-		"body": "\\$DB->release_session_lock(${1:\\$rowid});",
-		"description": "Releases the session lock."
-	},
-	"$DB->perf_get_reads": {
-		"prefix": [
-			"db_perf_get_reads",
-			"$DB->perf_get_reads"
-		],
-		"body": "\\$DB->perf_get_reads();",
-		"description": "Returns the number of reads done by this database."
-	},
-	"$DB->perf_get_writes": {
-		"prefix": [
-			"db_perf_get_writes",
-			"$DB->perf_get_writes"
-		],
-		"body": "\\$DB->perf_get_writes();",
-		"description": "Returns the number of writes done by this database."
-	},
-	"$DB->perf_get_queries": {
-		"prefix": [
-			"db_perf_get_queries",
-			"$DB->perf_get_queries"
-		],
-		"body": "\\$DB->perf_get_queries();",
-		"description": "Returns the number of queries done by this database."
-	},
-	"$DB->perf_get_queries_time": {
-		"prefix": [
-			"db_perf_get_queries_time",
-			"$DB->perf_get_queries_time"
-		],
-		"body": "\\$DB->perf_get_queries_time();",
-		"description": "Time waiting for the database engine to finish running all queries."
-	}
+  "$DB::get_driver_instance": {
+    "prefix": [
+      "db_get_driver_instance",
+      "$DB::get_driver_instance"
+    ],
+    "body": "\\$DB::get_driver_instance(${1:\\$type}, ${2:\\$library}${3:, ${4:\\$external}});",
+    "description": "Loads and returns a database instance with the specified type and library. The loaded class is within lib/dml directory and of the form: $type.'_'.$library.'_moodle_database'."
+  },
+  "$DB->driver_installed": {
+    "prefix": [
+      "db_driver_installed",
+      "$DB->driver_installed"
+    ],
+    "body": "\\$DB->driver_installed();",
+    "description": "Detects if all needed PHP stuff are installed for DB connectivity. Can be used before connect()"
+  },
+  "$DB->get_prefix": {
+    "prefix": [
+      "db_get_prefix",
+      "$DB->get_prefix"
+    ],
+    "body": "\\$DB->get_prefix();",
+    "description": "Returns database table prefix can be used before connect()."
+  },
+  "$DB->get_dbvendor": {
+    "prefix": [
+      "db_get_dbvendor",
+      "$DB->get_dbvendor"
+    ],
+    "body": "\\$DB->get_dbvendor();",
+    "description": "Returns the database vendor. Can be used before connect()."
+  },
+  "$DB->get_dbfamily": {
+    "prefix": [
+      "db_get_dbfamily",
+      "$DB->get_dbfamily"
+    ],
+    "body": "\\$DB->get_dbfamily();",
+    "description": "Returns the database family type. (This sort of describes the SQL 'dialect') can be used before connect()."
+  },
+  "$DB->get_name": {
+    "prefix": [
+      "db_get_name",
+      "$DB->get_name"
+    ],
+    "body": "\\$DB->get_name();",
+    "description": "Returns the localised database type name can be used before connect()."
+  },
+  "$DB->get_configuration_help": {
+    "prefix": [
+      "db_get_configuration_help",
+      "$DB->get_configuration_help"
+    ],
+    "body": "\\$DB->get_configuration_help();",
+    "description": "Returns the localised database configuration help. Can be used before connect()."
+  },
+  "$DB->get_configuration_hints": {
+    "prefix": [
+      "db_get_configuration_hints",
+      "$DB->get_configuration_hints"
+    ],
+    "body": "\\$DB->get_configuration_hints();",
+    "description": "DEPRECATED SINCE 2.6. Returns the localised database description can be used before connect()."
+  },
+  "$DB->export_dbconfig": {
+    "prefix": [
+      "db_export_dbconfig",
+      "$DB->export_dbconfig"
+    ],
+    "body": "\\$DB->export_dbconfig();",
+    "description": "Returns the db related part of config.php"
+  },
+  "$DB->diagnose": {
+    "prefix": [
+      "db_diagnose",
+      "$DB->diagnose"
+    ],
+    "body": "\\$DB->diagnose();",
+    "description": "Diagnose database and tables, this function is used to verify database and driver settings, db engine types, etc."
+  },
+  "$DB->connect": {
+    "prefix": [
+      "db_connect",
+      "$DB->connect"
+    ],
+    "body": "\\$DB->connect(${1:\\$dbhost}, ${2:\\$dbuser}, ${3:\\$dbpass}, ${4:\\$dbname}, ${5:\\$prefix}${6:, ${7:\\$dboptions_array}});",
+    "description": "Connects to the database. Must be called before other methods."
+  },
+  "$DB->create_database": {
+    "prefix": [
+      "db_create_database",
+      "$DB->create_database"
+    ],
+    "body": "\\$DB->create_database(${1:\\$dbhost}, ${2:\\$dbuser}, ${3:\\$dbpass}, ${4:\\$dbname}${5:, ${6:\\$dboptions_array}});",
+    "description": "Attempt to create the database."
+  },
+  "$DB->get_transaction_start_backtrace": {
+    "prefix": [
+      "db_get_transaction_start_backtrace",
+      "$DB->get_transaction_start_backtrace"
+    ],
+    "body": "\\$DB->get_transaction_start_backtrace();",
+    "description": "Returns transaction trace for debugging purposes. @private to be used by core only"
+  },
+  "$DB->dispose": {
+    "prefix": [
+      "db_dispose",
+      "$DB->dispose"
+    ],
+    "body": "\\$DB->dispose();",
+    "description": "Closes the database connection and releases all resources and memory (especially circular memory references). Do NOT use connect() again, create a new instance if needed."
+  },
+  "$DB->query_log": {
+    "prefix": [
+      "db_query_log",
+      "$DB->query_log"
+    ],
+    "body": "\\$DB->query_log(${1:\\$error});",
+    "description": "This logs the last query based on 'logall', 'logslow' and 'logerrors' options configured via $CFG->dboptions ."
+  },
+  "$DB->get_server_info": {
+    "prefix": [
+      "db_get_server_info",
+      "$DB->get_server_info"
+    ],
+    "body": "\\$DB->get_server_info();",
+    "description": "Returns database server info array"
+  },
+  "$DB->get_last_error": {
+    "prefix": [
+      "db_get_last_error",
+      "$DB->get_last_error"
+    ],
+    "body": "\\$DB->get_last_error();",
+    "description": "Returns the last error reported by the database engine."
+  },
+  "$DB->get_in_or_equal": {
+    "prefix": [
+      "db_get_in_or_equal",
+      "$DB->get_in_or_equal"
+    ],
+    "body": "\\$DB->get_in_or_equal(${1:\\$items}${2:, ${3|SQL_PARAMS_QM,SQL_PARAMS_NAMED|}${4:, ${5:\\$prefix}${6:, ${7:\\$equal}${8:, ${9:\\$onemptyitems}}}}});",
+    "description": "Constructs 'IN()' or '=' sql fragment"
+  },
+  "$DB->fix_sql_params": {
+    "prefix": [
+      "db_fix_sql_params",
+      "$DB->fix_sql_params"
+    ],
+    "body": "\\$DB->fix_sql_params(${1:\\$sql}${2:, ${3:\\$params_array}});",
+    "description": "Normalizes sql query parameters and verifies parameters."
+  },
+  "$DB->get_tables": {
+    "prefix": [
+      "db_get_tables",
+      "$DB->get_tables"
+    ],
+    "body": "\\$DB->get_tables(${1:\\$usecache});",
+    "description": "Return tables in database WITHOUT current prefix."
+  },
+  "$DB->get_indexes": {
+    "prefix": [
+      "db_get_indexes",
+      "$DB->get_indexes"
+    ],
+    "body": "\\$DB->get_indexes(${1:\\$table});",
+    "description": "Return table indexes - everything lowercased."
+  },
+  "$DB->get_columns": {
+    "prefix": [
+      "db_get_columns",
+      "$DB->get_columns"
+    ],
+    "body": "\\$DB->get_columns(${1:\\$table}${2:, ${3:\\$usecache}});",
+    "description": "Returns detailed information about columns in table. This information is cached internally."
+  },
+  "$DB->reset_caches": {
+    "prefix": [
+      "db_reset_caches",
+      "$DB->reset_caches"
+    ],
+    "body": "\\$DB->reset_caches(${1:\\$tablenames});",
+    "description": "Resets the internal column details cache"
+  },
+  "$DB->get_manager": {
+    "prefix": [
+      "db_get_manager",
+      "$DB->get_manager"
+    ],
+    "body": "\\$DB->get_manager();",
+    "description": "Returns the sql generator used for db manipulation. Used mostly in upgrade.php scripts."
+  },
+  "$DB->change_db_encoding": {
+    "prefix": [
+      "db_change_db_encoding",
+      "$DB->change_db_encoding"
+    ],
+    "body": "\\$DB->change_db_encoding();",
+    "description": "Attempts to change db encoding to UTF-8 encoding if possible."
+  },
+  "$DB->setup_is_unicodedb": {
+    "prefix": [
+      "db_setup_is_unicodedb",
+      "$DB->setup_is_unicodedb"
+    ],
+    "body": "\\$DB->setup_is_unicodedb();",
+    "description": "Checks to see if the database is in unicode mode?"
+  },
+  "$DB->set_debug": {
+    "prefix": [
+      "db_set_debug",
+      "$DB->set_debug"
+    ],
+    "body": "\\$DB->set_debug(${1:\\$state});",
+    "description": "Enable/disable very detailed debugging."
+  },
+  "$DB->get_debug": {
+    "prefix": [
+      "db_get_debug",
+      "$DB->get_debug"
+    ],
+    "body": "\\$DB->get_debug();",
+    "description": "Returns debug status"
+  },
+  "$DB->set_logging": {
+    "prefix": [
+      "db_set_logging",
+      "$DB->set_logging"
+    ],
+    "body": "\\$DB->set_logging(${1:\\$state});",
+    "description": "DEPRECATED SINCE MOODLE 2.9. Enable/disable detailed sql logging"
+  },
+  "$DB->change_database_structure": {
+    "prefix": [
+      "db_change_database_structure",
+      "$DB->change_database_structure"
+    ],
+    "body": "\\$DB->change_database_structure(${1:\\$sql}${2:, ${3:\\$tablenames}});",
+    "description": "Do NOT use in code, this is for use by database_manager only!"
+  },
+  "$DB->execute": {
+    "prefix": [
+      "db_execute",
+      "$DB->execute"
+    ],
+    "body": "\\$DB->execute(${1:\\$sql}${2:, ${3:\\$params_array}});",
+    "description": "Executes a general sql query. Should be used only when no other method suitable. Do NOT use this to make changes in db structure, use database_manager methods instead!"
+  },
+  "$DB->get_recordset": {
+    "prefix": [
+      "db_get_recordset",
+      "$DB->get_recordset"
+    ],
+    "body": "\\$DB->get_recordset(${1:\\$table}${2:, ${3:\\$conditions_array}${4:, ${5:\\$sort}${6:, ${7:\\$fields}${8:, ${9:\\$limitfrom}${10:, ${11:\\$limitnum}}}}}});",
+    "description": "Get a number of records as a moodle_recordset where all the given conditions met."
+  },
+  "$DB->get_recordset_list": {
+    "prefix": [
+      "db_get_recordset_list",
+      "$DB->get_recordset_list"
+    ],
+    "body": "\\$DB->get_recordset_list(${1:\\$table}, ${2:\\$field}, ${3:\\$values_array}${4:, ${5:\\$sort}${6:, ${7:\\$fields}${8:, ${9:\\$limitfrom}${10:, ${11:\\$limitnum}}}}});",
+    "description": "Get a number of records as a moodle_recordset where one field match one list of values."
+  },
+  "$DB->get_recordset_select": {
+    "prefix": [
+      "db_get_recordset_select",
+      "$DB->get_recordset_select"
+    ],
+    "body": "\\$DB->get_recordset_select(${1:\\$table}, ${2:\\$select}${3:, ${4:\\$params_array}${5:, ${6:\\$sort}${7:, ${8:\\$fields}${9:, ${10:\\$limitfrom}${11:, ${12:\\$limitnum}}}}}});",
+    "description": "Get a number of records as a moodle_recordset which match a particular WHERE clause."
+  },
+  "$DB->get_recordset_sql": {
+    "prefix": [
+      "db_get_recordset_sql",
+      "$DB->get_recordset_sql"
+    ],
+    "body": "\\$DB->get_recordset_sql(${1:\\$sql}${2:, ${3:\\$params_array}${4:, ${5:\\$limitfrom}${6:, ${7:\\$limitnum}}}});",
+    "description": "Get a number of records as a moodle_recordset using a SQL statement."
+  },
+  "$DB->export_table_recordset": {
+    "prefix": [
+      "db_export_table_recordset",
+      "$DB->export_table_recordset"
+    ],
+    "body": "\\$DB->export_table_recordset(${1:\\$table});",
+    "description": "Get all records from a table."
+  },
+  "$DB->get_records": {
+    "prefix": [
+      "db_get_records",
+      "$DB->get_records"
+    ],
+    "body": "\\$DB->get_records(${1:\\$table}${2:, ${3:\\$conditions_array}${4:, ${5:\\$sort}${6:, ${7:\\$fields}${8:, ${9:\\$limitfrom}${10:, ${11:\\$limitnum}}}}}});",
+    "description": "Get a number of records as an array of objects where all the given conditions met."
+  },
+  "$DB->get_records_list": {
+    "prefix": [
+      "db_get_records_list",
+      "$DB->get_records_list"
+    ],
+    "body": "\\$DB->get_records_list(${1:\\$table}, ${2:\\$field}, ${3:\\$values_array}${4:, ${5:\\$sort}${6:, ${7:\\$fields}${8:, ${9:\\$limitfrom}${10:, ${11:\\$limitnum}}}}});",
+    "description": "Get a number of records as an array of objects where one field match one list of values."
+  },
+  "$DB->get_records_select": {
+    "prefix": [
+      "db_get_records_select",
+      "$DB->get_records_select"
+    ],
+    "body": "\\$DB->get_records_select(${1:\\$table}, ${2:\\$select}${3:, ${4:\\$params_array}${5:, ${6:\\$sort}${7:, ${8:\\$fields}${9:, ${10:\\$limitfrom}${11:, ${12:\\$limitnum}}}}}});",
+    "description": "Get a number of records as an array of objects which match a particular WHERE clause."
+  },
+  "$DB->get_records_sql": {
+    "prefix": [
+      "db_get_records_sql",
+      "$DB->get_records_sql"
+    ],
+    "body": "\\$DB->get_records_sql(${1:\\$sql}${2:, ${3:\\$params_array}${4:, ${5:\\$limitfrom}${6:, ${7:\\$limitnum}}}});",
+    "description": "Get a number of records as an array of objects using a SQL statement."
+  },
+  "$DB->get_records_menu": {
+    "prefix": [
+      "db_get_records_menu",
+      "$DB->get_records_menu"
+    ],
+    "body": "\\$DB->get_records_menu(${1:\\$table}${2:, ${3:\\$conditions_array}${4:, ${5:\\$sort}${6:, ${7:\\$fields}${8:, ${9:\\$limitfrom}${10:, ${11:\\$limitnum}}}}}});",
+    "description": "Get the first two columns from a number of records as an associative array where all the given conditions met."
+  },
+  "$DB->get_records_select_menu": {
+    "prefix": [
+      "db_get_records_select_menu",
+      "$DB->get_records_select_menu"
+    ],
+    "body": "\\$DB->get_records_select_menu(${1:\\$table}, ${2:\\$select}${3:, ${4:\\$params_array}${5:, ${6:\\$sort}${7:, ${8:\\$fields}${9:, ${10:\\$limitfrom}${11:, ${12:\\$limitnum}}}}}});",
+    "description": "Get the first two columns from a number of records as an associative array which match a particular WHERE clause."
+  },
+  "$DB->get_records_sql_menu": {
+    "prefix": [
+      "db_get_records_sql_menu",
+      "$DB->get_records_sql_menu"
+    ],
+    "body": "\\$DB->get_records_sql_menu(${1:\\$sql}${2:, ${3:\\$params_array}${4:, ${5:\\$limitfrom}${6:, ${7:\\$limitnum}}}});",
+    "description": "Get the first two columns from a number of records as an associative array using a SQL statement."
+  },
+  "$DB->get_record": {
+    "prefix": [
+      "db_get_record",
+      "$DB->get_record"
+    ],
+    "body": "\\$DB->get_record(${1:\\$table}, ${2:\\$conditions_array}${3:, ${4:\\$fields}${5:, ${6|IGNORE_MISSING,IGNORE_MULTIPLE,MUST_EXIST|}}});",
+    "description": "Get a single database record as an object where all the given conditions met."
+  },
+  "$DB->get_record_select": {
+    "prefix": [
+      "db_get_record_select",
+      "$DB->get_record_select"
+    ],
+    "body": "\\$DB->get_record_select(${1:\\$table}, ${2:\\$select}${3:, ${4:\\$params_array}${5:, ${6:\\$fields}${7:, ${8|IGNORE_MISSING,IGNORE_MULTIPLE,MUST_EXIST|}}}});",
+    "description": "Get a single database record as an object which match a particular WHERE clause."
+  },
+  "$DB->get_record_sql": {
+    "prefix": [
+      "db_get_record_sql",
+      "$DB->get_record_sql"
+    ],
+    "body": "\\$DB->get_record_sql(${1:\\$sql}${2:, ${3:\\$params_array}${4:, ${5|IGNORE_MISSING,IGNORE_MULTIPLE,MUST_EXIST|}}});",
+    "description": "Get a single database record as an object using a SQL statement."
+  },
+  "$DB->get_field": {
+    "prefix": [
+      "db_get_field",
+      "$DB->get_field"
+    ],
+    "body": "\\$DB->get_field(${1:\\$table}, ${2:\\$return}, ${3:\\$conditions_array}${4:, ${5|IGNORE_MISSING,IGNORE_MULTIPLE,MUST_EXIST|}});",
+    "description": "Get a single field value from a table record where all the given conditions met."
+  },
+  "$DB->get_field_select": {
+    "prefix": [
+      "db_get_field_select",
+      "$DB->get_field_select"
+    ],
+    "body": "\\$DB->get_field_select(${1:\\$table}, ${2:\\$return}, ${3:\\$select}${4:, ${5:\\$params_array}${6:, ${7|IGNORE_MISSING,IGNORE_MULTIPLE,MUST_EXIST|}}});",
+    "description": "Get a single field value from a table record which match a particular WHERE clause."
+  },
+  "$DB->get_field_sql": {
+    "prefix": [
+      "db_get_field_sql",
+      "$DB->get_field_sql"
+    ],
+    "body": "\\$DB->get_field_sql(${1:\\$sql}${2:, ${3:\\$params_array}${4:, ${5|IGNORE_MISSING,IGNORE_MULTIPLE,MUST_EXIST|}}});",
+    "description": "Get a single field value (first field) using a SQL statement."
+  },
+  "$DB->get_fieldset_select": {
+    "prefix": [
+      "db_get_fieldset_select",
+      "$DB->get_fieldset_select"
+    ],
+    "body": "\\$DB->get_fieldset_select(${1:\\$table}, ${2:\\$return}, ${3:\\$select}${4:, ${5:\\$params_array}});",
+    "description": "Selects records and return values of chosen field as an array which match a particular WHERE clause."
+  },
+  "$DB->get_fieldset_sql": {
+    "prefix": [
+      "db_get_fieldset_sql",
+      "$DB->get_fieldset_sql"
+    ],
+    "body": "\\$DB->get_fieldset_sql(${1:\\$sql}${2:, ${3:\\$params_array}});",
+    "description": "Selects records and return values (first field) as an array using a SQL statement."
+  },
+  "$DB->insert_record_raw": {
+    "prefix": [
+      "db_insert_record_raw",
+      "$DB->insert_record_raw"
+    ],
+    "body": "\\$DB->insert_record_raw(${1:\\$table}, ${2:\\$params}${3:, ${4:\\$returnid}${5:, ${6:\\$bulk}${7:, ${8:\\$customsequence}}}});",
+    "description": "Insert new record into database, as fast as possible, no safety checks, lobs not supported."
+  },
+  "$DB->insert_record": {
+    "prefix": [
+      "db_insert_record",
+      "$DB->insert_record"
+    ],
+    "body": "\\$DB->insert_record(${1:\\$table}, ${2:\\$dataobject}${3:, ${4:\\$returnid}${5:, ${6:\\$bulk}}});",
+    "description": "Insert a record into a table and return the \"id\" field if required."
+  },
+  "$DB->insert_records": {
+    "prefix": [
+      "db_insert_records",
+      "$DB->insert_records"
+    ],
+    "body": "\\$DB->insert_records(${1:\\$table}, ${2:\\$dataobjects});",
+    "description": "Insert multiple records into database as fast as possible."
+  },
+  "$DB->import_record": {
+    "prefix": [
+      "db_import_record",
+      "$DB->import_record"
+    ],
+    "body": "\\$DB->import_record(${1:\\$table}, ${2:\\$dataobject});",
+    "description": "Import a record into a table, id field is required. Safety checks are NOT carried out. Lobs are supported."
+  },
+  "$DB->update_record_raw": {
+    "prefix": [
+      "db_update_record_raw",
+      "$DB->update_record_raw"
+    ],
+    "body": "\\$DB->update_record_raw(${1:\\$table}, ${2:\\$params}${3:, ${4:\\$bulk}});",
+    "description": "Update record in database, as fast as possible, no safety checks, lobs not supported."
+  },
+  "$DB->update_record": {
+    "prefix": [
+      "db_update_record",
+      "$DB->update_record"
+    ],
+    "body": "\\$DB->update_record(${1:\\$table}, ${2:\\$dataobject}${3:, ${4:\\$bulk}});",
+    "description": "Update a record in a table"
+  },
+  "$DB->set_field": {
+    "prefix": [
+      "db_set_field",
+      "$DB->set_field"
+    ],
+    "body": "\\$DB->set_field(${1:\\$table}, ${2:\\$newfield}, ${3:\\$newvalue}${4:, ${5:\\$conditions_array}});",
+    "description": "Set a single field in every table record where all the given conditions met."
+  },
+  "$DB->set_field_select": {
+    "prefix": [
+      "db_set_field_select",
+      "$DB->set_field_select"
+    ],
+    "body": "\\$DB->set_field_select(${1:\\$table}, ${2:\\$newfield}, ${3:\\$newvalue}, ${4:\\$select}${5:, ${6:\\$params_array}});",
+    "description": "Set a single field in every table record which match a particular WHERE clause."
+  },
+  "$DB->count_records": {
+    "prefix": [
+      "db_count_records",
+      "$DB->count_records"
+    ],
+    "body": "\\$DB->count_records(${1:\\$table}${2:, ${3:\\$conditions_array}});",
+    "description": "Count the records in a table where all the given conditions met."
+  },
+  "$DB->count_records_select": {
+    "prefix": [
+      "db_count_records_select",
+      "$DB->count_records_select"
+    ],
+    "body": "\\$DB->count_records_select(${1:\\$table}, ${2:\\$select}${3:, ${4:\\$params_array}${5:, ${6:\\$countitem}}});",
+    "description": "Count the records in a table which match a particular WHERE clause."
+  },
+  "$DB->count_records_sql": {
+    "prefix": [
+      "db_count_records_sql",
+      "$DB->count_records_sql"
+    ],
+    "body": "\\$DB->count_records_sql(${1:\\$sql}${2:, ${3:\\$params_array}});",
+    "description": "Get the result of a SQL SELECT COUNT(...) query."
+  },
+  "$DB->record_exists": {
+    "prefix": [
+      "db_record_exists",
+      "$DB->record_exists"
+    ],
+    "body": "\\$DB->record_exists(${1:\\$table}, ${2:\\$conditions_array});",
+    "description": "Test whether a record exists in a table where all the given conditions met."
+  },
+  "$DB->record_exists_select": {
+    "prefix": [
+      "db_record_exists_select",
+      "$DB->record_exists_select"
+    ],
+    "body": "\\$DB->record_exists_select(${1:\\$table}, ${2:\\$select}${3:, ${4:\\$params_array}});",
+    "description": "Test whether any records exists in a table which match a particular WHERE clause."
+  },
+  "$DB->record_exists_sql": {
+    "prefix": [
+      "db_record_exists_sql",
+      "$DB->record_exists_sql"
+    ],
+    "body": "\\$DB->record_exists_sql(${1:\\$sql}${2:, ${3:\\$params_array}});",
+    "description": "Test whether a SQL SELECT statement returns any records."
+  },
+  "$DB->delete_records": {
+    "prefix": [
+      "db_delete_records",
+      "$DB->delete_records"
+    ],
+    "body": "\\$DB->delete_records(${1:\\$table}${2:, ${3:\\$conditions_array}});",
+    "description": "Delete the records from a table where all the given conditions met. If conditions not specified, table is truncated."
+  },
+  "$DB->delete_records_list": {
+    "prefix": [
+      "db_delete_records_list",
+      "$DB->delete_records_list"
+    ],
+    "body": "\\$DB->delete_records_list(${1:\\$table}, ${2:\\$field}, ${3:\\$values_array});",
+    "description": "Delete the records from a table where one field match one list of values."
+  },
+  "$DB->delete_records_select": {
+    "prefix": [
+      "db_delete_records_select",
+      "$DB->delete_records_select"
+    ],
+    "body": "\\$DB->delete_records_select(${1:\\$table}, ${2:\\$select}${3:, ${4:\\$params_array}});",
+    "description": "Delete one or more records from a table which match a particular WHERE clause."
+  },
+  "$DB->sql_null_from_clause": {
+    "prefix": [
+      "db_sql_null_from_clause",
+      "$DB->sql_null_from_clause"
+    ],
+    "body": "\\$DB->sql_null_from_clause();",
+    "description": "Returns the FROM clause required by some DBs in all SELECT statements."
+  },
+  "$DB->sql_bitand": {
+    "prefix": [
+      "db_sql_bitand",
+      "$DB->sql_bitand"
+    ],
+    "body": "\\$DB->sql_bitand(${1:\\$int1}, ${2:\\$int2});",
+    "description": "Returns the SQL text to be used in order to perform one bitwise AND operation between 2 integers."
+  },
+  "$DB->sql_bitnot": {
+    "prefix": [
+      "db_sql_bitnot",
+      "$DB->sql_bitnot"
+    ],
+    "body": "\\$DB->sql_bitnot(${1:\\$int1});",
+    "description": "Returns the SQL text to be used in order to perform one bitwise NOT operation with 1 integer."
+  },
+  "$DB->sql_bitor": {
+    "prefix": [
+      "db_sql_bitor",
+      "$DB->sql_bitor"
+    ],
+    "body": "\\$DB->sql_bitor(${1:\\$int1}, ${2:\\$int2});",
+    "description": "Returns the SQL text to be used in order to perform one bitwise OR operation between 2 integers."
+  },
+  "$DB->sql_bitxor": {
+    "prefix": [
+      "db_sql_bitxor",
+      "$DB->sql_bitxor"
+    ],
+    "body": "\\$DB->sql_bitxor(${1:\\$int1}, ${2:\\$int2});",
+    "description": "Returns the SQL text to be used in order to perform one bitwise XOR operation between 2 integers."
+  },
+  "$DB->sql_modulo": {
+    "prefix": [
+      "db_sql_modulo",
+      "$DB->sql_modulo"
+    ],
+    "body": "\\$DB->sql_modulo(${1:\\$int1}, ${2:\\$int2});",
+    "description": "Returns the SQL text to be used in order to perform module '%' operation - remainder after division."
+  },
+  "$DB->sql_ceil": {
+    "prefix": [
+      "db_sql_ceil",
+      "$DB->sql_ceil"
+    ],
+    "body": "\\$DB->sql_ceil(${1:\\$fieldname});",
+    "description": "Returns the cross db correct CEIL (ceiling) expression applied to fieldname. Most DBs use CEIL(), hence it's the default here."
+  },
+  "$DB->sql_cast_char2int": {
+    "prefix": [
+      "db_sql_cast_char2int",
+      "$DB->sql_cast_char2int"
+    ],
+    "body": "\\$DB->sql_cast_char2int(${1:\\$fieldname}${2:, ${3:\\$text}});",
+    "description": "Returns the SQL to be used in order to CAST one CHAR column to INTEGER."
+  },
+  "$DB->sql_cast_char2real": {
+    "prefix": [
+      "db_sql_cast_char2real",
+      "$DB->sql_cast_char2real"
+    ],
+    "body": "\\$DB->sql_cast_char2real(${1:\\$fieldname}${2:, ${3:\\$text}});",
+    "description": "Returns the SQL to be used in order to CAST one CHAR column to REAL number."
+  },
+  "$DB->sql_cast_2signed": {
+    "prefix": [
+      "db_sql_cast_2signed",
+      "$DB->sql_cast_2signed"
+    ],
+    "body": "\\$DB->sql_cast_2signed(${1:\\$fieldname});",
+    "description": "DEPRECATED SINCE 2.3. Returns the SQL to be used in order to an UNSIGNED INTEGER column to SIGNED."
+  },
+  "$DB->sql_compare_text": {
+    "prefix": [
+      "db_sql_compare_text",
+      "$DB->sql_compare_text"
+    ],
+    "body": "\\$DB->sql_compare_text(${1:\\$fieldname}${2:, ${3:\\$numchars}});",
+    "description": "Returns the SQL text to be used to compare one TEXT (clob) column with one varchar column, because some RDBMS doesn't support such direct comparisons."
+  },
+  "$DB->sql_equal": {
+    "prefix": [
+      "db_sql_equal",
+      "$DB->sql_equal"
+    ],
+    "body": "\\$DB->sql_equal(${1:\\$fieldname}, ${2:\\$param}${3:, ${4:\\$casesensitive}${5:, ${6:\\$accentsensitive}${7:, ${8:\\$notequal}}}});",
+    "description": "Returns an equal (=) or not equal (<>) part of a query."
+  },
+  "$DB->sql_like": {
+    "prefix": [
+      "db_sql_like",
+      "$DB->sql_like"
+    ],
+    "body": "\\$DB->sql_like(${1:\\$fieldname}, ${2:\\$param}${3:, ${4:\\$casesensitive}${5:, ${6:\\$accentsensitive}${7:, ${8:\\$notlike}${9:, ${10:\\$escapechar}}}}});",
+    "description": "Returns 'LIKE' part of a query."
+  },
+  "$DB->sql_like_escape": {
+    "prefix": [
+      "db_sql_like_escape",
+      "$DB->sql_like_escape"
+    ],
+    "body": "\\$DB->sql_like_escape(${1:\\$text}${2:, ${3:\\$escapechar}});",
+    "description": "Escape sql LIKE special characters like '_' or '%'."
+  },
+  "$DB->sql_concat": {
+    "prefix": [
+      "db_sql_concat",
+      "$DB->sql_concat"
+    ],
+    "body": "\\$DB->sql_concat();",
+    "description": "Returns the proper SQL to do CONCAT between the elements(fieldnames) passed."
+  },
+  "$DB->sql_concat_join": {
+    "prefix": [
+      "db_sql_concat_join",
+      "$DB->sql_concat_join"
+    ],
+    "body": "\\$DB->sql_concat_join(${1:${2:\\$separator}${3:, ${4:\\$elements}}});",
+    "description": "Returns the proper SQL to do CONCAT between the elements passed with a given separator"
+  },
+  "$DB->sql_fullname": {
+    "prefix": [
+      "db_sql_fullname",
+      "$DB->sql_fullname"
+    ],
+    "body": "\\$DB->sql_fullname(${1:${2:\\$first}${3:, ${4:\\$last}}});",
+    "description": "Returns the proper SQL (for the dbms in use) to concatenate $firstname and $lastname"
+  },
+  "$DB->sql_order_by_text": {
+    "prefix": [
+      "db_sql_order_by_text",
+      "$DB->sql_order_by_text"
+    ],
+    "body": "\\$DB->sql_order_by_text(${1:\\$fieldname}${2:, ${3:\\$numchars}});",
+    "description": "Returns the SQL text to be used to order by one TEXT (clob) column, because some RDBMS doesn't support direct ordering of such fields."
+  },
+  "$DB->sql_length": {
+    "prefix": [
+      "db_sql_length",
+      "$DB->sql_length"
+    ],
+    "body": "\\$DB->sql_length(${1:\\$fieldname});",
+    "description": "Returns the SQL text to be used to calculate the length in characters of one expression."
+  },
+  "$DB->sql_substr": {
+    "prefix": [
+      "db_sql_substr",
+      "$DB->sql_substr"
+    ],
+    "body": "\\$DB->sql_substr(${1:\\$expr}, ${2:\\$start}${3:, ${4:\\$length}});",
+    "description": "Returns the proper substr() SQL text used to extract substrings from DB this was originally returning only function name"
+  },
+  "$DB->sql_position": {
+    "prefix": [
+      "db_sql_position",
+      "$DB->sql_position"
+    ],
+    "body": "\\$DB->sql_position(${1:\\$needle}, ${2:\\$haystack});",
+    "description": "Returns the SQL for returning searching one string for the location of another."
+  },
+  "$DB->sql_empty": {
+    "prefix": [
+      "db_sql_empty",
+      "$DB->sql_empty"
+    ],
+    "body": "\\$DB->sql_empty();",
+    "description": "DEPRECATED USE BOUND PARAMETER WITH EMPTY STRING INSTEAD. This used to return empty string replacement character."
+  },
+  "$DB->sql_isempty": {
+    "prefix": [
+      "db_sql_isempty",
+      "$DB->sql_isempty"
+    ],
+    "body": "\\$DB->sql_isempty(${1:\\$tablename}, ${2:\\$fieldname}, ${3:\\$nullablefield}, ${4:\\$textfield});",
+    "description": "Returns the proper SQL to know if one field is empty."
+  },
+  "$DB->sql_isnotempty": {
+    "prefix": [
+      "db_sql_isnotempty",
+      "$DB->sql_isnotempty"
+    ],
+    "body": "\\$DB->sql_isnotempty(${1:\\$tablename}, ${2:\\$fieldname}, ${3:\\$nullablefield}, ${4:\\$textfield});",
+    "description": "Returns the proper SQL to know if one field is not empty."
+  },
+  "$DB->sql_regex_supported": {
+    "prefix": [
+      "db_sql_regex_supported",
+      "$DB->sql_regex_supported"
+    ],
+    "body": "\\$DB->sql_regex_supported();",
+    "description": "Returns true if this database driver supports regex syntax when searching."
+  },
+  "$DB->sql_regex": {
+    "prefix": [
+      "db_sql_regex",
+      "$DB->sql_regex"
+    ],
+    "body": "\\$DB->sql_regex(${1:${2:\\$positivematch}${3:, ${4:\\$casesensitive}}});",
+    "description": "Returns the driver specific syntax (SQL part) for matching regex positively or negatively (inverted matching). Eg: 'REGEXP':'NOT REGEXP' or '~*' : '!~*'"
+  },
+  "$DB->sql_intersect": {
+    "prefix": [
+      "db_sql_intersect",
+      "$DB->sql_intersect"
+    ],
+    "body": "\\$DB->sql_intersect(${1:\\$selects}, ${2:\\$fields});",
+    "description": "Returns the SQL that allows to find intersection of two or more queries"
+  },
+  "$DB->replace_all_text_supported": {
+    "prefix": [
+      "db_replace_all_text_supported",
+      "$DB->replace_all_text_supported"
+    ],
+    "body": "\\$DB->replace_all_text_supported();",
+    "description": "Does this driver support tool_replace?"
+  },
+  "$DB->replace_all_text": {
+    "prefix": [
+      "db_replace_all_text",
+      "$DB->replace_all_text"
+    ],
+    "body": "\\$DB->replace_all_text(${1:\\$table}, ${2:\\$database_column_info}, ${3:\\$search}, ${4:\\$replace});",
+    "description": "Replace given text in all rows of column."
+  },
+  "$DB->update_temp_table_stats": {
+    "prefix": [
+      "db_update_temp_table_stats",
+      "$DB->update_temp_table_stats"
+    ],
+    "body": "\\$DB->update_temp_table_stats();",
+    "description": "Analyze the data in temporary tables to force statistics collection after bulk data loads."
+  },
+  "$DB->is_transaction_started": {
+    "prefix": [
+      "db_is_transaction_started",
+      "$DB->is_transaction_started"
+    ],
+    "body": "\\$DB->is_transaction_started();",
+    "description": "Returns true if a transaction is in progress."
+  },
+  "$DB->transactions_forbidden": {
+    "prefix": [
+      "db_transactions_forbidden",
+      "$DB->transactions_forbidden"
+    ],
+    "body": "\\$DB->transactions_forbidden();",
+    "description": "This is a test that throws an exception if transaction in progress. This test does not force rollback of active transactions."
+  },
+  "$DB->start_delegated_transaction": {
+    "prefix": [
+      "db_start_delegated_transaction",
+      "$DB->start_delegated_transaction"
+    ],
+    "body": "\\$DB->start_delegated_transaction();",
+    "description": "On DBs that support it, switch to transaction mode and begin a transaction you'll need to ensure you call allow_commit() on the returned object or your changes *will* be lost."
+  },
+  "$DB->commit_delegated_transaction": {
+    "prefix": [
+      "db_commit_delegated_transaction",
+      "$DB->commit_delegated_transaction"
+    ],
+    "body": "\\$DB->commit_delegated_transaction(${1:\\$moodle_transaction});",
+    "description": "Indicates delegated transaction finished successfully. The real database transaction is committed only if all delegated transactions committed."
+  },
+  "$DB->rollback_delegated_transaction": {
+    "prefix": [
+      "db_rollback_delegated_transaction",
+      "$DB->rollback_delegated_transaction"
+    ],
+    "body": "\\$DB->rollback_delegated_transaction(${1:\\$moodle_transaction}, ${2:\\$exception});",
+    "description": "Call when delegated transaction failed, this rolls back all delegated transactions up to the top most level."
+  },
+  "$DB->force_transaction_rollback": {
+    "prefix": [
+      "db_force_transaction_rollback",
+      "$DB->force_transaction_rollback"
+    ],
+    "body": "\\$DB->force_transaction_rollback();",
+    "description": "Force rollback of all delegated transaction. Does not throw any exceptions and does not log anything."
+  },
+  "$DB->session_lock_supported": {
+    "prefix": [
+      "db_session_lock_supported",
+      "$DB->session_lock_supported"
+    ],
+    "body": "\\$DB->session_lock_supported();",
+    "description": "Is session lock supported in this driver?"
+  },
+  "$DB->get_session_lock": {
+    "prefix": [
+      "db_get_session_lock",
+      "$DB->get_session_lock"
+    ],
+    "body": "\\$DB->get_session_lock(${1:\\$rowid}, ${2:\\$timeout});",
+    "description": "Obtains the session lock."
+  },
+  "$DB->release_session_lock": {
+    "prefix": [
+      "db_release_session_lock",
+      "$DB->release_session_lock"
+    ],
+    "body": "\\$DB->release_session_lock(${1:\\$rowid});",
+    "description": "Releases the session lock."
+  },
+  "$DB->perf_get_reads": {
+    "prefix": [
+      "db_perf_get_reads",
+      "$DB->perf_get_reads"
+    ],
+    "body": "\\$DB->perf_get_reads();",
+    "description": "Returns the number of reads done by this database."
+  },
+  "$DB->perf_get_writes": {
+    "prefix": [
+      "db_perf_get_writes",
+      "$DB->perf_get_writes"
+    ],
+    "body": "\\$DB->perf_get_writes();",
+    "description": "Returns the number of writes done by this database."
+  },
+  "$DB->perf_get_queries": {
+    "prefix": [
+      "db_perf_get_queries",
+      "$DB->perf_get_queries"
+    ],
+    "body": "\\$DB->perf_get_queries();",
+    "description": "Returns the number of queries done by this database."
+  },
+  "$DB->perf_get_queries_time": {
+    "prefix": [
+      "db_perf_get_queries_time",
+      "$DB->perf_get_queries_time"
+    ],
+    "body": "\\$DB->perf_get_queries_time();",
+    "description": "Time waiting for the database engine to finish running all queries."
+  }
 }

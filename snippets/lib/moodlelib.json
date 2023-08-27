@@ -1,2109 +1,2109 @@
 {
-	"required_param": {
-		"prefix": "required_param",
-		"body": "required_param(${1:\\$parameter_name}, ${2|PARAM_INT,PARAM_TEXT,PARAM_BOOL,PARAM_ALPHA,PARAM_ALPHAEXT,PARAM_ALPHANUM,PARAM_ALPHANUMEXT,PARAM_AUTH,PARAM_BASE64,PARAM_CAPABILITY,PARAM_CLEANHTML,PARAM_EMAIL,PARAM_FILE,PARAM_FLOAT,PARAM_HOST,PARAM_LANG,PARAM_LOCALURL,PARAM_NOTAGS,PARAM_PATH,PARAM_PEM,PARAM_PERMISSION,PARAM_RAW,PARAM_RAW_TRIMMED,PARAM_SAFEDIR,PARAM_SAFEPATH,PARAM_SEQUENCE,PARAM_STRINGID,PARAM_TAG,PARAM_TAGLIST,PARAM_THEME,PARAM_URL,PARAM_USERNAME|});",
-		"description": "Returns a particular value for the named variable, taken from POST or GET. If the parameter doesn't exist then an error is thrown because we require this variable. This function should be used to initialise all required values in a script that are based on parameters."
-	},
-	"required_param_array": {
-		"prefix": "required_param_array",
-		"body": "required_param_array(${1:\\$parameter_name}, ${2|PARAM_INT,PARAM_TEXT,PARAM_BOOL,PARAM_ALPHA,PARAM_ALPHAEXT,PARAM_ALPHANUM,PARAM_ALPHANUMEXT,PARAM_AUTH,PARAM_BASE64,PARAM_CAPABILITY,PARAM_CLEANHTML,PARAM_EMAIL,PARAM_FILE,PARAM_FLOAT,PARAM_HOST,PARAM_LANG,PARAM_LOCALURL,PARAM_NOTAGS,PARAM_PATH,PARAM_PEM,PARAM_PERMISSION,PARAM_RAW,PARAM_RAW_TRIMMED,PARAM_SAFEDIR,PARAM_SAFEPATH,PARAM_SEQUENCE,PARAM_STRINGID,PARAM_TAG,PARAM_TAGLIST,PARAM_THEME,PARAM_URL,PARAM_USERNAME|});",
-		"description": "Returns a particular array value for the named variable, taken from POST or GET. This function should be used to initialise all required values in a script that are based on parameters."
-	},
-	"optional_param": {
-		"prefix": "optional_param",
-		"body": "optional_param(${1:\\$parameter_name}, ${2:\\$default_value}, ${3|PARAM_INT,PARAM_TEXT,PARAM_BOOL,PARAM_ALPHA,PARAM_ALPHAEXT,PARAM_ALPHANUM,PARAM_ALPHANUMEXT,PARAM_AUTH,PARAM_BASE64,PARAM_CAPABILITY,PARAM_CLEANHTML,PARAM_EMAIL,PARAM_FILE,PARAM_FLOAT,PARAM_HOST,PARAM_LANG,PARAM_LOCALURL,PARAM_NOTAGS,PARAM_PATH,PARAM_PEM,PARAM_PERMISSION,PARAM_RAW,PARAM_RAW_TRIMMED,PARAM_SAFEDIR,PARAM_SAFEPATH,PARAM_SEQUENCE,PARAM_STRINGID,PARAM_TAG,PARAM_TAGLIST,PARAM_THEME,PARAM_URL,PARAM_USERNAME|});",
-		"description": "Returns a particular value for the named variable, taken from POST or GET, otherwise returning a given default. This function should be used to initialise all required values in a script that are based on parameters."
-	},
-	"optional_param_array": {
-		"prefix": "optional_param_array",
-		"body": "optional_param_array(${1:\\$parameter_name}, ${2:\\$default_value}, ${3|PARAM_INT,PARAM_TEXT,PARAM_BOOL,PARAM_ALPHA,PARAM_ALPHAEXT,PARAM_ALPHANUM,PARAM_ALPHANUMEXT,PARAM_AUTH,PARAM_BASE64,PARAM_CAPABILITY,PARAM_CLEANHTML,PARAM_EMAIL,PARAM_FILE,PARAM_FLOAT,PARAM_HOST,PARAM_LANG,PARAM_LOCALURL,PARAM_NOTAGS,PARAM_PATH,PARAM_PEM,PARAM_PERMISSION,PARAM_RAW,PARAM_RAW_TRIMMED,PARAM_SAFEDIR,PARAM_SAFEPATH,PARAM_SEQUENCE,PARAM_STRINGID,PARAM_TAG,PARAM_TAGLIST,PARAM_THEME,PARAM_URL,PARAM_USERNAME|});",
-		"description": "Returns a particular array for the named variable, taken from POST or GET, otherwise returning a given default. This function should be used to initialise all required values in a script that are based on parameters."
-	},
-	"validate_param": {
-		"prefix": "validate_param",
-		"body": "validate_param(${1:\\$param},  ${2|PARAM_INT,PARAM_TEXT,PARAM_BOOL,PARAM_ALPHA,PARAM_ALPHAEXT,PARAM_ALPHANUM,PARAM_ALPHANUMEXT,PARAM_AUTH,PARAM_BASE64,PARAM_CAPABILITY,PARAM_CLEANHTML,PARAM_EMAIL,PARAM_FILE,PARAM_FLOAT,PARAM_HOST,PARAM_LANG,PARAM_LOCALURL,PARAM_NOTAGS,PARAM_PATH,PARAM_PEM,PARAM_PERMISSION,PARAM_RAW,PARAM_RAW_TRIMMED,PARAM_SAFEDIR,PARAM_SAFEPATH,PARAM_SEQUENCE,PARAM_STRINGID,PARAM_TAG,PARAM_TAGLIST,PARAM_THEME,PARAM_URL,PARAM_USERNAME|}${3:, ${4:\\$allownull}${5:, ${6:\\$debuginfo}}});",
-		"description": "Strict validation of parameter values, the values are only converted to requested PHP type. Internally it is using clean_param, the values before and after cleaning must be equal - otherwise an invalid_parameter_exception is thrown."
-	},
-	"clean_param_array": {
-		"prefix": "clean_param_array",
-		"body": "clean_param_array(${1:\\$param_array},  ${2|PARAM_INT,PARAM_TEXT,PARAM_BOOL,PARAM_ALPHA,PARAM_ALPHAEXT,PARAM_ALPHANUM,PARAM_ALPHANUMEXT,PARAM_AUTH,PARAM_BASE64,PARAM_CAPABILITY,PARAM_CLEANHTML,PARAM_EMAIL,PARAM_FILE,PARAM_FLOAT,PARAM_HOST,PARAM_LANG,PARAM_LOCALURL,PARAM_NOTAGS,PARAM_PATH,PARAM_PEM,PARAM_PERMISSION,PARAM_RAW,PARAM_RAW_TRIMMED,PARAM_SAFEDIR,PARAM_SAFEPATH,PARAM_SEQUENCE,PARAM_STRINGID,PARAM_TAG,PARAM_TAGLIST,PARAM_THEME,PARAM_URL,PARAM_USERNAME|}${3:, ${4:\\$recursive}});",
-		"description": "Makes sure array contains only the allowed types, this function does not validate array key names!"
-	},
-	"clean_param": {
-		"prefix": "clean_param",
-		"body": "clean_param(${1:\\$param},  ${2|PARAM_INT,PARAM_TEXT,PARAM_BOOL,PARAM_ALPHA,PARAM_ALPHAEXT,PARAM_ALPHANUM,PARAM_ALPHANUMEXT,PARAM_AUTH,PARAM_BASE64,PARAM_CAPABILITY,PARAM_CLEANHTML,PARAM_EMAIL,PARAM_FILE,PARAM_FLOAT,PARAM_HOST,PARAM_LANG,PARAM_LOCALURL,PARAM_NOTAGS,PARAM_PATH,PARAM_PEM,PARAM_PERMISSION,PARAM_RAW,PARAM_RAW_TRIMMED,PARAM_SAFEDIR,PARAM_SAFEPATH,PARAM_SEQUENCE,PARAM_STRINGID,PARAM_TAG,PARAM_TAGLIST,PARAM_THEME,PARAM_URL,PARAM_USERNAME|});",
-		"description": "Used by {@link optional_param()} and {@link required_param()} to clean the variables and/or cast to specific types, based on an options field."
-	},
-	"is_rtl_compatible": {
-		"prefix": "is_rtl_compatible",
-		"body": "is_rtl_compatible(${1|PARAM_INT,PARAM_TEXT,PARAM_BOOL,PARAM_ALPHA,PARAM_ALPHAEXT,PARAM_ALPHANUM,PARAM_ALPHANUMEXT,PARAM_AUTH,PARAM_BASE64,PARAM_CAPABILITY,PARAM_CLEANHTML,PARAM_EMAIL,PARAM_FILE,PARAM_FLOAT,PARAM_HOST,PARAM_LANG,PARAM_LOCALURL,PARAM_NOTAGS,PARAM_PATH,PARAM_PEM,PARAM_PERMISSION,PARAM_RAW,PARAM_RAW_TRIMMED,PARAM_SAFEDIR,PARAM_SAFEPATH,PARAM_SEQUENCE,PARAM_STRINGID,PARAM_TAG,PARAM_TAGLIST,PARAM_THEME,PARAM_URL,PARAM_USERNAME|});",
-		"description": "Whether the PARAM_* type is compatible in RTL. Being compatible with RTL means that the data they contain can flow from right-to-left or left-to-right without compromising the user experience."
-	},
-	"fix_utf8": {
-		"prefix": "fix_utf8",
-		"body": "fix_utf8(${1:\\$value});",
-		"description": "Makes sure the data is using valid utf8, invalid characters are discarded."
-	},
-	"is_number": {
-		"prefix": "is_number",
-		"body": "is_number(${1:\\$value});",
-		"description": "Return true if given value is integer or string with integer value"
-	},
-	"get_host_from_url": {
-		"prefix": "get_host_from_url",
-		"body": "get_host_from_url(${1:\\$url});",
-		"description": "Returns host part from url."
-	},
-	"html_is_blank": {
-		"prefix": "html_is_blank",
-		"body": "html_is_blank(${1:\\$string});",
-		"description": "Tests whether anything was returned by text editor"
-	},
-	"set_config": {
-		"prefix": "set_config",
-		"body": "set_config(${1:\\$name}, ${2:\\$value}${3:, ${4:\\$plugin}});",
-		"description": "Set a key in global configuration"
-	},
-	"get_config": {
-		"prefix": "get_config",
-		"body": "get_config(${1:\\$plugin}${2:, ${3:\\$name}});",
-		"description": "Get configuration values from the global config table or the config_plugins table."
-	},
-	"unset_config": {
-		"prefix": "unset_config",
-		"body": "unset_config(${1:\\$name}${2:, ${3:\\$plugin}});",
-		"description": "Removes a key from global configuration."
-	},
-	"unset_all_config_for_plugin": {
-		"prefix": "unset_all_config_for_plugin",
-		"body": "unset_all_config_for_plugin(${1:\\$plugin});",
-		"description": "Remove all the config variables for a given plugin."
-	},
-	"get_users_from_config": {
-		"prefix": "get_users_from_config",
-		"body": "get_users_from_config(${1:\\$value}, ${2:\\$capability}${3:, ${4:\\$includeadmins}});",
-		"description": "Use this function to get a list of users from a config setting of type admin_setting_users_with_capability."
-	},
-	"purge_all_caches": {
-		"prefix": "purge_all_caches",
-		"body": "purge_all_caches();",
-		"description": "Invalidates browser caches and cached data in temp."
-	},
-	"get_cache_flags": {
-		"prefix": "get_cache_flags",
-		"body": "get_cache_flags(${1:\\$type}${2:, ${3:\\$changedsince}});",
-		"description": "Get volatile flags"
-	},
-	"get_cache_flag": {
-		"prefix": "get_cache_flag",
-		"body": "get_cache_flag(${1:\\$type}, ${2:\\$name}${3:, ${4:\\$changedsince}});",
-		"description": "Get volatile flags"
-	},
-	"set_cache_flag": {
-		"prefix": "set_cache_flag",
-		"body": "set_cache_flag(${1:\\$type}, ${2:\\$name}, ${3:\\$value}${4:, ${5:\\$expiry}});",
-		"description": "Set a volatile flag"
-	},
-	"unset_cache_flag": {
-		"prefix": "unset_cache_flag",
-		"body": "unset_cache_flag(${1:\\$type}, ${2:\\$name});",
-		"description": "Removes a single volatile flag"
-	},
-	"gc_cache_flags": {
-		"prefix": "gc_cache_flags",
-		"body": "gc_cache_flags();",
-		"description": "Garbage-collect volatile flags"
-	},
-	"check_user_preferences_loaded": {
-		"prefix": "check_user_preferences_loaded",
-		"body": "check_user_preferences_loaded(${1:\\$user_stdClass}${2:, ${3:\\$cachelifetime}});",
-		"description": "Refresh user preference cache. This is used most often for $USER object that is stored in session, but it also helps with performance in cron script."
-	},
-	"mark_user_preferences_changed": {
-		"prefix": "mark_user_preferences_changed",
-		"body": "mark_user_preferences_changed(${1:\\$userid});",
-		"description": "Called from set/unset_user_preferences, so that the prefs can be correctly reloaded in different sessions."
-	},
-	"set_user_preference": {
-		"prefix": "set_user_preference",
-		"body": "set_user_preference(${1:\\$name}, ${2:\\$value}${3:, ${4:\\$user}});",
-		"description": "Sets a preference for the specified user."
-	},
-	"set_user_preferences": {
-		"prefix": "set_user_preferences",
-		"body": "set_user_preferences(${1:\\$prefarray_array}${2:, ${3:\\$user}});",
-		"description": "Sets a whole array of preferences for the current user"
-	},
-	"unset_user_preference": {
-		"prefix": "unset_user_preference",
-		"body": "unset_user_preference(${1:\\$name}${2:, ${3:\\$user}});",
-		"description": "Unsets a preference completely by deleting it from the database"
-	},
-	"get_user_preferences": {
-		"prefix": "get_user_preferences",
-		"body": "get_user_preferences(${1:{$2:\\$name}${3:, ${4:\\$default}${5:, ${6:\\$user}}}});",
-		"description": "Used to fetch user preference(s)"
-	},
-	"make_timestamp": {
-		"prefix": "make_timestamp",
-		"body": "make_timestamp(${1:\\$year}${2:, ${3:\\$month}${4:, ${5:\\$day}${6:, ${7:\\$hour}${8:, ${9:\\$minute}${10:, ${11:\\$second}${12:, ${13:\\$timezone}${14:, ${15:\\$applydst}}}}}}}});",
-		"description": "Given Gregorian date parts in user time produce a GMT timestamp."
-	},
-	"format_time": {
-		"prefix": "format_time",
-		"body": "format_time(${1:\\$totalsecs}${2:, ${3:\\$str}});",
-		"description": "Format a date/time (seconds) as weeks, days, hours etc as needed"
-	},
-	"userdate": {
-		"prefix": "userdate",
-		"body": "userdate(${1:\\$date}${2:, ${3:\\$format}${4:, ${5:\\$timezone}${6:, ${7:\\$fixday}${8:, ${9:\\$fixhour}${10:, ${11:\\$fixmonthlang}}}}}});",
-		"description": "Returns a formatted string that represents a date in user time."
-	},
-	"date_format_string": {
-		"prefix": "date_format_string",
-		"body": "date_format_string(${1:\\$date}, ${2:\\$format}${3:, ${4:\\$timezone}});",
-		"description": "Returns a formatted date ensuring it is UTF-8."
-	},
-	"usergetdate": {
-		"prefix": "usergetdate",
-		"body": "usergetdate(${1:\\$time}${2:, ${3:\\$timezone}});",
-		"description": "Given a $time timestamp in GMT (seconds since epoch), returns an array that represents the Gregorian date in user time"
-	},
-	"usertime": {
-		"prefix": "usertime",
-		"body": "usertime(${1:\\$date}${2:, ${3:\\$timezone}});",
-		"description": "Given a GMT timestamp (seconds since epoch), offsets it by the timezone.  eg 3pm in India is 3pm GMT - 7 * 3600 seconds"
-	},
-	"usergetmidnight": {
-		"prefix": "usergetmidnight",
-		"body": "usergetmidnight(${1:\\$date}${2:, ${3:\\$timezone}});",
-		"description": "Given a time, return the GMT timestamp of the most recent midnight for the current user."
-	},
-	"usertimezone": {
-		"prefix": "Returns a string that prints the user's timezone",
-		"body": "usertimezone(${1:\\$timezone});",
-		"description": "Returns a string that prints the user's timezone."
-	},
-	"get_user_timezone": {
-		"prefix": "get_user_timezone",
-		"body": "get_user_timezone(${1:\\$timezone});",
-		"description": "Returns a float or a string which denotes the user's timezone."
-	},
-	"dst_offset_on": {
-		"prefix": "dst_offset_on",
-		"body": "dst_offset_on(${1:\\$time}${2:, ${3:\\$strtimezone}});",
-		"description": "Calculates the Daylight Saving Offset for a given date/time (timestamp). Note: Daylight saving only works for string timezones and not for float."
-	},
-	"find_day_in_month": {
-		"prefix": "find_day_in_month",
-		"body": "find_day_in_month(${1:\\$startday}, ${2:\\$weekday}, ${3:\\$month}, ${4:\\$year});",
-		"description": "Calculates when the day appears in specific month"
-	},
-	"days_in_month": {
-		"prefix": "days_in_month",
-		"body": "days_in_month(${1:\\$month}, ${2:\\$year});",
-		"description": "Calculate the number of days in a given month"
-	},
-	"dayofweek": {
-		"prefix": "dayofweek",
-		"body": "dayofweek(${1:\\$day}, ${2:\\$month}, ${3:\\$year});",
-		"description": "Calculate the position in the week of a specific calendar day"
-	},
-	"get_login_url": {
-		"prefix": "get_login_url",
-		"body": "get_login_url();",
-		"description": "Returns full login url."
-	},
-	"require_login": {
-		"prefix": "require_login",
-		"body": "require_login(${1:${2:\\$courseorid}${3:, ${4:\\$autologinguest}${5:, ${6:\\$cm}${7:, ${8:\\$setwantsurltome}${9:, ${10:\\$preventredirect}}}}}});",
-		"description": "This function checks that the current user is logged in and has the required privileges"
-	},
-	"require_logout": {
-		"prefix": "require_logout",
-		"body": "require_logout();",
-		"description": "This function just makes sure a user is logged out."
-	},
-	"require_course_login": {
-		"prefix": "require_course_login",
-		"body": "require_course_login(${1:\\$courseorid}${2:, ${3:\\$autologinguest}${4:, ${5:\\$cm}${6:, ${7:\\$setwantsurltome}${8:, ${9:\\$preventredirect}}}}});",
-		"description": "Weaker version of require_login()"
-	},
-	"validate_user_key": {
-		"prefix": "validate_user_key",
-		"body": "validate_user_key(${1:\\$keyvalue}, ${2:\\$script}, ${3:\\$instance});",
-		"description": "Validates a user key, checking if the key exists, is not expired and the remote ip is correct."
-	},
-	"require_user_key_login": {
-		"prefix": "require_user_key_login",
-		"body": "require_user_key_login(${1:\\$script}${2:, ${3:\\$instance}});",
-		"description": "Require key login. Function terminates with error if key not found or incorrect."
-	},
-	"create_user_key": {
-		"prefix": "create_user_key",
-		"body": "create_user_key(${1:\\$script}, ${2:\\$userid}${3:, ${4:\\$instance}${5:, ${6:\\$iprestriction}${7:, ${8:\\$validuntil}}}});",
-		"description": "Creates a new private user access key."
-	},
-	"delete_user_key": {
-		"prefix": "delete_user_key",
-		"body": "delete_user_key(${1:\\$script}, ${2:\\$userid});",
-		"description": "Delete the user's new private user access keys for a particular script."
-	},
-	"get_user_key": {
-		"prefix": "get_user_key",
-		"body": "get_user_key(${1:\\$script}, ${2:\\$userid}${3:, ${4:\\$instance}${5:, ${6:\\$iprestriction}${7:, ${8:\\$validuntil}}}});",
-		"description": "Gets a private user access key (and creates one if one doesn't exist)."
-	},
-	"update_user_login_times": {
-		"prefix": "update_user_login_times",
-		"body": "update_user_login_times();",
-		"description": "Modify the user table by setting the currently logged in user's last login to now."
-	},
-	"user_not_fully_set_up": {
-		"prefix": "user_not_fully_set_up",
-		"body": "user_not_fully_set_up(${1:\\$user}${2:, ${3:\\$strict}});",
-		"description": "Determines if a user has completed setting up their account."
-	},
-	"over_bounce_threshold": {
-		"prefix": "over_bounce_threshold",
-		"body": "over_bounce_threshold(${1:\\$user});",
-		"description": "Check whether the user has exceeded the bounce threshold"
-	},
-	"set_send_count": {
-		"prefix": "set_send_count",
-		"body": "set_send_count(${1:\\$user}${2:, ${3:\\$reset}});",
-		"description": "Used to increment or reset email sent count"
-	},
-	"set_bounce_count": {
-		"prefix": "set_bounce_count",
-		"body": "set_bounce_count(${1:\\$user}${2:, ${3:\\$reset}});",
-		"description": "Increment or reset user's email bounce count"
-	},
-	"ismoving": {
-		"prefix": "ismoving",
-		"body": "ismoving(${1:\\$courseid});",
-		"description": "Determines if the logged in user is currently moving an activity"
-	},
-	"fullname": {
-		"prefix": "fullname",
-		"body": "fullname(${1:\\$user}${2:, ${3:\\$override}});",
-		"description": "Returns a persons full name."
-	},
-	"get_all_user_name_fields": {
-		"prefix": "get_all_user_name_fields",
-		"body": "get_all_user_name_fields(${1:${2:\\$returnsql}${3:, ${4:\\$tableprefix}${5:, ${6:\\$prefix}${7:, ${8:\\$fieldprefix}${9:, ${10:\\$order}}}}}});",
-		"description": "A centralised location for the all name fields. Returns an array / sql string snippet."
-	},
-	"username_load_fields_from_object": {
-		"prefix": "username_load_fields_from_object",
-		"body": "username_load_fields_from_object(${1:\\$addtoobject}, ${2:\\$secondobject}${3:, ${4:\\$prefix}${5:, ${6:\\$additionalfields}}});",
-		"description": "Reduces lines of duplicated code for getting user name fields."
-	},
-	"order_in_string": {
-		"prefix": "order_in_string",
-		"body": "order_in_string(${1:\\$values}, ${2:\\$stringformat});",
-		"description": "Returns an array of values in order of occurance in a provided string. The key in the result is the character postion in the string."
-	},
-	"get_extra_user_fields": {
-		"prefix": "get_extra_user_fields",
-		"body": "get_extra_user_fields(${1:\\$context}${2:, ${3:\\$already}});",
-		"description": "Checks if current user is shown any extra fields when listing users."
-	},
-	"get_extra_user_fields_sql": {
-		"prefix": "get_extra_user_fields_sql",
-		"body": "get_extra_user_fields_sql(${1:\\$context}${2:, ${3:\\$alias}${4:, ${5:\\$prefix}${6:, ${7:\\$already}}}});",
-		"description": "If the current user is to be shown extra user fields when listing or selecting users, returns a string suitable for including in an SQL select clause to retrieve those fields."
-	},
-	"get_user_field_name": {
-		"prefix": "get_user_field_name",
-		"body": "get_user_field_name(${1:\\$field});",
-		"description": "Returns the display name of a field in the user table. Works for most fields that are commonly displayed to users."
-	},
-	"exists_auth_plugin": {
-		"prefix": "exists_auth_plugin",
-		"body": "exists_auth_plugin(${1:\\$auth});",
-		"description": "Returns whether a given authentication plugin exists."
-	},
-	"is_enabled_auth": {
-		"prefix": "is_enabled_auth",
-		"body": "is_enabled_auth(${1:\\$auth});",
-		"description": "Checks if a given plugin is in the list of enabled authentication plugins."
-	},
-	"get_auth_plugin": {
-		"prefix": "get_auth_plugin",
-		"body": "get_auth_plugin(${1:\\$auth});",
-		"description": "Returns an authentication plugin instance."
-	},
-	"get_enabled_auth_plugins": {
-		"prefix": "get_enabled_auth_plugins",
-		"body": "get_enabled_auth_plugins(${1:\\$fix});",
-		"description": "Returns array of active auth plugins."
-	},
-	"is_internal_auth": {
-		"prefix": "is_internal_auth",
-		"body": "is_internal_auth(${1:\\$auth});",
-		"description": "Returns true if an internal authentication method is being used. If method not specified then, global default is assumed"
-	},
-	"is_restored_user": {
-		"prefix": "is_restored_user",
-		"body": "is_restored_user(${1:\\$username});",
-		"description": "Returns true if the user is a 'restored' one."
-	},
-	"get_user_fieldnames": {
-		"prefix": "get_user_fieldnames",
-		"body": "get_user_fieldnames();",
-		"description": "Returns an array of user fields"
-	},
-	"create_user_record": {
-		"prefix": "create_user_record",
-		"body": "create_user_record(${1:\\$username}, ${2:\\$password}${3:, ${4:\\$auth}});",
-		"description": "Creates a bare-bones user record"
-	},
-	"update_user_record": {
-		"prefix": "update_user_record",
-		"body": "update_user_record(${1:\\$username});",
-		"description": "Will update a local user record from an external source (MNET users can not be updated using this method!)."
-	},
-	"update_user_record_by_id": {
-		"prefix": "update_user_record_by_id",
-		"body": "update_user_record_by_id(${1:\\$id});",
-		"description": "Will update a local user record from an external source (MNET users can not be updated using this method!)."
-	},
-	"truncate_userinfo": {
-		"prefix": "truncate_userinfo",
-		"body": "truncate_userinfo(${1:\\$info_array});",
-		"description": "Will truncate userinfo as it comes from auth_get_userinfo (from external auth) which may have large fields."
-	},
-	"delete_user": {
-		"prefix": "delete_user",
-		"body": "delete_user(${1:\\$user_stdClass});",
-		"description": "Marks user deleted in internal user database and notifies the auth plugin. Also unenrols user from all roles and does other cleanup."
-	},
-	"guest_user": {
-		"prefix": "guest_user",
-		"body": "guest_user();",
-		"description": "Retrieve the guest user object."
-	},
-	"authenticate_user_login": {
-		"prefix": "authenticate_user_login",
-		"body": "authenticate_user_login(${1:\\$username}, ${2:\\$password}${3:, ${4:\\$ignorelockout}${5:, ${6:\\$failurereason}${7:, ${8:\\$logintoken}}}});",
-		"description": "Authenticates a user against the chosen authentication mechanism"
-	},
-	"complete_user_login": {
-		"prefix": "complete_user_login",
-		"body": "complete_user_login(${1:\\$user});",
-		"description": "Call to complete the user login process after authenticate_user_login() has succeeded. It will setup the $USER variable and other required bits and pieces."
-	},
-	"password_is_legacy_hash": {
-		"prefix": "password_is_legacy_hash",
-		"body": "password_is_legacy_hash(${1:\\$password});",
-		"description": "Check a password hash to see if it was hashed using the legacy hash algorithm (md5)."
-	},
-	"validate_internal_user_password": {
-		"prefix": "validate_internal_user_password",
-		"body": "validate_internal_user_password(${1:\\$user}, ${2:\\$password});",
-		"description": "Compare password against hash stored in user object to determine if it is valid."
-	},
-	"hash_internal_user_password": {
-		"prefix": "hash_internal_user_password",
-		"body": "hash_internal_user_password(${1:\\$password}${2:, ${3:\\$fasthash}});",
-		"description": "Calculate hash for a plain text password."
-	},
-	"update_internal_user_password": {
-		"prefix": "update_internal_user_password",
-		"body": "update_internal_user_password(${1:\\$user}, ${2:\\$password}${3:, ${4:\\$fasthash}});",
-		"description": "Update password hash in user object (if necessary)."
-	},
-	"get_complete_user_data": {
-		"prefix": "get_complete_user_data",
-		"body": "get_complete_user_data(${1:\\$field}, ${2:\\$value}${3:, ${4:\\$mnethostid}});",
-		"description": "Get a complete user record, which includes all the info in the user record."
-	},
-	"check_password_policy": {
-		"prefix": "check_password_policy",
-		"body": "check_password_policy(${1:\\$password}, ${2:\\$errmsg});",
-		"description": "Validate a password against the configured password policy"
-	},
-	"set_login_session_preferences": {
-		"prefix": "set_login_session_preferences",
-		"body": "set_login_session_preferences();",
-		"description": "When logging in, this function is run to set certain preferences for the current SESSION."
-	},
-	"delete_course": {
-		"prefix": "delete_course",
-		"body": "delete_course(${1:\\$courseorid}${2:, ${3:\\$showfeedback}});",
-		"description": "Delete a course, including all related data from the database, and any associated files."
-	},
-	"remove_course_contents": {
-		"prefix": "remove_course_contents",
-		"body": "remove_course_contents(${1:\\$courseid}${2:, ${3:\\$showfeedback}${4:, ${5:\\$options}}});",
-		"description": "Clear a course out completely, deleting all content but don't delete the course itself."
-	},
-	"shift_course_mod_dates": {
-		"prefix": "shift_course_mod_dates",
-		"body": "shift_course_mod_dates(${1:\\$modname}, ${2:\\$fields}, ${3:\\$timeshift}, ${4:\\$courseid}${5:, ${6:\\$modid}});",
-		"description": "Change dates in module - used from course reset."
-	},
-	"reset_course_userdata": {
-		"prefix": "reset_course_userdata",
-		"body": "reset_course_userdata(${1:\\$data});",
-		"description": "This function will empty a course of user data. It will retain the activities and the structure of the course."
-	},
-	"generate_email_processing_address": {
-		"prefix": "generate_email_processing_address",
-		"body": "generate_email_processing_address(${1:\\$modid}, ${2:\\$modargs});",
-		"description": "Generate an email processing address."
-	},
-	"moodle_process_email": {
-		"prefix": "moodle_process_email",
-		"body": "moodle_process_email(${1:\\$modargs}, ${2:\\$body});",
-		"description": "moodle_process_email"
-	},
-	"get_mailer": {
-		"prefix": "get_mailer",
-		"body": "get_mailer(${1:\\$action});",
-		"description": "Get mailer instance, enable buffering, flush buffer or disable buffering."
-	},
-	"email_should_be_diverted": {
-		"prefix": "email_should_be_diverted",
-		"body": "email_should_be_diverted(${1:\\$email});",
-		"description": "A helper function to test for email diversion"
-	},
-	"generate_email_messageid": {
-		"prefix": "generate_email_messageid",
-		"body": "generate_email_messageid(${1:\\$localpart});",
-		"description": "Generate a unique email Message-ID using the moodle domain and install path"
-	},
-	"email_to_user": {
-		"prefix": "email_to_user",
-		"body": "email_to_user(${1:\\$user}, ${2:\\$from}, ${3:\\$subject}, ${4:\\$messagetext}${5:, ${6:\\$messagehtml}${7:, ${8:\\$attachment}${9:, ${10:\\$attachname}${11:, ${12:\\$usetrueaddress}${13, ${14:\\$replyto}${15:, ${16:\\$replytoname}${17:, ${18:\\$wordwrapwidth}${19:, ${20:\\$strategy}}}}}}}});",
-		"description": "Send an email to a specified user"
-	},
-	"can_send_from_real_email_address": {
-		"prefix": "can_send_from_real_email_address",
-		"body": "can_send_from_real_email_address(${1:\\$from}, ${2:\\$user}${3:, ${4:\\$unused}});",
-		"description": "Check to see if a user's real email address should be used for the \"From\" field."
-	},
-	"generate_email_signoff": {
-		"prefix": "generate_email_signoff",
-		"body": "generate_email_signoff();",
-		"description": "Generate a signoff for emails based on support settings"
-	},
-	"setnew_password_and_mail": {
-		"prefix": "setnew_password_and_mail",
-		"body": "setnew_password_and_mail(${1:\\$user}${2:, ${3:\\$fasthash}});",
-		"description": "Sets specified user's password and send the new password to the user via email."
-	},
-	"reset_password_and_mail": {
-		"prefix": "reset_password_and_mail",
-		"body": "reset_password_and_mail(${1:\\$user});",
-		"description": "Resets specified user's password and send the new password to the user via email."
-	},
-	"send_confirmation_email": {
-		"prefix": "send_confirmation_email",
-		"body": "send_confirmation_email(${1:\\$user}${2:, ${3:\\$confirmationurl}});",
-		"description": "Send email to specified user with confirmation text and activation link."
-	},
-	"send_password_change_confirmation_email": {
-		"prefix": "send_password_change_confirmation_email",
-		"body": "send_password_change_confirmation_email(${1:\\$user}, ${2:\\$resetrecord});",
-		"description": "Sends a password change confirmation email."
-	},
-	"send_password_change_info": {
-		"prefix": "send_password_change_info",
-		"body": "send_password_change_info(${1:\\$user});",
-		"description": "Sends an email containinginformation on how to change your password."
-	},
-	"email_is_not_allowed": {
-		"prefix": "email_is_not_allowed",
-		"body": "email_is_not_allowed(${1:\\$email});",
-		"description": "Check that an email is allowed.  It returns an error message if there was a problem."
-	},
-	"get_file_storage": {
-		"prefix": "get_file_storage",
-		"body": "get_file_storage(${1:\\$reset});",
-		"description": "Returns local file storage instance"
-	},
-	"get_file_browser": {
-		"prefix": "get_file_browser",
-		"body": "get_file_browser();",
-		"description": "Returns local file storage instance"
-	},
-	"get_file_packer": {
-		"prefix": "get_file_packer",
-		"body": "get_file_packer(${1:\\$mimetype});",
-		"description": "Returns file packer"
-	},
-	"valid_uploaded_file": {
-		"prefix": "valid_uploaded_file",
-		"body": "valid_uploaded_file(${1:\\$newfile});",
-		"description": "Returns current name of file on disk if it exists."
-	},
-	"get_max_upload_file_size": {
-		"prefix": "get_max_upload_file_size",
-		"body": "get_max_upload_file_size(${1:${2:\\$sitebytes}${3:, ${4:\\$coursebytes}${5:, ${6:\\$modulebytes}${7:, ${8:\\$unused}}}}});",
-		"description": "Returns the maximum size for uploading files."
-	},
-	"get_user_max_upload_file_size": {
-		"prefix": "get_user_max_upload_file_size",
-		"body": "get_user_max_upload_file_size(${1:\\$context}${2:, ${3:\\$sitebytes}${4:, ${5:\\$coursebytes}${6:, ${7:\\$modulebytes}${8:, ${9:\\$user}${10:, ${11:\\$unused}}}}}});",
-		"description": "Returns the maximum size for uploading files for the current user"
-	},
-	"get_max_upload_sizes": {
-		"prefix": "get_max_upload_sizes",
-		"body": "get_max_upload_sizes(${1:${2:\\$sitebytes}${3:, ${4:\\$coursebytes}${5:, ${6:\\$modulebytes}${7:, ${8:\\$custombytes}}}}});",
-		"description": "Returns an array of possible sizes in local language"
-	},
-	"get_directory_list": {
-		"prefix": "get_directory_list",
-		"body": "get_directory_list(${1:\\$rootdir}${2:, ${3:\\$excludefiles}${4:, ${5:\\$descend}${6:, ${7:\\$getdirs}${8:, ${9:\\$getfiles}}}}});",
-		"description": "Returns an array with all the filenames in all subdirectories, relative to the given rootdir."
-	},
-	"get_directory_size": {
-		"prefix": "get_directory_size",
-		"body": "get_directory_size(${1:\\$rootdir}${2:, ${3:\\$excludefile}});",
-		"description": "Adds up all the files in a directory and works out the size."
-	},
-	"display_size": {
-		"prefix": "display_size",
-		"body": "display_size(${1:\\$size});",
-		"description": "Converts bytes into display form"
-	},
-	"clean_filename": {
-		"prefix": "clean_filename",
-		"body": "clean_filename(${1:\\$string});",
-		"description": "Cleans a given filename by removing suspicious or troublesome characters"
-	},
-	"current_language": {
-		"prefix": "current_language",
-		"body": "current_language();",
-		"description": "Returns the code for the current language"
-	},
-	"get_parent_language": {
-		"prefix": "get_parent_language",
-		"body": "get_parent_language(${1:\\$lang});",
-		"description": "Returns parent language of current active language if defined"
-	},
-	"force_current_language": {
-		"prefix": "force_current_language",
-		"body": "force_current_language(${1:\\$language});",
-		"description": "Force the current language to get strings and dates localised in the given language."
-	},
-	"get_string_manager": {
-		"prefix": "get_string_manager",
-		"body": "get_string_manager(${1:\\$forcereload});",
-		"description": "Returns current string_manager instance."
-	},
-	"get_string": {
-		"prefix": "get_string",
-		"body": "get_string(${1:\\$identifier}${2:, ${3:\\$component}${4:, ${5:\\$a}${6:, ${7:\\$lazyload}}}});",
-		"description": "Returns a localized string."
-	},
-	"get_strings": {
-		"prefix": "get_strings",
-		"body": "get_strings(${1:\\$array}${2:, ${3:\\$component}});",
-		"description": "Converts an array of strings to their localized value."
-	},
-	"print_string": {
-		"prefix": "print_string",
-		"body": "print_string(${1:\\$identifier}${2:, ${3:\\$component}${4:, ${5:\\$a}}});",
-		"description": "Prints out a translated string."
-	},
-	"get_list_of_charsets": {
-		"prefix": "get_list_of_charsets",
-		"body": "get_list_of_charsets();",
-		"description": "Returns a list of charset codes"
-	},
-	"get_list_of_themes": {
-		"prefix": "get_list_of_themes",
-		"body": "get_list_of_themes();",
-		"description": "Returns a list of valid and compatible themes"
-	},
-	"get_emoticon_manager": {
-		"prefix": "get_emoticon_manager",
-		"body": "get_emoticon_manager();",
-		"description": "Factory function for emoticon_manager"
-	},
-	"rc4encrypt": {
-		"prefix": "rc4encrypt",
-		"body": "rc4encrypt(${1:\\$data});",
-		"description": "rc4encrypt"
-	},
-	"rc4decrypt": {
-		"prefix": "rc4decrypt",
-		"body": "rc4decrypt(${1:\\$data});",
-		"description": "rc4decrypt"
-	},
-	"endecrypt": {
-		"prefix": "endecrypt",
-		"body": "endecrypt (${1:\\$pwd}, ${2:\\$data}, ${3:\\$case});",
-		"description": "Based on a class by Mukul Sabharwal [mukulsabharwal @ yahoo.com]"
-	},
-	"is_valid_plugin_name": {
-		"prefix": "is_valid_plugin_name",
-		"body": "is_valid_plugin_name(${1:\\$name});",
-		"description": "This method validates a plug name. It is much faster than calling clean_param."
-	},
-	"get_plugin_list_with_function": {
-		"prefix": "get_plugin_list_with_function",
-		"body": "get_plugin_list_with_function(${1:\\$plugintype}, ${2:\\$function}${3:, ${4:\\$file}});",
-		"description": "Get a list of all the plugins of a given type that define a certain API function in a certain file. The plugin component names and function names are returned."
-	},
-	"get_plugins_with_function": {
-		"prefix": "get_plugins_with_function",
-		"body": "get_plugins_with_function(${1:\\$function}${2:, ${3:\\$file}${4:, ${5:\\$include}}});",
-		"description": "Get a list of all the plugins that define a certain API function in a certain file."
-	},
-	"get_list_of_plugins": {
-		"prefix": "get_list_of_plugins",
-		"body": "get_list_of_plugins(${1:${2:\\$directory}${3:, ${4:\\$exclude}${5:, ${6:\\$basedir}}}});",
-		"description": "Lists plugin-like directories within specified directory"
-	},
-	"plugin_callback": {
-		"prefix": "plugin_callback",
-		"body": "plugin_callback(${1:\\$type}, ${2:\\$name}, ${3:\\$feature}, ${4:\\$action}${5:, ${6:\\$params}${7:, ${8:\\$default}}});",
-		"description": "Invoke plugin's callback functions"
-	},
-	"component_callback": {
-		"prefix": "component_callback",
-		"body": "component_callback(${1:\\$component}, ${2:\\$function}${3:, ${4:\\$params_array}${5:, ${6:\\$default}}});",
-		"description": "Invoke component's callback functions"
-	},
-	"component_callback_exists": {
-		"prefix": "component_callback_exists",
-		"body": "component_callback_exists(${1:\\$component}, ${2:\\$function});",
-		"description": "Determine if a component callback exists and return the function name to call. Note that this function will include the required library files so that the functioname returned can be called directly."
-	},
-	"component_class_callback": {
-		"prefix": "component_class_callback",
-		"body": "component_class_callback(${1:\\$classname}, ${2:\\$methodname}, ${3:\\$params_array}${4:, ${5:\\$default}});",
-		"description": "Call the specified callback method on the provided class."
-	},
-	"plugin_supports": {
-		"prefix": "plugin_supports",
-		"body": "plugin_supports(${1:\\$type}, ${2:\\$name}, ${3:\\$feature}${4:, ${5:\\$default}});",
-		"description": "Checks whether a plugin supports a specified feature."
-	},
-	"check_php_version": {
-		"prefix": "check_php_version",
-		"body": "check_php_version(${1:\\$version});",
-		"description": "Returns true if the current version of PHP is greater that the specified one."
-	},
-	"moodle_needs_upgrading": {
-		"prefix": "moodle_needs_upgrading",
-		"body": "moodle_needs_upgrading();",
-		"description": "Determine if moodle installation requires update."
-	},
-	"moodle_major_version": {
-		"prefix": "moodle_major_version",
-		"body": "moodle_major_version(${1:\\$fromdisk});",
-		"description": "Returns the major version of this site"
-	},
-	"moodle_setlocale": {
-		"prefix": "moodle_setlocale",
-		"body": "moodle_setlocale(${1:\\$locale});",
-		"description": "Sets the system locale"
-	},
-	"count_words": {
-		"prefix": "count_words",
-		"body": "count_words(${1:\\$string});",
-		"description": "Count words in a string."
-	},
-	"count_letters": {
-		"prefix": "count_letters",
-		"body": "count_letters(${1:\\$string});",
-		"description": "Count letters in a string."
-	},
-	"random_string": {
-		"prefix": "random_string",
-		"body": "random_string(${1:\\$length});",
-		"description": "Generate and return a random string of the specified length."
-	},
-	"complex_random_string": {
-		"prefix": "complex_random_string",
-		"body": "complex_random_string(${1:\\$length});",
-		"description": "Generate a complex random string (useful for md5 salts)"
-	},
-	"random_bytes_emulate": {
-		"prefix": "random_bytes_emulate",
-		"body": "random_bytes_emulate(${1:\\$length});",
-		"description": "Try to generates cryptographically secure pseudo-random bytes."
-	},
-	"shorten_text": {
-		"prefix": "shorten_text",
-		"body": "shorten_text(${1:\\$text}${2:, ${3:\\$ideal}${3:, ${4:\\$exact}${5:, ${6:\\$ending}}}});",
-		"description": "Given some text (which may contain HTML) and an ideal length, this function truncates the text neatly on a word boundary if possible"
-	},
-	"shorten_filename": {
-		"prefix": "shorten_filename",
-		"body": "shorten_filename(${1:\\$filename}${2:, ${3:\\$length}${3:, ${4:\\$includehash}}});",
-		"description": "Shortens a given filename by removing characters positioned after the ideal string length. When the filename is too long, the file cannot be created on the filesystem due to exceeding max byte size. Limiting the filename to a certain size (considering multibyte characters) will prevent this."
-	},
-	"shorten_filenames": {
-		"prefix": "shorten_filenames",
-		"body": "shorten_filenames(${1:\\$path_array}${2:, ${3:\\$length}${3:, ${4:\\$includehash}}});",
-		"description": "Shortens a given array of filenames by removing characters positioned after the ideal string length."
-	},
-	"getweek": {
-		"prefix": "getweek",
-		"body": "getweek(${1:\\$startdate}, ${2:\\$thedate});",
-		"description": "Given dates in seconds, how many weeks is the date from startdate The first week is 1, the second 2 etc ..."
-	},
-	"generate_password": {
-		"prefix": "generate_password",
-		"body": "generate_password(${1:\\$maxlen});",
-		"description": "Returns a randomly generated password of length $maxlen.  inspired by"
-	},
-	"format_float": {
-		"prefix": "format_float",
-		"body": "format_float(${1:\\$float}${2:, ${3:\\$decimalpoints}${4:, ${5:\\$localized}${6:, ${1:\\$stripzeros}}}});",
-		"description": "Given a float, prints it nicely."
-	},
-	"unformat_float": {
-		"prefix": "unformat_float",
-		"body": "unformat_float(${1:\\$localefloat}${2:, ${3:\\$strict}});",
-		"description": "Converts locale specific floating point/comma number back to standard PHP float value"
-	},
-	"swapshuffle": {
-		"prefix": "swapshuffle",
-		"body": "swapshuffle(${1:\\$array});",
-		"description": "Given a simple array, this shuffles it up just like shuffle() Unlike PHP's shuffle() this function works on any machine."
-	},
-	"swapshuffle_assoc": {
-		"prefix": "swapshuffle_assoc",
-		"body": "swapshuffle_assoc(${1:\\$array});",
-		"description": "swapshuffle_assoc"
-	},
-	"draw_rand_array": {
-		"prefix": "draw_rand_array",
-		"body": "draw_rand_array(${1:\\$array}, ${2:\\$draws});",
-		"description": "Given an arbitrary array, and a number of draws, this function returns an array with that amount of items.  The indexes are retained."
-	},
-	"microtime_diff": {
-		"prefix": "microtime_diff",
-		"body": "microtime_diff(${1:\\$a}, ${2:\\$b});",
-		"description": "Calculate the difference between two microtimes"
-	},
-	"make_menu_from_list": {
-		"prefix": "make_menu_from_list",
-		"body": "make_menu_from_list(${1:\\$list}${2:, ${3:\\$separator}});",
-		"description": "Given a list (eg a,b,c,d,e) this function returns an array of 1->a, 2->b, 3->c etc"
-	},
-	"make_grades_menu": {
-		"prefix": "make_grades_menu",
-		"body": "make_grades_menu(${1:\\$gradingtype});",
-		"description": "Creates an array that represents all the current grades that can be chosen using the given grading type."
-	},
-	"make_unique_id_code": {
-		"prefix": "make_unique_id_code",
-		"body": "make_unique_id_code(${1:\\$extra});",
-		"description": "make_unique_id_code"
-	},
-	"address_in_subnet": {
-		"prefix": "address_in_subnet",
-		"body": "address_in_subnet(${1:\\$addr}, ${2:\\$subnetstr});",
-		"description": "Function to check the passed address is within the passed subnet"
-	},
-	"mtrace": {
-		"prefix": "mtrace",
-		"body": "mtrace(${1:\\$string}${2:, ${3:\\$eol}${4:, ${5:\\$sleep}}});",
-		"description": "For outputting debugging info"
-	},
-	"cleardoubleslashes": {
-		"prefix": "cleardoubleslashes",
-		"body": "cleardoubleslashes (${1:\\$path});",
-		"description": "Replace 1 or more slashes or backslashes to 1 slash"
-	},
-	"remoteip_in_list": {
-		"prefix": "remoteip_in_list",
-		"body": "remoteip_in_list(${1:\\$list});",
-		"description": "Is current ip in give list?"
-	},
-	"getremoteaddr": {
-		"prefix": "getremoteaddr",
-		"body": "getremoteaddr(${1:\\$default});",
-		"description": "Returns most reliable client address"
-	},
-	"cleanremoteaddr": {
-		"prefix": "cleanremoteaddr",
-		"body": "cleanremoteaddr(${1:\\$addr}${2:, ${3:\\$compress}});",
-		"description": "Cleans an ip address. Internal addresses are now allowed."
-	},
-	"ip_is_public": {
-		"prefix": "ip_is_public",
-		"body": "ip_is_public(${1:\\$ip});",
-		"description": "Is IP address a public address?"
-	},
-	"fullclone": {
-		"prefix": "fullclone",
-		"body": "fullclone(${1:\\$thing});",
-		"description": "This function will make a complete copy of anything it's given, regardless of whether it's an object or not."
-	},
-	"bounded_number": {
-		"prefix": "bounded_number",
-		"body": "bounded_number(${1:\\$min}, ${2:\\$value}, ${3:\\$max});",
-		"description": "Used to make sure that $min <= $value <= $max"
-	},
-	"array_is_nested": {
-		"prefix": "array_is_nested",
-		"body": "array_is_nested(${1:\\$array});",
-		"description": "Check if there is a nested array within the passed array"
-	},
-	"get_performance_info": {
-		"prefix": "get_performance_info",
-		"body": "get_performance_info();",
-		"description": "get_performance_info() pairs up with init_performance_info() loaded in setup.php. Returns an array with 'html' and 'txt' values ready for use, and each of the individual stats provided separately as well."
-	},
-	"remove_dir": {
-		"prefix": "remove_dir",
-		"body": "remove_dir(${1:\\$dir}${2:, ${3:\\$contentonly}});",
-		"description": "Delete directory or only its content"
-	},
-	"object_property_exists": {
-		"prefix": "object_property_exists",
-		"body": "object_property_exists(${1:\\$obj}, ${2:\\$property});",
-		"description": "Detect if an object or a class contains a given property will take an actual object or the name of a class"
-	},
-	"convert_to_array": {
-		"prefix": "convert_to_array",
-		"body": "convert_to_array(${1:\\$var});",
-		"description": "Converts an object into an associative array"
-	},
-	"custom_script_path": {
-		"prefix": "custom_script_path",
-		"body": "custom_script_path();",
-		"description": "Detect a custom script replacement in the data directory that will replace an existing moodle script"
-	},
-	"is_mnet_remote_user": {
-		"prefix": "is_mnet_remote_user",
-		"body": "is_mnet_remote_user(${1:\\$user});",
-		"description": "Returns whether or not the user object is a remote MNET user. This function is in moodlelib because it does not rely on loading any of the MNET code."
-	},
-	"setup_lang_from_browser": {
-		"prefix": "setup_lang_from_browser",
-		"body": "setup_lang_from_browser();",
-		"description": "This function will search for browser prefereed languages, setting Moodle to use the best one available if $SESSION->lang is undefined"
-	},
-	"is_proxybypass": {
-		"prefix": "is_proxybypass",
-		"body": "is_proxybypass(${1:\\$url});",
-		"description": "Check if $url matches anything in proxybypass list"
-	},
-	"is_newnav": {
-		"prefix": "is_newnav",
-		"body": "is_newnav(${1:\\$navigation});",
-		"description": "Check if the passed navigation is of the new style"
-	},
-	"in_object_vars": {
-		"prefix": "in_object_vars",
-		"body": "in_object_vars(${1:\\$var}, ${2:\\$object});",
-		"description": "Checks whether the given variable name is defined as a variable within the given object."
-	},
-	"object_array_unique": {
-		"prefix": "object_array_unique",
-		"body": "object_array_unique(${1:\\$array}${2:, ${3:\\$keepkeyassoc}});",
-		"description": "Returns an array without repeated objects."
-	},
-	"is_primary_admin": {
-		"prefix": "is_primary_admin",
-		"body": "is_primary_admin(${1:\\$userid});",
-		"description": "Is a userid the primary administrator?"
-	},
-	"get_site_identifier": {
-		"prefix": "get_site_identifier",
-		"body": "get_site_identifier();",
-		"description": "Returns the site identifier"
-	},
-	"check_consecutive_identical_characters": {
-		"prefix": "check_consecutive_identical_characters",
-		"body": "check_consecutive_identical_characters(${1:\\$password}, ${2:\\$maxchars});",
-		"description": "Check whether the given password has no more than the specified number of consecutive identical characters."
-	},
-	"partial": {
-		"prefix": "partial",
-		"body": "partial();",
-		"description": "Helper function to do partial function binding. so we can use it for preg_replace_callback, for example this works with php functions, user functions, static methods and class methods it returns you a callback that you can pass on like so:"
-	},
-	"get_mnet_environment": {
-		"prefix": "get_mnet_environment",
-		"body": "get_mnet_environment();",
-		"description": "helper function to load up and initialise the mnet environment this must be called before you use mnet functions."
-	},
-	"get_mnet_remote_client": {
-		"prefix": "get_mnet_remote_client",
-		"body": "get_mnet_remote_client();",
-		"description": "during xmlrpc server code execution, any code wishing to access information about the remote peer must use this to get it."
-	},
-	"set_mnet_remote_client": {
-		"prefix": "set_mnet_remote_client",
-		"body": "set_mnet_remote_client(${1:\\$client});",
-		"description": "during the xmlrpc server code execution, this will be called to setup the object returned by {@link get_mnet_remote_client}"
-	},
-	"mnet_get_idp_jump_url": {
-		"prefix": "mnet_get_idp_jump_url",
-		"body": "mnet_get_idp_jump_url(${1:\\$user});",
-		"description": "return the jump url for a given remote user this is used for rewriting forum post links in emails, etc"
-	},
-	"get_home_page": {
-		"prefix": "get_home_page",
-		"body": "get_home_page();",
-		"description": "Gets the homepage to use for the current user"
-	},
-	"get_course_display_name_for_list": {
-		"prefix": "get_course_display_name_for_list",
-		"body": "get_course_display_name_for_list(${1:\\$course});",
-		"description": "ets the name of a course to be displayed when showing a list of courses. By default this is just $course->fullname but user can configure it. The result of this function should be passed through print_string."
-	},
-	"unserialize_array": {
-		"prefix": "unserialize_array",
-		"body": "unserialize_array(${1:\\$expression});",
-		"description": "Safe analogue of unserialize() that can only parse arrays"
-	},
-	"get_callable_name": {
-		"prefix": "get_callable_name",
-		"body": "get_callable_name(${1:\\$callable});",
-		"description": "Get human readable name describing the given callable."
-	},
-	"get_context_instance": {
-		"prefix": "get_context_instance",
-		"body": "get_context_instance(${1:\\$contextlevel}, ${2:\\$instance = 0}, ${3:\\$strictness = IGNORE_MISSING});",
-		"description": "Moodle snippets"
-	},
-	"get_context_instance_by_id": {
-		"prefix": "get_context_instance_by_id",
-		"body": "get_context_instance_by_id(${1:\\$id}, ${2:\\$strictness = IGNORE_MISSING});",
-		"description": "Moodle snippets"
-	},
-	"has_capability": {
-		"prefix": "has_capability",
-		"body": "has_capability(${1:\\$capability}, ${2:context \\$context}, ${3:\\$user = null}, ${4:\\$doanything = true});",
-		"description": "Moodle snippets"
-	},
-	"require_capability": {
-		"prefix": "require_capability",
-		"body": "require_capability(${1:\\$capability}, ${2:context \\$context}, ${3:\\$userid = null}, ${4:\\$doanything = true}, ${5:\\$errormessage = 'nopermissions'}, ${6:\\$stringfile = ''});",
-		"description": "Moodle snippets"
-	},
-	"get_users_by_capability": {
-		"prefix": "get_users_by_capability",
-		"body": "get_users_by_capability(${1:context \\$context}, ${2:\\$capability}, ${3:\\$fields = ''}, ${4:\\$sort = ''}, ${5:\\$limitfrom = ''}, ${6:\\$limitnum = ''}, ${7:\\$groups = ''}, ${8:\\$exceptions = ''}, ${9:\\$doanything_ignored = null}, ${10:\\$view_ignored = null}, ${11:\\$useviewallgroups = false});",
-		"description": "Moodle snippets"
-	},
-	"isguestuser": {
-		"prefix": "isguestuser",
-		"body": "isguestuser(${1:\\$user = null});",
-		"description": "Moodle snippets"
-	},
-	"isloggedin": {
-		"prefix": "isloggedin",
-		"body": "isloggedin();",
-		"description": "Moodle snippets"
-	},
-	"is_siteadmin": {
-		"prefix": "is_siteadmin",
-		"body": "is_siteadmin(${1:\\$user_or_id = null});",
-		"description": "Moodle snippets"
-	},
-	"is_guest": {
-		"prefix": "is_guest",
-		"body": "is_guest(${1:context \\$context}, ${2:\\$user = null});",
-		"description": "Moodle snippets"
-	},
-	"is_viewing": {
-		"prefix": "is_viewing",
-		"body": "is_viewing(${1:context \\$context}, ${2: \\$user = null}, ${3: \\$withcapability = ''});",
-		"description": "Moodle snippets"
-	},
-	"allow_commit": {
-		"prefix": "allow_commit",
-		"body": "allow_commit();",
-		"description": "Moodle snippets"
-	},
-	"get_course": {
-		"prefix": "get_course",
-		"body": "get_course(${1:\\$courseid});",
-		"description": "Moodle snippets"
-	},
-	"get_file_content": {
-		"prefix": "get_file_content",
-		"body": "get_file_content(${1:'userfile'});",
-		"description": "Moodle snippets"
-	},
-	"get_new_filename": {
-		"prefix": "get_new_filename",
-		"body": "get_new_filename(${1:'userfile'});",
-		"description": "Moodle snippets"
-	},
-	"save_file": {
-		"prefix": "save_file",
-		"body": "save_file(${1:'userfile'}, ${2: \\$fullpath}, ${3: \\$override});",
-		"description": "Moodle snippets"
-	},
-	"save_stored_file": {
-		"prefix": "save_stored_file",
-		"body": "save_stored_file(${1:'userfile'}, ${2: ...});",
-		"description": "Moodle snippets"
-	},
-	"file_get_submitted_draft_itemid": {
-		"prefix": "file_get_submitted_draft_itemid",
-		"body": "file_get_submitted_draft_itemid(${1:'entry'});",
-		"description": "Moodle snippets"
-	},
-	"file_prepare_draft_area": {
-		"prefix": "file_prepare_draft_area",
-		"body": "file_prepare_draft_area(${1:\\$draftid_editor}, ${2: \\$context->id}, ${3: 'mod_MYMOD'}, ${4: 'entry'}, ${5: \\$entry->id}, ${6: array('subdirs'=>true)}, ${7: \\$entry->definition});",
-		"description": "Moodle snippets"
-	},
-	"file_save_draft_area_files": {
-		"prefix": "file_save_draft_area_files",
-		"body": "file_save_draft_area_files(${1:\\$data->attachments}, ${2: \\$context->id}, ${3: 'mod_glossary'}, ${4: 'attachment'}, ${5: \\$entry->id}, array(${6:'subdirs' => 0}, ${7: 'maxbytes' => \\$maxbytes}, ${8: 'maxfiles' => 50}));",
-		"description": "Moodle snippets"
-	},
-	"file_rewrite_pluginfile_urls": {
-		"prefix": "file_rewrite_pluginfile_urls",
-		"body": "file_rewrite_pluginfile_urls(${1:\\$messagetext}, ${2: 'pluginfile.php'}, ${3: \\$context->id}, ${4: 'mod_mymodule'}, ${5: 'proper_file_area'}, ${6: \\$itemid});",
-		"description": "Moodle snippets"
-	},
-	"file_prepare_standard_editor": {
-		"prefix": "file_prepare_standard_editor",
-		"body": "file_prepare_standard_editor(${1:\\$data}, ${2: 'textfield'}, ${3: \\$textfieldoptions}, ${4: \\$context}, ${5: 'mod_somemodule'}, ${6: 'somearea'}, ${7: \\$data->id});",
-		"description": "Moodle snippets"
-	},
-	"file_prepare_standard_filemanager": {
-		"prefix": "file_prepare_standard_filemanager",
-		"body": "file_prepare_standard_filemanager(${1:\\$entry}, ${2: 'attachment'}, ${3: \\$attachmentoptions}, ${4: \\$context}, ${5: 'mod_mymod'}, ${6: 'attachment'}, ${7: \\$entry->id});",
-		"description": "Moodle snippets"
-	},
-	"file_postupdate_standard_filemanager": {
-		"prefix": "file_postupdate_standard_filemanager",
-		"body": "file_postupdate_standard_filemanager(${1:\\$entry}, ${2: 'attachment'}, ${3: \\$attachmentoptions}, ${4: \\$context}, ${5: 'mod_mymod'}, ${6: 'attachment'}, ${7: \\$entry->id});",
-		"description": "Moodle snippets"
-	},
-	"file_postupdate_standard_editor": {
-		"prefix": "file_postupdate_standard_editor",
-		"body": "file_postupdate_standard_editor(${1:\\$data}, ${2: 'textfield'}, ${3: \\$textfieldoptions}, ${4: \\$context}, ${5: 'mod_somemodule'}, ${6: 'somearea'}, ${7: \\$data->id});",
-		"description": "Moodle snippets"
-	},
-	"make_pluginfile_url": {
-		"prefix": "make_pluginfile_url",
-		"body": "make_pluginfile_url(${1:\\$file->get_contextid()}, ${2: \\$file->get_component()}, ${3: \\$file->get_filearea()}, ${4: \\$file->get_itemid()}, ${5: \\$file->get_filepath()}, ${6: \\$file->get_filename()});",
-		"description": "Moodle snippets"
-	},
-	"myPLUGIN_pluginfile": {
-		"prefix": "myPLUGIN_pluginfile",
-		"body": "myPLUGIN_pluginfile(${1:\\$course}, ${2: \\$cm}, ${3: \\$context}, ${4: \\$filearea}, ${5: \\$args}, ${6: \\$forcedownload}, ${7: array \\$options=array()});",
-		"description": "Moodle snippets"
-	},
-	"get_file": {
-		"prefix": "get_file",
-		"body": "get_file(${1:\\$context->id}, ${2: 'mod_MYPLUGIN'}, ${3: \\$filearea}, ${4: \\$itemid}, ${5: \\$filepath}, ${6: \\$filename});",
-		"description": "Moodle snippets"
-	},
-	"send_file": {
-		"prefix": "send_file",
-		"body": "send_file(${1:\\$file}, ${2: 86400}, ${3: 0}, ${4: \\$forcedownload}, ${5: \\$options});",
-		"description": "Moodle snippets"
-	},
-	"get_system_context": {
-		"prefix": "get_system_context",
-		"body": "get_system_context();",
-		"description": "Moodle snippets"
-	},
-	"get_file_info": {
-		"prefix": "get_file_info",
-		"body": "get_file_info(${1:\\$context}, ${2: \\$component}, ${3: \\$filearea}, ${4: \\$itemid}, ${5: '\/'}, ${6: \\$filename});",
-		"description": "Moodle snippets"
-	},
-	"get_parent": {
-		"prefix": "get_parent",
-		"body": "get_parent();",
-		"description": "Moodle snippets"
-	},
-	"get_children": {
-		"prefix": "get_children",
-		"body": "get_children();",
-		"description": "Moodle snippets"
-	},
-	"is_directory": {
-		"prefix": "is_directory",
-		"body": "is_directory();",
-		"description": "Moodle snippets"
-	},
-	"get_visible_name": {
-		"prefix": "get_visible_name",
-		"body": "get_visible_name();",
-		"description": "Moodle snippets"
-	},
-	"get_params": {
-		"prefix": "get_params",
-		"body": "get_params();",
-		"description": "Moodle snippets"
-	},
-	"create_file_from_pathname": {
-		"prefix": "create_file_from_pathname",
-		"body": "create_file_from_pathname(${1:\\$file_record}, ${2: \\$from_zip_file});",
-		"description": "Moodle snippets"
-	},
-	"get_area_files": {
-		"prefix": "get_area_files",
-		"body": "get_area_files(${1:\\$contextid}, ${2: 'mod_MYMOD'}, ${3: 'AREA'}, ${4: \\$submission->id});",
-		"description": "Moodle snippets"
-	},
-	"get_filename": {
-		"prefix": "get_filename",
-		"body": "get_filename();",
-		"description": "Moodle snippets"
-	},
-	"get_itemid": {
-		"prefix": "get_itemid",
-		"body": "get_itemid();",
-		"description": "Moodle snippets"
-	},
-	"get_filepath": {
-		"prefix": "get_filepath",
-		"body": "get_filepath();",
-		"description": "Moodle snippets"
-	},
-	"get_component": {
-		"prefix": "get_component",
-		"body": "get_component();",
-		"description": "Moodle snippets"
-	},
-	"get_contextid": {
-		"prefix": "get_contextid",
-		"body": "get_contextid();",
-		"description": "Moodle snippets"
-	},
-	"get_filearea": {
-		"prefix": "get_filearea",
-		"body": "get_filearea();",
-		"description": "Moodle snippets"
-	},
-	"create_file_from_string": {
-		"prefix": "create_file_from_string",
-		"body": "create_file_from_string(${1:\\$fileinfo}, ${2: 'hello world'});",
-		"description": "Moodle snippets"
-	},
-	"get_content": {
-		"prefix": "get_content",
-		"body": "get_content();",
-		"description": "Moodle snippets"
-	},
-	"delete": {
-		"prefix": "delete",
-		"body": "delete();",
-		"description": "Moodle snippets"
-	},
-	"addGroupRule": {
-		"prefix": "addGroupRule",
-		"body": "addGroupRule(${1:'elementname'}, array(${2:'value'} => array(array(${3:list}, ${4: of}, ${5: rule}, ${6: params}, ${7: but}, ${8: fieldname}))));",
-		"description": "Moodle snippets"
-	},
-	"createElement": {
-		"prefix": "createElement",
-		"body": "createElement(${1:'radio'}, ${2: 'yesno'}, ${3: ''}, ${4: get_string('yes')}, ${5: 1}, ${6: \\$attributes});",
-		"description": "Moodle snippets"
-	},
-	"setDefault": {
-		"prefix": "setDefault",
-		"body": "setDefault(${1:'yesno'}, ${2: 0});",
-		"description": "Moodle snippets"
-	},
-	"setMultiple": {
-		"prefix": "setMultiple",
-		"body": "setMultiple(${1:true});",
-		"description": "Moodle snippets"
-	},
-	"addGroup": {
-		"prefix": "addGroup",
-		"body": "addGroup(${1:\\$buttonarray}, ${2: 'buttonar'}, ${3: ''}, ${4: array(' ')}, ${5: false});",
-		"description": "Moodle snippets"
-	},
-	"disabledIf": {
-		"prefix": "disabledIf",
-		"body": "disabledIf(${1:'mycontrol'}, ${2: 'someselect'}, ${3: 'neq'}, ${4: 42});",
-		"description": "Moodle snippets"
-	},
-	"addRule": {
-		"prefix": "addRule",
-		"body": "addRule(${1:'elementname'}, ${2: get_string('error')}, ${3: 'rule type'}, ${4: 'extraruledata'}, ${5: 'server'(default)}, ${6: false}, ${7: false});",
-		"description": "Moodle snippets"
-	},
-	"setHelpButton": {
-		"prefix": "setHelpButton",
-		"body": "setHelpButton(${1:'lessondefault'}, array(${2:'lessondefault'}, ${3: get_string('lessondefault', 'lesson')}, ${4: 'lesson')});",
-		"description": "Moodle snippets"
-	},
-	"addHelpButton": {
-		"prefix": "addHelpButton",
-		"body": "addHelpButton(${1:'api_key_field'}, ${2: 'api_key'}, ${3: 'block_extsearch'});",
-		"description": "Moodle snippets"
-	},
-	"disable_form_change_checker": {
-		"prefix": "disable_form_change_checker",
-		"body": "disable_form_change_checker();",
-		"description": "Moodle snippets"
-	},
-	"setType": {
-		"prefix": "setType",
-		"body": "setType(${2:'name'}, ${4:PARAM_TYPE});",
-		"description": "Moodle snippets"
-	},
-	"add_to_log": {
-		"prefix": "add_to_log",
-		"body": "add_to_log(${1:\\$courseid}, ${2: \\$module}, ${3: \\$action}, ${4: \\$url=''}, ${5: \\$info=''}, ${6: \\$cm=0}, ${7: \\$user=0});",
-		"description": "Moodle snippets"
-	},
-	"user_accesstime_log": {
-		"prefix": "user_accesstime_log",
-		"body": "user_accesstime_log(${1:\\$courseid=0});",
-		"description": "Moodle snippets"
-	},
-	"get_logs": {
-		"prefix": "get_logs",
-		"body": "get_logs(${1:\\$select}, ${2: array \\$params=null}, ${3: \\$order='l.time DESC'}, ${4: \\$limitfrom=''}, ${5: \\$limitnum=''}, ${6: &\\$totalcount});",
-		"description": "Moodle snippets"
-	},
-	"get_logs_usercourse": {
-		"prefix": "get_logs_usercourse",
-		"body": "get_logs_usercourse(${1:\\$userid}, ${2: \\$courseid}, ${3: \\$coursestart});",
-		"description": "Moodle snippets"
-	},
-	"get_logs_userday": {
-		"prefix": "get_logs_userday",
-		"body": "get_logs_userday(${1:\\$userid}, ${2: \\$courseid}, ${3: \\$daystart});",
-		"description": "Moodle snippets"
-	},
-	"make_active": {
-		"prefix": "make_active",
-		"body": "make_active();",
-		"description": "Moodle snippets"
-	},
-	"get_coursemodule_from_id": {
-		"prefix": "get_coursemodule_from_id",
-		"body": "get_coursemodule_from_id(${1:'mymodulename'}, ${2: \\$cmid}, ${3: 0}, ${4: false}, ${5: MUST_EXIST});",
-		"description": "Moodle snippets"
-	},
-	"get_strings(": {
-		"prefix": "get_strings",
-		"body": "get_strings(array(${1:'enable'}, ${2: 'disable'}, ${3: 'up'}, ${4: 'down'}, ${5: 'none')}, ${6: 'qtype_dragdrop'});",
-		"description": "Moodle snippets"
-	},
-	"asort": {
-		"prefix": "asort",
-		"body": "asort();",
-		"description": "Moodle snippets"
-	},
-	"code2utf8": {
-		"prefix": "code2utf8",
-		"body": "code2utf8(${1:\\$string});",
-		"description": "Moodle snippets"
-	},
-	"convert": {
-		"prefix": "convert",
-		"body": "convert(${1:\\$string});",
-		"description": "Moodle snippets"
-	},
-	"encode_mimeheader": {
-		"prefix": "encode_mimeheader",
-		"body": "encode_mimeheader(${1:\\$string});",
-		"description": "Moodle snippets"
-	},
-	"entities_to_utf8": {
-		"prefix": "entities_to_utf8",
-		"body": "entities_to_utf8(${1:\\$string});",
-		"description": "Moodle snippets"
-	},
-	"specialtoascii": {
-		"prefix": "specialtoascii",
-		"body": "specialtoascii(${1:\\$string});",
-		"description": "Moodle snippets"
-	},
-	"strlen": {
-		"prefix": "strlen",
-		"body": "strlen(${1:\\$string});",
-		"description": "Moodle snippets"
-	},
-	"strpos": {
-		"prefix": "strpos",
-		"body": "strpos(${1:\\$string});",
-		"description": "Moodle snippets"
-	},
-	"strrpos": {
-		"prefix": "strrpos",
-		"body": "strrpos(${1:\\$string});",
-		"description": "Moodle snippets"
-	},
-	"strtolower": {
-		"prefix": "strtolower",
-		"body": "strtolower(${1:\\$string});",
-		"description": "Moodle snippets"
-	},
-	"strtotitle": {
-		"prefix": "strtotitle",
-		"body": "strtotitle(${1:\\$string});",
-		"description": "Moodle snippets"
-	},
-	"strtoupper": {
-		"prefix": "strtoupper",
-		"body": "strtoupper(${1:\\$string});",
-		"description": "Moodle snippets"
-	},
-	"substr": {
-		"prefix": "substr",
-		"body": "substr(${1:\\$string});",
-		"description": "Moodle snippets"
-	},
-	"trim_utf8_bom": {
-		"prefix": "trim_utf8_bom",
-		"body": "trim_utf8_bom(${1:\\$string});",
-		"description": "Moodle snippets"
-	},
-	"utf8_to_entities": {
-		"prefix": "utf8_to_entities",
-		"body": "utf8_to_entities(${1:\\$string});",
-		"description": "Moodle snippets"
-	},
-	"add(": {
-		"prefix": "add",
-		"body": "add(new admin_setting_FIELDTYPE(${1:'MYMOD\/MYNAME'}, ${2: 'MYNAME'}, ${3: 'MYDESC'}, array(${4:'value' => '0'}, ${5: 'fix' => false)}, ${6: PARAM_INT}));",
-		"description": "Moodle snippets"
-	},
-	"get_fast_modinfo": {
-		"prefix": "get_fast_modinfo",
-		"body": "get_fast_modinfo(${1:\\$course});",
-		"description": "Moodle snippets"
-	},
-	"filter_user_list": {
-		"prefix": "filter_user_list",
-		"body": "filter_user_list(${1:\\$users});",
-		"description": "Moodle snippets"
-	},
-	"define_my_steps": {
-		"prefix": "define_my_steps",
-		"body": "define_my_steps();",
-		"description": "Moodle snippets"
-	},
-	"set_source_table": {
-		"prefix": "set_source_table",
-		"body": "set_source_table();",
-		"description": "Moodle snippets"
-	},
-	"set_source_sql": {
-		"prefix": "set_source_sql",
-		"body": "set_source_sql();",
-		"description": "Moodle snippets"
-	},
-	"prepare_activity_structure": {
-		"prefix": "prepare_activity_structure",
-		"body": "prepare_activity_structure();",
-		"description": "Moodle snippets"
-	},
-	"calendar_event_hook": {
-		"prefix": "calendar_event_hook",
-		"body": "calendar_event_hook(${1:\\$action}, ${2: array \\$args});",
-		"description": "Moodle snippets"
-	},
-	"calendar_get_default_courses": {
-		"prefix": "calendar_get_default_courses",
-		"body": "calendar_get_default_courses();",
-		"description": "Moodle snippets"
-	},
-	"calendar_get_days": {
-		"prefix": "calendar_get_days",
-		"body": "calendar_get_days();",
-		"description": "Moodle snippets"
-	},
-	"calendar_get_starting_weekday": {
-		"prefix": "calendar_get_starting_weekday",
-		"body": "calendar_get_starting_weekday();",
-		"description": "Moodle snippets"
-	},
-	"calendar_day_representation": {
-		"prefix": "calendar_day_representation",
-		"body": "calendar_day_representation(${1:\\$tstamp}, ${2: \\$now = false}, ${3: \\$usecommonwords = true});",
-		"description": "Moodle snippets"
-	},
-	"calendar_time_representation": {
-		"prefix": "calendar_time_representation",
-		"body": "calendar_time_representation(${1:\\$time});",
-		"description": "Moodle snippets"
-	},
-	"calendar_wday_name": {
-		"prefix": "calendar_wday_name",
-		"body": "calendar_wday_name(${1:\\$englishname});",
-		"description": "Moodle snippets"
-	},
-	"calendar_days_in_month": {
-		"prefix": "calendar_days_in_month",
-		"body": "calendar_days_in_month(${1:\\$month}, ${2: \\$year});",
-		"description": "Moodle snippets"
-	},
-	"calendar_get_link_href": {
-		"prefix": "calendar_get_link_href",
-		"body": "calendar_get_link_href(${1:\\$linkbase}, ${2: \\$d}, ${3: \\$m}, ${4: \\$y});",
-		"description": "Moodle snippets"
-	},
-	"calendar_get_mini": {
-		"prefix": "calendar_get_mini",
-		"body": "calendar_get_mini(${1:\\$courses}, ${2: \\$groups}, ${3: \\$users}, ${4: \\$cal_month = false}, ${5: \\$cal_year = false});",
-		"description": "Moodle snippets"
-	},
-	"calendar_get_popup": {
-		"prefix": "calendar_get_popup",
-		"body": "calendar_get_popup(${1:\\$is_today}, ${2: \\$event_timestart}, ${3: \\$popupcontent = ''});",
-		"description": "Moodle snippets"
-	},
-	"calendar_add_month": {
-		"prefix": "calendar_add_month",
-		"body": "calendar_add_month(${1:\\$month}, ${2: \\$year});",
-		"description": "Moodle snippets"
-	},
-	"calendar_sub_month": {
-		"prefix": "calendar_sub_month",
-		"body": "calendar_sub_month(${1:\\$month}, ${2: \\$year});",
-		"description": "Moodle snippets"
-	},
-	"calendar_get_module_cached": {
-		"prefix": "calendar_get_module_cached",
-		"body": "calendar_get_module_cached(${1:&\\$coursecache}, ${2: \\$modulename}, ${3: \\$instance});",
-		"description": "Moodle snippets"
-	},
-	"calendar_get_course_cached": {
-		"prefix": "calendar_get_course_cached",
-		"body": "calendar_get_course_cached(${1:&\\$coursecache}, ${2: \\$courseid});",
-		"description": "Moodle snippets"
-	},
-	"calendar_print_month_selector": {
-		"prefix": "calendar_print_month_selector",
-		"body": "calendar_print_month_selector(${1:\\$name}, ${2: \\$selected});",
-		"description": "Moodle snippets"
-	},
-	"calendar_top_controls": {
-		"prefix": "calendar_top_controls",
-		"body": "calendar_top_controls(${1:\\$type}, ${2: \\$data});",
-		"description": "Moodle snippets"
-	},
-	"calendar_filter_controls": {
-		"prefix": "calendar_filter_controls",
-		"body": "calendar_filter_controls(${1:moodle_url \\$returnurl});",
-		"description": "Moodle snippets"
-	},
-	"calendar_preferences_button": {
-		"prefix": "calendar_preferences_button",
-		"body": "calendar_preferences_button(${1:stdClass \\$course});",
-		"description": "Moodle snippets"
-	},
-	"calendar_set_filters": {
-		"prefix": "calendar_set_filters",
-		"body": "calendar_set_filters(${1:array \\$courseeventsfrom}, ${2: \\$ignorefilters = false});",
-		"description": "Moodle snippets"
-	},
-	"calendar_get_link_previous": {
-		"prefix": "calendar_get_link_previous",
-		"body": "calendar_get_link_previous(${1:\\$text}, ${2: \\$linkbase}, ${3: \\$d}, ${4: \\$m}, ${5: \\$y}, ${6: \\$accesshide = false});",
-		"description": "Moodle snippets"
-	},
-	"calendar_get_link_next": {
-		"prefix": "calendar_get_link_next",
-		"body": "calendar_get_link_next(${1:\\$text}, ${2: \\$linkbase}, ${3: \\$d}, ${4: \\$m}, ${5: \\$y}, ${6: \\$accesshide = false});",
-		"description": "Moodle snippets"
-	},
-	"calendar_get_allowed_types": {
-		"prefix": "calendar_get_allowed_types",
-		"body": "calendar_get_allowed_types(${1:&\\$allowed}, ${2: \\$course = null});",
-		"description": "Moodle snippets"
-	},
-	"calendar_add_event_allowed": {
-		"prefix": "calendar_add_event_allowed",
-		"body": "calendar_add_event_allowed(${1:\\$event});",
-		"description": "Moodle snippets"
-	},
-	"calendar_edit_event_allowed": {
-		"prefix": "calendar_edit_event_allowed",
-		"body": "calendar_edit_event_allowed(${1:\\$event});",
-		"description": "Moodle snippets"
-	},
-	"calendar_user_can_add_event": {
-		"prefix": "calendar_user_can_add_event",
-		"body": "calendar_user_can_add_event(${1:\\$course});",
-		"description": "Moodle snippets"
-	},
-	"calendar_show_event_type": {
-		"prefix": "calendar_show_event_type",
-		"body": "calendar_show_event_type(${1:\\$type}, ${2: \\$user = null});",
-		"description": "Moodle snippets"
-	},
-	"calendar_set_event_type_display": {
-		"prefix": "calendar_set_event_type_display",
-		"body": "calendar_set_event_type_display(${1:\\$type}, ${2: \\$display = null}, ${3: \\$user = null});",
-		"description": "Moodle snippets"
-	},
-	"calendar_get_events": {
-		"prefix": "calendar_get_events",
-		"body": "calendar_get_events(${1:\\$tstart}, ${2: \\$tend}, ${3: \\$users}, ${4: \\$groups}, ${5: \\$courses}, ${6: \\$withduration = true}, ${7: \\$ignorehidden = true});",
-		"description": "Moodle snippets"
-	},
-	"calendar_events_by_day": {
-		"prefix": "calendar_events_by_day",
-		"body": "calendar_events_by_day(${1:\\$events}, ${2: \\$month}, ${3: \\$year}, ${4: &\\$eventsbyday}, ${5: &\\$durationbyday}, ${6: &\\$typesbyday}, ${7: &\\$courses});",
-		"description": "Moodle snippets"
-	},
-	"calendar_get_upcoming": {
-		"prefix": "calendar_get_upcoming",
-		"body": "calendar_get_upcoming(${1:\\$courses}, ${2: \\$groups}, ${3: \\$users}, ${4: \\$daysinfuture}, ${5: \\$maxevents}, ${6: \\$fromtime = 0});",
-		"description": "Moodle snippets"
-	},
-	"calendar_get_block_upcoming": {
-		"prefix": "calendar_get_block_upcoming",
-		"body": "calendar_get_block_upcoming(${1:\\$events}, ${2: \\$linkhref = NULL});",
-		"description": "Moodle snippets"
-	},
-	"calendar_format_event_time": {
-		"prefix": "calendar_format_event_time",
-		"body": "calendar_format_event_time(${1:\\$event}, ${2: \\$now}, ${3: \\$linkparams = null}, ${4: \\$usecommonwords = true}, ${5: \\$showtime = 0});",
-		"description": "Moodle snippets"
-	},
-	"calendar_add_event_metadata": {
-		"prefix": "calendar_add_event_metadata",
-		"body": "calendar_add_event_metadata(${1:\\$event});",
-		"description": "Moodle snippets"
-	},
-	"table_exists": {
-		"prefix": "table_exists",
-		"body": "table_exists(${1:\\$table});",
-		"description": "Moodle snippets"
-	},
-	"create_table": {
-		"prefix": "create_table",
-		"body": "create_table(${1:\\$table}, ${2: \\$continue=true}, ${3: \\$feedback=true});",
-		"description": "Moodle snippets"
-	},
-	"drop_table": {
-		"prefix": "drop_table",
-		"body": "drop_table(${1:\\$table}, ${2: \\$continue=true}, ${3: \\$feedback=true});",
-		"description": "Moodle snippets"
-	},
-	"rename_table": {
-		"prefix": "rename_table",
-		"body": "rename_table(${1:\\$table}, ${2: \\$newname}, ${3: \\$continue=true}, ${4: \\$feedback=true});",
-		"description": "Moodle snippets"
-	},
-	"field_exists": {
-		"prefix": "field_exists",
-		"body": "field_exists(${1:\\$table}, ${2: \\$field});",
-		"description": "Moodle snippets"
-	},
-	"add_field": {
-		"prefix": "add_field",
-		"body": "add_field(${1:\\$table}, ${2: \\$field}, ${3: \\$continue=true}, ${4: \\$feedback=true});",
-		"description": "Moodle snippets"
-	},
-	"drop_field": {
-		"prefix": "drop_field",
-		"body": "drop_field(${1:\\$table}, ${2: \\$field}, ${3: \\$continue=true}, ${4: \\$feedback=true});",
-		"description": "Moodle snippets"
-	},
-	"change_field_type": {
-		"prefix": "change_field_type",
-		"body": "change_field_type(${1:\\$table}, ${2: \\$field}, ${3: \\$continue=true}, ${4: \\$feedback=true});",
-		"description": "Moodle snippets"
-	},
-	"change_field_precision": {
-		"prefix": "change_field_precision",
-		"body": "change_field_precision(${1:\\$table}, ${2: \\$field}, ${3: \\$continue=true}, ${4: \\$feedback=true});",
-		"description": "Moodle snippets"
-	},
-	"change_field_unsigned": {
-		"prefix": "change_field_unsigned",
-		"body": "change_field_unsigned(${1:\\$table}, ${2: \\$field}, ${3: \\$continue=true}, ${4: \\$feedback=true});",
-		"description": "Moodle snippets"
-	},
-	"change_field_notnull": {
-		"prefix": "change_field_notnull",
-		"body": "change_field_notnull(${1:\\$table}, ${2: \\$field}, ${3: \\$continue=true}, ${4: \\$feedback=true});",
-		"description": "Moodle snippets"
-	},
-	"drop_enum_from_field": {
-		"prefix": "drop_enum_from_field",
-		"body": "drop_enum_from_field(${1:\\$table}, ${2: \\$field}, ${3: \\$continue=true}, ${4: \\$feedback=true});",
-		"description": "Moodle snippets"
-	},
-	"change_field_default": {
-		"prefix": "change_field_default",
-		"body": "change_field_default(${1:\\$table}, ${2: \\$field}, ${3: \\$continue=true}, ${4: \\$feedback=true});",
-		"description": "Moodle snippets"
-	},
-	"rename_field": {
-		"prefix": "rename_field",
-		"body": "rename_field(${1:\\$table}, ${2: \\$field}, ${3: \\$newname}, ${4: \\$continue=true}, ${5: \\$feedback=true});",
-		"description": "Moodle snippets"
-	},
-	"index_exists": {
-		"prefix": "index_exists",
-		"body": "index_exists(${1:\\$table}, ${2: \\$index});",
-		"description": "Moodle snippets"
-	},
-	"find_index_name": {
-		"prefix": "find_index_name",
-		"body": "find_index_name(${1:\\$table}, ${2: \\$index});",
-		"description": "Moodle snippets"
-	},
-	"add_index": {
-		"prefix": "add_index",
-		"body": "add_index(${1:\\$table}, ${2: \\$index}, ${3: \\$continue=true}, ${4: \\$feedback=true});",
-		"description": "Moodle snippets"
-	},
-	"drop_index": {
-		"prefix": "drop_index",
-		"body": "drop_index(${1:\\$table}, ${2: \\$index}, ${3: \\$continue=true}, ${4: \\$feedback=true});",
-		"description": "Moodle snippets"
-	},
-	"is_enrolled": {
-		"prefix": "is_enrolled",
-		"body": "is_enrolled(${1:context \\$context}, ${2: \\$user = null}, ${3: \\$withcapability = ''}, ${4: \\$onlyactive = false});",
-		"description": "Moodle snippets"
-	},
-	"get_enrolled_sql": {
-		"prefix": "get_enrolled_sql",
-		"body": "get_enrolled_sql(${1:context \\$context}, ${2: \\$withcapability = ''}, ${3: \\$groupid = 0}, ${4: \\$onlyactive = false});",
-		"description": "Moodle snippets"
-	},
-	"get_enrolled_users": {
-		"prefix": "get_enrolled_users",
-		"body": "get_enrolled_users(${1:context \\$context}, ${2: \\$withcapability = ''}, ${3: \\$groupid = 0}, ${4: \\$userfields = 'u.*'}, ${5: \\$orderby = ''}, ${6: \\$limitfrom = 0}, ${7: \\$limitnum = 0});",
-		"description": "Moodle snippets"
-	},
-	"count_enrolled_users": {
-		"prefix": "count_enrolled_users",
-		"body": "count_enrolled_users(${1:context \\$context}, ${2: \\$withcapability = ''}, ${3: \\$groupid = 0});",
-		"description": "Moodle snippets"
-	},
-	"events_trigger": {
-		"prefix": "events_trigger",
-		"body": "events_trigger(${1:'user_enrolled'}, ${2: \\$ue});",
-		"description": "Moodle snippets"
-	},
-	"message_send": {
-		"prefix": "message_send",
-		"body": "message_send(${1:\\$eventdata});",
-		"description": "Moodle snippets"
-	},
-	"get_ratings": {
-		"prefix": "get_ratings",
-		"body": "get_ratings();",
-		"description": "Moodle snippets"
-	},
-	"get_user_grades": {
-		"prefix": "get_user_grades",
-		"body": "get_user_grades();",
-		"description": "Moodle snippets"
-	},
-	"delete_ratings": {
-		"prefix": "delete_ratings",
-		"body": "delete_ratings();",
-		"description": "Moodle snippets"
-	},
-	"tag_set": {
-		"prefix": "tag_set",
-		"body": "tag_set(${1:'user'}, ${2: \\$userId}, ${3: array()});",
-		"description": "Moodle snippets"
-	},
-	"tag_get_tags": {
-		"prefix": "tag_get_tags",
-		"body": "tag_get_tags(${1:'user'}, ${2: \\$userId});",
-		"description": "Moodle snippets"
-	},
-	"tag_set_add": {
-		"prefix": "tag_set_add",
-		"body": "tag_set_add(${1:'user'}, ${2: \\$userId}, ${3: 'chess'});",
-		"description": "Moodle snippets"
-	},
-	"tag_set_delete": {
-		"prefix": "tag_set_delete",
-		"body": "tag_set_delete(${1:'user'}, ${2: \\$userId}, ${3: 'chess'});",
-		"description": "Moodle snippets"
-	},
-	"tag_description_set": {
-		"prefix": "tag_description_set",
-		"body": "tag_description_set(\\$firstTagKey, '<p>TEXT</p>', FORMAT_HTML);",
-		"description": "Moodle snippets"
-	},
-	"tag_print_cloud": {
-		"prefix": "tag_print_cloud",
-		"body": "tag_print_cloud();",
-		"description": "Moodle snippets"
-	},
-	"get_user_timezone_offset": {
-		"prefix": "get_user_timezone_offset",
-		"body": "get_user_timezone_offset();",
-		"description": "Moodle snippets"
-	},
-	"get_timezone_offset": {
-		"prefix": "get_timezone_offset",
-		"body": "get_timezone_offset();",
-		"description": "Moodle snippets"
-	},
-	"dst_changes_for_year": {
-		"prefix": "dst_changes_for_year",
-		"body": "dst_changes_for_year();",
-		"description": "Moodle snippets"
-	},
-	"set_module_viewed": {
-		"prefix": "set_module_viewed",
-		"body": "set_module_viewed(${1:\\$cm});",
-		"description": "Moodle snippets"
-	},
-	"addElement button": {
-		"prefix": [
-			"add_element_button",
-			"addElement button"
-		],
-		"body": "addElement(${1:'button'}, ${2: 'intro'}, ${3: get_string('buttonlabel')});",
-		"description": "Moodle snippets"
-	},
-	"addElement checkbox": {
-		"prefix": [
-			"add_element_checkbox",
-			"addElement checkbox"
-		],
-		"body": "addElement(${1:'checkbox'}, ${2: 'ratingtime'}, ${3: get_string('ratingtime'}, ${4: 'forum')});",
-		"description": "Moodle snippets"
-	},
-	"addElement advcheckbox": {
-		"prefix": [
-			"add_element_advcheckbox",
-			"addElement advcheckbox"
-		],
-		"body": "addElement(${1:'advcheckbox'}, ${2: 'ratingtime'}, ${3: get_string('ratingtime', 'forum')}, ${4: 'Label displayed after checkbox'}, ${5:array('group' => 1)}, ${6: array(0, 1)});",
-		"description": "Moodle snippets"
-	},
-	"addElement choosecoursefile": {
-		"prefix": [
-			"add_element_choosecoursefile",
-			"addElement choosecoursefile"
-		],
-		"body": "addElement(${1:'choosecoursefile'}, ${2: 'mediafile'}, ${3: get_string('mediafile', 'lesson')}, ${4: array('courseid'=>\\$COURSE->id)});",
-		"description": "Moodle snippets"
-	},
-	"addElement date_time_selector": {
-		"prefix": [
-			"add_element_date_time_selector",
-			"addElement date_time_selector"
-		],
-		"body": "addElement(${1:'date_time_selector'}, ${2: 'assesstimestart'}, ${3: get_string('from')});",
-		"description": "Moodle snippets"
-	},
-	"addElement select": {
-		"prefix": [
-			"add_element_select",
-			"addElement select"
-		],
-		"body": "addElement(${1:'select'}, ${2: 'type'}, ${3: get_string('forumtype', 'forum')}, ${4: \\$FORUM_TYPES}, ${5: \\$attributes});",
-		"description": "Moodle snippets"
-	},
-	"addElement password": {
-		"prefix": [
-			"add_element_password",
-			"addElement password"
-		],
-		"body": "addElement(${1:'password'}, ${2: 'password'}, ${3: get_string('label')}, ${4: \\$attributes});",
-		"description": "Moodle snippets"
-	},
-	"addElement hidden": {
-		"prefix": [
-			"add_element_hidden",
-			"addElement hidden"
-		],
-		"body": "addElement(${1:'hidden'}, ${2: 'reply'}, ${3: 'yes'});",
-		"description": "Moodle snippets"
-	},
-	"addElement html": {
-		"prefix": [
-			"add_element_html",
-			"addElement html"
-		],
-		"body": "addElement(${1:'html'}, ${2: '<div class=qheader>'});",
-		"description": "Moodle snippets"
-	},
-	"addElement modgrade": {
-		"prefix": [
-			"add_element_modgrade",
-			"addElement modgrade"
-		],
-		"body": "addElement(${1:'modgrade'}, ${2: 'scale'}, ${3: get_string('grade')}, ${4: false});",
-		"description": "Moodle snippets"
-	},
-	"addElement static": {
-		"prefix": [
-			"add_element_static",
-			"addElement static"
-		],
-		"body": "addElement(${1:'static'}, ${2: 'description'}, ${3: get_string('description', 'exercise')}, ${4:get_string('descriptionofexercise', 'exercise'}, ${5: \\$COURSE->students)});",
-		"description": "Moodle snippets"
-	},
-	"addElement text": {
-		"prefix": [
-			"add_element_text",
-			"addElement text"
-		],
-		"body": "addElement(${1:'text'}, ${2: 'name'}, ${3: get_string('forumname', 'forum')}, ${4: \\$attributes});",
-		"description": "Moodle snippets"
-	},
-	"addElement textarea": {
-		"prefix": [
-			"add_element_textarea",
-			"addElement textarea"
-		],
-		"body": "addElement(${1:'textarea'}, ${2: 'introduction'}, ${3: get_string('introtext', 'survey')}, ${4: 'wrap=virtual rows=20 cols=50'});",
-		"description": "Moodle snippets"
-	},
-	"addElement recaptcha": {
-		"prefix": [
-			"add_element_recaptcha",
-			"addElement recaptcha"
-		],
-		"body": "addElement(${1:'recaptcha'}, ${2: 'recaptcha_field_name'}, ${3: \\$attributes});",
-		"description": "Moodle snippets"
-	},
-	"addElement passwordunmask": {
-		"prefix": [
-			"add_element_passwordunmask",
-			"addElement passwordunmask"
-		],
-		"body": "addElement(${1:'passwordunmask'}, ${2: 'password'}, ${3: get_string('label')}, ${4: \\$attributes});",
-		"description": "Moodle snippets"
-	},
-	"addElement selectyesno": {
-		"prefix": [
-			"add_element_selectyesno",
-			"addElement selectyesno"
-		],
-		"body": "addElement(${1:'selectyesno'}, ${2: 'maxbytes'}, ${3: get_string('maxattachmentsize', 'forum')});",
-		"description": "Moodle snippets"
-	},
-	"addElement selectwithlink": {
-		"prefix": [
-			"add_element_selectwithlink",
-			"addElement selectwithlink"
-		],
-		"body": "addElement(${1:'selectwithlink'}, ${2: 'scaleid'}, ${3: get_string('scale')}, ${4:\\$options}, ${5: null}, array(${6:'link' => URL}, ${7: 'label' => get_string('scalescustomcreate')}));",
-		"description": "Moodle snippets"
-	},
-	"addElement date_selector": {
-		"prefix": [
-			"add_element_date_selector",
-			"addElement date_selector"
-		],
-		"body": "addElement(${1:'date_selector'}, ${2: 'assesstimefinish'}, ${3: get_string('to')});",
-		"description": "Moodle snippets"
-	},
-	"addElement duration": {
-		"prefix": [
-			"add_element_duration",
-			"addElement duration"
-		],
-		"body": "addElement(${1:'duration'}, ${2: 'timelimit'}, ${3: get_string('timelimit', 'quiz')});",
-		"description": "Moodle snippets"
-	},
-	"addElement editor": {
-		"prefix": [
-			"add_element_editor",
-			"addElement editor"
-		],
-		"body": "addElement(${1:'editor'}, ${2: 'fieldname'}, ${3: get_string('labeltext', 'langfile')});",
-		"description": "Moodle snippets"
-	},
-	"addElement filepicker": {
-		"prefix": [
-			"add_element_filepicker",
-			"addElement filepicker"
-		],
-		"body": "addElement(${1:'filepicker'}, ${2: 'userfile'}, ${3: get_string('file')}, ${4: null}, array(${5:'maxbytes' => \\$maxbytes}, ${6: 'accepted_types' => '*'}));",
-		"description": "Moodle snippets"
-	},
-	"addElement filemanager": {
-		"prefix": [
-			"add_element_filemanager",
-			"addElement filemanager"
-		],
-		"body": "addElement(${1:'filemanager'}, ${2: 'attachments'}, ${3: get_string('attachment', 'moodle')}, ${4: null}, array(${5:'subdirs' => 0}, ${6: 'maxbytes' => \\$maxbytes}, ${7: 'maxfiles' => 50}, ${8: 'accepted_types' => array('document')}));",
-		"description": "Moodle snippets"
-	},
-	"addElement tags": {
-		"prefix": [
-			"add_element_tags",
-			"addElement tags"
-		],
-		"body": "addElement(${1:'tags'}, ${2: 'field_name'}, ${3: \\$lable}, ${4: \\$options}, ${5: \\$attributes});",
-		"description": "Moodle snippets"
-	},
-	"addElement modvisible": {
-		"prefix": [
-			"add_element_modvisible",
-			"addElement modvisible"
-		],
-		"body": "addElement(${1:'modvisible'}, ${2: 'visible'}, ${3: get_string('visible')});",
-		"description": "Moodle snippets"
-	},
-	"addElement grading": {
-		"prefix": [
-			"add_element_grading",
-			"addElement grading"
-		],
-		"body": "addElement(${1:'grading'}, ${2: 'advancedgrading'}, ${3: get_string('grade').':'}, ${4: array('gradinginstance' => \\$gradinginstance)});",
-		"description": "Moodle snippets"
-	},
-	"addElement questioncategory": {
-		"prefix": [
-			"add_element_questioncategory",
-			"addElement questioncategory"
-		],
-		"body": "addElement(${1:'questioncategory'}, ${2: 'category'}, ${3: get_string('category', 'question')}, array(${4:'contexts'=>\\$contexts}, ${5: 'top'=>true}, ${6: 'currentcat'=>\\$currentcat}, ${7: 'nochildrenof'=>\\$currentcat}));",
-		"description": "Moodle snippets"
-	},
-	"context_system::instance": {
-		"prefix": [
-			"context_system_instance",
-			"context_system::instance"
-		],
-		"body": "context_system::instance();",
-		"description": "Moodle snippets"
-	},
-	"context_user::instance": {
-		"prefix": [
-			"context_user_instance",
-			"context_user::instance"
-		],
-		"body": "context_user::instance(${1:\\$user->id});",
-		"description": "Moodle snippets"
-	},
-	"context_coursecat::instance": {
-		"prefix": [
-			"context_coursecat_instance",
-			"context_coursecat::instance"
-		],
-		"body": "context_coursecat::instance(${1:\\$category->id});",
-		"description": "Moodle snippets"
-	},
-	"context_course::instance": {
-		"prefix": [
-			"context_course_instance",
-			"context_course::instance"
-		],
-		"body": "context_course::instance(${1:\\$course->id});",
-		"description": "Moodle snippets"
-	},
-	"context_module::instance": {
-		"prefix": [
-			"context_module_instance",
-			"context_module::instance"
-		],
-		"body": "context_module::instance(${1:\\$cm->id});",
-		"description": "Moodle snippets"
-	},
-	"context::instance_by_id": {
-		"prefix": [
-			"context_instance_by_id",
-			"context::instance_by_id"
-		],
-		"body": "context::instance_by_id(${1:\\$contextid});",
-		"description": "Moodle snippets"
-	},
-	"html_writer::table": {
-		"prefix": [
-			"html_writer_table",
-			"html_writer::table"
-		],
-		"body": "html_writer::table(${1:\\$table});",
-		"description": "Moodle snippets"
-	},
-	"html_select::make": {
-		"prefix": [
-			"html_select_make",
-			"html_select::make"
-		],
-		"body": "html_select::make(${1:\\$options}, ${2: 'choice1'}, ${3: 'value1'});",
-		"description": "Moodle snippets"
-	},
-	"html_select::make_time_selector": {
-		"prefix": [
-			"html_select_make_time_selector",
-			"html_select::make_time_selector"
-		],
-		"body": "html_select::make_time_selector(${1:'days'}, ${2: 'myday'}, ${3: '120308000'});",
-		"description": "Moodle snippets"
-	},
-	"calendar_event::create": {
-		"prefix": [
-			"calendar_event_create",
-			"calendar_event::create"
-		],
-		"body": "calendar_event::create(${1:\\$properties});",
-		"description": "Moodle snippets"
-	},
-	"calendar_event::update": {
-		"prefix": [
-			"calendar_event_update",
-			"calendar_event::update"
-		],
-		"body": "calendar_event::update(${1:\\$data}, ${2: \\$checkcapability = true});",
-		"description": "Moodle snippets"
-	},
-	"$capabilities": {
-		"prefix": [
-			"capabilities",
-			"$capabilities"
-		],
-		"body": "\\$capabilities = array('${1:mod}/${2:MYPLUGIN}:${3:MYCAPABILITY}' => array('riskbitmask' => ${4:RISK_SPAM}, 'captype' => ${5:'write'}, 'contextlevel' =>${6:CONTEXT_MODULE}, 'archetypes' => array(${7:'editingteacher' => CAP_ALLOW})));",
-		"description": "Moodle snippets"
-	},
-	"$fileinfo": {
-		"prefix": [
-			"fileinfo",
-			"$fileinfo"
-		],
-		"body": "\\$fileinfo = array(${1:'contextid' => \\$context->id}, ${2: 'component' => 'mod_MYMOD'}, ${3: 'filearea' => 'myarea'}, ${4: 'itemid' => 0}, ${5: 'filepath' => '\/'}, ${6: 'filename' => 'myfile.txt'});",
-		"description": "Moodle snippets"
-	},
-	"$handlers": {
-		"prefix": [
-			"handlers",
-			"$handlers"
-		],
-		"body": "\\$handlers = array(${1: 'user_enrolled'} => array ('handlerfile' => ${2:'\/mod\/MYMOD\/lib.php'}, 'handlerfunction' => ${3:'MYMODFUNCTION'}, 'schedule' => ${4:'instant'}, 'internal' => ${5: 1}));",
-		"description": "Moodle snippets"
-	},
-	"$messageproviders": {
-		"prefix": [
-			"messageproviders",
-			"$messageproviders"
-		],
-		"body": "\\$messageproviders = array (${1:'MYPROVIDER' => array ()});",
-		"description": "Moodle snippets"
-	},
-	"$plugin->version": {
-		"prefix": [
-			"plugin_version",
-			"$plugin->version"
-		],
-		"body": "\\$plugin->version",
-		"description": "Moodle snippets"
-	},
-	"$plugin->requires": {
-		"prefix": [
-			"plugin_requires",
-			"$plugin->requires"
-		],
-		"body": "\\$plugin->requires",
-		"description": "Moodle snippets"
-	},
-	"$plugin->dependencies": {
-		"prefix": [
-			"plugin_dependencies",
-			"$plugin->dependencies"
-		],
-		"body": "\\$plugin->dependencies",
-		"description": "Moodle snippets"
-	}
+  "required_param": {
+    "prefix": "required_param",
+    "body": "required_param(${1:\\$parameter_name}, ${2|PARAM_INT,PARAM_TEXT,PARAM_BOOL,PARAM_ALPHA,PARAM_ALPHAEXT,PARAM_ALPHANUM,PARAM_ALPHANUMEXT,PARAM_AUTH,PARAM_BASE64,PARAM_CAPABILITY,PARAM_CLEANHTML,PARAM_EMAIL,PARAM_FILE,PARAM_FLOAT,PARAM_HOST,PARAM_LANG,PARAM_LOCALURL,PARAM_NOTAGS,PARAM_PATH,PARAM_PEM,PARAM_PERMISSION,PARAM_RAW,PARAM_RAW_TRIMMED,PARAM_SAFEDIR,PARAM_SAFEPATH,PARAM_SEQUENCE,PARAM_STRINGID,PARAM_TAG,PARAM_TAGLIST,PARAM_THEME,PARAM_URL,PARAM_USERNAME|});",
+    "description": "Returns a particular value for the named variable, taken from POST or GET. If the parameter doesn't exist then an error is thrown because we require this variable. This function should be used to initialise all required values in a script that are based on parameters."
+  },
+  "required_param_array": {
+    "prefix": "required_param_array",
+    "body": "required_param_array(${1:\\$parameter_name}, ${2|PARAM_INT,PARAM_TEXT,PARAM_BOOL,PARAM_ALPHA,PARAM_ALPHAEXT,PARAM_ALPHANUM,PARAM_ALPHANUMEXT,PARAM_AUTH,PARAM_BASE64,PARAM_CAPABILITY,PARAM_CLEANHTML,PARAM_EMAIL,PARAM_FILE,PARAM_FLOAT,PARAM_HOST,PARAM_LANG,PARAM_LOCALURL,PARAM_NOTAGS,PARAM_PATH,PARAM_PEM,PARAM_PERMISSION,PARAM_RAW,PARAM_RAW_TRIMMED,PARAM_SAFEDIR,PARAM_SAFEPATH,PARAM_SEQUENCE,PARAM_STRINGID,PARAM_TAG,PARAM_TAGLIST,PARAM_THEME,PARAM_URL,PARAM_USERNAME|});",
+    "description": "Returns a particular array value for the named variable, taken from POST or GET. This function should be used to initialise all required values in a script that are based on parameters."
+  },
+  "optional_param": {
+    "prefix": "optional_param",
+    "body": "optional_param(${1:\\$parameter_name}, ${2:\\$default_value}, ${3|PARAM_INT,PARAM_TEXT,PARAM_BOOL,PARAM_ALPHA,PARAM_ALPHAEXT,PARAM_ALPHANUM,PARAM_ALPHANUMEXT,PARAM_AUTH,PARAM_BASE64,PARAM_CAPABILITY,PARAM_CLEANHTML,PARAM_EMAIL,PARAM_FILE,PARAM_FLOAT,PARAM_HOST,PARAM_LANG,PARAM_LOCALURL,PARAM_NOTAGS,PARAM_PATH,PARAM_PEM,PARAM_PERMISSION,PARAM_RAW,PARAM_RAW_TRIMMED,PARAM_SAFEDIR,PARAM_SAFEPATH,PARAM_SEQUENCE,PARAM_STRINGID,PARAM_TAG,PARAM_TAGLIST,PARAM_THEME,PARAM_URL,PARAM_USERNAME|});",
+    "description": "Returns a particular value for the named variable, taken from POST or GET, otherwise returning a given default. This function should be used to initialise all required values in a script that are based on parameters."
+  },
+  "optional_param_array": {
+    "prefix": "optional_param_array",
+    "body": "optional_param_array(${1:\\$parameter_name}, ${2:\\$default_value}, ${3|PARAM_INT,PARAM_TEXT,PARAM_BOOL,PARAM_ALPHA,PARAM_ALPHAEXT,PARAM_ALPHANUM,PARAM_ALPHANUMEXT,PARAM_AUTH,PARAM_BASE64,PARAM_CAPABILITY,PARAM_CLEANHTML,PARAM_EMAIL,PARAM_FILE,PARAM_FLOAT,PARAM_HOST,PARAM_LANG,PARAM_LOCALURL,PARAM_NOTAGS,PARAM_PATH,PARAM_PEM,PARAM_PERMISSION,PARAM_RAW,PARAM_RAW_TRIMMED,PARAM_SAFEDIR,PARAM_SAFEPATH,PARAM_SEQUENCE,PARAM_STRINGID,PARAM_TAG,PARAM_TAGLIST,PARAM_THEME,PARAM_URL,PARAM_USERNAME|});",
+    "description": "Returns a particular array for the named variable, taken from POST or GET, otherwise returning a given default. This function should be used to initialise all required values in a script that are based on parameters."
+  },
+  "validate_param": {
+    "prefix": "validate_param",
+    "body": "validate_param(${1:\\$param},  ${2|PARAM_INT,PARAM_TEXT,PARAM_BOOL,PARAM_ALPHA,PARAM_ALPHAEXT,PARAM_ALPHANUM,PARAM_ALPHANUMEXT,PARAM_AUTH,PARAM_BASE64,PARAM_CAPABILITY,PARAM_CLEANHTML,PARAM_EMAIL,PARAM_FILE,PARAM_FLOAT,PARAM_HOST,PARAM_LANG,PARAM_LOCALURL,PARAM_NOTAGS,PARAM_PATH,PARAM_PEM,PARAM_PERMISSION,PARAM_RAW,PARAM_RAW_TRIMMED,PARAM_SAFEDIR,PARAM_SAFEPATH,PARAM_SEQUENCE,PARAM_STRINGID,PARAM_TAG,PARAM_TAGLIST,PARAM_THEME,PARAM_URL,PARAM_USERNAME|}${3:, ${4:\\$allownull}${5:, ${6:\\$debuginfo}}});",
+    "description": "Strict validation of parameter values, the values are only converted to requested PHP type. Internally it is using clean_param, the values before and after cleaning must be equal - otherwise an invalid_parameter_exception is thrown."
+  },
+  "clean_param_array": {
+    "prefix": "clean_param_array",
+    "body": "clean_param_array(${1:\\$param_array},  ${2|PARAM_INT,PARAM_TEXT,PARAM_BOOL,PARAM_ALPHA,PARAM_ALPHAEXT,PARAM_ALPHANUM,PARAM_ALPHANUMEXT,PARAM_AUTH,PARAM_BASE64,PARAM_CAPABILITY,PARAM_CLEANHTML,PARAM_EMAIL,PARAM_FILE,PARAM_FLOAT,PARAM_HOST,PARAM_LANG,PARAM_LOCALURL,PARAM_NOTAGS,PARAM_PATH,PARAM_PEM,PARAM_PERMISSION,PARAM_RAW,PARAM_RAW_TRIMMED,PARAM_SAFEDIR,PARAM_SAFEPATH,PARAM_SEQUENCE,PARAM_STRINGID,PARAM_TAG,PARAM_TAGLIST,PARAM_THEME,PARAM_URL,PARAM_USERNAME|}${3:, ${4:\\$recursive}});",
+    "description": "Makes sure array contains only the allowed types, this function does not validate array key names!"
+  },
+  "clean_param": {
+    "prefix": "clean_param",
+    "body": "clean_param(${1:\\$param},  ${2|PARAM_INT,PARAM_TEXT,PARAM_BOOL,PARAM_ALPHA,PARAM_ALPHAEXT,PARAM_ALPHANUM,PARAM_ALPHANUMEXT,PARAM_AUTH,PARAM_BASE64,PARAM_CAPABILITY,PARAM_CLEANHTML,PARAM_EMAIL,PARAM_FILE,PARAM_FLOAT,PARAM_HOST,PARAM_LANG,PARAM_LOCALURL,PARAM_NOTAGS,PARAM_PATH,PARAM_PEM,PARAM_PERMISSION,PARAM_RAW,PARAM_RAW_TRIMMED,PARAM_SAFEDIR,PARAM_SAFEPATH,PARAM_SEQUENCE,PARAM_STRINGID,PARAM_TAG,PARAM_TAGLIST,PARAM_THEME,PARAM_URL,PARAM_USERNAME|});",
+    "description": "Used by {@link optional_param()} and {@link required_param()} to clean the variables and/or cast to specific types, based on an options field."
+  },
+  "is_rtl_compatible": {
+    "prefix": "is_rtl_compatible",
+    "body": "is_rtl_compatible(${1|PARAM_INT,PARAM_TEXT,PARAM_BOOL,PARAM_ALPHA,PARAM_ALPHAEXT,PARAM_ALPHANUM,PARAM_ALPHANUMEXT,PARAM_AUTH,PARAM_BASE64,PARAM_CAPABILITY,PARAM_CLEANHTML,PARAM_EMAIL,PARAM_FILE,PARAM_FLOAT,PARAM_HOST,PARAM_LANG,PARAM_LOCALURL,PARAM_NOTAGS,PARAM_PATH,PARAM_PEM,PARAM_PERMISSION,PARAM_RAW,PARAM_RAW_TRIMMED,PARAM_SAFEDIR,PARAM_SAFEPATH,PARAM_SEQUENCE,PARAM_STRINGID,PARAM_TAG,PARAM_TAGLIST,PARAM_THEME,PARAM_URL,PARAM_USERNAME|});",
+    "description": "Whether the PARAM_* type is compatible in RTL. Being compatible with RTL means that the data they contain can flow from right-to-left or left-to-right without compromising the user experience."
+  },
+  "fix_utf8": {
+    "prefix": "fix_utf8",
+    "body": "fix_utf8(${1:\\$value});",
+    "description": "Makes sure the data is using valid utf8, invalid characters are discarded."
+  },
+  "is_number": {
+    "prefix": "is_number",
+    "body": "is_number(${1:\\$value});",
+    "description": "Return true if given value is integer or string with integer value"
+  },
+  "get_host_from_url": {
+    "prefix": "get_host_from_url",
+    "body": "get_host_from_url(${1:\\$url});",
+    "description": "Returns host part from url."
+  },
+  "html_is_blank": {
+    "prefix": "html_is_blank",
+    "body": "html_is_blank(${1:\\$string});",
+    "description": "Tests whether anything was returned by text editor"
+  },
+  "set_config": {
+    "prefix": "set_config",
+    "body": "set_config(${1:\\$name}, ${2:\\$value}${3:, ${4:\\$plugin}});",
+    "description": "Set a key in global configuration"
+  },
+  "get_config": {
+    "prefix": "get_config",
+    "body": "get_config(${1:\\$plugin}${2:, ${3:\\$name}});",
+    "description": "Get configuration values from the global config table or the config_plugins table."
+  },
+  "unset_config": {
+    "prefix": "unset_config",
+    "body": "unset_config(${1:\\$name}${2:, ${3:\\$plugin}});",
+    "description": "Removes a key from global configuration."
+  },
+  "unset_all_config_for_plugin": {
+    "prefix": "unset_all_config_for_plugin",
+    "body": "unset_all_config_for_plugin(${1:\\$plugin});",
+    "description": "Remove all the config variables for a given plugin."
+  },
+  "get_users_from_config": {
+    "prefix": "get_users_from_config",
+    "body": "get_users_from_config(${1:\\$value}, ${2:\\$capability}${3:, ${4:\\$includeadmins}});",
+    "description": "Use this function to get a list of users from a config setting of type admin_setting_users_with_capability."
+  },
+  "purge_all_caches": {
+    "prefix": "purge_all_caches",
+    "body": "purge_all_caches();",
+    "description": "Invalidates browser caches and cached data in temp."
+  },
+  "get_cache_flags": {
+    "prefix": "get_cache_flags",
+    "body": "get_cache_flags(${1:\\$type}${2:, ${3:\\$changedsince}});",
+    "description": "Get volatile flags"
+  },
+  "get_cache_flag": {
+    "prefix": "get_cache_flag",
+    "body": "get_cache_flag(${1:\\$type}, ${2:\\$name}${3:, ${4:\\$changedsince}});",
+    "description": "Get volatile flags"
+  },
+  "set_cache_flag": {
+    "prefix": "set_cache_flag",
+    "body": "set_cache_flag(${1:\\$type}, ${2:\\$name}, ${3:\\$value}${4:, ${5:\\$expiry}});",
+    "description": "Set a volatile flag"
+  },
+  "unset_cache_flag": {
+    "prefix": "unset_cache_flag",
+    "body": "unset_cache_flag(${1:\\$type}, ${2:\\$name});",
+    "description": "Removes a single volatile flag"
+  },
+  "gc_cache_flags": {
+    "prefix": "gc_cache_flags",
+    "body": "gc_cache_flags();",
+    "description": "Garbage-collect volatile flags"
+  },
+  "check_user_preferences_loaded": {
+    "prefix": "check_user_preferences_loaded",
+    "body": "check_user_preferences_loaded(${1:\\$user_stdClass}${2:, ${3:\\$cachelifetime}});",
+    "description": "Refresh user preference cache. This is used most often for $USER object that is stored in session, but it also helps with performance in cron script."
+  },
+  "mark_user_preferences_changed": {
+    "prefix": "mark_user_preferences_changed",
+    "body": "mark_user_preferences_changed(${1:\\$userid});",
+    "description": "Called from set/unset_user_preferences, so that the prefs can be correctly reloaded in different sessions."
+  },
+  "set_user_preference": {
+    "prefix": "set_user_preference",
+    "body": "set_user_preference(${1:\\$name}, ${2:\\$value}${3:, ${4:\\$user}});",
+    "description": "Sets a preference for the specified user."
+  },
+  "set_user_preferences": {
+    "prefix": "set_user_preferences",
+    "body": "set_user_preferences(${1:\\$prefarray_array}${2:, ${3:\\$user}});",
+    "description": "Sets a whole array of preferences for the current user"
+  },
+  "unset_user_preference": {
+    "prefix": "unset_user_preference",
+    "body": "unset_user_preference(${1:\\$name}${2:, ${3:\\$user}});",
+    "description": "Unsets a preference completely by deleting it from the database"
+  },
+  "get_user_preferences": {
+    "prefix": "get_user_preferences",
+    "body": "get_user_preferences(${1:{$2:\\$name}${3:, ${4:\\$default}${5:, ${6:\\$user}}}});",
+    "description": "Used to fetch user preference(s)"
+  },
+  "make_timestamp": {
+    "prefix": "make_timestamp",
+    "body": "make_timestamp(${1:\\$year}${2:, ${3:\\$month}${4:, ${5:\\$day}${6:, ${7:\\$hour}${8:, ${9:\\$minute}${10:, ${11:\\$second}${12:, ${13:\\$timezone}${14:, ${15:\\$applydst}}}}}}}});",
+    "description": "Given Gregorian date parts in user time produce a GMT timestamp."
+  },
+  "format_time": {
+    "prefix": "format_time",
+    "body": "format_time(${1:\\$totalsecs}${2:, ${3:\\$str}});",
+    "description": "Format a date/time (seconds) as weeks, days, hours etc as needed"
+  },
+  "userdate": {
+    "prefix": "userdate",
+    "body": "userdate(${1:\\$date}${2:, ${3:\\$format}${4:, ${5:\\$timezone}${6:, ${7:\\$fixday}${8:, ${9:\\$fixhour}${10:, ${11:\\$fixmonthlang}}}}}});",
+    "description": "Returns a formatted string that represents a date in user time."
+  },
+  "date_format_string": {
+    "prefix": "date_format_string",
+    "body": "date_format_string(${1:\\$date}, ${2:\\$format}${3:, ${4:\\$timezone}});",
+    "description": "Returns a formatted date ensuring it is UTF-8."
+  },
+  "usergetdate": {
+    "prefix": "usergetdate",
+    "body": "usergetdate(${1:\\$time}${2:, ${3:\\$timezone}});",
+    "description": "Given a $time timestamp in GMT (seconds since epoch), returns an array that represents the Gregorian date in user time"
+  },
+  "usertime": {
+    "prefix": "usertime",
+    "body": "usertime(${1:\\$date}${2:, ${3:\\$timezone}});",
+    "description": "Given a GMT timestamp (seconds since epoch), offsets it by the timezone.  eg 3pm in India is 3pm GMT - 7 * 3600 seconds"
+  },
+  "usergetmidnight": {
+    "prefix": "usergetmidnight",
+    "body": "usergetmidnight(${1:\\$date}${2:, ${3:\\$timezone}});",
+    "description": "Given a time, return the GMT timestamp of the most recent midnight for the current user."
+  },
+  "usertimezone": {
+    "prefix": "Returns a string that prints the user's timezone",
+    "body": "usertimezone(${1:\\$timezone});",
+    "description": "Returns a string that prints the user's timezone."
+  },
+  "get_user_timezone": {
+    "prefix": "get_user_timezone",
+    "body": "get_user_timezone(${1:\\$timezone});",
+    "description": "Returns a float or a string which denotes the user's timezone."
+  },
+  "dst_offset_on": {
+    "prefix": "dst_offset_on",
+    "body": "dst_offset_on(${1:\\$time}${2:, ${3:\\$strtimezone}});",
+    "description": "Calculates the Daylight Saving Offset for a given date/time (timestamp). Note: Daylight saving only works for string timezones and not for float."
+  },
+  "find_day_in_month": {
+    "prefix": "find_day_in_month",
+    "body": "find_day_in_month(${1:\\$startday}, ${2:\\$weekday}, ${3:\\$month}, ${4:\\$year});",
+    "description": "Calculates when the day appears in specific month"
+  },
+  "days_in_month": {
+    "prefix": "days_in_month",
+    "body": "days_in_month(${1:\\$month}, ${2:\\$year});",
+    "description": "Calculate the number of days in a given month"
+  },
+  "dayofweek": {
+    "prefix": "dayofweek",
+    "body": "dayofweek(${1:\\$day}, ${2:\\$month}, ${3:\\$year});",
+    "description": "Calculate the position in the week of a specific calendar day"
+  },
+  "get_login_url": {
+    "prefix": "get_login_url",
+    "body": "get_login_url();",
+    "description": "Returns full login url."
+  },
+  "require_login": {
+    "prefix": "require_login",
+    "body": "require_login(${1:${2:\\$courseorid}${3:, ${4:\\$autologinguest}${5:, ${6:\\$cm}${7:, ${8:\\$setwantsurltome}${9:, ${10:\\$preventredirect}}}}}});",
+    "description": "This function checks that the current user is logged in and has the required privileges"
+  },
+  "require_logout": {
+    "prefix": "require_logout",
+    "body": "require_logout();",
+    "description": "This function just makes sure a user is logged out."
+  },
+  "require_course_login": {
+    "prefix": "require_course_login",
+    "body": "require_course_login(${1:\\$courseorid}${2:, ${3:\\$autologinguest}${4:, ${5:\\$cm}${6:, ${7:\\$setwantsurltome}${8:, ${9:\\$preventredirect}}}}});",
+    "description": "Weaker version of require_login()"
+  },
+  "validate_user_key": {
+    "prefix": "validate_user_key",
+    "body": "validate_user_key(${1:\\$keyvalue}, ${2:\\$script}, ${3:\\$instance});",
+    "description": "Validates a user key, checking if the key exists, is not expired and the remote ip is correct."
+  },
+  "require_user_key_login": {
+    "prefix": "require_user_key_login",
+    "body": "require_user_key_login(${1:\\$script}${2:, ${3:\\$instance}});",
+    "description": "Require key login. Function terminates with error if key not found or incorrect."
+  },
+  "create_user_key": {
+    "prefix": "create_user_key",
+    "body": "create_user_key(${1:\\$script}, ${2:\\$userid}${3:, ${4:\\$instance}${5:, ${6:\\$iprestriction}${7:, ${8:\\$validuntil}}}});",
+    "description": "Creates a new private user access key."
+  },
+  "delete_user_key": {
+    "prefix": "delete_user_key",
+    "body": "delete_user_key(${1:\\$script}, ${2:\\$userid});",
+    "description": "Delete the user's new private user access keys for a particular script."
+  },
+  "get_user_key": {
+    "prefix": "get_user_key",
+    "body": "get_user_key(${1:\\$script}, ${2:\\$userid}${3:, ${4:\\$instance}${5:, ${6:\\$iprestriction}${7:, ${8:\\$validuntil}}}});",
+    "description": "Gets a private user access key (and creates one if one doesn't exist)."
+  },
+  "update_user_login_times": {
+    "prefix": "update_user_login_times",
+    "body": "update_user_login_times();",
+    "description": "Modify the user table by setting the currently logged in user's last login to now."
+  },
+  "user_not_fully_set_up": {
+    "prefix": "user_not_fully_set_up",
+    "body": "user_not_fully_set_up(${1:\\$user}${2:, ${3:\\$strict}});",
+    "description": "Determines if a user has completed setting up their account."
+  },
+  "over_bounce_threshold": {
+    "prefix": "over_bounce_threshold",
+    "body": "over_bounce_threshold(${1:\\$user});",
+    "description": "Check whether the user has exceeded the bounce threshold"
+  },
+  "set_send_count": {
+    "prefix": "set_send_count",
+    "body": "set_send_count(${1:\\$user}${2:, ${3:\\$reset}});",
+    "description": "Used to increment or reset email sent count"
+  },
+  "set_bounce_count": {
+    "prefix": "set_bounce_count",
+    "body": "set_bounce_count(${1:\\$user}${2:, ${3:\\$reset}});",
+    "description": "Increment or reset user's email bounce count"
+  },
+  "ismoving": {
+    "prefix": "ismoving",
+    "body": "ismoving(${1:\\$courseid});",
+    "description": "Determines if the logged in user is currently moving an activity"
+  },
+  "fullname": {
+    "prefix": "fullname",
+    "body": "fullname(${1:\\$user}${2:, ${3:\\$override}});",
+    "description": "Returns a persons full name."
+  },
+  "get_all_user_name_fields": {
+    "prefix": "get_all_user_name_fields",
+    "body": "get_all_user_name_fields(${1:${2:\\$returnsql}${3:, ${4:\\$tableprefix}${5:, ${6:\\$prefix}${7:, ${8:\\$fieldprefix}${9:, ${10:\\$order}}}}}});",
+    "description": "A centralised location for the all name fields. Returns an array / sql string snippet."
+  },
+  "username_load_fields_from_object": {
+    "prefix": "username_load_fields_from_object",
+    "body": "username_load_fields_from_object(${1:\\$addtoobject}, ${2:\\$secondobject}${3:, ${4:\\$prefix}${5:, ${6:\\$additionalfields}}});",
+    "description": "Reduces lines of duplicated code for getting user name fields."
+  },
+  "order_in_string": {
+    "prefix": "order_in_string",
+    "body": "order_in_string(${1:\\$values}, ${2:\\$stringformat});",
+    "description": "Returns an array of values in order of occurance in a provided string. The key in the result is the character postion in the string."
+  },
+  "get_extra_user_fields": {
+    "prefix": "get_extra_user_fields",
+    "body": "get_extra_user_fields(${1:\\$context}${2:, ${3:\\$already}});",
+    "description": "Checks if current user is shown any extra fields when listing users."
+  },
+  "get_extra_user_fields_sql": {
+    "prefix": "get_extra_user_fields_sql",
+    "body": "get_extra_user_fields_sql(${1:\\$context}${2:, ${3:\\$alias}${4:, ${5:\\$prefix}${6:, ${7:\\$already}}}});",
+    "description": "If the current user is to be shown extra user fields when listing or selecting users, returns a string suitable for including in an SQL select clause to retrieve those fields."
+  },
+  "get_user_field_name": {
+    "prefix": "get_user_field_name",
+    "body": "get_user_field_name(${1:\\$field});",
+    "description": "Returns the display name of a field in the user table. Works for most fields that are commonly displayed to users."
+  },
+  "exists_auth_plugin": {
+    "prefix": "exists_auth_plugin",
+    "body": "exists_auth_plugin(${1:\\$auth});",
+    "description": "Returns whether a given authentication plugin exists."
+  },
+  "is_enabled_auth": {
+    "prefix": "is_enabled_auth",
+    "body": "is_enabled_auth(${1:\\$auth});",
+    "description": "Checks if a given plugin is in the list of enabled authentication plugins."
+  },
+  "get_auth_plugin": {
+    "prefix": "get_auth_plugin",
+    "body": "get_auth_plugin(${1:\\$auth});",
+    "description": "Returns an authentication plugin instance."
+  },
+  "get_enabled_auth_plugins": {
+    "prefix": "get_enabled_auth_plugins",
+    "body": "get_enabled_auth_plugins(${1:\\$fix});",
+    "description": "Returns array of active auth plugins."
+  },
+  "is_internal_auth": {
+    "prefix": "is_internal_auth",
+    "body": "is_internal_auth(${1:\\$auth});",
+    "description": "Returns true if an internal authentication method is being used. If method not specified then, global default is assumed"
+  },
+  "is_restored_user": {
+    "prefix": "is_restored_user",
+    "body": "is_restored_user(${1:\\$username});",
+    "description": "Returns true if the user is a 'restored' one."
+  },
+  "get_user_fieldnames": {
+    "prefix": "get_user_fieldnames",
+    "body": "get_user_fieldnames();",
+    "description": "Returns an array of user fields"
+  },
+  "create_user_record": {
+    "prefix": "create_user_record",
+    "body": "create_user_record(${1:\\$username}, ${2:\\$password}${3:, ${4:\\$auth}});",
+    "description": "Creates a bare-bones user record"
+  },
+  "update_user_record": {
+    "prefix": "update_user_record",
+    "body": "update_user_record(${1:\\$username});",
+    "description": "Will update a local user record from an external source (MNET users can not be updated using this method!)."
+  },
+  "update_user_record_by_id": {
+    "prefix": "update_user_record_by_id",
+    "body": "update_user_record_by_id(${1:\\$id});",
+    "description": "Will update a local user record from an external source (MNET users can not be updated using this method!)."
+  },
+  "truncate_userinfo": {
+    "prefix": "truncate_userinfo",
+    "body": "truncate_userinfo(${1:\\$info_array});",
+    "description": "Will truncate userinfo as it comes from auth_get_userinfo (from external auth) which may have large fields."
+  },
+  "delete_user": {
+    "prefix": "delete_user",
+    "body": "delete_user(${1:\\$user_stdClass});",
+    "description": "Marks user deleted in internal user database and notifies the auth plugin. Also unenrols user from all roles and does other cleanup."
+  },
+  "guest_user": {
+    "prefix": "guest_user",
+    "body": "guest_user();",
+    "description": "Retrieve the guest user object."
+  },
+  "authenticate_user_login": {
+    "prefix": "authenticate_user_login",
+    "body": "authenticate_user_login(${1:\\$username}, ${2:\\$password}${3:, ${4:\\$ignorelockout}${5:, ${6:\\$failurereason}${7:, ${8:\\$logintoken}}}});",
+    "description": "Authenticates a user against the chosen authentication mechanism"
+  },
+  "complete_user_login": {
+    "prefix": "complete_user_login",
+    "body": "complete_user_login(${1:\\$user});",
+    "description": "Call to complete the user login process after authenticate_user_login() has succeeded. It will setup the $USER variable and other required bits and pieces."
+  },
+  "password_is_legacy_hash": {
+    "prefix": "password_is_legacy_hash",
+    "body": "password_is_legacy_hash(${1:\\$password});",
+    "description": "Check a password hash to see if it was hashed using the legacy hash algorithm (md5)."
+  },
+  "validate_internal_user_password": {
+    "prefix": "validate_internal_user_password",
+    "body": "validate_internal_user_password(${1:\\$user}, ${2:\\$password});",
+    "description": "Compare password against hash stored in user object to determine if it is valid."
+  },
+  "hash_internal_user_password": {
+    "prefix": "hash_internal_user_password",
+    "body": "hash_internal_user_password(${1:\\$password}${2:, ${3:\\$fasthash}});",
+    "description": "Calculate hash for a plain text password."
+  },
+  "update_internal_user_password": {
+    "prefix": "update_internal_user_password",
+    "body": "update_internal_user_password(${1:\\$user}, ${2:\\$password}${3:, ${4:\\$fasthash}});",
+    "description": "Update password hash in user object (if necessary)."
+  },
+  "get_complete_user_data": {
+    "prefix": "get_complete_user_data",
+    "body": "get_complete_user_data(${1:\\$field}, ${2:\\$value}${3:, ${4:\\$mnethostid}});",
+    "description": "Get a complete user record, which includes all the info in the user record."
+  },
+  "check_password_policy": {
+    "prefix": "check_password_policy",
+    "body": "check_password_policy(${1:\\$password}, ${2:\\$errmsg});",
+    "description": "Validate a password against the configured password policy"
+  },
+  "set_login_session_preferences": {
+    "prefix": "set_login_session_preferences",
+    "body": "set_login_session_preferences();",
+    "description": "When logging in, this function is run to set certain preferences for the current SESSION."
+  },
+  "delete_course": {
+    "prefix": "delete_course",
+    "body": "delete_course(${1:\\$courseorid}${2:, ${3:\\$showfeedback}});",
+    "description": "Delete a course, including all related data from the database, and any associated files."
+  },
+  "remove_course_contents": {
+    "prefix": "remove_course_contents",
+    "body": "remove_course_contents(${1:\\$courseid}${2:, ${3:\\$showfeedback}${4:, ${5:\\$options}}});",
+    "description": "Clear a course out completely, deleting all content but don't delete the course itself."
+  },
+  "shift_course_mod_dates": {
+    "prefix": "shift_course_mod_dates",
+    "body": "shift_course_mod_dates(${1:\\$modname}, ${2:\\$fields}, ${3:\\$timeshift}, ${4:\\$courseid}${5:, ${6:\\$modid}});",
+    "description": "Change dates in module - used from course reset."
+  },
+  "reset_course_userdata": {
+    "prefix": "reset_course_userdata",
+    "body": "reset_course_userdata(${1:\\$data});",
+    "description": "This function will empty a course of user data. It will retain the activities and the structure of the course."
+  },
+  "generate_email_processing_address": {
+    "prefix": "generate_email_processing_address",
+    "body": "generate_email_processing_address(${1:\\$modid}, ${2:\\$modargs});",
+    "description": "Generate an email processing address."
+  },
+  "moodle_process_email": {
+    "prefix": "moodle_process_email",
+    "body": "moodle_process_email(${1:\\$modargs}, ${2:\\$body});",
+    "description": "moodle_process_email"
+  },
+  "get_mailer": {
+    "prefix": "get_mailer",
+    "body": "get_mailer(${1:\\$action});",
+    "description": "Get mailer instance, enable buffering, flush buffer or disable buffering."
+  },
+  "email_should_be_diverted": {
+    "prefix": "email_should_be_diverted",
+    "body": "email_should_be_diverted(${1:\\$email});",
+    "description": "A helper function to test for email diversion"
+  },
+  "generate_email_messageid": {
+    "prefix": "generate_email_messageid",
+    "body": "generate_email_messageid(${1:\\$localpart});",
+    "description": "Generate a unique email Message-ID using the moodle domain and install path"
+  },
+  "email_to_user": {
+    "prefix": "email_to_user",
+    "body": "email_to_user(${1:\\$user}, ${2:\\$from}, ${3:\\$subject}, ${4:\\$messagetext}${5:, ${6:\\$messagehtml}${7:, ${8:\\$attachment}${9:, ${10:\\$attachname}${11:, ${12:\\$usetrueaddress}${13, ${14:\\$replyto}${15:, ${16:\\$replytoname}${17:, ${18:\\$wordwrapwidth}${19:, ${20:\\$strategy}}}}}}}});",
+    "description": "Send an email to a specified user"
+  },
+  "can_send_from_real_email_address": {
+    "prefix": "can_send_from_real_email_address",
+    "body": "can_send_from_real_email_address(${1:\\$from}, ${2:\\$user}${3:, ${4:\\$unused}});",
+    "description": "Check to see if a user's real email address should be used for the \"From\" field."
+  },
+  "generate_email_signoff": {
+    "prefix": "generate_email_signoff",
+    "body": "generate_email_signoff();",
+    "description": "Generate a signoff for emails based on support settings"
+  },
+  "setnew_password_and_mail": {
+    "prefix": "setnew_password_and_mail",
+    "body": "setnew_password_and_mail(${1:\\$user}${2:, ${3:\\$fasthash}});",
+    "description": "Sets specified user's password and send the new password to the user via email."
+  },
+  "reset_password_and_mail": {
+    "prefix": "reset_password_and_mail",
+    "body": "reset_password_and_mail(${1:\\$user});",
+    "description": "Resets specified user's password and send the new password to the user via email."
+  },
+  "send_confirmation_email": {
+    "prefix": "send_confirmation_email",
+    "body": "send_confirmation_email(${1:\\$user}${2:, ${3:\\$confirmationurl}});",
+    "description": "Send email to specified user with confirmation text and activation link."
+  },
+  "send_password_change_confirmation_email": {
+    "prefix": "send_password_change_confirmation_email",
+    "body": "send_password_change_confirmation_email(${1:\\$user}, ${2:\\$resetrecord});",
+    "description": "Sends a password change confirmation email."
+  },
+  "send_password_change_info": {
+    "prefix": "send_password_change_info",
+    "body": "send_password_change_info(${1:\\$user});",
+    "description": "Sends an email containinginformation on how to change your password."
+  },
+  "email_is_not_allowed": {
+    "prefix": "email_is_not_allowed",
+    "body": "email_is_not_allowed(${1:\\$email});",
+    "description": "Check that an email is allowed.  It returns an error message if there was a problem."
+  },
+  "get_file_storage": {
+    "prefix": "get_file_storage",
+    "body": "get_file_storage(${1:\\$reset});",
+    "description": "Returns local file storage instance"
+  },
+  "get_file_browser": {
+    "prefix": "get_file_browser",
+    "body": "get_file_browser();",
+    "description": "Returns local file storage instance"
+  },
+  "get_file_packer": {
+    "prefix": "get_file_packer",
+    "body": "get_file_packer(${1:\\$mimetype});",
+    "description": "Returns file packer"
+  },
+  "valid_uploaded_file": {
+    "prefix": "valid_uploaded_file",
+    "body": "valid_uploaded_file(${1:\\$newfile});",
+    "description": "Returns current name of file on disk if it exists."
+  },
+  "get_max_upload_file_size": {
+    "prefix": "get_max_upload_file_size",
+    "body": "get_max_upload_file_size(${1:${2:\\$sitebytes}${3:, ${4:\\$coursebytes}${5:, ${6:\\$modulebytes}${7:, ${8:\\$unused}}}}});",
+    "description": "Returns the maximum size for uploading files."
+  },
+  "get_user_max_upload_file_size": {
+    "prefix": "get_user_max_upload_file_size",
+    "body": "get_user_max_upload_file_size(${1:\\$context}${2:, ${3:\\$sitebytes}${4:, ${5:\\$coursebytes}${6:, ${7:\\$modulebytes}${8:, ${9:\\$user}${10:, ${11:\\$unused}}}}}});",
+    "description": "Returns the maximum size for uploading files for the current user"
+  },
+  "get_max_upload_sizes": {
+    "prefix": "get_max_upload_sizes",
+    "body": "get_max_upload_sizes(${1:${2:\\$sitebytes}${3:, ${4:\\$coursebytes}${5:, ${6:\\$modulebytes}${7:, ${8:\\$custombytes}}}}});",
+    "description": "Returns an array of possible sizes in local language"
+  },
+  "get_directory_list": {
+    "prefix": "get_directory_list",
+    "body": "get_directory_list(${1:\\$rootdir}${2:, ${3:\\$excludefiles}${4:, ${5:\\$descend}${6:, ${7:\\$getdirs}${8:, ${9:\\$getfiles}}}}});",
+    "description": "Returns an array with all the filenames in all subdirectories, relative to the given rootdir."
+  },
+  "get_directory_size": {
+    "prefix": "get_directory_size",
+    "body": "get_directory_size(${1:\\$rootdir}${2:, ${3:\\$excludefile}});",
+    "description": "Adds up all the files in a directory and works out the size."
+  },
+  "display_size": {
+    "prefix": "display_size",
+    "body": "display_size(${1:\\$size});",
+    "description": "Converts bytes into display form"
+  },
+  "clean_filename": {
+    "prefix": "clean_filename",
+    "body": "clean_filename(${1:\\$string});",
+    "description": "Cleans a given filename by removing suspicious or troublesome characters"
+  },
+  "current_language": {
+    "prefix": "current_language",
+    "body": "current_language();",
+    "description": "Returns the code for the current language"
+  },
+  "get_parent_language": {
+    "prefix": "get_parent_language",
+    "body": "get_parent_language(${1:\\$lang});",
+    "description": "Returns parent language of current active language if defined"
+  },
+  "force_current_language": {
+    "prefix": "force_current_language",
+    "body": "force_current_language(${1:\\$language});",
+    "description": "Force the current language to get strings and dates localised in the given language."
+  },
+  "get_string_manager": {
+    "prefix": "get_string_manager",
+    "body": "get_string_manager(${1:\\$forcereload});",
+    "description": "Returns current string_manager instance."
+  },
+  "get_string": {
+    "prefix": "get_string",
+    "body": "get_string(${1:\\$identifier}${2:, ${3:\\$component}${4:, ${5:\\$a}${6:, ${7:\\$lazyload}}}});",
+    "description": "Returns a localized string."
+  },
+  "get_strings": {
+    "prefix": "get_strings",
+    "body": "get_strings(${1:\\$array}${2:, ${3:\\$component}});",
+    "description": "Converts an array of strings to their localized value."
+  },
+  "print_string": {
+    "prefix": "print_string",
+    "body": "print_string(${1:\\$identifier}${2:, ${3:\\$component}${4:, ${5:\\$a}}});",
+    "description": "Prints out a translated string."
+  },
+  "get_list_of_charsets": {
+    "prefix": "get_list_of_charsets",
+    "body": "get_list_of_charsets();",
+    "description": "Returns a list of charset codes"
+  },
+  "get_list_of_themes": {
+    "prefix": "get_list_of_themes",
+    "body": "get_list_of_themes();",
+    "description": "Returns a list of valid and compatible themes"
+  },
+  "get_emoticon_manager": {
+    "prefix": "get_emoticon_manager",
+    "body": "get_emoticon_manager();",
+    "description": "Factory function for emoticon_manager"
+  },
+  "rc4encrypt": {
+    "prefix": "rc4encrypt",
+    "body": "rc4encrypt(${1:\\$data});",
+    "description": "rc4encrypt"
+  },
+  "rc4decrypt": {
+    "prefix": "rc4decrypt",
+    "body": "rc4decrypt(${1:\\$data});",
+    "description": "rc4decrypt"
+  },
+  "endecrypt": {
+    "prefix": "endecrypt",
+    "body": "endecrypt (${1:\\$pwd}, ${2:\\$data}, ${3:\\$case});",
+    "description": "Based on a class by Mukul Sabharwal [mukulsabharwal @ yahoo.com]"
+  },
+  "is_valid_plugin_name": {
+    "prefix": "is_valid_plugin_name",
+    "body": "is_valid_plugin_name(${1:\\$name});",
+    "description": "This method validates a plug name. It is much faster than calling clean_param."
+  },
+  "get_plugin_list_with_function": {
+    "prefix": "get_plugin_list_with_function",
+    "body": "get_plugin_list_with_function(${1:\\$plugintype}, ${2:\\$function}${3:, ${4:\\$file}});",
+    "description": "Get a list of all the plugins of a given type that define a certain API function in a certain file. The plugin component names and function names are returned."
+  },
+  "get_plugins_with_function": {
+    "prefix": "get_plugins_with_function",
+    "body": "get_plugins_with_function(${1:\\$function}${2:, ${3:\\$file}${4:, ${5:\\$include}}});",
+    "description": "Get a list of all the plugins that define a certain API function in a certain file."
+  },
+  "get_list_of_plugins": {
+    "prefix": "get_list_of_plugins",
+    "body": "get_list_of_plugins(${1:${2:\\$directory}${3:, ${4:\\$exclude}${5:, ${6:\\$basedir}}}});",
+    "description": "Lists plugin-like directories within specified directory"
+  },
+  "plugin_callback": {
+    "prefix": "plugin_callback",
+    "body": "plugin_callback(${1:\\$type}, ${2:\\$name}, ${3:\\$feature}, ${4:\\$action}${5:, ${6:\\$params}${7:, ${8:\\$default}}});",
+    "description": "Invoke plugin's callback functions"
+  },
+  "component_callback": {
+    "prefix": "component_callback",
+    "body": "component_callback(${1:\\$component}, ${2:\\$function}${3:, ${4:\\$params_array}${5:, ${6:\\$default}}});",
+    "description": "Invoke component's callback functions"
+  },
+  "component_callback_exists": {
+    "prefix": "component_callback_exists",
+    "body": "component_callback_exists(${1:\\$component}, ${2:\\$function});",
+    "description": "Determine if a component callback exists and return the function name to call. Note that this function will include the required library files so that the functioname returned can be called directly."
+  },
+  "component_class_callback": {
+    "prefix": "component_class_callback",
+    "body": "component_class_callback(${1:\\$classname}, ${2:\\$methodname}, ${3:\\$params_array}${4:, ${5:\\$default}});",
+    "description": "Call the specified callback method on the provided class."
+  },
+  "plugin_supports": {
+    "prefix": "plugin_supports",
+    "body": "plugin_supports(${1:\\$type}, ${2:\\$name}, ${3:\\$feature}${4:, ${5:\\$default}});",
+    "description": "Checks whether a plugin supports a specified feature."
+  },
+  "check_php_version": {
+    "prefix": "check_php_version",
+    "body": "check_php_version(${1:\\$version});",
+    "description": "Returns true if the current version of PHP is greater that the specified one."
+  },
+  "moodle_needs_upgrading": {
+    "prefix": "moodle_needs_upgrading",
+    "body": "moodle_needs_upgrading();",
+    "description": "Determine if moodle installation requires update."
+  },
+  "moodle_major_version": {
+    "prefix": "moodle_major_version",
+    "body": "moodle_major_version(${1:\\$fromdisk});",
+    "description": "Returns the major version of this site"
+  },
+  "moodle_setlocale": {
+    "prefix": "moodle_setlocale",
+    "body": "moodle_setlocale(${1:\\$locale});",
+    "description": "Sets the system locale"
+  },
+  "count_words": {
+    "prefix": "count_words",
+    "body": "count_words(${1:\\$string});",
+    "description": "Count words in a string."
+  },
+  "count_letters": {
+    "prefix": "count_letters",
+    "body": "count_letters(${1:\\$string});",
+    "description": "Count letters in a string."
+  },
+  "random_string": {
+    "prefix": "random_string",
+    "body": "random_string(${1:\\$length});",
+    "description": "Generate and return a random string of the specified length."
+  },
+  "complex_random_string": {
+    "prefix": "complex_random_string",
+    "body": "complex_random_string(${1:\\$length});",
+    "description": "Generate a complex random string (useful for md5 salts)"
+  },
+  "random_bytes_emulate": {
+    "prefix": "random_bytes_emulate",
+    "body": "random_bytes_emulate(${1:\\$length});",
+    "description": "Try to generates cryptographically secure pseudo-random bytes."
+  },
+  "shorten_text": {
+    "prefix": "shorten_text",
+    "body": "shorten_text(${1:\\$text}${2:, ${3:\\$ideal}${3:, ${4:\\$exact}${5:, ${6:\\$ending}}}});",
+    "description": "Given some text (which may contain HTML) and an ideal length, this function truncates the text neatly on a word boundary if possible"
+  },
+  "shorten_filename": {
+    "prefix": "shorten_filename",
+    "body": "shorten_filename(${1:\\$filename}${2:, ${3:\\$length}${3:, ${4:\\$includehash}}});",
+    "description": "Shortens a given filename by removing characters positioned after the ideal string length. When the filename is too long, the file cannot be created on the filesystem due to exceeding max byte size. Limiting the filename to a certain size (considering multibyte characters) will prevent this."
+  },
+  "shorten_filenames": {
+    "prefix": "shorten_filenames",
+    "body": "shorten_filenames(${1:\\$path_array}${2:, ${3:\\$length}${3:, ${4:\\$includehash}}});",
+    "description": "Shortens a given array of filenames by removing characters positioned after the ideal string length."
+  },
+  "getweek": {
+    "prefix": "getweek",
+    "body": "getweek(${1:\\$startdate}, ${2:\\$thedate});",
+    "description": "Given dates in seconds, how many weeks is the date from startdate The first week is 1, the second 2 etc ..."
+  },
+  "generate_password": {
+    "prefix": "generate_password",
+    "body": "generate_password(${1:\\$maxlen});",
+    "description": "Returns a randomly generated password of length $maxlen.  inspired by"
+  },
+  "format_float": {
+    "prefix": "format_float",
+    "body": "format_float(${1:\\$float}${2:, ${3:\\$decimalpoints}${4:, ${5:\\$localized}${6:, ${1:\\$stripzeros}}}});",
+    "description": "Given a float, prints it nicely."
+  },
+  "unformat_float": {
+    "prefix": "unformat_float",
+    "body": "unformat_float(${1:\\$localefloat}${2:, ${3:\\$strict}});",
+    "description": "Converts locale specific floating point/comma number back to standard PHP float value"
+  },
+  "swapshuffle": {
+    "prefix": "swapshuffle",
+    "body": "swapshuffle(${1:\\$array});",
+    "description": "Given a simple array, this shuffles it up just like shuffle() Unlike PHP's shuffle() this function works on any machine."
+  },
+  "swapshuffle_assoc": {
+    "prefix": "swapshuffle_assoc",
+    "body": "swapshuffle_assoc(${1:\\$array});",
+    "description": "swapshuffle_assoc"
+  },
+  "draw_rand_array": {
+    "prefix": "draw_rand_array",
+    "body": "draw_rand_array(${1:\\$array}, ${2:\\$draws});",
+    "description": "Given an arbitrary array, and a number of draws, this function returns an array with that amount of items.  The indexes are retained."
+  },
+  "microtime_diff": {
+    "prefix": "microtime_diff",
+    "body": "microtime_diff(${1:\\$a}, ${2:\\$b});",
+    "description": "Calculate the difference between two microtimes"
+  },
+  "make_menu_from_list": {
+    "prefix": "make_menu_from_list",
+    "body": "make_menu_from_list(${1:\\$list}${2:, ${3:\\$separator}});",
+    "description": "Given a list (eg a,b,c,d,e) this function returns an array of 1->a, 2->b, 3->c etc"
+  },
+  "make_grades_menu": {
+    "prefix": "make_grades_menu",
+    "body": "make_grades_menu(${1:\\$gradingtype});",
+    "description": "Creates an array that represents all the current grades that can be chosen using the given grading type."
+  },
+  "make_unique_id_code": {
+    "prefix": "make_unique_id_code",
+    "body": "make_unique_id_code(${1:\\$extra});",
+    "description": "make_unique_id_code"
+  },
+  "address_in_subnet": {
+    "prefix": "address_in_subnet",
+    "body": "address_in_subnet(${1:\\$addr}, ${2:\\$subnetstr});",
+    "description": "Function to check the passed address is within the passed subnet"
+  },
+  "mtrace": {
+    "prefix": "mtrace",
+    "body": "mtrace(${1:\\$string}${2:, ${3:\\$eol}${4:, ${5:\\$sleep}}});",
+    "description": "For outputting debugging info"
+  },
+  "cleardoubleslashes": {
+    "prefix": "cleardoubleslashes",
+    "body": "cleardoubleslashes (${1:\\$path});",
+    "description": "Replace 1 or more slashes or backslashes to 1 slash"
+  },
+  "remoteip_in_list": {
+    "prefix": "remoteip_in_list",
+    "body": "remoteip_in_list(${1:\\$list});",
+    "description": "Is current ip in give list?"
+  },
+  "getremoteaddr": {
+    "prefix": "getremoteaddr",
+    "body": "getremoteaddr(${1:\\$default});",
+    "description": "Returns most reliable client address"
+  },
+  "cleanremoteaddr": {
+    "prefix": "cleanremoteaddr",
+    "body": "cleanremoteaddr(${1:\\$addr}${2:, ${3:\\$compress}});",
+    "description": "Cleans an ip address. Internal addresses are now allowed."
+  },
+  "ip_is_public": {
+    "prefix": "ip_is_public",
+    "body": "ip_is_public(${1:\\$ip});",
+    "description": "Is IP address a public address?"
+  },
+  "fullclone": {
+    "prefix": "fullclone",
+    "body": "fullclone(${1:\\$thing});",
+    "description": "This function will make a complete copy of anything it's given, regardless of whether it's an object or not."
+  },
+  "bounded_number": {
+    "prefix": "bounded_number",
+    "body": "bounded_number(${1:\\$min}, ${2:\\$value}, ${3:\\$max});",
+    "description": "Used to make sure that $min <= $value <= $max"
+  },
+  "array_is_nested": {
+    "prefix": "array_is_nested",
+    "body": "array_is_nested(${1:\\$array});",
+    "description": "Check if there is a nested array within the passed array"
+  },
+  "get_performance_info": {
+    "prefix": "get_performance_info",
+    "body": "get_performance_info();",
+    "description": "get_performance_info() pairs up with init_performance_info() loaded in setup.php. Returns an array with 'html' and 'txt' values ready for use, and each of the individual stats provided separately as well."
+  },
+  "remove_dir": {
+    "prefix": "remove_dir",
+    "body": "remove_dir(${1:\\$dir}${2:, ${3:\\$contentonly}});",
+    "description": "Delete directory or only its content"
+  },
+  "object_property_exists": {
+    "prefix": "object_property_exists",
+    "body": "object_property_exists(${1:\\$obj}, ${2:\\$property});",
+    "description": "Detect if an object or a class contains a given property will take an actual object or the name of a class"
+  },
+  "convert_to_array": {
+    "prefix": "convert_to_array",
+    "body": "convert_to_array(${1:\\$var});",
+    "description": "Converts an object into an associative array"
+  },
+  "custom_script_path": {
+    "prefix": "custom_script_path",
+    "body": "custom_script_path();",
+    "description": "Detect a custom script replacement in the data directory that will replace an existing moodle script"
+  },
+  "is_mnet_remote_user": {
+    "prefix": "is_mnet_remote_user",
+    "body": "is_mnet_remote_user(${1:\\$user});",
+    "description": "Returns whether or not the user object is a remote MNET user. This function is in moodlelib because it does not rely on loading any of the MNET code."
+  },
+  "setup_lang_from_browser": {
+    "prefix": "setup_lang_from_browser",
+    "body": "setup_lang_from_browser();",
+    "description": "This function will search for browser prefereed languages, setting Moodle to use the best one available if $SESSION->lang is undefined"
+  },
+  "is_proxybypass": {
+    "prefix": "is_proxybypass",
+    "body": "is_proxybypass(${1:\\$url});",
+    "description": "Check if $url matches anything in proxybypass list"
+  },
+  "is_newnav": {
+    "prefix": "is_newnav",
+    "body": "is_newnav(${1:\\$navigation});",
+    "description": "Check if the passed navigation is of the new style"
+  },
+  "in_object_vars": {
+    "prefix": "in_object_vars",
+    "body": "in_object_vars(${1:\\$var}, ${2:\\$object});",
+    "description": "Checks whether the given variable name is defined as a variable within the given object."
+  },
+  "object_array_unique": {
+    "prefix": "object_array_unique",
+    "body": "object_array_unique(${1:\\$array}${2:, ${3:\\$keepkeyassoc}});",
+    "description": "Returns an array without repeated objects."
+  },
+  "is_primary_admin": {
+    "prefix": "is_primary_admin",
+    "body": "is_primary_admin(${1:\\$userid});",
+    "description": "Is a userid the primary administrator?"
+  },
+  "get_site_identifier": {
+    "prefix": "get_site_identifier",
+    "body": "get_site_identifier();",
+    "description": "Returns the site identifier"
+  },
+  "check_consecutive_identical_characters": {
+    "prefix": "check_consecutive_identical_characters",
+    "body": "check_consecutive_identical_characters(${1:\\$password}, ${2:\\$maxchars});",
+    "description": "Check whether the given password has no more than the specified number of consecutive identical characters."
+  },
+  "partial": {
+    "prefix": "partial",
+    "body": "partial();",
+    "description": "Helper function to do partial function binding. so we can use it for preg_replace_callback, for example this works with php functions, user functions, static methods and class methods it returns you a callback that you can pass on like so:"
+  },
+  "get_mnet_environment": {
+    "prefix": "get_mnet_environment",
+    "body": "get_mnet_environment();",
+    "description": "helper function to load up and initialise the mnet environment this must be called before you use mnet functions."
+  },
+  "get_mnet_remote_client": {
+    "prefix": "get_mnet_remote_client",
+    "body": "get_mnet_remote_client();",
+    "description": "during xmlrpc server code execution, any code wishing to access information about the remote peer must use this to get it."
+  },
+  "set_mnet_remote_client": {
+    "prefix": "set_mnet_remote_client",
+    "body": "set_mnet_remote_client(${1:\\$client});",
+    "description": "during the xmlrpc server code execution, this will be called to setup the object returned by {@link get_mnet_remote_client}"
+  },
+  "mnet_get_idp_jump_url": {
+    "prefix": "mnet_get_idp_jump_url",
+    "body": "mnet_get_idp_jump_url(${1:\\$user});",
+    "description": "return the jump url for a given remote user this is used for rewriting forum post links in emails, etc"
+  },
+  "get_home_page": {
+    "prefix": "get_home_page",
+    "body": "get_home_page();",
+    "description": "Gets the homepage to use for the current user"
+  },
+  "get_course_display_name_for_list": {
+    "prefix": "get_course_display_name_for_list",
+    "body": "get_course_display_name_for_list(${1:\\$course});",
+    "description": "ets the name of a course to be displayed when showing a list of courses. By default this is just $course->fullname but user can configure it. The result of this function should be passed through print_string."
+  },
+  "unserialize_array": {
+    "prefix": "unserialize_array",
+    "body": "unserialize_array(${1:\\$expression});",
+    "description": "Safe analogue of unserialize() that can only parse arrays"
+  },
+  "get_callable_name": {
+    "prefix": "get_callable_name",
+    "body": "get_callable_name(${1:\\$callable});",
+    "description": "Get human readable name describing the given callable."
+  },
+  "get_context_instance": {
+    "prefix": "get_context_instance",
+    "body": "get_context_instance(${1:\\$contextlevel}, ${2:\\$instance = 0}, ${3:\\$strictness = IGNORE_MISSING});",
+    "description": "Moodle snippets"
+  },
+  "get_context_instance_by_id": {
+    "prefix": "get_context_instance_by_id",
+    "body": "get_context_instance_by_id(${1:\\$id}, ${2:\\$strictness = IGNORE_MISSING});",
+    "description": "Moodle snippets"
+  },
+  "has_capability": {
+    "prefix": "has_capability",
+    "body": "has_capability(${1:\\$capability}, ${2:context \\$context}, ${3:\\$user = null}, ${4:\\$doanything = true});",
+    "description": "Moodle snippets"
+  },
+  "require_capability": {
+    "prefix": "require_capability",
+    "body": "require_capability(${1:\\$capability}, ${2:context \\$context}, ${3:\\$userid = null}, ${4:\\$doanything = true}, ${5:\\$errormessage = 'nopermissions'}, ${6:\\$stringfile = ''});",
+    "description": "Moodle snippets"
+  },
+  "get_users_by_capability": {
+    "prefix": "get_users_by_capability",
+    "body": "get_users_by_capability(${1:context \\$context}, ${2:\\$capability}, ${3:\\$fields = ''}, ${4:\\$sort = ''}, ${5:\\$limitfrom = ''}, ${6:\\$limitnum = ''}, ${7:\\$groups = ''}, ${8:\\$exceptions = ''}, ${9:\\$doanything_ignored = null}, ${10:\\$view_ignored = null}, ${11:\\$useviewallgroups = false});",
+    "description": "Moodle snippets"
+  },
+  "isguestuser": {
+    "prefix": "isguestuser",
+    "body": "isguestuser(${1:\\$user = null});",
+    "description": "Moodle snippets"
+  },
+  "isloggedin": {
+    "prefix": "isloggedin",
+    "body": "isloggedin();",
+    "description": "Moodle snippets"
+  },
+  "is_siteadmin": {
+    "prefix": "is_siteadmin",
+    "body": "is_siteadmin(${1:\\$user_or_id = null});",
+    "description": "Moodle snippets"
+  },
+  "is_guest": {
+    "prefix": "is_guest",
+    "body": "is_guest(${1:context \\$context}, ${2:\\$user = null});",
+    "description": "Moodle snippets"
+  },
+  "is_viewing": {
+    "prefix": "is_viewing",
+    "body": "is_viewing(${1:context \\$context}, ${2: \\$user = null}, ${3: \\$withcapability = ''});",
+    "description": "Moodle snippets"
+  },
+  "allow_commit": {
+    "prefix": "allow_commit",
+    "body": "allow_commit();",
+    "description": "Moodle snippets"
+  },
+  "get_course": {
+    "prefix": "get_course",
+    "body": "get_course(${1:\\$courseid});",
+    "description": "Moodle snippets"
+  },
+  "get_file_content": {
+    "prefix": "get_file_content",
+    "body": "get_file_content(${1:'userfile'});",
+    "description": "Moodle snippets"
+  },
+  "get_new_filename": {
+    "prefix": "get_new_filename",
+    "body": "get_new_filename(${1:'userfile'});",
+    "description": "Moodle snippets"
+  },
+  "save_file": {
+    "prefix": "save_file",
+    "body": "save_file(${1:'userfile'}, ${2: \\$fullpath}, ${3: \\$override});",
+    "description": "Moodle snippets"
+  },
+  "save_stored_file": {
+    "prefix": "save_stored_file",
+    "body": "save_stored_file(${1:'userfile'}, ${2: ...});",
+    "description": "Moodle snippets"
+  },
+  "file_get_submitted_draft_itemid": {
+    "prefix": "file_get_submitted_draft_itemid",
+    "body": "file_get_submitted_draft_itemid(${1:'entry'});",
+    "description": "Moodle snippets"
+  },
+  "file_prepare_draft_area": {
+    "prefix": "file_prepare_draft_area",
+    "body": "file_prepare_draft_area(${1:\\$draftid_editor}, ${2: \\$context->id}, ${3: 'mod_MYMOD'}, ${4: 'entry'}, ${5: \\$entry->id}, ${6: array('subdirs'=>true)}, ${7: \\$entry->definition});",
+    "description": "Moodle snippets"
+  },
+  "file_save_draft_area_files": {
+    "prefix": "file_save_draft_area_files",
+    "body": "file_save_draft_area_files(${1:\\$data->attachments}, ${2: \\$context->id}, ${3: 'mod_glossary'}, ${4: 'attachment'}, ${5: \\$entry->id}, array(${6:'subdirs' => 0}, ${7: 'maxbytes' => \\$maxbytes}, ${8: 'maxfiles' => 50}));",
+    "description": "Moodle snippets"
+  },
+  "file_rewrite_pluginfile_urls": {
+    "prefix": "file_rewrite_pluginfile_urls",
+    "body": "file_rewrite_pluginfile_urls(${1:\\$messagetext}, ${2: 'pluginfile.php'}, ${3: \\$context->id}, ${4: 'mod_mymodule'}, ${5: 'proper_file_area'}, ${6: \\$itemid});",
+    "description": "Moodle snippets"
+  },
+  "file_prepare_standard_editor": {
+    "prefix": "file_prepare_standard_editor",
+    "body": "file_prepare_standard_editor(${1:\\$data}, ${2: 'textfield'}, ${3: \\$textfieldoptions}, ${4: \\$context}, ${5: 'mod_somemodule'}, ${6: 'somearea'}, ${7: \\$data->id});",
+    "description": "Moodle snippets"
+  },
+  "file_prepare_standard_filemanager": {
+    "prefix": "file_prepare_standard_filemanager",
+    "body": "file_prepare_standard_filemanager(${1:\\$entry}, ${2: 'attachment'}, ${3: \\$attachmentoptions}, ${4: \\$context}, ${5: 'mod_mymod'}, ${6: 'attachment'}, ${7: \\$entry->id});",
+    "description": "Moodle snippets"
+  },
+  "file_postupdate_standard_filemanager": {
+    "prefix": "file_postupdate_standard_filemanager",
+    "body": "file_postupdate_standard_filemanager(${1:\\$entry}, ${2: 'attachment'}, ${3: \\$attachmentoptions}, ${4: \\$context}, ${5: 'mod_mymod'}, ${6: 'attachment'}, ${7: \\$entry->id});",
+    "description": "Moodle snippets"
+  },
+  "file_postupdate_standard_editor": {
+    "prefix": "file_postupdate_standard_editor",
+    "body": "file_postupdate_standard_editor(${1:\\$data}, ${2: 'textfield'}, ${3: \\$textfieldoptions}, ${4: \\$context}, ${5: 'mod_somemodule'}, ${6: 'somearea'}, ${7: \\$data->id});",
+    "description": "Moodle snippets"
+  },
+  "make_pluginfile_url": {
+    "prefix": "make_pluginfile_url",
+    "body": "make_pluginfile_url(${1:\\$file->get_contextid()}, ${2: \\$file->get_component()}, ${3: \\$file->get_filearea()}, ${4: \\$file->get_itemid()}, ${5: \\$file->get_filepath()}, ${6: \\$file->get_filename()});",
+    "description": "Moodle snippets"
+  },
+  "myPLUGIN_pluginfile": {
+    "prefix": "myPLUGIN_pluginfile",
+    "body": "myPLUGIN_pluginfile(${1:\\$course}, ${2: \\$cm}, ${3: \\$context}, ${4: \\$filearea}, ${5: \\$args}, ${6: \\$forcedownload}, ${7: array \\$options=array()});",
+    "description": "Moodle snippets"
+  },
+  "get_file": {
+    "prefix": "get_file",
+    "body": "get_file(${1:\\$context->id}, ${2: 'mod_MYPLUGIN'}, ${3: \\$filearea}, ${4: \\$itemid}, ${5: \\$filepath}, ${6: \\$filename});",
+    "description": "Moodle snippets"
+  },
+  "send_file": {
+    "prefix": "send_file",
+    "body": "send_file(${1:\\$file}, ${2: 86400}, ${3: 0}, ${4: \\$forcedownload}, ${5: \\$options});",
+    "description": "Moodle snippets"
+  },
+  "get_system_context": {
+    "prefix": "get_system_context",
+    "body": "get_system_context();",
+    "description": "Moodle snippets"
+  },
+  "get_file_info": {
+    "prefix": "get_file_info",
+    "body": "get_file_info(${1:\\$context}, ${2: \\$component}, ${3: \\$filearea}, ${4: \\$itemid}, ${5: '\/'}, ${6: \\$filename});",
+    "description": "Moodle snippets"
+  },
+  "get_parent": {
+    "prefix": "get_parent",
+    "body": "get_parent();",
+    "description": "Moodle snippets"
+  },
+  "get_children": {
+    "prefix": "get_children",
+    "body": "get_children();",
+    "description": "Moodle snippets"
+  },
+  "is_directory": {
+    "prefix": "is_directory",
+    "body": "is_directory();",
+    "description": "Moodle snippets"
+  },
+  "get_visible_name": {
+    "prefix": "get_visible_name",
+    "body": "get_visible_name();",
+    "description": "Moodle snippets"
+  },
+  "get_params": {
+    "prefix": "get_params",
+    "body": "get_params();",
+    "description": "Moodle snippets"
+  },
+  "create_file_from_pathname": {
+    "prefix": "create_file_from_pathname",
+    "body": "create_file_from_pathname(${1:\\$file_record}, ${2: \\$from_zip_file});",
+    "description": "Moodle snippets"
+  },
+  "get_area_files": {
+    "prefix": "get_area_files",
+    "body": "get_area_files(${1:\\$contextid}, ${2: 'mod_MYMOD'}, ${3: 'AREA'}, ${4: \\$submission->id});",
+    "description": "Moodle snippets"
+  },
+  "get_filename": {
+    "prefix": "get_filename",
+    "body": "get_filename();",
+    "description": "Moodle snippets"
+  },
+  "get_itemid": {
+    "prefix": "get_itemid",
+    "body": "get_itemid();",
+    "description": "Moodle snippets"
+  },
+  "get_filepath": {
+    "prefix": "get_filepath",
+    "body": "get_filepath();",
+    "description": "Moodle snippets"
+  },
+  "get_component": {
+    "prefix": "get_component",
+    "body": "get_component();",
+    "description": "Moodle snippets"
+  },
+  "get_contextid": {
+    "prefix": "get_contextid",
+    "body": "get_contextid();",
+    "description": "Moodle snippets"
+  },
+  "get_filearea": {
+    "prefix": "get_filearea",
+    "body": "get_filearea();",
+    "description": "Moodle snippets"
+  },
+  "create_file_from_string": {
+    "prefix": "create_file_from_string",
+    "body": "create_file_from_string(${1:\\$fileinfo}, ${2: 'hello world'});",
+    "description": "Moodle snippets"
+  },
+  "get_content": {
+    "prefix": "get_content",
+    "body": "get_content();",
+    "description": "Moodle snippets"
+  },
+  "delete": {
+    "prefix": "delete",
+    "body": "delete();",
+    "description": "Moodle snippets"
+  },
+  "addGroupRule": {
+    "prefix": "addGroupRule",
+    "body": "addGroupRule(${1:'elementname'}, array(${2:'value'} => array(array(${3:list}, ${4: of}, ${5: rule}, ${6: params}, ${7: but}, ${8: fieldname}))));",
+    "description": "Moodle snippets"
+  },
+  "createElement": {
+    "prefix": "createElement",
+    "body": "createElement(${1:'radio'}, ${2: 'yesno'}, ${3: ''}, ${4: get_string('yes')}, ${5: 1}, ${6: \\$attributes});",
+    "description": "Moodle snippets"
+  },
+  "setDefault": {
+    "prefix": "setDefault",
+    "body": "setDefault(${1:'yesno'}, ${2: 0});",
+    "description": "Moodle snippets"
+  },
+  "setMultiple": {
+    "prefix": "setMultiple",
+    "body": "setMultiple(${1:true});",
+    "description": "Moodle snippets"
+  },
+  "addGroup": {
+    "prefix": "addGroup",
+    "body": "addGroup(${1:\\$buttonarray}, ${2: 'buttonar'}, ${3: ''}, ${4: array(' ')}, ${5: false});",
+    "description": "Moodle snippets"
+  },
+  "disabledIf": {
+    "prefix": "disabledIf",
+    "body": "disabledIf(${1:'mycontrol'}, ${2: 'someselect'}, ${3: 'neq'}, ${4: 42});",
+    "description": "Moodle snippets"
+  },
+  "addRule": {
+    "prefix": "addRule",
+    "body": "addRule(${1:'elementname'}, ${2: get_string('error')}, ${3: 'rule type'}, ${4: 'extraruledata'}, ${5: 'server'(default)}, ${6: false}, ${7: false});",
+    "description": "Moodle snippets"
+  },
+  "setHelpButton": {
+    "prefix": "setHelpButton",
+    "body": "setHelpButton(${1:'lessondefault'}, array(${2:'lessondefault'}, ${3: get_string('lessondefault', 'lesson')}, ${4: 'lesson')});",
+    "description": "Moodle snippets"
+  },
+  "addHelpButton": {
+    "prefix": "addHelpButton",
+    "body": "addHelpButton(${1:'api_key_field'}, ${2: 'api_key'}, ${3: 'block_extsearch'});",
+    "description": "Moodle snippets"
+  },
+  "disable_form_change_checker": {
+    "prefix": "disable_form_change_checker",
+    "body": "disable_form_change_checker();",
+    "description": "Moodle snippets"
+  },
+  "setType": {
+    "prefix": "setType",
+    "body": "setType(${2:'name'}, ${4:PARAM_TYPE});",
+    "description": "Moodle snippets"
+  },
+  "add_to_log": {
+    "prefix": "add_to_log",
+    "body": "add_to_log(${1:\\$courseid}, ${2: \\$module}, ${3: \\$action}, ${4: \\$url=''}, ${5: \\$info=''}, ${6: \\$cm=0}, ${7: \\$user=0});",
+    "description": "Moodle snippets"
+  },
+  "user_accesstime_log": {
+    "prefix": "user_accesstime_log",
+    "body": "user_accesstime_log(${1:\\$courseid=0});",
+    "description": "Moodle snippets"
+  },
+  "get_logs": {
+    "prefix": "get_logs",
+    "body": "get_logs(${1:\\$select}, ${2: array \\$params=null}, ${3: \\$order='l.time DESC'}, ${4: \\$limitfrom=''}, ${5: \\$limitnum=''}, ${6: &\\$totalcount});",
+    "description": "Moodle snippets"
+  },
+  "get_logs_usercourse": {
+    "prefix": "get_logs_usercourse",
+    "body": "get_logs_usercourse(${1:\\$userid}, ${2: \\$courseid}, ${3: \\$coursestart});",
+    "description": "Moodle snippets"
+  },
+  "get_logs_userday": {
+    "prefix": "get_logs_userday",
+    "body": "get_logs_userday(${1:\\$userid}, ${2: \\$courseid}, ${3: \\$daystart});",
+    "description": "Moodle snippets"
+  },
+  "make_active": {
+    "prefix": "make_active",
+    "body": "make_active();",
+    "description": "Moodle snippets"
+  },
+  "get_coursemodule_from_id": {
+    "prefix": "get_coursemodule_from_id",
+    "body": "get_coursemodule_from_id(${1:'mymodulename'}, ${2: \\$cmid}, ${3: 0}, ${4: false}, ${5: MUST_EXIST});",
+    "description": "Moodle snippets"
+  },
+  "get_strings(": {
+    "prefix": "get_strings",
+    "body": "get_strings(array(${1:'enable'}, ${2: 'disable'}, ${3: 'up'}, ${4: 'down'}, ${5: 'none')}, ${6: 'qtype_dragdrop'});",
+    "description": "Moodle snippets"
+  },
+  "asort": {
+    "prefix": "asort",
+    "body": "asort();",
+    "description": "Moodle snippets"
+  },
+  "code2utf8": {
+    "prefix": "code2utf8",
+    "body": "code2utf8(${1:\\$string});",
+    "description": "Moodle snippets"
+  },
+  "convert": {
+    "prefix": "convert",
+    "body": "convert(${1:\\$string});",
+    "description": "Moodle snippets"
+  },
+  "encode_mimeheader": {
+    "prefix": "encode_mimeheader",
+    "body": "encode_mimeheader(${1:\\$string});",
+    "description": "Moodle snippets"
+  },
+  "entities_to_utf8": {
+    "prefix": "entities_to_utf8",
+    "body": "entities_to_utf8(${1:\\$string});",
+    "description": "Moodle snippets"
+  },
+  "specialtoascii": {
+    "prefix": "specialtoascii",
+    "body": "specialtoascii(${1:\\$string});",
+    "description": "Moodle snippets"
+  },
+  "strlen": {
+    "prefix": "strlen",
+    "body": "strlen(${1:\\$string});",
+    "description": "Moodle snippets"
+  },
+  "strpos": {
+    "prefix": "strpos",
+    "body": "strpos(${1:\\$string});",
+    "description": "Moodle snippets"
+  },
+  "strrpos": {
+    "prefix": "strrpos",
+    "body": "strrpos(${1:\\$string});",
+    "description": "Moodle snippets"
+  },
+  "strtolower": {
+    "prefix": "strtolower",
+    "body": "strtolower(${1:\\$string});",
+    "description": "Moodle snippets"
+  },
+  "strtotitle": {
+    "prefix": "strtotitle",
+    "body": "strtotitle(${1:\\$string});",
+    "description": "Moodle snippets"
+  },
+  "strtoupper": {
+    "prefix": "strtoupper",
+    "body": "strtoupper(${1:\\$string});",
+    "description": "Moodle snippets"
+  },
+  "substr": {
+    "prefix": "substr",
+    "body": "substr(${1:\\$string});",
+    "description": "Moodle snippets"
+  },
+  "trim_utf8_bom": {
+    "prefix": "trim_utf8_bom",
+    "body": "trim_utf8_bom(${1:\\$string});",
+    "description": "Moodle snippets"
+  },
+  "utf8_to_entities": {
+    "prefix": "utf8_to_entities",
+    "body": "utf8_to_entities(${1:\\$string});",
+    "description": "Moodle snippets"
+  },
+  "add(": {
+    "prefix": "add",
+    "body": "add(new admin_setting_FIELDTYPE(${1:'MYMOD\/MYNAME'}, ${2: 'MYNAME'}, ${3: 'MYDESC'}, array(${4:'value' => '0'}, ${5: 'fix' => false)}, ${6: PARAM_INT}));",
+    "description": "Moodle snippets"
+  },
+  "get_fast_modinfo": {
+    "prefix": "get_fast_modinfo",
+    "body": "get_fast_modinfo(${1:\\$course});",
+    "description": "Moodle snippets"
+  },
+  "filter_user_list": {
+    "prefix": "filter_user_list",
+    "body": "filter_user_list(${1:\\$users});",
+    "description": "Moodle snippets"
+  },
+  "define_my_steps": {
+    "prefix": "define_my_steps",
+    "body": "define_my_steps();",
+    "description": "Moodle snippets"
+  },
+  "set_source_table": {
+    "prefix": "set_source_table",
+    "body": "set_source_table();",
+    "description": "Moodle snippets"
+  },
+  "set_source_sql": {
+    "prefix": "set_source_sql",
+    "body": "set_source_sql();",
+    "description": "Moodle snippets"
+  },
+  "prepare_activity_structure": {
+    "prefix": "prepare_activity_structure",
+    "body": "prepare_activity_structure();",
+    "description": "Moodle snippets"
+  },
+  "calendar_event_hook": {
+    "prefix": "calendar_event_hook",
+    "body": "calendar_event_hook(${1:\\$action}, ${2: array \\$args});",
+    "description": "Moodle snippets"
+  },
+  "calendar_get_default_courses": {
+    "prefix": "calendar_get_default_courses",
+    "body": "calendar_get_default_courses();",
+    "description": "Moodle snippets"
+  },
+  "calendar_get_days": {
+    "prefix": "calendar_get_days",
+    "body": "calendar_get_days();",
+    "description": "Moodle snippets"
+  },
+  "calendar_get_starting_weekday": {
+    "prefix": "calendar_get_starting_weekday",
+    "body": "calendar_get_starting_weekday();",
+    "description": "Moodle snippets"
+  },
+  "calendar_day_representation": {
+    "prefix": "calendar_day_representation",
+    "body": "calendar_day_representation(${1:\\$tstamp}, ${2: \\$now = false}, ${3: \\$usecommonwords = true});",
+    "description": "Moodle snippets"
+  },
+  "calendar_time_representation": {
+    "prefix": "calendar_time_representation",
+    "body": "calendar_time_representation(${1:\\$time});",
+    "description": "Moodle snippets"
+  },
+  "calendar_wday_name": {
+    "prefix": "calendar_wday_name",
+    "body": "calendar_wday_name(${1:\\$englishname});",
+    "description": "Moodle snippets"
+  },
+  "calendar_days_in_month": {
+    "prefix": "calendar_days_in_month",
+    "body": "calendar_days_in_month(${1:\\$month}, ${2: \\$year});",
+    "description": "Moodle snippets"
+  },
+  "calendar_get_link_href": {
+    "prefix": "calendar_get_link_href",
+    "body": "calendar_get_link_href(${1:\\$linkbase}, ${2: \\$d}, ${3: \\$m}, ${4: \\$y});",
+    "description": "Moodle snippets"
+  },
+  "calendar_get_mini": {
+    "prefix": "calendar_get_mini",
+    "body": "calendar_get_mini(${1:\\$courses}, ${2: \\$groups}, ${3: \\$users}, ${4: \\$cal_month = false}, ${5: \\$cal_year = false});",
+    "description": "Moodle snippets"
+  },
+  "calendar_get_popup": {
+    "prefix": "calendar_get_popup",
+    "body": "calendar_get_popup(${1:\\$is_today}, ${2: \\$event_timestart}, ${3: \\$popupcontent = ''});",
+    "description": "Moodle snippets"
+  },
+  "calendar_add_month": {
+    "prefix": "calendar_add_month",
+    "body": "calendar_add_month(${1:\\$month}, ${2: \\$year});",
+    "description": "Moodle snippets"
+  },
+  "calendar_sub_month": {
+    "prefix": "calendar_sub_month",
+    "body": "calendar_sub_month(${1:\\$month}, ${2: \\$year});",
+    "description": "Moodle snippets"
+  },
+  "calendar_get_module_cached": {
+    "prefix": "calendar_get_module_cached",
+    "body": "calendar_get_module_cached(${1:&\\$coursecache}, ${2: \\$modulename}, ${3: \\$instance});",
+    "description": "Moodle snippets"
+  },
+  "calendar_get_course_cached": {
+    "prefix": "calendar_get_course_cached",
+    "body": "calendar_get_course_cached(${1:&\\$coursecache}, ${2: \\$courseid});",
+    "description": "Moodle snippets"
+  },
+  "calendar_print_month_selector": {
+    "prefix": "calendar_print_month_selector",
+    "body": "calendar_print_month_selector(${1:\\$name}, ${2: \\$selected});",
+    "description": "Moodle snippets"
+  },
+  "calendar_top_controls": {
+    "prefix": "calendar_top_controls",
+    "body": "calendar_top_controls(${1:\\$type}, ${2: \\$data});",
+    "description": "Moodle snippets"
+  },
+  "calendar_filter_controls": {
+    "prefix": "calendar_filter_controls",
+    "body": "calendar_filter_controls(${1:moodle_url \\$returnurl});",
+    "description": "Moodle snippets"
+  },
+  "calendar_preferences_button": {
+    "prefix": "calendar_preferences_button",
+    "body": "calendar_preferences_button(${1:stdClass \\$course});",
+    "description": "Moodle snippets"
+  },
+  "calendar_set_filters": {
+    "prefix": "calendar_set_filters",
+    "body": "calendar_set_filters(${1:array \\$courseeventsfrom}, ${2: \\$ignorefilters = false});",
+    "description": "Moodle snippets"
+  },
+  "calendar_get_link_previous": {
+    "prefix": "calendar_get_link_previous",
+    "body": "calendar_get_link_previous(${1:\\$text}, ${2: \\$linkbase}, ${3: \\$d}, ${4: \\$m}, ${5: \\$y}, ${6: \\$accesshide = false});",
+    "description": "Moodle snippets"
+  },
+  "calendar_get_link_next": {
+    "prefix": "calendar_get_link_next",
+    "body": "calendar_get_link_next(${1:\\$text}, ${2: \\$linkbase}, ${3: \\$d}, ${4: \\$m}, ${5: \\$y}, ${6: \\$accesshide = false});",
+    "description": "Moodle snippets"
+  },
+  "calendar_get_allowed_types": {
+    "prefix": "calendar_get_allowed_types",
+    "body": "calendar_get_allowed_types(${1:&\\$allowed}, ${2: \\$course = null});",
+    "description": "Moodle snippets"
+  },
+  "calendar_add_event_allowed": {
+    "prefix": "calendar_add_event_allowed",
+    "body": "calendar_add_event_allowed(${1:\\$event});",
+    "description": "Moodle snippets"
+  },
+  "calendar_edit_event_allowed": {
+    "prefix": "calendar_edit_event_allowed",
+    "body": "calendar_edit_event_allowed(${1:\\$event});",
+    "description": "Moodle snippets"
+  },
+  "calendar_user_can_add_event": {
+    "prefix": "calendar_user_can_add_event",
+    "body": "calendar_user_can_add_event(${1:\\$course});",
+    "description": "Moodle snippets"
+  },
+  "calendar_show_event_type": {
+    "prefix": "calendar_show_event_type",
+    "body": "calendar_show_event_type(${1:\\$type}, ${2: \\$user = null});",
+    "description": "Moodle snippets"
+  },
+  "calendar_set_event_type_display": {
+    "prefix": "calendar_set_event_type_display",
+    "body": "calendar_set_event_type_display(${1:\\$type}, ${2: \\$display = null}, ${3: \\$user = null});",
+    "description": "Moodle snippets"
+  },
+  "calendar_get_events": {
+    "prefix": "calendar_get_events",
+    "body": "calendar_get_events(${1:\\$tstart}, ${2: \\$tend}, ${3: \\$users}, ${4: \\$groups}, ${5: \\$courses}, ${6: \\$withduration = true}, ${7: \\$ignorehidden = true});",
+    "description": "Moodle snippets"
+  },
+  "calendar_events_by_day": {
+    "prefix": "calendar_events_by_day",
+    "body": "calendar_events_by_day(${1:\\$events}, ${2: \\$month}, ${3: \\$year}, ${4: &\\$eventsbyday}, ${5: &\\$durationbyday}, ${6: &\\$typesbyday}, ${7: &\\$courses});",
+    "description": "Moodle snippets"
+  },
+  "calendar_get_upcoming": {
+    "prefix": "calendar_get_upcoming",
+    "body": "calendar_get_upcoming(${1:\\$courses}, ${2: \\$groups}, ${3: \\$users}, ${4: \\$daysinfuture}, ${5: \\$maxevents}, ${6: \\$fromtime = 0});",
+    "description": "Moodle snippets"
+  },
+  "calendar_get_block_upcoming": {
+    "prefix": "calendar_get_block_upcoming",
+    "body": "calendar_get_block_upcoming(${1:\\$events}, ${2: \\$linkhref = NULL});",
+    "description": "Moodle snippets"
+  },
+  "calendar_format_event_time": {
+    "prefix": "calendar_format_event_time",
+    "body": "calendar_format_event_time(${1:\\$event}, ${2: \\$now}, ${3: \\$linkparams = null}, ${4: \\$usecommonwords = true}, ${5: \\$showtime = 0});",
+    "description": "Moodle snippets"
+  },
+  "calendar_add_event_metadata": {
+    "prefix": "calendar_add_event_metadata",
+    "body": "calendar_add_event_metadata(${1:\\$event});",
+    "description": "Moodle snippets"
+  },
+  "table_exists": {
+    "prefix": "table_exists",
+    "body": "table_exists(${1:\\$table});",
+    "description": "Moodle snippets"
+  },
+  "create_table": {
+    "prefix": "create_table",
+    "body": "create_table(${1:\\$table}, ${2: \\$continue=true}, ${3: \\$feedback=true});",
+    "description": "Moodle snippets"
+  },
+  "drop_table": {
+    "prefix": "drop_table",
+    "body": "drop_table(${1:\\$table}, ${2: \\$continue=true}, ${3: \\$feedback=true});",
+    "description": "Moodle snippets"
+  },
+  "rename_table": {
+    "prefix": "rename_table",
+    "body": "rename_table(${1:\\$table}, ${2: \\$newname}, ${3: \\$continue=true}, ${4: \\$feedback=true});",
+    "description": "Moodle snippets"
+  },
+  "field_exists": {
+    "prefix": "field_exists",
+    "body": "field_exists(${1:\\$table}, ${2: \\$field});",
+    "description": "Moodle snippets"
+  },
+  "add_field": {
+    "prefix": "add_field",
+    "body": "add_field(${1:\\$table}, ${2: \\$field}, ${3: \\$continue=true}, ${4: \\$feedback=true});",
+    "description": "Moodle snippets"
+  },
+  "drop_field": {
+    "prefix": "drop_field",
+    "body": "drop_field(${1:\\$table}, ${2: \\$field}, ${3: \\$continue=true}, ${4: \\$feedback=true});",
+    "description": "Moodle snippets"
+  },
+  "change_field_type": {
+    "prefix": "change_field_type",
+    "body": "change_field_type(${1:\\$table}, ${2: \\$field}, ${3: \\$continue=true}, ${4: \\$feedback=true});",
+    "description": "Moodle snippets"
+  },
+  "change_field_precision": {
+    "prefix": "change_field_precision",
+    "body": "change_field_precision(${1:\\$table}, ${2: \\$field}, ${3: \\$continue=true}, ${4: \\$feedback=true});",
+    "description": "Moodle snippets"
+  },
+  "change_field_unsigned": {
+    "prefix": "change_field_unsigned",
+    "body": "change_field_unsigned(${1:\\$table}, ${2: \\$field}, ${3: \\$continue=true}, ${4: \\$feedback=true});",
+    "description": "Moodle snippets"
+  },
+  "change_field_notnull": {
+    "prefix": "change_field_notnull",
+    "body": "change_field_notnull(${1:\\$table}, ${2: \\$field}, ${3: \\$continue=true}, ${4: \\$feedback=true});",
+    "description": "Moodle snippets"
+  },
+  "drop_enum_from_field": {
+    "prefix": "drop_enum_from_field",
+    "body": "drop_enum_from_field(${1:\\$table}, ${2: \\$field}, ${3: \\$continue=true}, ${4: \\$feedback=true});",
+    "description": "Moodle snippets"
+  },
+  "change_field_default": {
+    "prefix": "change_field_default",
+    "body": "change_field_default(${1:\\$table}, ${2: \\$field}, ${3: \\$continue=true}, ${4: \\$feedback=true});",
+    "description": "Moodle snippets"
+  },
+  "rename_field": {
+    "prefix": "rename_field",
+    "body": "rename_field(${1:\\$table}, ${2: \\$field}, ${3: \\$newname}, ${4: \\$continue=true}, ${5: \\$feedback=true});",
+    "description": "Moodle snippets"
+  },
+  "index_exists": {
+    "prefix": "index_exists",
+    "body": "index_exists(${1:\\$table}, ${2: \\$index});",
+    "description": "Moodle snippets"
+  },
+  "find_index_name": {
+    "prefix": "find_index_name",
+    "body": "find_index_name(${1:\\$table}, ${2: \\$index});",
+    "description": "Moodle snippets"
+  },
+  "add_index": {
+    "prefix": "add_index",
+    "body": "add_index(${1:\\$table}, ${2: \\$index}, ${3: \\$continue=true}, ${4: \\$feedback=true});",
+    "description": "Moodle snippets"
+  },
+  "drop_index": {
+    "prefix": "drop_index",
+    "body": "drop_index(${1:\\$table}, ${2: \\$index}, ${3: \\$continue=true}, ${4: \\$feedback=true});",
+    "description": "Moodle snippets"
+  },
+  "is_enrolled": {
+    "prefix": "is_enrolled",
+    "body": "is_enrolled(${1:context \\$context}, ${2: \\$user = null}, ${3: \\$withcapability = ''}, ${4: \\$onlyactive = false});",
+    "description": "Moodle snippets"
+  },
+  "get_enrolled_sql": {
+    "prefix": "get_enrolled_sql",
+    "body": "get_enrolled_sql(${1:context \\$context}, ${2: \\$withcapability = ''}, ${3: \\$groupid = 0}, ${4: \\$onlyactive = false});",
+    "description": "Moodle snippets"
+  },
+  "get_enrolled_users": {
+    "prefix": "get_enrolled_users",
+    "body": "get_enrolled_users(${1:context \\$context}, ${2: \\$withcapability = ''}, ${3: \\$groupid = 0}, ${4: \\$userfields = 'u.*'}, ${5: \\$orderby = ''}, ${6: \\$limitfrom = 0}, ${7: \\$limitnum = 0});",
+    "description": "Moodle snippets"
+  },
+  "count_enrolled_users": {
+    "prefix": "count_enrolled_users",
+    "body": "count_enrolled_users(${1:context \\$context}, ${2: \\$withcapability = ''}, ${3: \\$groupid = 0});",
+    "description": "Moodle snippets"
+  },
+  "events_trigger": {
+    "prefix": "events_trigger",
+    "body": "events_trigger(${1:'user_enrolled'}, ${2: \\$ue});",
+    "description": "Moodle snippets"
+  },
+  "message_send": {
+    "prefix": "message_send",
+    "body": "message_send(${1:\\$eventdata});",
+    "description": "Moodle snippets"
+  },
+  "get_ratings": {
+    "prefix": "get_ratings",
+    "body": "get_ratings();",
+    "description": "Moodle snippets"
+  },
+  "get_user_grades": {
+    "prefix": "get_user_grades",
+    "body": "get_user_grades();",
+    "description": "Moodle snippets"
+  },
+  "delete_ratings": {
+    "prefix": "delete_ratings",
+    "body": "delete_ratings();",
+    "description": "Moodle snippets"
+  },
+  "tag_set": {
+    "prefix": "tag_set",
+    "body": "tag_set(${1:'user'}, ${2: \\$userId}, ${3: array()});",
+    "description": "Moodle snippets"
+  },
+  "tag_get_tags": {
+    "prefix": "tag_get_tags",
+    "body": "tag_get_tags(${1:'user'}, ${2: \\$userId});",
+    "description": "Moodle snippets"
+  },
+  "tag_set_add": {
+    "prefix": "tag_set_add",
+    "body": "tag_set_add(${1:'user'}, ${2: \\$userId}, ${3: 'chess'});",
+    "description": "Moodle snippets"
+  },
+  "tag_set_delete": {
+    "prefix": "tag_set_delete",
+    "body": "tag_set_delete(${1:'user'}, ${2: \\$userId}, ${3: 'chess'});",
+    "description": "Moodle snippets"
+  },
+  "tag_description_set": {
+    "prefix": "tag_description_set",
+    "body": "tag_description_set(\\$firstTagKey, '<p>TEXT</p>', FORMAT_HTML);",
+    "description": "Moodle snippets"
+  },
+  "tag_print_cloud": {
+    "prefix": "tag_print_cloud",
+    "body": "tag_print_cloud();",
+    "description": "Moodle snippets"
+  },
+  "get_user_timezone_offset": {
+    "prefix": "get_user_timezone_offset",
+    "body": "get_user_timezone_offset();",
+    "description": "Moodle snippets"
+  },
+  "get_timezone_offset": {
+    "prefix": "get_timezone_offset",
+    "body": "get_timezone_offset();",
+    "description": "Moodle snippets"
+  },
+  "dst_changes_for_year": {
+    "prefix": "dst_changes_for_year",
+    "body": "dst_changes_for_year();",
+    "description": "Moodle snippets"
+  },
+  "set_module_viewed": {
+    "prefix": "set_module_viewed",
+    "body": "set_module_viewed(${1:\\$cm});",
+    "description": "Moodle snippets"
+  },
+  "addElement button": {
+    "prefix": [
+      "add_element_button",
+      "addElement button"
+    ],
+    "body": "addElement(${1:'button'}, ${2: 'intro'}, ${3: get_string('buttonlabel')});",
+    "description": "Moodle snippets"
+  },
+  "addElement checkbox": {
+    "prefix": [
+      "add_element_checkbox",
+      "addElement checkbox"
+    ],
+    "body": "addElement(${1:'checkbox'}, ${2: 'ratingtime'}, ${3: get_string('ratingtime'}, ${4: 'forum')});",
+    "description": "Moodle snippets"
+  },
+  "addElement advcheckbox": {
+    "prefix": [
+      "add_element_advcheckbox",
+      "addElement advcheckbox"
+    ],
+    "body": "addElement(${1:'advcheckbox'}, ${2: 'ratingtime'}, ${3: get_string('ratingtime', 'forum')}, ${4: 'Label displayed after checkbox'}, ${5:array('group' => 1)}, ${6: array(0, 1)});",
+    "description": "Moodle snippets"
+  },
+  "addElement choosecoursefile": {
+    "prefix": [
+      "add_element_choosecoursefile",
+      "addElement choosecoursefile"
+    ],
+    "body": "addElement(${1:'choosecoursefile'}, ${2: 'mediafile'}, ${3: get_string('mediafile', 'lesson')}, ${4: array('courseid'=>\\$COURSE->id)});",
+    "description": "Moodle snippets"
+  },
+  "addElement date_time_selector": {
+    "prefix": [
+      "add_element_date_time_selector",
+      "addElement date_time_selector"
+    ],
+    "body": "addElement(${1:'date_time_selector'}, ${2: 'assesstimestart'}, ${3: get_string('from')});",
+    "description": "Moodle snippets"
+  },
+  "addElement select": {
+    "prefix": [
+      "add_element_select",
+      "addElement select"
+    ],
+    "body": "addElement(${1:'select'}, ${2: 'type'}, ${3: get_string('forumtype', 'forum')}, ${4: \\$FORUM_TYPES}, ${5: \\$attributes});",
+    "description": "Moodle snippets"
+  },
+  "addElement password": {
+    "prefix": [
+      "add_element_password",
+      "addElement password"
+    ],
+    "body": "addElement(${1:'password'}, ${2: 'password'}, ${3: get_string('label')}, ${4: \\$attributes});",
+    "description": "Moodle snippets"
+  },
+  "addElement hidden": {
+    "prefix": [
+      "add_element_hidden",
+      "addElement hidden"
+    ],
+    "body": "addElement(${1:'hidden'}, ${2: 'reply'}, ${3: 'yes'});",
+    "description": "Moodle snippets"
+  },
+  "addElement html": {
+    "prefix": [
+      "add_element_html",
+      "addElement html"
+    ],
+    "body": "addElement(${1:'html'}, ${2: '<div class=qheader>'});",
+    "description": "Moodle snippets"
+  },
+  "addElement modgrade": {
+    "prefix": [
+      "add_element_modgrade",
+      "addElement modgrade"
+    ],
+    "body": "addElement(${1:'modgrade'}, ${2: 'scale'}, ${3: get_string('grade')}, ${4: false});",
+    "description": "Moodle snippets"
+  },
+  "addElement static": {
+    "prefix": [
+      "add_element_static",
+      "addElement static"
+    ],
+    "body": "addElement(${1:'static'}, ${2: 'description'}, ${3: get_string('description', 'exercise')}, ${4:get_string('descriptionofexercise', 'exercise'}, ${5: \\$COURSE->students)});",
+    "description": "Moodle snippets"
+  },
+  "addElement text": {
+    "prefix": [
+      "add_element_text",
+      "addElement text"
+    ],
+    "body": "addElement(${1:'text'}, ${2: 'name'}, ${3: get_string('forumname', 'forum')}, ${4: \\$attributes});",
+    "description": "Moodle snippets"
+  },
+  "addElement textarea": {
+    "prefix": [
+      "add_element_textarea",
+      "addElement textarea"
+    ],
+    "body": "addElement(${1:'textarea'}, ${2: 'introduction'}, ${3: get_string('introtext', 'survey')}, ${4: 'wrap=virtual rows=20 cols=50'});",
+    "description": "Moodle snippets"
+  },
+  "addElement recaptcha": {
+    "prefix": [
+      "add_element_recaptcha",
+      "addElement recaptcha"
+    ],
+    "body": "addElement(${1:'recaptcha'}, ${2: 'recaptcha_field_name'}, ${3: \\$attributes});",
+    "description": "Moodle snippets"
+  },
+  "addElement passwordunmask": {
+    "prefix": [
+      "add_element_passwordunmask",
+      "addElement passwordunmask"
+    ],
+    "body": "addElement(${1:'passwordunmask'}, ${2: 'password'}, ${3: get_string('label')}, ${4: \\$attributes});",
+    "description": "Moodle snippets"
+  },
+  "addElement selectyesno": {
+    "prefix": [
+      "add_element_selectyesno",
+      "addElement selectyesno"
+    ],
+    "body": "addElement(${1:'selectyesno'}, ${2: 'maxbytes'}, ${3: get_string('maxattachmentsize', 'forum')});",
+    "description": "Moodle snippets"
+  },
+  "addElement selectwithlink": {
+    "prefix": [
+      "add_element_selectwithlink",
+      "addElement selectwithlink"
+    ],
+    "body": "addElement(${1:'selectwithlink'}, ${2: 'scaleid'}, ${3: get_string('scale')}, ${4:\\$options}, ${5: null}, array(${6:'link' => URL}, ${7: 'label' => get_string('scalescustomcreate')}));",
+    "description": "Moodle snippets"
+  },
+  "addElement date_selector": {
+    "prefix": [
+      "add_element_date_selector",
+      "addElement date_selector"
+    ],
+    "body": "addElement(${1:'date_selector'}, ${2: 'assesstimefinish'}, ${3: get_string('to')});",
+    "description": "Moodle snippets"
+  },
+  "addElement duration": {
+    "prefix": [
+      "add_element_duration",
+      "addElement duration"
+    ],
+    "body": "addElement(${1:'duration'}, ${2: 'timelimit'}, ${3: get_string('timelimit', 'quiz')});",
+    "description": "Moodle snippets"
+  },
+  "addElement editor": {
+    "prefix": [
+      "add_element_editor",
+      "addElement editor"
+    ],
+    "body": "addElement(${1:'editor'}, ${2: 'fieldname'}, ${3: get_string('labeltext', 'langfile')});",
+    "description": "Moodle snippets"
+  },
+  "addElement filepicker": {
+    "prefix": [
+      "add_element_filepicker",
+      "addElement filepicker"
+    ],
+    "body": "addElement(${1:'filepicker'}, ${2: 'userfile'}, ${3: get_string('file')}, ${4: null}, array(${5:'maxbytes' => \\$maxbytes}, ${6: 'accepted_types' => '*'}));",
+    "description": "Moodle snippets"
+  },
+  "addElement filemanager": {
+    "prefix": [
+      "add_element_filemanager",
+      "addElement filemanager"
+    ],
+    "body": "addElement(${1:'filemanager'}, ${2: 'attachments'}, ${3: get_string('attachment', 'moodle')}, ${4: null}, array(${5:'subdirs' => 0}, ${6: 'maxbytes' => \\$maxbytes}, ${7: 'maxfiles' => 50}, ${8: 'accepted_types' => array('document')}));",
+    "description": "Moodle snippets"
+  },
+  "addElement tags": {
+    "prefix": [
+      "add_element_tags",
+      "addElement tags"
+    ],
+    "body": "addElement(${1:'tags'}, ${2: 'field_name'}, ${3: \\$lable}, ${4: \\$options}, ${5: \\$attributes});",
+    "description": "Moodle snippets"
+  },
+  "addElement modvisible": {
+    "prefix": [
+      "add_element_modvisible",
+      "addElement modvisible"
+    ],
+    "body": "addElement(${1:'modvisible'}, ${2: 'visible'}, ${3: get_string('visible')});",
+    "description": "Moodle snippets"
+  },
+  "addElement grading": {
+    "prefix": [
+      "add_element_grading",
+      "addElement grading"
+    ],
+    "body": "addElement(${1:'grading'}, ${2: 'advancedgrading'}, ${3: get_string('grade').':'}, ${4: array('gradinginstance' => \\$gradinginstance)});",
+    "description": "Moodle snippets"
+  },
+  "addElement questioncategory": {
+    "prefix": [
+      "add_element_questioncategory",
+      "addElement questioncategory"
+    ],
+    "body": "addElement(${1:'questioncategory'}, ${2: 'category'}, ${3: get_string('category', 'question')}, array(${4:'contexts'=>\\$contexts}, ${5: 'top'=>true}, ${6: 'currentcat'=>\\$currentcat}, ${7: 'nochildrenof'=>\\$currentcat}));",
+    "description": "Moodle snippets"
+  },
+  "context_system::instance": {
+    "prefix": [
+      "context_system_instance",
+      "context_system::instance"
+    ],
+    "body": "context_system::instance();",
+    "description": "Moodle snippets"
+  },
+  "context_user::instance": {
+    "prefix": [
+      "context_user_instance",
+      "context_user::instance"
+    ],
+    "body": "context_user::instance(${1:\\$user->id});",
+    "description": "Moodle snippets"
+  },
+  "context_coursecat::instance": {
+    "prefix": [
+      "context_coursecat_instance",
+      "context_coursecat::instance"
+    ],
+    "body": "context_coursecat::instance(${1:\\$category->id});",
+    "description": "Moodle snippets"
+  },
+  "context_course::instance": {
+    "prefix": [
+      "context_course_instance",
+      "context_course::instance"
+    ],
+    "body": "context_course::instance(${1:\\$course->id});",
+    "description": "Moodle snippets"
+  },
+  "context_module::instance": {
+    "prefix": [
+      "context_module_instance",
+      "context_module::instance"
+    ],
+    "body": "context_module::instance(${1:\\$cm->id});",
+    "description": "Moodle snippets"
+  },
+  "context::instance_by_id": {
+    "prefix": [
+      "context_instance_by_id",
+      "context::instance_by_id"
+    ],
+    "body": "context::instance_by_id(${1:\\$contextid});",
+    "description": "Moodle snippets"
+  },
+  "html_writer::table": {
+    "prefix": [
+      "html_writer_table",
+      "html_writer::table"
+    ],
+    "body": "html_writer::table(${1:\\$table});",
+    "description": "Moodle snippets"
+  },
+  "html_select::make": {
+    "prefix": [
+      "html_select_make",
+      "html_select::make"
+    ],
+    "body": "html_select::make(${1:\\$options}, ${2: 'choice1'}, ${3: 'value1'});",
+    "description": "Moodle snippets"
+  },
+  "html_select::make_time_selector": {
+    "prefix": [
+      "html_select_make_time_selector",
+      "html_select::make_time_selector"
+    ],
+    "body": "html_select::make_time_selector(${1:'days'}, ${2: 'myday'}, ${3: '120308000'});",
+    "description": "Moodle snippets"
+  },
+  "calendar_event::create": {
+    "prefix": [
+      "calendar_event_create",
+      "calendar_event::create"
+    ],
+    "body": "calendar_event::create(${1:\\$properties});",
+    "description": "Moodle snippets"
+  },
+  "calendar_event::update": {
+    "prefix": [
+      "calendar_event_update",
+      "calendar_event::update"
+    ],
+    "body": "calendar_event::update(${1:\\$data}, ${2: \\$checkcapability = true});",
+    "description": "Moodle snippets"
+  },
+  "$capabilities": {
+    "prefix": [
+      "capabilities",
+      "$capabilities"
+    ],
+    "body": "\\$capabilities = array('${1:mod}/${2:MYPLUGIN}:${3:MYCAPABILITY}' => array('riskbitmask' => ${4:RISK_SPAM}, 'captype' => ${5:'write'}, 'contextlevel' =>${6:CONTEXT_MODULE}, 'archetypes' => array(${7:'editingteacher' => CAP_ALLOW})));",
+    "description": "Moodle snippets"
+  },
+  "$fileinfo": {
+    "prefix": [
+      "fileinfo",
+      "$fileinfo"
+    ],
+    "body": "\\$fileinfo = array(${1:'contextid' => \\$context->id}, ${2: 'component' => 'mod_MYMOD'}, ${3: 'filearea' => 'myarea'}, ${4: 'itemid' => 0}, ${5: 'filepath' => '\/'}, ${6: 'filename' => 'myfile.txt'});",
+    "description": "Moodle snippets"
+  },
+  "$handlers": {
+    "prefix": [
+      "handlers",
+      "$handlers"
+    ],
+    "body": "\\$handlers = array(${1: 'user_enrolled'} => array ('handlerfile' => ${2:'\/mod\/MYMOD\/lib.php'}, 'handlerfunction' => ${3:'MYMODFUNCTION'}, 'schedule' => ${4:'instant'}, 'internal' => ${5: 1}));",
+    "description": "Moodle snippets"
+  },
+  "$messageproviders": {
+    "prefix": [
+      "messageproviders",
+      "$messageproviders"
+    ],
+    "body": "\\$messageproviders = array (${1:'MYPROVIDER' => array ()});",
+    "description": "Moodle snippets"
+  },
+  "$plugin->version": {
+    "prefix": [
+      "plugin_version",
+      "$plugin->version"
+    ],
+    "body": "\\$plugin->version",
+    "description": "Moodle snippets"
+  },
+  "$plugin->requires": {
+    "prefix": [
+      "plugin_requires",
+      "$plugin->requires"
+    ],
+    "body": "\\$plugin->requires",
+    "description": "Moodle snippets"
+  },
+  "$plugin->dependencies": {
+    "prefix": [
+      "plugin_dependencies",
+      "$plugin->dependencies"
+    ],
+    "body": "\\$plugin->dependencies",
+    "description": "Moodle snippets"
+  }
 }

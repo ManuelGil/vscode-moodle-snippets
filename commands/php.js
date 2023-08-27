@@ -29,11 +29,19 @@ $defined('MOODLE_INTERNAL') || die();
 `;
 
 module.exports = function (vscode, fs, path) {
-    vscode.window.showInputBox({
-        prompt: "Filename",
-        placeHolder: "Filename"
-    }).then(function (value) {
-        const filename = value.endsWith('.php') ? value : `${value}.php`;
-        execute.save(vscode, fs, path, filename, content);
+  vscode.window
+    .showInputBox({
+      prompt: 'Filename',
+      placeHolder: 'Filename',
+    })
+    .then(function (value) {
+      const filename = value.endsWith('.php') ? value : `${value}.php`;
+      const year = new Date().getFullYear();
+      const author_fullname = vscode.workspace.getConfiguration().get('moodle.author_fullname');
+      const author_link = vscode.workspace.getConfiguration().get('moodle.author_link');
+
+      content = content.replace('{CURRENT_YEAR}', year).replace('{author_fullname}', author_fullname).replace('{author_link}', author_link);
+
+      execute.save(vscode, fs, path, filename, content);
     });
-}
+};
