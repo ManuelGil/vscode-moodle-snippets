@@ -1,6 +1,6 @@
 const execute = require('./functions');
 
-let content = `{{!
+const content = `{{!
 \tThis file is part of Moodle - http://moodle.org/
 
 \tMoodle is free software: you can redistribute it and/or modify
@@ -18,14 +18,18 @@ let content = `{{!
 }}
 `;
 
-module.exports = function (vscode, fs, path) {
-  vscode.window
-    .showInputBox({
-      prompt: 'Filename',
-      placeHolder: 'Filename',
-    })
-    .then(function (value) {
-      const filename = value.endsWith('.mustache') ? value : `${value}.mustache`;
-      execute.save(vscode, fs, path, filename, content);
-    });
+module.exports = async (vscode, fs, path) => {
+  const value = await vscode.window.showInputBox({
+    prompt: 'Filename',
+    placeHolder: 'Filename',
+    validateInput: (text) => {
+      if (!/^[\w,\s-\/.]+$/.test(text)) {
+        return 'Invalid format!';
+      }
+    },
+  });
+
+  const filename = value.endsWith('.mustache') ? value : `${value}.mustache`;
+
+  execute.save(vscode, fs, path, filename, content);
 };

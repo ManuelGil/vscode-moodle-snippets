@@ -1,8 +1,6 @@
 const execute = require('./functions');
 
-let filename = 'version.php';
-
-let content = `<?php
+const content = `<?php
 // This file is part of Moodle - http://moodle.org/
 //
 // Moodle is free software: you can redistribute it and/or modify
@@ -33,11 +31,11 @@ $defined('MOODLE_INTERNAL') || die();
 `;
 
 module.exports = function (vscode, fs, path) {
+  const filename = 'version.php';
   const year = new Date().getFullYear();
   const author_fullname = vscode.workspace.getConfiguration().get('moodle.author_fullname');
   const author_link = vscode.workspace.getConfiguration().get('moodle.author_link');
+  const body = content.replace('{CURRENT_YEAR}', year).replace('{author_fullname}', author_fullname).replace('{author_link}', author_link);
 
-  content = content.replace('{CURRENT_YEAR}', year).replace('{author_fullname}', author_fullname).replace('{author_link}', author_link);
-
-  execute.save(vscode, fs, path, filename, content);
+  execute.save(vscode, fs, path, filename, body);
 };

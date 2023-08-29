@@ -2,7 +2,7 @@
   "name": "vscode-moodle-snippets",
   "displayName": "Moodle Pack",
   "description": "Moodle - snippets, autocomplete, emmet & syntax for VSCode editor",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "icon": "icon.png",
   "license": "MIT",
   "publisher": "imgildev",
@@ -71,12 +71,12 @@
       "properties": {
         "moodle.author_fullname": {
           "type": "string",
-          "default": "",
+          "default": "author_fullname",
           "description": "Author's full name"
         },
         "moodle.author_link": {
           "type": "string",
-          "default": "",
+          "default": "author_link",
           "description": "Author's link"
         }
       }
