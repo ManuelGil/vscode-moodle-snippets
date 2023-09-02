@@ -29,6 +29,10 @@ module.exports = async (vscode, fs, path) => {
     },
   });
 
+  if (value.lenght === 0) {
+    return;
+  }
+
   const filename = value.endsWith('.mustache') ? value : `${value}.mustache`;
 
   execute.save(vscode, fs, path, filename, content);

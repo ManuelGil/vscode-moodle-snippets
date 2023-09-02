@@ -39,6 +39,10 @@ module.exports = async (vscode, fs, path) => {
     },
   });
 
+  if (value.lenght === 0) {
+    return;
+  }
+
   const filename = value.endsWith('.php') ? value : `${value}.php`;
   const year = new Date().getFullYear();
   const author_fullname = vscode.workspace.getConfiguration().get('moodle.author_fullname');

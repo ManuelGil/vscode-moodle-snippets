@@ -6,6 +6,10 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 ## [Unreleased]
 
+## [1.4.0] - 2023-09-02
+
+- Add File validations.
+
 ## [1.3.0] - 2023-08-28
 
 - Add Folder validations.
@@ -26,7 +30,9 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 - Initial release
 
-[unreleased]: https://github.com/ManuelGil/vscode-moodle-snippets/compare/v1.2.0...HEAD
+[unreleased]: https://github.com/ManuelGil/vscode-moodle-snippets/compare/v1.4.0...HEAD
+[1.4.0]: https://github.com/ManuelGil/vscode-moodle-snippets/compare/v1.3.0...v1.4.0
+[1.3.0]: https://github.com/ManuelGil/vscode-moodle-snippets/compare/v1.2.0...v1.3.0
 [1.2.0]: https://github.com/ManuelGil/vscode-moodle-snippets/compare/v1.1.0...v1.2.0
 [1.1.0]: https://github.com/ManuelGil/vscode-moodle-snippets/compare/v1.0.1...v1.1.0
 [1.0.1]: https://github.com/ManuelGil/vscode-moodle-snippets/compare/v1.0.0...v1.0.1
