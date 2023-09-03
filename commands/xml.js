@@ -9,7 +9,7 @@ module.exports = async (vscode, fs, path) => {
     prompt: 'Filename',
     placeHolder: 'Filename',
     validateInput: (text) => {
-      if (!/^[\w,\s-\/.]+$/.test(text)) {
+      if (!/^[A-Za-z0-9][\w\s\/,.-]+$/.test(text)) {
         return 'Invalid format!';
       }
     },

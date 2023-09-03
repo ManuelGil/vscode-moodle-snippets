@@ -11,7 +11,7 @@ module.exports.save = function (vscode, fs, path, filename, content, show = true
   const pathfile = path.join(folder, filename);
 
   if (!fs.existsSync(path.dirname(pathfile))) {
-    fs.mkdirSync(path.dirname(pathfile));
+    fs.mkdirSync(path.dirname(pathfile), { recursive: true });
   }
 
   fs.access(pathfile, (err) => {
