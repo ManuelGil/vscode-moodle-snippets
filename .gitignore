@@ -109,7 +109,7 @@
 *.wdp
 
 # Graphics Interchange Format
-*.gif
+# *.gif
 
 # RAW
 *.raw

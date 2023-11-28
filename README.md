@@ -7,7 +7,9 @@
 
 Moodle - snippets, autocomplete, emmet & syntax for VSCode editor
 
-Based on [Moodle - snippets & autocomplete](https://marketplace.visualstudio.com/items?itemName=MateuszLesiak.vscode-moodle-snippets)
+## Requirements
+
+- VSCode 1.46.0 or later
 
 ## Features
 
@@ -17,16 +19,11 @@ Based on [Moodle - snippets & autocomplete](https://marketplace.visualstudio.com
 - [Commands](#commands)
 - [Keyboard Shortcuts](#keyboard-shortcuts)
 
-## Other Repositories
-
-- Wrapper [Alternate Admin for Moodle](https://github.com/ManuelGil/alternate-admin)
-- Plugin [VSCode Mustache Snippets](https://github.com/ManuelGil/vscode-mustache-snippets)
-
 ## Usage
 
 ### Snippets
 
-![snippets](https://raw.githubusercontent.com/ManuelGil/vscode-moodle-snippets/main/readme/snippets.gif)
+![snippets](https://raw.githubusercontent.com/ManuelGil/vscode-moodle-snippets/main/images/snippets.gif)
 
 Type part of snippet, press `Tab` or `Enter`, and the snippet unfolds. Below is a list of the most important shortcuts.
 
@@ -509,7 +506,7 @@ Type part of snippet, press `Tab` or `Enter`, and the snippet unfolds. Below is 
 
 ### Commands
 
-![commands](https://raw.githubusercontent.com/ManuelGil/vscode-moodle-snippets/main/readme/commands.gif)
+![commands](https://raw.githubusercontent.com/ManuelGil/vscode-moodle-snippets/main/images/commands.gif)
 
 | Commands                  | Purpose                                    |
 | ------------------------- | ------------------------------------------ |
@@ -521,7 +518,7 @@ Type part of snippet, press `Tab` or `Enter`, and the snippet unfolds. Below is 
 
 ### Keyboard Shortcuts
 
-![shortcuts](https://raw.githubusercontent.com/ManuelGil/vscode-moodle-snippets/main/readme/shortcuts.gif)
+![shortcuts](https://raw.githubusercontent.com/ManuelGil/vscode-moodle-snippets/main/images/shortcuts.gif)
 
 | Shortcuts        | Purpose                   |
 | ---------------- | ------------------------- |
@@ -529,9 +526,13 @@ Type part of snippet, press `Tab` or `Enter`, and the snippet unfolds. Below is 
 | ctrl + alt + p   | Moodle: New PHP File      |
 | ctrl + shift + v | Moodle: New Version File  |
 
-## Requirements
+## Other extensions
 
-- VSCode 1.53.0 or later
+- [Mustache Template Engine - Snippets & Autocomplete](https://marketplace.visualstudio.com/items?itemName=imgildev.vscode-mustache-snippets)
+- [Moodle Pack](https://marketplace.visualstudio.com/items?itemName=imgildev.vscode-moodle-snippets)
+- [CodeIgniter 4 Snippets for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=imgildev.vscode-codeigniter4-snippets)
+- [CodeIgniter 4 Spark for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=imgildev.vscode-codeigniter4-spark)
+- [NestJS Snippets for VSCode Editor](https://marketplace.visualstudio.com/items?itemName=imgildev.vscode-nestjs-snippets-extension)
 
 ## Changelog
 
@@ -539,7 +540,7 @@ See [CHANGELOG.md](./CHANGELOG.md)
 
 ## Authors
 
-- **Manuel Gil** - _Owner_ - [ManuelGil](https://github.com/ManuelGil)
+- **Manuel Gil** - *Owner* - [ManuelGil](https://github.com/ManuelGil)
 
 See also the list of [contributors](https://github.com/ManuelGil/vscode-moodle-snippets/contributors) who participated in this project.
 
