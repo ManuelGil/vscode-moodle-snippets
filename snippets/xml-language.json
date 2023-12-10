@@ -11,7 +11,7 @@
       "\t\txmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"",
       "\t\txsi:noNamespaceSchemaLocation=\"../../../lib/xmldb/xmldb.xsd\">",
       "\t<TABLES>",
-      "\t\t<TABLE NAME=\"${name}\">",
+      "\t\t<TABLE NAME=\"${1:name}\">",
       "\t\t\t<FIELDS>",
       "\t\t\t\t<FIELD NAME=\"id\" TYPE=\"int\" />",
       "\t\t\t\t<FIELD NAME=\"name\" TYPE=\"char\" />",
@@ -37,7 +37,7 @@
       "<TABLE "
     ],
     "body": [
-      "<TABLE NAME=\"${name}\">",
+      "<TABLE NAME=\"${1:name}\">",
       "\t\t\t<FIELDS>",
       "\t\t\t\t<FIELD NAME=\"id\" TYPE=\"int\" />",
       "\t\t\t\t<FIELD NAME=\"name\" TYPE=\"char\" />",

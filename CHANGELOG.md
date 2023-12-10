@@ -6,6 +6,10 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 ## [Unreleased]
 
+## [1.6.1] - 2023-12-10
+
+- Fix snippets.
+
 ## [1.6.0] - 2023-11-28
 
 - Move mustache config as a new extension.
@@ -38,7 +42,8 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 - Initial release
 
-[unreleased]: https://github.com/ManuelGil/vscode-moodle-snippets/compare/v1.6.0...HEAD
+[unreleased]: https://github.com/ManuelGil/vscode-moodle-snippets/compare/v1.6.1...HEAD
+[1.6.1]: https://github.com/ManuelGil/vscode-moodle-snippets/compare/v1.6.0...v1.6.1
 [1.6.0]: https://github.com/ManuelGil/vscode-moodle-snippets/compare/v1.5.0...v1.6.0
 [1.5.0]: https://github.com/ManuelGil/vscode-moodle-snippets/compare/v1.4.0...v1.5.0
 [1.4.0]: https://github.com/ManuelGil/vscode-moodle-snippets/compare/v1.3.0...v1.4.0
