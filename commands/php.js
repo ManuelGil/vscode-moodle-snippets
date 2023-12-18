@@ -17,14 +17,14 @@ const content = `<?php
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Provides meta-data about the plugin.
+ * Version metadata for the repository_pluginname plugin.
  *
- * @package     type_pluginname
- * @author      {CURRENT_YEAR} {author_fullname} <{author_link}>
- * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package   repository_pluginname
+ * @copyright {CURRENT_YEAR}, {author_fullname} <{author_link}>
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-$defined('MOODLE_INTERNAL') || die();
+defined('MOODLE_INTERNAL') || die();
 
 `;
 

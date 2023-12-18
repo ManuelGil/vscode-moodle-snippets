@@ -27,7 +27,8 @@ Moodle - snippets, autocomplete, emmet & syntax for VSCode editor
 
 Type part of snippet, press `Tab` or `Enter`, and the snippet unfolds. Below is a list of the most important shortcuts.
 
-#### $CFG Snippets
+<details>
+<summary>$CFG Snippets</summary>
 
 | Snippet           | Purpose             |
 | ----------------- | ------------------- |
@@ -43,7 +44,10 @@ Type part of snippet, press `Tab` or `Enter`, and the snippet unfolds. Below is 
 | cfg_tempdir       | $CFG->tempdir       |
 | cfg_wwwroot       | $CFG->wwwroot       |
 
-#### $DB Snippets
+</details>
+
+<details>
+<summary>$DB Snippets</summary>
 
 | Snippet                            | Purpose                              |
 | ---------------------------------- | ------------------------------------ |
@@ -159,7 +163,10 @@ Type part of snippet, press `Tab` or `Enter`, and the snippet unfolds. Below is 
 | db_perf_get_queries                | $DB->perf_get_queries                |
 | db_perf_get_queries_time           | $DB->perf_get_queries_time           |
 
-#### $OUTPUT Snippets
+</details>
+
+<details>
+<summary>$OUTPUT Snippets</summary>
 
 | Snippet                             | Purpose                               |
 | ----------------------------------- | ------------------------------------- |
@@ -283,7 +290,10 @@ Type part of snippet, press `Tab` or `Enter`, and the snippet unfolds. Below is 
 | output_checkbox                     | $OUTPUT->checkbox                     |
 | output_old_icon_url                 | $OUTPUT->old_icon_url                 |
 
-#### $PAGE Snippets
+</details>
+
+<details>
+<summary>$PAGE Snippets</summary>
 
 | Snippet                                       | Purpose                                          |
 | --------------------------------------------- | ------------------------------------------------ |
@@ -357,7 +367,6 @@ Type part of snippet, press `Tab` or `Enter`, and the snippet unfolds. Below is 
 | page_blocks                                   | $PAGE->blocks                                    |
 | page_requires_get_config_for_javascript       | $PAGE->requires->get_config_for_javascript       |
 | page_requires_js                              | $PAGE->requires->js                              |
-| page*requires*                                | $PAGE->requires->jquery                          |
 | page_requires_jquery_plugin                   | $PAGE->requires->jquery_plugin                   |
 | page_requires_jquery_override_plugin          | $PAGE->requires->jquery_override_plugin          |
 | page_requires_js_module                       | $PAGE->requires->js_module                       |
@@ -401,7 +410,10 @@ Type part of snippet, press `Tab` or `Enter`, and the snippet unfolds. Below is 
 | page_navigation_find                          | $PAGE->navigation->find                          |
 | page_requires                                 | $PAGE->requires                                  |
 
-#### $USER Snippets
+</details>
+
+<details>
+<summary>$USER Snippets</summary>
 
 | Snippet                | Purpose                  |
 | ---------------------- | ------------------------ |
@@ -454,7 +466,10 @@ Type part of snippet, press `Tab` or `Enter`, and the snippet unfolds. Below is 
 | user_moodlenetprofile  | $USER->moodlenetprofile  |
 | user_sesskey           | $USER->sesskey           |
 
-#### Form Snippets
+</details>
+
+<details>
+<summary>Form Snippets</summary>
 
 | Snippet                           | Purpose                                   |
 | --------------------------------- | ----------------------------------------- |
@@ -485,54 +500,19 @@ Type part of snippet, press `Tab` or `Enter`, and the snippet unfolds. Below is 
 | add_element_grading               | addElement('grading', ... );              |
 | add_element_questioncategory      | addElement('questioncategory', ... );     |
 
-#### Mustache Snippets
+</details>
 
-| Snippet          | Purpose                     |
-| ---------------- | --------------------------- |
-| block            | {{$ name }} ... {{/ name }} |
-| section          | {{# name }} ... {{/ name }} |
-| inverted section | {{^ name }} ... {{/ name }} |
-| comment          | {{! comment }}              |
-| include          | {{> template }}             |
-| extends          | {{< template }}             |
+## Other Extensions
 
-#### XML Snippets
-
-| Snippet | Purpose                                     |
-| ------- | ------------------------------------------- |
-| FIELD   | &lt;FIELD NAME="id" TYPE="int" /&gt;        |
-| KEY     | &lt;KEY NAME="primary" FIELDS="id" /&gt;    |
-| INDEX   | &lt;INDEX NAME="date" FIELDS="date" /&gt;   |
-
-### Commands
-
-![commands](https://raw.githubusercontent.com/ManuelGil/vscode-moodle-snippets/main/images/commands.gif)
-
-| Commands                  | Purpose                                    |
-| ------------------------- | ------------------------------------------ |
-| Moodle: New Mustache File | Create a new file with .mustache extension |
-| Moodle: New PHP File      | Create a new file with .php extension      |
-| Moodle: New XML File      | Create a new file with .xml extension      |
-| Moodle: New Table File    | Create a new file with table structure     |
-| Moodle: New Version File  | Create a new file with version structure   |
-
-### Keyboard Shortcuts
-
-![shortcuts](https://raw.githubusercontent.com/ManuelGil/vscode-moodle-snippets/main/images/shortcuts.gif)
-
-| Shortcuts        | Purpose                   |
-| ---------------- | ------------------------- |
-| ctrl + alt + m   | Moodle: New Mustache File |
-| ctrl + alt + p   | Moodle: New PHP File      |
-| ctrl + shift + v | Moodle: New Version File  |
-
-## Other extensions
-
-- [Mustache Template Engine - Snippets & Autocomplete](https://marketplace.visualstudio.com/items?itemName=imgildev.vscode-mustache-snippets)
-- [Moodle Pack](https://marketplace.visualstudio.com/items?itemName=imgildev.vscode-moodle-snippets)
-- [CodeIgniter 4 Snippets for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=imgildev.vscode-codeigniter4-snippets)
-- [CodeIgniter 4 Spark for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=imgildev.vscode-codeigniter4-spark)
+- [NestJS File Generator for VSCode](https://marketplace.visualstudio.com/items?itemName=imgildev.vscode-nestjs-generator)
 - [NestJS Snippets for VSCode Editor](https://marketplace.visualstudio.com/items?itemName=imgildev.vscode-nestjs-snippets-extension)
+- [Angular File Generator for VSCode Editor](https://marketplace.visualstudio.com/items?itemName=imgildev.vscode-angular-generator)
+- [React / NextJS / T3 Stack File Generator](https://marketplace.visualstudio.com/items?itemName=imgildev.vscode-nextjs-generator)
+- [Nx / Angular / Nest / Next Essential Extension Pack](https://marketplace.visualstudio.com/items?itemName=imgildev.vscode-nx-pack)
+- [CodeIgniter 4 Snippets for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=imgildev.vscode-codeigniter4-shield-snippets)
+- [CodeIgniter 4 Spark for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=imgildev.vscode-codeigniter4-shield-spark)
+- [Moodle Pack](https://marketplace.visualstudio.com/items?itemName=imgildev.vscode-moodle-snippets)
+- [Mustache Template Engine - Snippets & Autocomplete](https://marketplace.visualstudio.com/items?itemName=imgildev.vscode-mustache-snippets)
 
 ## Changelog
 

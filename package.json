@@ -2,7 +2,7 @@
   "name": "vscode-moodle-snippets",
   "displayName": "Moodle Pack",
   "description": "Moodle - snippets, autocomplete, emmet & syntax for VSCode editor",
-  "version": "1.6.1",
+  "version": "1.7.0",
   "icon": "icon.png",
   "license": "MIT",
   "publisher": "imgildev",
@@ -68,12 +68,23 @@
     "imgildev.vscode-mustache-snippets"
   ],
   "activationEvents": [
-    "*"
+    "onCommand:moodle.file.mustache",
+    "onCommand:moodle.file.php",
+    "onCommand:moodle.file.xml",
+    "onCommand:moodle.table",
+    "onCommand:moodle.access",
+    "onCommand:moodle.lib",
+    "onCommand:moodle.version",
+    "onLanguage:php",
+    "onLanguage:xml",
+    "onLanguage:mustache",
+    "onStartupFinished"
   ],
   "main": "./extension.js",
   "contributes": {
     "configuration": {
-      "title": "Moodle",
+      "id": "moodle",
+      "title": "Moodle Pack",
       "properties": {
         "moodle.author_fullname": {
           "type": "string",
@@ -83,7 +94,7 @@
         "moodle.author_link": {
           "type": "string",
           "default": "author_link",
-          "description": "Author's link"
+          "description": "Author's email or link"
         }
       }
     },
@@ -114,6 +125,10 @@
       },
       {
         "language": "php",
+        "path": "./snippets/lib/plugins.json"
+      },
+      {
+        "language": "php",
         "path": "./snippets/php-language.json"
       },
       {
@@ -137,6 +152,14 @@
       {
         "command": "moodle.table",
         "title": "Moodle: New Table File"
+      },
+      {
+        "command": "moodle.access",
+        "title": "Moodle: New Access File"
+      },
+      {
+        "command": "moodle.lib",
+        "title": "Moodle: New Lib File"
       },
       {
         "command": "moodle.version",

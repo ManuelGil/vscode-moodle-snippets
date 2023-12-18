@@ -17,31 +17,29 @@ const content = `<?php
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Version metadata for the repository_pluginname plugin.
+ * Plugin capabilities for the repository_pluginname plugin.
  *
  * @package   repository_pluginname
- * @copyright {CURRENT_YEAR}, {author_fullname} <{author_link}>
+ * @copyright Year, You Name <your@email.address>
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-defined('MOODLE_INTERNAL') || die();
-
-\\$plugin->version = TODO;
-\\$plugin->requires = TODO;
-\\$plugin->supported = TODO;   // Available as of Moodle 3.9.0 or later.
-\\$plugin->incompatible = TODO;   // Available as of Moodle 3.9.0 or later.
-\\$plugin->component = 'TODO_FRANKENSTYLE';
-\\$plugin->maturity = MATURITY_STABLE;
-\\$plugin->release = 'TODO';
-
-\\$plugin->dependencies = [
-\t'mod_forum' => 2022042100,
-\t'mod_data' => 2022042100
+\\$capabilities = [
+\t// Ability to use the plugin.
+\t'repository/pluginname:view' => [
+\t\t'captype' => 'read',
+\t\t'contextlevel' => CONTEXT_MODULE,
+\t\t'archetypes' => [
+\t\t\t'coursecreator' => CAP_ALLOW,
+\t\t\t'editingteacher' => CAP_ALLOW,
+\t\t\t'manager' => CAP_ALLOW
+\t\t]
+\t],
 ];
 `;
 
-module.exports = (vscode, fs, path) => {
-  const filename = 'version.php';
+module.exports = async (vscode, fs, path) => {
+  const filename = 'db/access.php';
   const year = new Date().getFullYear();
   const author_fullname = vscode.workspace.getConfiguration().get('moodle.author_fullname');
   const author_link = vscode.workspace.getConfiguration().get('moodle.author_link');

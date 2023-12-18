@@ -1,0 +1,70 @@
+{
+  "supported_filetypes": {
+    "prefix": "supported_filetypes",
+    "body": [
+      "function supported_filetypes() {",
+      "\t// Allow any kind of file.",
+      "\treturn '*';",
+      "}"
+    ],
+    "description": "This method is used to hide repositories when they don't support certain file types - for example, if a user is inserting a video then any repository which does not support videos will not be shown."
+  },
+  "get_type_option_names": {
+    "prefix": "get_type_option_names",
+    "body": [
+      "public static function get_type_option_names() {",
+      "\t// Return a list of option names that are valid for this plugin.",
+      "\treturn array_merge(parent::get_type_option_names(), ['rootpath']);",
+      "}"
+    ],
+    "description": "Optional. Return an array of string. These strings are setting names. These settings are shared by all instances. Parent function returns an array with a single item - pluginname."
+  },
+  "type_config_form": {
+    "prefix": "type_config_form",
+    "body": [
+      "public static function type_config_form(\\$mform, \\$classname='repository') {",
+      "\tparent: :type_config_form($mform);",
+      "",
+      "\t$rootpath = get_config('repository_pluginname', 'rootpath');",
+      "\t$mform->addElement('text', 'rootpath', get_string('rootpath', 'repository_pluginname'), array('size' => '40'));",
+      "\t$mform->setDefault('rootpath', $rootpath);",
+      "}"
+    ],
+    "description": "Optional. This is for modifying the Moodle form displaying the plugin settings. The Form Definition documentation has details of all the types of elements you can add to the settings form."
+  },
+  "type_form_validation": {
+    "prefix": "type_form_validation",
+    "body": [
+      "public static function type_form_validation(\\$mform, \\$data, \\$errors) {",
+      "\tif (!is_dir(\\$data['rootpath'])) {",
+      "\t\t\\$errors['rootpath'] = get_string('invalidrootpath', 'repository_pluginname');",
+      "\t}",
+      "\treturn \\$errors;",
+      "}"
+    ],
+    "description": "Optional. Use this function if you need to validate some variables submitted by plugin settings form."
+  },
+  "get_instance_option_names": {
+    "prefix": "get_instance_option_names",
+    "body": [
+      "public static function get_instance_option_names() {",
+      "\treturn ['fs_path']; // From repository_filesystem",
+      "}"
+    ],
+    "description": "Optional. Return an array of strings. These strings are setting names. These settings are specific to an instance."
+  },
+  "instance_config_form": {
+    "prefix": "instance_config_form",
+    "body": [
+      "public static function get_instance_option_names() {",
+      "\t\\$mform->addElement(",
+      "\t\t'text',",
+      "\t\t'email_address',",
+      "\t\tget_string('emailaddress', 'repository_pluginname')",
+      "\t);",
+      "\t\\$mform->addRule('email_address', \\$strrequired, 'required', null, 'client');",
+      "}"
+    ],
+    "description": "Optional. This is for modifying the Moodle form displaying the settings specific to an instance."
+  }
+}
