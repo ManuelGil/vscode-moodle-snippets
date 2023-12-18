@@ -26,7 +26,7 @@ const content = `<?php
 
 defined('MOODLE_INTERNAL') || die();
 
-require_once(\\$CFG->dirroot . '/repository/lib.php');
+require_once(\$CFG->dirroot . '/repository/lib.php');
 
 class repository_pluginname extends repository {
 \t/**
@@ -36,11 +36,11 @@ class repository_pluginname extends repository {
 \t *
 \t * See repository::get_listing() for details.
 \t *
-\t * @param string \\$encodedpath
-\t * @param string \\$page
+\t * @param string \$encodedpath
+\t * @param string \$page
 \t * @return array the list of files, including meta information
 \t */
-\tpublic function get_listing(\\$encodedpath = '', \\$page = '') {
+\tpublic function get_listing(\$encodedpath = '', \$page = '') {
 \t\t// This methods
 \t\treturn array('list' => []);
 \t}
@@ -76,16 +76,16 @@ class repository_pluginname extends repository {
 \t/**
 \t * Optional method for searching files in the repository.
 \t *
-\t * @param string \\$search
-\t * @param int \\$page
+\t * @param string \$search
+\t * @param int \$page
 \t * @return array the list of found files.
 \t */
-\tpublic function search(\\$search, \\$page = 0) {
-\t\t\\$ret = [];
-\t\t\\$ret['nologin'] = true;
+\tpublic function search(\$search, \$page = 0) {
+\t\t\$ret = [];
+\t\t\$ret['nologin'] = true;
 \t\t// The found files list.
-\t\t\\$ret['list'] = [];
-\t\treturn \\$ret;
+\t\t\$ret['list'] = [];
+\t\treturn \$ret;
 \t}
 }
 `;

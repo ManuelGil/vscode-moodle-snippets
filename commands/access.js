@@ -20,11 +20,11 @@ const content = `<?php
  * Plugin capabilities for the repository_pluginname plugin.
  *
  * @package   repository_pluginname
- * @copyright Year, You Name <your@email.address>
+ * @copyright {CURRENT_YEAR}, {author_fullname} <{author_link}>
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-\\$capabilities = [
+\$capabilities = [
 \t// Ability to use the plugin.
 \t'repository/pluginname:view' => [
 \t\t'captype' => 'read',

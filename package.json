@@ -2,7 +2,7 @@
   "name": "vscode-moodle-snippets",
   "displayName": "Moodle Pack",
   "description": "Moodle - snippets, autocomplete, emmet & syntax for VSCode editor",
-  "version": "1.7.0",
+  "version": "1.7.1",
   "icon": "icon.png",
   "license": "MIT",
   "publisher": "imgildev",
@@ -77,7 +77,6 @@
     "onCommand:moodle.version",
     "onLanguage:php",
     "onLanguage:xml",
-    "onLanguage:mustache",
     "onStartupFinished"
   ],
   "main": "./extension.js",
