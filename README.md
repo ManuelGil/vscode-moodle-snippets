@@ -1,11 +1,15 @@
-![icon](https://raw.githubusercontent.com/ManuelGil/vscode-moodle-snippets/main/icon.png)
-
 # Moodle Pack
 
-[![Latest Release](https://img.shields.io/visual-studio-marketplace/v/imgildev.vscode-moodle-snippets?style=flat&label=VS%20Marketplace&logo=visual-studio-code)](https://marketplace.visualstudio.com/items?itemName=imgildev.vscode-moodle-snippets)
-[![GitHub license](https://img.shields.io/github/license/ManuelGil/vscode-moodle-snippets)]()
+[![Visual Studio Marketplace Version](https://img.shields.io/visual-studio-marketplace/v/imgildev.vscode-moodle-snippets?style=for-the-badge&label=VS%20Marketplace&logo=visual-studio-code)](https://marketplace.visualstudio.com/items?itemName=imgildev.vscode-moodle-snippets)
+[![Visual Studio Marketplace Installs](https://img.shields.io/visual-studio-marketplace/i/imgildev.vscode-moodle-snippets?style=for-the-badge&logo=visual-studio-code)](https://marketplace.visualstudio.com/items?itemName=imgildev.vscode-moodle-snippets)
+[![GitHub Repo stars](https://img.shields.io/github/stars/ManuelGil/vscode-moodle-snippets?style=for-the-badge&logo=github)](https://github.com/ManuelGil/vscode-moodle-snippets)
+[![GitHub license](https://img.shields.io/github/license/ManuelGil/vscode-moodle-snippets?style=for-the-badge&logo=github)](https://github.com/ManuelGil/vscode-moodle-snippets/blob/main/LICENSE)
 
-Moodle - snippets, autocomplete, emmet & syntax for VSCode editor
+![icon](https://raw.githubusercontent.com/ManuelGil/vscode-moodle-snippets/main/icon.png)
+
+Moodle - snippets, autocomplete, emmet & syntax for VSCode editor.
+
+This extension provides Moodle snippets for PHP, XML and Mustache files. It also provides commands to create new files for Moodle.
 
 ## Requirements
 
@@ -15,11 +19,14 @@ Moodle - snippets, autocomplete, emmet & syntax for VSCode editor
 
 - Mustache Grammar
 - XML Schema
-- [Snippets](#snippets)
 - [Commands](#commands)
-- [Keyboard Shortcuts](#keyboard-shortcuts)
+- [Snippets](#snippets)
 
 ## Usage
+
+### Commands
+
+![commands](https://raw.githubusercontent.com/ManuelGil/vscode-moodle-snippets/main/images/commands.gif)
 
 ### Snippets
 
@@ -502,15 +509,20 @@ Type part of snippet, press `Tab` or `Enter`, and the snippet unfolds. Below is 
 
 </details>
 
+## Connect with me
+
+[![GitHub followers](https://img.shields.io/github/followers/ManuelGil?style=for-the-badge&logo=github)](https://github.com/ManuelGil)
+[![X (formerly Twitter) Follow](https://img.shields.io/twitter/follow/imgildev?style=for-the-badge&logo=x)](https://twitter.com/imgildev)
+
 ## Other Extensions
 
-- [NestJS File Generator for VSCode](https://marketplace.visualstudio.com/items?itemName=imgildev.vscode-nestjs-generator)
-- [NestJS Snippets for VSCode Editor](https://marketplace.visualstudio.com/items?itemName=imgildev.vscode-nestjs-snippets-extension)
-- [Angular File Generator for VSCode Editor](https://marketplace.visualstudio.com/items?itemName=imgildev.vscode-angular-generator)
-- [React / NextJS / T3 Stack File Generator](https://marketplace.visualstudio.com/items?itemName=imgildev.vscode-nextjs-generator)
-- [Nx / Angular / Nest / Next Essential Extension Pack](https://marketplace.visualstudio.com/items?itemName=imgildev.vscode-nx-pack)
-- [CodeIgniter 4 Snippets for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=imgildev.vscode-codeigniter4-shield-snippets)
-- [CodeIgniter 4 Spark for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=imgildev.vscode-codeigniter4-shield-spark)
+- [NestJS File Generator](https://marketplace.visualstudio.com/items?itemName=imgildev.vscode-nestjs-generator)
+- [NestJS Snippets](https://marketplace.visualstudio.com/items?itemName=imgildev.vscode-nestjs-snippets-extension)
+- [Angular File Generator](https://marketplace.visualstudio.com/items?itemName=imgildev.vscode-angular-generator)
+- [T3 Stack / NextJS / ReactJS File Generator](https://marketplace.visualstudio.com/items?itemName=imgildev.vscode-nextjs-generator)
+- [CodeIgniter 4 Snippets](https://marketplace.visualstudio.com/items?itemName=imgildev.vscode-codeigniter4-snippets)
+- [CodeIgniter 4 Shield Snippets](https://marketplace.visualstudio.com/items?itemName=imgildev.vscode-codeigniter4-shield-snippets)
+- [CodeIgniter 4 Spark](https://marketplace.visualstudio.com/items?itemName=imgildev.vscode-codeigniter4-spark)
 - [Moodle Pack](https://marketplace.visualstudio.com/items?itemName=imgildev.vscode-moodle-snippets)
 - [Mustache Template Engine - Snippets & Autocomplete](https://marketplace.visualstudio.com/items?itemName=imgildev.vscode-mustache-snippets)
 

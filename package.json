@@ -1,8 +1,8 @@
 {
   "name": "vscode-moodle-snippets",
   "displayName": "Moodle Pack",
-  "description": "Moodle - snippets, autocomplete, emmet & syntax for VSCode editor",
-  "version": "1.7.1",
+  "description": "🎓 This extension provides Moodle snippets for PHP, XML and Mustache files. It also provides commands to create new files for Moodle.",
+  "version": "1.7.2",
   "icon": "icon.png",
   "license": "MIT",
   "publisher": "imgildev",

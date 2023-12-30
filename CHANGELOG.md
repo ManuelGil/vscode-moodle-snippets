@@ -6,6 +6,10 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 ## [Unreleased]
 
+## [1.7.2] - 2023-12-30
+
+- Improve docuemntation.
+
 ## [1.7.1] - 2023-12-18
 
 - Fix typos.
@@ -50,7 +54,8 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 - Initial release
 
-[unreleased]: https://github.com/ManuelGil/vscode-moodle-snippets/compare/v1.7.0...HEAD
+[unreleased]: https://github.com/ManuelGil/vscode-moodle-snippets/compare/v1.7.1...HEAD
+[1.7.1]: https://github.com/ManuelGil/vscode-moodle-snippets/compare/v1.7.0...v1.7.1
 [1.7.0]: https://github.com/ManuelGil/vscode-moodle-snippets/compare/v1.6.1...v1.7.0
 [1.6.1]: https://github.com/ManuelGil/vscode-moodle-snippets/compare/v1.6.0...v1.6.1
 [1.6.0]: https://github.com/ManuelGil/vscode-moodle-snippets/compare/v1.5.0...v1.6.0
