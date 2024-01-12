@@ -1,4 +1,4 @@
-const execute = require('./functions');
+const { save, parsePath } = require('./functions');
 
 const content = `{{!
 \tThis file is part of Moodle - http://moodle.org/
@@ -18,7 +18,13 @@ const content = `{{!
 }}
 `;
 
-module.exports = async (vscode, fs, path) => {
+module.exports = async (vscode, fs, path, args) => {
+  let relativePath = '';
+
+  if (args) {
+    relativePath = parsePath(vscode, path, args);
+  }
+
   const value = await vscode.window.showInputBox({
     prompt: 'Filename',
     placeHolder: 'Filename',
@@ -27,6 +33,7 @@ module.exports = async (vscode, fs, path) => {
         return 'Invalid format!';
       }
     },
+    value: `${relativePath}new_file.mustache`,
   });
 
   if (value.lenght === 0) {
@@ -35,5 +42,5 @@ module.exports = async (vscode, fs, path) => {
 
   const filename = value.endsWith('.mustache') ? value : `${value}.mustache`;
 
-  execute.save(vscode, fs, path, filename, content);
+  save(vscode, fs, path, filename, content);
 };

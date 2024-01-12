@@ -2,40 +2,26 @@
 
 [![Visual Studio Marketplace Version](https://img.shields.io/visual-studio-marketplace/v/imgildev.vscode-moodle-snippets?style=for-the-badge&label=VS%20Marketplace&logo=visual-studio-code)](https://marketplace.visualstudio.com/items?itemName=imgildev.vscode-moodle-snippets)
 [![Visual Studio Marketplace Installs](https://img.shields.io/visual-studio-marketplace/i/imgildev.vscode-moodle-snippets?style=for-the-badge&logo=visual-studio-code)](https://marketplace.visualstudio.com/items?itemName=imgildev.vscode-moodle-snippets)
+[![Visual Studio Marketplace Downloads](https://img.shields.io/visual-studio-marketplace/d/imgildev.vscode-moodle-snippets?style=for-the-badge&logo=visual-studio-code)](https://marketplace.visualstudio.com/items?itemName=imgildev.vscode-moodle-snippets)
+[![Visual Studio Marketplace Rating](https://img.shields.io/visual-studio-marketplace/r/imgildev.vscode-moodle-snippets?style=for-the-badge&logo=visual-studio-code)](https://marketplace.visualstudio.com/items?itemName=imgildev.vscode-moodle-snippets&ssr=false#review-details)
 [![GitHub Repo stars](https://img.shields.io/github/stars/ManuelGil/vscode-moodle-snippets?style=for-the-badge&logo=github)](https://github.com/ManuelGil/vscode-moodle-snippets)
 [![GitHub license](https://img.shields.io/github/license/ManuelGil/vscode-moodle-snippets?style=for-the-badge&logo=github)](https://github.com/ManuelGil/vscode-moodle-snippets/blob/main/LICENSE)
 
-![icon](https://raw.githubusercontent.com/ManuelGil/vscode-moodle-snippets/main/icon.png)
-
-Moodle - snippets, autocomplete, emmet & syntax for VSCode editor.
-
 This extension provides Moodle snippets for PHP, XML and Mustache files. It also provides commands to create new files for Moodle.
+
+![demo](https://raw.githubusercontent.com/ManuelGil/vscode-moodle-snippets/main/images/demo.gif)
 
 ## Requirements
 
 - VSCode 1.46.0 or later
 
-## Features
-
-- Mustache Grammar
-- XML Schema
-- [Commands](#commands)
-- [Snippets](#snippets)
-
-## Usage
-
-### Commands
-
-![commands](https://raw.githubusercontent.com/ManuelGil/vscode-moodle-snippets/main/images/commands.gif)
-
-### Snippets
+## Snippets
 
 ![snippets](https://raw.githubusercontent.com/ManuelGil/vscode-moodle-snippets/main/images/snippets.gif)
 
 Type part of snippet, press `Tab` or `Enter`, and the snippet unfolds. Below is a list of the most important shortcuts.
 
-<details>
-<summary>$CFG Snippets</summary>
+### $CFG Snippets
 
 | Snippet           | Purpose             |
 | ----------------- | ------------------- |
@@ -51,10 +37,7 @@ Type part of snippet, press `Tab` or `Enter`, and the snippet unfolds. Below is 
 | cfg_tempdir       | $CFG->tempdir       |
 | cfg_wwwroot       | $CFG->wwwroot       |
 
-</details>
-
-<details>
-<summary>$DB Snippets</summary>
+### $DB Snippets
 
 | Snippet                            | Purpose                              |
 | ---------------------------------- | ------------------------------------ |
@@ -170,10 +153,7 @@ Type part of snippet, press `Tab` or `Enter`, and the snippet unfolds. Below is 
 | db_perf_get_queries                | $DB->perf_get_queries                |
 | db_perf_get_queries_time           | $DB->perf_get_queries_time           |
 
-</details>
-
-<details>
-<summary>$OUTPUT Snippets</summary>
+### $OUTPUT Snippets
 
 | Snippet                             | Purpose                               |
 | ----------------------------------- | ------------------------------------- |
@@ -297,10 +277,7 @@ Type part of snippet, press `Tab` or `Enter`, and the snippet unfolds. Below is 
 | output_checkbox                     | $OUTPUT->checkbox                     |
 | output_old_icon_url                 | $OUTPUT->old_icon_url                 |
 
-</details>
-
-<details>
-<summary>$PAGE Snippets</summary>
+### $PAGE Snippets
 
 | Snippet                                       | Purpose                                          |
 | --------------------------------------------- | ------------------------------------------------ |
@@ -417,10 +394,7 @@ Type part of snippet, press `Tab` or `Enter`, and the snippet unfolds. Below is 
 | page_navigation_find                          | $PAGE->navigation->find                          |
 | page_requires                                 | $PAGE->requires                                  |
 
-</details>
-
-<details>
-<summary>$USER Snippets</summary>
+### $USER Snippets
 
 | Snippet                | Purpose                  |
 | ---------------------- | ------------------------ |
@@ -473,10 +447,7 @@ Type part of snippet, press `Tab` or `Enter`, and the snippet unfolds. Below is 
 | user_moodlenetprofile  | $USER->moodlenetprofile  |
 | user_sesskey           | $USER->sesskey           |
 
-</details>
-
-<details>
-<summary>Form Snippets</summary>
+### Form Snippets
 
 | Snippet                           | Purpose                                   |
 | --------------------------------- | ----------------------------------------- |
@@ -506,8 +477,6 @@ Type part of snippet, press `Tab` or `Enter`, and the snippet unfolds. Below is 
 | add_element_modvisible            | addElement('modvisible', ... );           |
 | add_element_grading               | addElement('grading', ... );              |
 | add_element_questioncategory      | addElement('questioncategory', ... );     |
-
-</details>
 
 ## Connect with me
 

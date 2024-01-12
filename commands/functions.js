@@ -1,4 +1,4 @@
-module.exports.save = function (vscode, fs, path, filename, content, show = true) {
+const save = (vscode, fs, path, filename, content, show = true) => {
   let folder;
 
   if (vscode.workspace.workspaceFolders) {
@@ -34,4 +34,27 @@ module.exports.save = function (vscode, fs, path, filename, content, show = true
       vscode.window.showWarningMessage('Name already exist!');
     }
   });
+};
+
+const parsePath = (vscode, path, args) => {
+  let folder = '';
+
+  if (vscode.workspace.workspaceFolders) {
+    folder = vscode.workspace.workspaceFolders[0].uri.fsPath;
+  }
+
+  if (process.platform === 'win32') {
+    folder = folder.replace(/\\/g, '/');
+  }
+
+  folder = folder.startsWith('/') ? folder : `/${folder}`;
+
+  const relativePath = path.posix.relative(folder, args.path);
+
+  return relativePath === '/' ? '' : `${relativePath}/}`;
+};
+
+module.exports = {
+  save,
+  parsePath,
 };

@@ -1,4 +1,4 @@
-const execute = require('./functions');
+const { save, parsePath } = require('./functions');
 
 const content = `<?php
 // This file is part of Moodle - http://moodle.org/
@@ -90,12 +90,34 @@ class repository_pluginname extends repository {
 }
 `;
 
-module.exports = async (vscode, fs, path) => {
-  const filename = 'lib.php';
+module.exports = async (vscode, fs, path, args) => {
+  let relativePath = '';
+
+  if (args) {
+    relativePath = parsePath(vscode, path, args);
+  }
+
+  const value = await vscode.window.showInputBox({
+    prompt: 'Filename',
+    placeHolder: 'Filename',
+    validateInput: (text) => {
+      if (!/^[A-Za-z0-9][\w\s\/,.-]+$/.test(text)) {
+        return 'Invalid format!';
+      }
+    },
+    value: `${relativePath}lib.php`,
+  });
+
+  if (value.lenght === 0) {
+    return;
+  }
+
+  const filename = value.endsWith('.php') ? value : `${value}.php`;
+
   const year = new Date().getFullYear();
   const author_fullname = vscode.workspace.getConfiguration().get('moodle.author_fullname');
   const author_link = vscode.workspace.getConfiguration().get('moodle.author_link');
   const body = content.replace('{CURRENT_YEAR}', year).replace('{author_fullname}', author_fullname).replace('{author_link}', author_link);
 
-  execute.save(vscode, fs, path, filename, body);
+  save(vscode, fs, path, filename, body);
 };

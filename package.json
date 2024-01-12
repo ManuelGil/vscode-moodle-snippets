@@ -2,7 +2,7 @@
   "name": "vscode-moodle-snippets",
   "displayName": "Moodle Pack",
   "description": "🎓 This extension provides Moodle snippets for PHP, XML and Mustache files. It also provides commands to create new files for Moodle.",
-  "version": "1.7.2",
+  "version": "1.8.0",
   "icon": "icon.png",
   "license": "MIT",
   "publisher": "imgildev",
@@ -71,10 +71,10 @@
     "onCommand:moodle.file.mustache",
     "onCommand:moodle.file.php",
     "onCommand:moodle.file.xml",
-    "onCommand:moodle.table",
-    "onCommand:moodle.access",
-    "onCommand:moodle.lib",
-    "onCommand:moodle.version",
+    "onCommand:moodle.file.table",
+    "onCommand:moodle.file.access",
+    "onCommand:moodle.file.lib",
+    "onCommand:moodle.file.version",
     "onLanguage:php",
     "onLanguage:xml",
     "onStartupFinished"
@@ -138,31 +138,38 @@
     "commands": [
       {
         "command": "moodle.file.mustache",
-        "title": "Moodle: New Mustache File"
+        "title": "New Mustache File",
+        "category": "Moodle"
       },
       {
         "command": "moodle.file.php",
-        "title": "Moodle: New PHP File"
+        "title": "New PHP File",
+        "category": "Moodle"
       },
       {
         "command": "moodle.file.xml",
-        "title": "Moodle: New XML File"
+        "title": "New XML File",
+        "category": "Moodle"
       },
       {
-        "command": "moodle.table",
-        "title": "Moodle: New Table File"
+        "command": "moodle.file.table",
+        "title": "New Table File",
+        "category": "Moodle"
       },
       {
-        "command": "moodle.access",
-        "title": "Moodle: New Access File"
+        "command": "moodle.file.access",
+        "title": "New Access File",
+        "category": "Moodle"
       },
       {
-        "command": "moodle.lib",
-        "title": "Moodle: New Lib File"
+        "command": "moodle.file.lib",
+        "title": "New Lib File",
+        "category": "Moodle"
       },
       {
-        "command": "moodle.version",
-        "title": "Moodle: New Version File"
+        "command": "moodle.file.version",
+        "title": "New Version File",
+        "category": "Moodle"
       }
     ],
     "keybindings": [
@@ -176,9 +183,61 @@
       },
       {
         "key": "ctrl+shift+v",
-        "command": "moodle.version"
+        "command": "moodle.file.version"
       }
-    ]
+    ],
+    "submenus": [
+      {
+        "id": "moodle.submenu",
+        "label": "Moodle Pack"
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "submenu": "moodle.submenu",
+          "group": "2_workspace",
+          "when": "explorerViewletFocus && explorerResourceIsFolder"
+        }
+      ],
+      "moodle.submenu": [
+        {
+          "command": "moodle.file.mustache",
+          "alt": "New Mustache File",
+          "group": "1_file"
+        },
+        {
+          "command": "moodle.file.php",
+          "alt": "New PHP File",
+          "group": "1_file"
+        },
+        {
+          "command": "moodle.file.xml",
+          "alt": "New XML File",
+          "group": "1_file"
+        },
+        {
+          "command": "moodle.file.table",
+          "alt": "New Table File",
+          "group": "1_file"
+        },
+        {
+          "command": "moodle.file.access",
+          "alt": "New Access File",
+          "group": "1_file"
+        },
+        {
+          "command": "moodle.file.lib",
+          "alt": "New Lib File",
+          "group": "1_file"
+        },
+        {
+          "command": "moodle.file.version",
+          "alt": "New Version File",
+          "group": "1_file"
+        }
+      ]
+    }
   },
   "scripts": {
     "lint": "eslint --ext .js ./ --fix",

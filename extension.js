@@ -15,35 +15,35 @@ const access = require('./commands/access');
  */
 
 function activate(context) {
-  const moodle_file_mustache = vscode.commands.registerCommand('moodle.file.mustache', function () {
-    mustache(vscode, fs, path);
+  const moodle_file_mustache = vscode.commands.registerCommand('moodle.file.mustache', (args) => {
+    mustache(vscode, fs, path, args);
   });
-  const moodle_file_php = vscode.commands.registerCommand('moodle.file.php', function () {
-    php(vscode, fs, path);
+  const moodle_file_php = vscode.commands.registerCommand('moodle.file.php', (args) => {
+    php(vscode, fs, path, args);
   });
-  const moodle_file_xml = vscode.commands.registerCommand('moodle.file.xml', function () {
-    xml(vscode, fs, path);
+  const moodle_file_xml = vscode.commands.registerCommand('moodle.file.xml', (args) => {
+    xml(vscode, fs, path, args);
   });
-  const moodle_table = vscode.commands.registerCommand('moodle.table', function () {
-    table(vscode, fs, path);
+  const moodle_file_table = vscode.commands.registerCommand('moodle.file.table', (args) => {
+    table(vscode, fs, path, args);
   });
-  const moodle_access = vscode.commands.registerCommand('moodle.access', function () {
-    access(vscode, fs, path);
+  const moodle_file_access = vscode.commands.registerCommand('moodle.file.access', (args) => {
+    access(vscode, fs, path, args);
   });
-  const moodle_lib = vscode.commands.registerCommand('moodle.lib', function () {
-    lib(vscode, fs, path);
+  const moodle_file_lib = vscode.commands.registerCommand('moodle.file.lib', (args) => {
+    lib(vscode, fs, path, args);
   });
-  const moodle_version = vscode.commands.registerCommand('moodle.version', function () {
-    version(vscode, fs, path);
+  const moodle_file_version = vscode.commands.registerCommand('moodle.file.version', (args) => {
+    version(vscode, fs, path, args);
   });
 
   context.subscriptions.push(moodle_file_mustache);
   context.subscriptions.push(moodle_file_php);
   context.subscriptions.push(moodle_file_xml);
-  context.subscriptions.push(moodle_table);
-  context.subscriptions.push(moodle_access);
-  context.subscriptions.push(moodle_lib);
-  context.subscriptions.push(moodle_version);
+  context.subscriptions.push(moodle_file_table);
+  context.subscriptions.push(moodle_file_access);
+  context.subscriptions.push(moodle_file_lib);
+  context.subscriptions.push(moodle_file_version);
 }
 
 function deactivate() {}

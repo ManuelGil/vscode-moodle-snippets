@@ -1,10 +1,16 @@
-const execute = require('./functions');
+const { save, parsePath } = require('./functions');
 
 let content = `<?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="correct-xmldb-format.xslt"?>
 `;
 
-module.exports = async (vscode, fs, path) => {
+module.exports = async (vscode, fs, path, args) => {
+  let relativePath = '';
+
+  if (args) {
+    relativePath = parsePath(vscode, path, args);
+  }
+
   const value = await vscode.window.showInputBox({
     prompt: 'Filename',
     placeHolder: 'Filename',
@@ -13,6 +19,7 @@ module.exports = async (vscode, fs, path) => {
         return 'Invalid format!';
       }
     },
+    value: `${relativePath}new_file.xml`,
   });
 
   if (value.lenght === 0) {
@@ -21,5 +28,5 @@ module.exports = async (vscode, fs, path) => {
 
   const filename = value.endsWith('.xml') ? value : `${value}.xml`;
 
-  execute.save(vscode, fs, path, filename, content);
+  save(vscode, fs, path, filename, content);
 };
