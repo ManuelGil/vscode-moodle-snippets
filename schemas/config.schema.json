@@ -1,0 +1,16 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "moodle.author_fullname": {
+      "type": "string",
+      "default": "author_fullname",
+      "description": "Author's full name"
+    },
+    "moodle.author_link": {
+      "type": "string",
+      "default": "author_link",
+      "description": "Author's email or link"
+    }
+  }
+}

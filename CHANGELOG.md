@@ -6,6 +6,10 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 ## [Unreleased]
 
+## [1.9.0] - 2024-01-12
+
+- Add Workspace configuration.
+
 ## [1.8.0] - 2024-01-12
 
 - Add context menu to create files and folders.
@@ -58,7 +62,8 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 - Initial release
 
-[unreleased]: https://github.com/ManuelGil/vscode-moodle-snippets/compare/v1.8.0...HEAD
+[unreleased]: https://github.com/ManuelGil/vscode-moodle-snippets/compare/v1.9.0...HEAD
+[1.9.0]: https://github.com/ManuelGil/vscode-moodle-snippets/compare/v1.8.0...v1.9.0
 [1.8.0]: https://github.com/ManuelGil/vscode-moodle-snippets/compare/v1.7.2...v1.8.0
 [1.7.2]: https://github.com/ManuelGil/vscode-moodle-snippets/compare/v1.7.1...v1.7.2
 [1.7.1]: https://github.com/ManuelGil/vscode-moodle-snippets/compare/v1.7.0...v1.7.1

@@ -75,6 +75,18 @@ class pluginname_table extends table_sql
 `;
 
 module.exports = async (vscode, fs, path, args) => {
+  let resource;
+
+  if (vscode.workspace.workspaceFolders) {
+    resource = vscode.workspace.workspaceFolders[0].uri;
+  }
+
+  const moodleConfig = vscode.workspace.getConfiguration('moodle', resource);
+  const year = new Date().getFullYear();
+  const author_fullname = moodleConfig.get('author_fullname');
+  const author_link = moodleConfig.get('author_link');
+  const body = content.replace('{CURRENT_YEAR}', year).replace('{author_fullname}', author_fullname).replace('{author_link}', author_link);
+
   let relativePath = '';
 
   if (args) {
@@ -97,11 +109,6 @@ module.exports = async (vscode, fs, path, args) => {
   }
 
   const filename = value.endsWith('.php') ? value : `${value}.php`;
-
-  const year = new Date().getFullYear();
-  const author_fullname = vscode.workspace.getConfiguration().get('moodle.author_fullname');
-  const author_link = vscode.workspace.getConfiguration().get('moodle.author_link');
-  const body = content.replace('{CURRENT_YEAR}', year).replace('{author_fullname}', author_fullname).replace('{author_link}', author_link);
 
   save(vscode, fs, path, filename, body);
 };

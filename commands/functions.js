@@ -51,7 +51,7 @@ const parsePath = (vscode, path, args) => {
 
   const relativePath = path.posix.relative(folder, args.path);
 
-  return relativePath === '/' ? '' : `${relativePath}/}`;
+  return relativePath === '/' ? '' : `${relativePath}/`;
 };
 
 module.exports = {

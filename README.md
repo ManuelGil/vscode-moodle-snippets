@@ -15,6 +15,29 @@ This extension provides Moodle snippets for PHP, XML and Mustache files. It also
 
 - VSCode 1.46.0 or later
 
+## Project Settings
+
+Configure your project by creating or updating a settings.json file at the project's root. If you already have a `.vscode/settings.json` file, skip the first two steps.
+
+1. Open the command palette in VSCode:
+   - `CTRL + SHIFT + P` (Windows)
+   - `CMD + SHIFT + P` (Mac OS)
+
+2. Type `Preferences: Open Workspace Settings (JSON)`.
+
+3. In the `.vscode/settings.json` file, copy and paste the following settings:
+
+    ```jsonc
+    {
+      "moodle.author_fullname": "author_fullname",
+      "moodle.author_link": "author_link"
+    }
+    ```
+
+4. **Restart VS Code**
+
+Your project is now set up to automatically format code upon saving.
+
 ## Snippets
 
 ![snippets](https://raw.githubusercontent.com/ManuelGil/vscode-moodle-snippets/main/images/snippets.gif)

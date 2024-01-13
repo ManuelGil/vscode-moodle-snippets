@@ -2,7 +2,7 @@
   "name": "vscode-moodle-snippets",
   "displayName": "Moodle Pack",
   "description": "🎓 This extension provides Moodle snippets for PHP, XML and Mustache files. It also provides commands to create new files for Moodle.",
-  "version": "1.8.0",
+  "version": "1.9.0",
   "icon": "icon.png",
   "license": "MIT",
   "publisher": "imgildev",
@@ -237,7 +237,13 @@
           "group": "1_file"
         }
       ]
-    }
+    },
+    "jsonValidation": [
+      {
+        "fileMatch": ".vscode/settings.json",
+        "url": "./schemas/config.schema.json"
+      }
+    ]
   },
   "scripts": {
     "lint": "eslint --ext .js ./ --fix",
