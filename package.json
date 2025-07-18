@@ -2,7 +2,7 @@
   "name": "vscode-moodle-snippets",
   "displayName": "Moodle Pack",
   "description": "🎓 This extension provides Moodle snippets for PHP, XML and Mustache files. It also provides commands to create new files for Moodle.",
-  "version": "1.9.0",
+  "version": "1.10.0",
   "icon": "icon.png",
   "license": "MIT",
   "publisher": "imgildev",
@@ -14,7 +14,7 @@
     "url": "https://github.com/sponsors/manuelgil"
   },
   "engines": {
-    "vscode": "^1.53.0"
+    "vscode": "^1.88.0"
   },
   "categories": [
     "Programming Languages",
@@ -68,13 +68,6 @@
     "imgildev.vscode-mustache-snippets"
   ],
   "activationEvents": [
-    "onCommand:moodle.file.mustache",
-    "onCommand:moodle.file.php",
-    "onCommand:moodle.file.xml",
-    "onCommand:moodle.file.table",
-    "onCommand:moodle.file.access",
-    "onCommand:moodle.file.lib",
-    "onCommand:moodle.file.version",
     "onLanguage:php",
     "onLanguage:xml",
     "onStartupFinished"
@@ -100,39 +93,39 @@
     "snippets": [
       {
         "language": "php",
-        "path": "./snippets/GLOBAL/CFG.json"
+        "path": "./snippets/GLOBAL/CFG.code-snippets"
       },
       {
         "language": "php",
-        "path": "./snippets/GLOBAL/DB.json"
+        "path": "./snippets/GLOBAL/DB.code-snippets"
       },
       {
         "language": "php",
-        "path": "./snippets/GLOBAL/OUTPUT.json"
+        "path": "./snippets/GLOBAL/OUTPUT.code-snippets"
       },
       {
         "language": "php",
-        "path": "./snippets/GLOBAL/PAGE.json"
+        "path": "./snippets/GLOBAL/PAGE.code-snippets"
       },
       {
         "language": "php",
-        "path": "./snippets/GLOBAL/USER.json"
+        "path": "./snippets/GLOBAL/USER.code-snippets"
       },
       {
         "language": "php",
-        "path": "./snippets/lib/moodlelib.json"
+        "path": "./snippets/lib/moodlelib.code-snippets"
       },
       {
         "language": "php",
-        "path": "./snippets/lib/plugins.json"
+        "path": "./snippets/lib/plugins.code-snippets"
       },
       {
         "language": "php",
-        "path": "./snippets/php-language.json"
+        "path": "./snippets/php-language.code-snippets"
       },
       {
         "language": "xml",
-        "path": "./snippets/xml-language.json"
+        "path": "./snippets/xml-language.code-snippets"
       }
     ],
     "commands": [
@@ -252,22 +245,20 @@
     "prepare": "husky install"
   },
   "devDependencies": {
-    "@types/glob": "^7.1.3",
-    "@types/mocha": "^8.0.4",
-    "@types/node": "^12.11.7",
-    "@types/vscode": "^1.53.0",
-    "eslint": "^8.24.0",
-    "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-import": "^2.26.0",
-    "eslint-plugin-prettier": "^5.0.0",
-    "glob": "^7.1.6",
-    "husky": "^8.0.3",
-    "lint-staged": "^13.2.3",
-    "mocha": "^8.3.0",
-    "prettier": "3.0.1",
-    "typescript": "^4.1.3",
-    "vscode-test": "^1.5.0"
+    "@types/glob": "^9.0.0",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "^24.0.14",
+    "@types/vscode": "^1.88.0",
+    "@vscode/test-cli": "^0.0.11",
+    "@vscode/test-electron": "^2.5.2",
+    "eslint": "^9.31.0",
+    "glob": "^11.0.3",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.1.2",
+    "mocha": "^11.7.1",
+    "prettier": "3.6.2",
+    "typescript": "^5.8.3",
+    "vscode-test": "^1.6.1"
   },
   "lint-staged": {
     "*.(js)": "npm run lint"

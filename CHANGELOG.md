@@ -6,6 +6,15 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 ## [Unreleased]
 
+## [1.10.0] - 2025-07-18
+
+### Changed
+
+- Update funding model and enhance README and package description for clarity
+- Create new `file-generator.js` module to centralize file creation logic
+- Refactore all command files (php.js, xml.js, mustache.js, table.js, version.js, access.js, lib.js) to use the centralized file generator
+- Add comprehensive error handling with try/catch blocks to core functions
+
 ## [1.9.0] - 2024-01-12
 
 - Add Workspace configuration.

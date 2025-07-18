@@ -1,5 +1,15 @@
-const { save, parsePath } = require('./functions');
+/**
+ * Command to create a new table PHP file for Moodle
+ *
+ * @module table
+ */
 
+const { generateFile } = require('./file-generator');
+
+/**
+ * Base content for Moodle table files
+ * Includes a base table class with common methods
+ */
 const content = `<?php
 // This file is part of Moodle - http://moodle.org/
 //
@@ -30,85 +40,65 @@ const content = `<?php
 class pluginname_table extends table_sql
 {
 
-\t/**
-\t * Constructor
-\t *@param int \\$uniqueid all tables have to have a unique id
-\t */
-\tfunction __construct(\\$uniqueid)
-\t{
-\t\tparent::__construct(\\$uniqueid);
-\t\t// Define the list of columns to show.
-\t\t\\$columns = array('username', 'password', 'firstname', 'lastname');
-\t\t\\$this->define_columns(\\$columns);
-\t\t// Define the titles of columns to show in header.
-\t\t\\$headers = array('Username', 'Password', 'First name', 'Last name');
-\t\t\\$this->define_headers(\\$headers);
-\t}
+	/**
+	 * Constructor
+	 *@param int \$uniqueid all tables have to have a unique id
+	 */
+	function __construct(\$uniqueid)
+	{
+		parent::__construct(\$uniqueid);
+		// Define the list of columns to show.
+		\$columns = array('username', 'password', 'firstname', 'lastname');
+		\$this->define_columns(\$columns);
+		// Define the titles of columns to show in header.
+		\$headers = array('Username', 'Password', 'First name', 'Last name');
+		\$this->define_headers(\$headers);
+	}
 
-\t/**
-\t *This function is called for each data row to allow processing of the username value.
-\t * @param object \\$values Contains object with all the values of record.
-\t * @return \\$string personalized string value for username column
-\t */
-\tfunction col_username(\\$values)
-\t{
-\t\t// If the data is being downloaded than we don't want to show HTML.
-\t\tif (\\$this->is_downloading()) {
-\t\t\treturn \\$values->username;
-\t\t} else {
-\t\t\treturn '<a href=\"/user/profile.php?id=' . \\$values->id . '\">' . \\$values->username . '</a>';
-\t\t}
-\t}
+	/**
+	 *This function is called for each data row to allow processing of the username value.
+	 * @param object \$values Contains object with all the values of record.
+	 * @return \$string personalized string value for username column
+	 */
+	function col_username(\$values)
+	{
+		// If the data is being downloaded than we don't want to show HTML.
+		if (\$this->is_downloading()) {
+			return \$values->username;
+		} else {
+			return '<a href="/user/profile.php?id=' . \$values->id . '">' . \$values->username . '</a>';
+		}
+	}
 
-\t/**
-\t *This function is called for each data row to allow processing of columns which do not have a *_cols function.
-\t * @return string return processed value. Return NULL if no change has been made
-\t */
-\tfunction other_cols(\\$colname, \\$value)
-\t{
-\t\t// For security reasons we don't want to show the password hash.
-\t\tif (\\$colname == 'password') {
-\t\t\treturn "****";
-\t\t}
-\t}
+	/**
+	 *This function is called for each data row to allow processing of columns which do not have a *_cols function.
+	 * @return string return processed value. Return NULL if no change has been made
+	 */
+	function other_cols(\$colname, \$value)
+	{
+		// For security reasons we don't want to show the password hash.
+		if (\$colname == 'password') {
+			return "****";
+		}
+	}
 }
 `;
 
+/**
+ * Creates a new table PHP file for Moodle
+ *
+ * @param {Object} vscode - VSCode API
+ * @param {Object} fs - FileSystem Module
+ * @param {Object} path - Path Module
+ * @param {Object} args - Command arguments
+ * @returns {Promise<void>}
+ */
 module.exports = async (vscode, fs, path, args) => {
-  let resource;
-
-  if (vscode.workspace.workspaceFolders) {
-    resource = vscode.workspace.workspaceFolders[0].uri;
-  }
-
-  const moodleConfig = vscode.workspace.getConfiguration('moodle', resource);
-  const year = new Date().getFullYear();
-  const author_fullname = moodleConfig.get('author_fullname');
-  const author_link = moodleConfig.get('author_link');
-  const body = content.replace('{CURRENT_YEAR}', year).replace('{author_fullname}', author_fullname).replace('{author_link}', author_link);
-
-  let relativePath = '';
-
-  if (args) {
-    relativePath = parsePath(vscode, path, args);
-  }
-
-  const value = await vscode.window.showInputBox({
-    prompt: 'Filename',
-    placeHolder: 'Filename',
-    validateInput: (text) => {
-      if (!/^[A-Za-z0-9][\w\s\/,.-]+$/.test(text)) {
-        return 'Invalid format!';
-      }
-    },
-    value: `${relativePath}table.php`,
+  await generateFile(vscode, fs, path, args, {
+    template: content,
+    defaultFilename: 'table.php',
+    extension: 'php',
+    insertAuthorData: true,
+    packagePrefix: 'type_pluginname',
   });
-
-  if (value.lenght === 0) {
-    return;
-  }
-
-  const filename = value.endsWith('.php') ? value : `${value}.php`;
-
-  save(vscode, fs, path, filename, body);
 };

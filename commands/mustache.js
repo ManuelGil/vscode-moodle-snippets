@@ -1,5 +1,15 @@
-const { save, parsePath } = require('./functions');
+/**
+ * Command to create a new Mustache file for Moodle
+ *
+ * @module mustache
+ */
 
+const { generateFile } = require('./file-generator');
+
+/**
+ * Base content for Moodle Mustache files
+ * Includes Moodle standard header as comment
+ */
 const content = `{{!
 \tThis file is part of Moodle - http://moodle.org/
 
@@ -18,29 +28,20 @@ const content = `{{!
 }}
 `;
 
+/**
+ * Creates a new Mustache file for Moodle
+ *
+ * @param {Object} vscode - VSCode API
+ * @param {Object} fs - FileSystem Module
+ * @param {Object} path - Path Module
+ * @param {Object} args - Command arguments
+ * @returns {Promise<void>}
+ */
 module.exports = async (vscode, fs, path, args) => {
-  let relativePath = '';
-
-  if (args) {
-    relativePath = parsePath(vscode, path, args);
-  }
-
-  const value = await vscode.window.showInputBox({
-    prompt: 'Filename',
-    placeHolder: 'Filename',
-    validateInput: (text) => {
-      if (!/^[A-Za-z0-9][\w\s\/,.-]+$/.test(text)) {
-        return 'Invalid format!';
-      }
-    },
-    value: `${relativePath}new_file.mustache`,
+  await generateFile(vscode, fs, path, args, {
+    template: content,
+    defaultFilename: 'new_file.mustache',
+    extension: 'mustache',
+    insertAuthorData: false, // Mustache format doesn't include author data
   });
-
-  if (value.lenght === 0) {
-    return;
-  }
-
-  const filename = value.endsWith('.mustache') ? value : `${value}.mustache`;
-
-  save(vscode, fs, path, filename, content);
 };

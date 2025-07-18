@@ -1,32 +1,32 @@
-const { save, parsePath } = require('./functions');
+/**
+ * Command to create a new XML file for Moodle
+ *
+ * @module xml
+ */
 
-let content = `<?xml version="1.0" encoding="UTF-8"?>
+const { generateFile } = require('./file-generator');
+
+/**
+ * Base content for Moodle XML files
+ */
+const content = `<?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="correct-xmldb-format.xslt"?>
 `;
 
+/**
+ * Creates a new XML file for Moodle
+ *
+ * @param {Object} vscode - VSCode API
+ * @param {Object} fs - FileSystem Module
+ * @param {Object} path - Path Module
+ * @param {Object} args - Command arguments
+ * @returns {Promise<void>}
+ */
 module.exports = async (vscode, fs, path, args) => {
-  let relativePath = '';
-
-  if (args) {
-    relativePath = parsePath(vscode, path, args);
-  }
-
-  const value = await vscode.window.showInputBox({
-    prompt: 'Filename',
-    placeHolder: 'Filename',
-    validateInput: (text) => {
-      if (!/^[A-Za-z0-9][\w\s\/,.-]+$/.test(text)) {
-        return 'Invalid format!';
-      }
-    },
-    value: `${relativePath}new_file.xml`,
+  await generateFile(vscode, fs, path, args, {
+    template: content,
+    defaultFilename: 'new_file.xml',
+    extension: 'xml',
+    insertAuthorData: false, // No hay datos de autor en la plantilla XML
   });
-
-  if (value.lenght === 0) {
-    return;
-  }
-
-  const filename = value.endsWith('.xml') ? value : `${value}.xml`;
-
-  save(vscode, fs, path, filename, content);
 };

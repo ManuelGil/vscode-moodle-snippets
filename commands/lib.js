@@ -1,5 +1,15 @@
-const { save, parsePath } = require('./functions');
+/**
+ * Command to create a new lib.php file for Moodle
+ *
+ * @module lib
+ */
 
+const { generateFile } = require('./file-generator');
+
+/**
+ * Base content for Moodle lib.php files
+ * Includes a repository class with basic methods
+ */
 const content = `<?php
 // This file is part of Moodle - http://moodle.org/
 //
@@ -90,41 +100,21 @@ class repository_pluginname extends repository {
 }
 `;
 
+/**
+ * Creates a new lib.php file for Moodle
+ *
+ * @param {Object} vscode - VSCode API
+ * @param {Object} fs - FileSystem Module
+ * @param {Object} path - Path Module
+ * @param {Object} args - Command arguments
+ * @returns {Promise<void>}
+ */
 module.exports = async (vscode, fs, path, args) => {
-  let resource;
-
-  if (vscode.workspace.workspaceFolders) {
-    resource = vscode.workspace.workspaceFolders[0].uri;
-  }
-
-  const moodleConfig = vscode.workspace.getConfiguration('moodle', resource);
-  const year = new Date().getFullYear();
-  const author_fullname = moodleConfig.get('author_fullname');
-  const author_link = moodleConfig.get('author_link');
-  const body = content.replace('{CURRENT_YEAR}', year).replace('{author_fullname}', author_fullname).replace('{author_link}', author_link);
-
-  let relativePath = '';
-
-  if (args) {
-    relativePath = parsePath(vscode, path, args);
-  }
-
-  const value = await vscode.window.showInputBox({
-    prompt: 'Filename',
-    placeHolder: 'Filename',
-    validateInput: (text) => {
-      if (!/^[A-Za-z0-9][\w\s\/,.-]+$/.test(text)) {
-        return 'Invalid format!';
-      }
-    },
-    value: `${relativePath}lib.php`,
+  await generateFile(vscode, fs, path, args, {
+    template: content,
+    defaultFilename: 'lib.php',
+    extension: 'php',
+    insertAuthorData: true,
+    packagePrefix: 'repository_pluginname',
   });
-
-  if (value.lenght === 0) {
-    return;
-  }
-
-  const filename = value.endsWith('.php') ? value : `${value}.php`;
-
-  save(vscode, fs, path, filename, body);
 };

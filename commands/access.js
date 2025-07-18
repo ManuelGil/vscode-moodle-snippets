@@ -1,5 +1,15 @@
-const { save, parsePath } = require('./functions');
+/**
+ * Command to create a new access.php file for Moodle
+ *
+ * @module access
+ */
 
+const { generateFile } = require('./file-generator');
+
+/**
+ * Base content for Moodle access.php files
+ * Includes standard capability definitions for a plugin
+ */
 const content = `<?php
 // This file is part of Moodle - http://moodle.org/
 //
@@ -17,62 +27,51 @@ const content = `<?php
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Plugin capabilities for the repository_pluginname plugin.
+ * Capability definitions for this module.
  *
  * @package   repository_pluginname
  * @copyright {CURRENT_YEAR}, {author_fullname} <{author_link}>
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
+defined('MOODLE_INTERNAL') || die();
+
 \$capabilities = [
-\t// Ability to use the plugin.
 \t'repository/pluginname:view' => [
 \t\t'captype' => 'read',
 \t\t'contextlevel' => CONTEXT_MODULE,
 \t\t'archetypes' => [
-\t\t\t'coursecreator' => CAP_ALLOW,
+\t\t\t'user' => CAP_ALLOW
+\t\t]
+\t],
+\t'repository/pluginname:addinstance' => [
+\t\t'riskbitmask' => RISK_SPAM | RISK_XSS,
+\t\t'captype' => 'write',
+\t\t'contextlevel' => CONTEXT_COURSE,
+\t\t'archetypes' => [
 \t\t\t'editingteacher' => CAP_ALLOW,
 \t\t\t'manager' => CAP_ALLOW
-\t\t]
+\t\t],
+\t\t'clonepermissionsfrom' => 'moodle/course:manageactivities'
 \t],
 ];
 `;
 
+/**
+ * Creates a new access.php file for Moodle
+ *
+ * @param {Object} vscode - VSCode API
+ * @param {Object} fs - FileSystem Module
+ * @param {Object} path - Path Module
+ * @param {Object} args - Command arguments
+ * @returns {Promise<void>}
+ */
 module.exports = async (vscode, fs, path, args) => {
-  let resource;
-
-  if (vscode.workspace.workspaceFolders) {
-    resource = vscode.workspace.workspaceFolders[0].uri;
-  }
-
-  const moodleConfig = vscode.workspace.getConfiguration('moodle', resource);
-  const year = new Date().getFullYear();
-  const author_fullname = moodleConfig.get('author_fullname');
-  const author_link = moodleConfig.get('author_link');
-  const body = content.replace('{CURRENT_YEAR}', year).replace('{author_fullname}', author_fullname).replace('{author_link}', author_link);
-
-  let relativePath = '';
-
-  if (args) {
-    relativePath = parsePath(vscode, path, args);
-  }
-
-  const value = await vscode.window.showInputBox({
-    prompt: 'Filename',
-    placeHolder: 'Filename',
-    validateInput: (text) => {
-      if (!/^[A-Za-z0-9][\w\s\/,.-]+$/.test(text)) {
-        return 'Invalid format!';
-      }
-    },
-    value: `${relativePath}db/access.php`,
+  await generateFile(vscode, fs, path, args, {
+    template: content,
+    defaultFilename: 'access.php',
+    extension: 'php',
+    insertAuthorData: true,
+    packagePrefix: 'repository_pluginname',
   });
-
-  if (value.lenght === 0) {
-    return;
-  }
-
-  const filename = value.endsWith('.php') ? value : `${value}.php`;
-
-  save(vscode, fs, path, filename, body);
 };
